@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <!-- SEO & GOOGLE DISCOVERY -->
-  <title>SDG Insights — VU Exam Preparation & Project Guidance Portal</title>
-  <meta name="description" content="SDG Insights: 100% Handout-Accurate Solved Notes, Highlighting, CS619 Final Projects, Assignments & Past Papers for Virtual University Students." />
-  <meta name="keywords" content="SDG Insights, VU Notes, MTH401, MTH202, CS610, CS301, CS619 Final Project, Virtual University Solved Handouts, Munaza Mukhtar" />
+  <title>SDG Insights — Virtual University BSCS Semester Notes & Bundle Deals</title>
+  <meta name="description" content="Official SDG Insights: 100% Handout-Accurate VU BS CS Semester 1 to 8 Solved Notes, Semester Bundles (20% OFF), 5 Subjects Pack (10% OFF), CS619 Final Projects." />
+  <meta name="keywords" content="SDG Insights, VU BSCS Notes, VU Semester Bundles, MTH401, MTH202, CS610, CS301, CS619 Final Project, Virtual University Handouts" />
   <link rel="canonical" href="https://sdginsights.github.io" />
 
   <!-- TAILWIND CSS & FONTS -->
@@ -22,21 +22,25 @@
     .heading-font { font-family: 'Poppins', sans-serif; }
     .urdu-font { font-family: 'Noto Nastaliq Urdu', serif; line-height: 2.2; }
     .gradient-hero { background: radial-gradient(circle at 10% 20%, #1e1b4b 0%, #0f172a 90%); }
-    .glass-card { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(12px); border: 1px solid rgba(226, 232, 240, 0.8); }
-    .gold-glow { box-shadow: 0 0 25px rgba(245, 158, 11, 0.25); }
-    .category-active { background: linear-gradient(135deg, #f59e0b, #d97706); color: #0f172a; font-weight: 700; }
+    .glass-card { background: rgba(255, 255, 255, 0.96); backdrop-filter: blur(12px); border: 1px solid rgba(226, 232, 240, 0.8); }
+    .deal-card-gold { background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%); border: 2px solid #f59e0b; }
+    .deal-card-indigo { background: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 100%); border: 2px solid #6366f1; }
+    .sem-active { background: #0f172a; color: #f59e0b; font-weight: 800; border-color: #f59e0b; }
   </style>
 </head>
 <body class="bg-slate-100 text-slate-800 antialiased min-h-screen flex flex-col selection:bg-amber-300 selection:text-slate-900">
 
-  <!-- TOP BRANDING & CHANNELS BAR -->
+  <!-- TOP APP BAR -->
   <header class="bg-slate-950 text-slate-200 border-b border-slate-800/80 sticky top-0 z-50 shadow-md">
     <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
       
-      <!-- LOGO / EMBLEM -->
+      <!-- LOGO AREA (Supports image logo.png with elegant fallback) -->
       <a href="#" class="flex items-center space-x-3 group">
-        <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-amber-500 via-indigo-600 to-violet-600 flex items-center justify-center text-white shadow-lg font-black text-xl tracking-tighter transform group-hover:scale-105 transition">
-          <i class="fa-solid fa-graduation-cap text-amber-300"></i>
+        <div class="relative">
+          <img src="logo.png" alt="SDG Insights Logo" onerror="this.style.display='none'; document.getElementById('logoFallback').style.display='flex';" class="w-11 h-11 rounded-2xl object-cover shadow-lg border border-amber-400/30" />
+          <div id="logoFallback" class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-amber-500 via-indigo-600 to-violet-600 flex items-center justify-center text-white shadow-lg font-black text-xl tracking-tighter transform group-hover:scale-105 transition">
+            <i class="fa-solid fa-graduation-cap text-amber-300"></i>
+          </div>
         </div>
         <div>
           <div class="flex items-center space-x-2">
@@ -47,12 +51,17 @@
         </div>
       </a>
 
-      <!-- SOCIAL COMMUNITY BUTTONS -->
+      <!-- SOCIAL COMMUNITY & CATALOG BUTTONS -->
       <div class="flex items-center space-x-2">
+        <!-- WhatsApp Catalog -->
+        <a href="https://wa.me/c/923198519637" target="_blank" class="inline-flex items-center space-x-1.5 bg-emerald-700 hover:bg-emerald-800 text-white text-xs px-3.5 py-2 rounded-xl font-semibold shadow-sm transition border border-emerald-600">
+          <i class="fa-solid fa-store text-sm"></i>
+          <span class="hidden sm:inline">WhatsApp Catalog</span>
+        </a>
         <!-- WhatsApp Channel -->
         <a href="https://whatsapp.com/channel/0029VbB78Xa3WHTReQ1hTF1Q" target="_blank" class="hidden sm:inline-flex items-center space-x-1.5 bg-emerald-600 hover:bg-emerald-700 text-white text-xs px-3.5 py-2 rounded-xl font-semibold shadow-sm transition">
           <i class="fa-brands fa-whatsapp text-sm"></i>
-          <span>WhatsApp Channel</span>
+          <span>Community Channel</span>
         </a>
         <!-- YouTube Channel -->
         <a href="https://youtube.com/@sdginsights?si=yFODeRKu4Q1S_ORa" target="_blank" class="flex items-center space-x-1.5 bg-red-600 hover:bg-red-700 text-white text-xs px-3.5 py-2 rounded-xl font-semibold shadow-sm transition">
@@ -67,80 +76,106 @@
   <section class="gradient-hero text-white py-12 px-4 relative overflow-hidden">
     <div class="max-w-5xl mx-auto text-center relative z-10">
       
-      <!-- URDU HIGHLIGHT BADGE -->
-      <div class="inline-flex items-center gap-2 bg-amber-400/10 border border-amber-400/30 text-amber-300 px-4 py-1.5 rounded-full text-xs font-semibold mb-6">
-        <i class="fa-solid fa-certificate text-amber-400"></i>
-        <span class="urdu-font text-sm">ورچوئل یونیورسٹی کے تمام امتحانات کی 100% مستند تیاری</span>
+      <div class="inline-flex items-center gap-2 bg-amber-400/10 border border-amber-400/30 text-amber-300 px-4 py-1.5 rounded-full text-xs font-semibold mb-5">
+        <i class="fa-solid fa-fire text-amber-400"></i>
+        <span class="urdu-font text-sm">بی ایس کمپیوٹر سائنس سمسٹر 1 تا 8: تمام نوٹس، پلے لسٹس اور سپیشل بنڈل ڈیلز</span>
       </div>
 
-      <!-- MAIN HEADINGS -->
-      <h1 class="text-3xl md:text-5xl lg:text-6xl font-black tracking-tight mb-4 heading-font leading-tight">
-        Master Your VU Courses with <br/>
+      <h1 class="text-3xl md:text-5xl lg:text-6xl font-black tracking-tight mb-3 heading-font leading-tight">
+        Master VU BS Computer Science <br/>
         <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-amber-200 to-pink-400">
-          Handout-Accurate Solved Notes
+          Semester-Wise Handout Notes
         </span>
       </h1>
 
       <p class="urdu-font text-base md:text-lg text-slate-300 max-w-3xl mx-auto mb-8">
-        مڈٹرم و فائنل ٹرم ہینڈ آؤٹس، حل شدہ شارٹ و لانگ سوالات، 100% تصدیق شدہ ایم سی کیوز، اور CS619 فائنل ایئر پروجیکٹس کی مکمل رہنمائی۔
+        تمام سمسٹرز کے 100% ہینڈ آؤٹ حل شدہ شارٹ و لانگ نوٹس، درست ایم سی کیوز، اور CS619 فائنل ایئر پروجیکٹس۔
       </p>
 
-      <!-- SEARCH BOX -->
+      <!-- SEARCH BAR -->
       <div class="max-w-2xl mx-auto bg-slate-900/90 p-2 rounded-2xl border border-slate-700/80 shadow-2xl flex items-center">
         <i class="fa-solid fa-magnifying-glass text-slate-400 text-lg ml-4 mr-2"></i>
-        <input type="text" id="subjectSearch" onkeyup="searchSubjects()" placeholder="Type subject code: e.g. CS619, MTH401, CS301, MTH202, CS610..." class="w-full bg-transparent text-white px-2 py-2.5 text-sm focus:outline-none placeholder:text-slate-400" />
-        <button onclick="searchSubjects()" class="bg-amber-400 hover:bg-amber-500 text-slate-950 font-bold px-5 py-2.5 rounded-xl text-xs transition">
+        <input type="text" id="courseSearch" onkeyup="searchCourses()" placeholder="Search Subject (e.g. CS101, CS201, CS301, CS610, MTH401, CS619)..." class="w-full bg-transparent text-white px-2 py-2.5 text-sm focus:outline-none placeholder:text-slate-400" />
+        <button onclick="searchCourses()" class="bg-amber-400 hover:bg-amber-500 text-slate-950 font-bold px-5 py-2.5 rounded-xl text-xs transition">
           Search
         </button>
       </div>
 
-      <!-- 4 KEY PILLARS -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto mt-10 text-left">
-        <div class="bg-white/5 border border-white/10 p-3.5 rounded-xl backdrop-blur-sm">
-          <div class="text-amber-400 text-lg mb-1"><i class="fa-solid fa-file-signature"></i></div>
-          <div class="font-bold text-xs">Highlighted Notes</div>
-          <div class="text-[11px] text-slate-400">100% Handout Focused</div>
+      <!-- MEGA BUNDLE DEALS BANNER -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto mt-10 text-left">
+        
+        <!-- DEAL 1: FULL SEMESTER 20% OFF -->
+        <div class="deal-card-gold p-5 rounded-3xl text-slate-900 shadow-xl relative overflow-hidden flex flex-col justify-between">
+          <div class="absolute -right-4 -bottom-4 text-amber-300/30 text-8xl font-black select-none pointer-events-none">20%</div>
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="bg-amber-500 text-slate-950 font-black text-xs px-3 py-1 rounded-full uppercase tracking-wider shadow-xs">
+                ★ Best Value Deal
+              </span>
+              <span class="text-xs font-black text-amber-800 bg-white/80 px-2.5 py-1 rounded-lg border border-amber-300">
+                FLAT 20% OFF
+              </span>
+            </div>
+            <h3 class="text-xl font-extrabold text-slate-950 heading-font">Full Semester Super Bundle</h3>
+            <p class="urdu-font text-xs text-slate-700 my-1 leading-relaxed">
+              کسی بھی مکمل سمسٹر (تمام 5 یا 6 سبجیکٹس) کی مکمل فائلز لینے پر سیدھا <strong>20% رعایت</strong> حاصل کریں۔
+            </p>
+          </div>
+          <div class="mt-3 pt-3 border-t border-amber-200/80 flex items-center justify-between">
+            <span class="text-xs font-bold text-amber-950">Rs. 3000 کی بجائے صرف <strong>Rs. 2400</strong></span>
+            <button onclick="openDealCheckout('Full Semester Pack (20% OFF)', 'All Subjects of your selected Semester', 'Rs. 2400', '20% OFF')" class="bg-slate-950 hover:bg-slate-800 text-amber-300 font-bold text-xs px-4 py-2 rounded-xl transition shadow-md">
+              Claim 20% Deal
+            </button>
+          </div>
         </div>
-        <div class="bg-white/5 border border-white/10 p-3.5 rounded-xl backdrop-blur-sm">
-          <div class="text-emerald-400 text-lg mb-1"><i class="fa-solid fa-square-check"></i></div>
-          <div class="font-bold text-xs">Past & Current Papers</div>
-          <div class="text-[11px] text-slate-400">Verified Solved Keys</div>
+
+        <!-- DEAL 2: ANY 5 SUBJECTS 10% OFF -->
+        <div class="deal-card-indigo p-5 rounded-3xl text-slate-900 shadow-xl relative overflow-hidden flex flex-col justify-between">
+          <div class="absolute -right-4 -bottom-4 text-indigo-300/30 text-8xl font-black select-none pointer-events-none">10%</div>
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="bg-indigo-600 text-white font-black text-xs px-3 py-1 rounded-full uppercase tracking-wider shadow-xs">
+                ★ Custom Pick
+              </span>
+              <span class="text-xs font-black text-indigo-800 bg-white/80 px-2.5 py-1 rounded-lg border border-indigo-300">
+                FLAT 10% OFF
+              </span>
+            </div>
+            <h3 class="text-xl font-extrabold text-slate-950 heading-font">Pick Any 5 Subjects Pack</h3>
+            <p class="urdu-font text-xs text-slate-700 my-1 leading-relaxed">
+              اپنی مرضی کے کوئی سے بھی 5 سبجیکٹس سلیکٹ کریں اور حاصل کریں <strong>10% رعایت</strong>۔
+            </p>
+          </div>
+          <div class="mt-3 pt-3 border-t border-indigo-200/80 flex items-center justify-between">
+            <span class="text-xs font-bold text-indigo-950">Rs. 2500 کی بجائے صرف <strong>Rs. 2250</strong></span>
+            <button onclick="openDealCheckout('Any 5 Subjects Pack (10% OFF)', 'Choice of Any 5 VU Subjects', 'Rs. 2250', '10% OFF')" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs px-4 py-2 rounded-xl transition shadow-md">
+              Claim 10% Deal
+            </button>
+          </div>
         </div>
-        <div class="bg-white/5 border border-white/10 p-3.5 rounded-xl backdrop-blur-sm">
-          <div class="text-blue-400 text-lg mb-1"><i class="fa-solid fa-code"></i></div>
-          <div class="font-bold text-xs">CS619 Final Projects</div>
-          <div class="text-[11px] text-slate-400">SRS, Prototype & Viva</div>
-        </div>
-        <div class="bg-white/5 border border-white/10 p-3.5 rounded-xl backdrop-blur-sm">
-          <div class="text-purple-400 text-lg mb-1"><i class="fa-solid fa-bolt"></i></div>
-          <div class="font-bold text-xs">Instant Access</div>
-          <div class="text-[11px] text-slate-400">Direct Portal Unlock</div>
-        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- DEPARTMENT & TERM TABS -->
+  <!-- SEMESTER WISE HORIZONTAL TABS -->
   <div class="bg-white border-b border-slate-200 sticky top-[69px] z-30 shadow-xs">
-    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between gap-4 overflow-x-auto">
-      
-      <!-- Categories Filter -->
-      <div class="flex items-center space-x-2 shrink-0">
-        <button onclick="filterDepartment('All')" id="dept-All" class="category-active px-4 py-2 rounded-xl text-xs transition">All Courses</button>
-        <button onclick="filterDepartment('CS')" id="dept-CS" class="bg-slate-100 hover:bg-slate-200 text-slate-700 px-4 py-2 rounded-xl text-xs font-semibold transition">Computer Science</button>
-        <button onclick="filterDepartment('MTH')" id="dept-MTH" class="bg-slate-100 hover:bg-slate-200 text-slate-700 px-4 py-2 rounded-xl text-xs font-semibold transition">Mathematics</button>
-        <button onclick="filterDepartment('MGMT')" id="dept-MGMT" class="bg-slate-100 hover:bg-slate-200 text-slate-700 px-4 py-2 rounded-xl text-xs font-semibold transition">Management & English</button>
-        <button onclick="filterDepartment('PROJECTS')" id="dept-PROJECTS" class="bg-indigo-50 text-indigo-700 hover:bg-indigo-100 px-4 py-2 rounded-xl text-xs font-bold border border-indigo-200 transition">
-          <i class="fa-solid fa-diagram-project mr-1"></i> Final Projects
-        </button>
-      </div>
-
-      <!-- Term Toggle -->
-      <div class="flex items-center bg-slate-100 p-1 rounded-xl shrink-0 text-xs">
-        <button onclick="filterTerm('All')" id="term-All" class="px-3 py-1 rounded-lg bg-white font-bold shadow-xs">All Terms</button>
-        <button onclick="filterTerm('Midterm')" id="term-Midterm" class="px-3 py-1 rounded-lg text-slate-600 font-medium">Midterm</button>
-        <button onclick="filterTerm('Finalterm')" id="term-Finalterm" class="px-3 py-1 rounded-lg text-slate-600 font-medium">Final Term</button>
-      </div>
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center gap-2 overflow-x-auto scrollbar-none">
+      <span class="text-xs font-extrabold text-slate-400 uppercase tracking-wider shrink-0 mr-1">
+        <i class="fa-solid fa-filter text-amber-500"></i> Semesters:
+      </span>
+      <button onclick="filterSemester('All')" id="sem-All" class="sem-active px-3.5 py-1.5 rounded-xl text-xs border border-slate-300 shrink-0 transition">All Courses</button>
+      <button onclick="filterSemester('Sem 1')" id="sem-Sem 1" class="bg-slate-100 hover:bg-slate-200 text-slate-700 px-3.5 py-1.5 rounded-xl text-xs font-bold border border-slate-200 shrink-0 transition">Semester 1</button>
+      <button onclick="filterSemester('Sem 2')" id="sem-Sem 2" class="bg-slate-100 hover:bg-slate-200 text-slate-700 px-3.5 py-1.5 rounded-xl text-xs font-bold border border-slate-200 shrink-0 transition">Semester 2</button>
+      <button onclick="filterSemester('Sem 3')" id="sem-Sem 3" class="bg-slate-100 hover:bg-slate-200 text-slate-700 px-3.5 py-1.5 rounded-xl text-xs font-bold border border-slate-200 shrink-0 transition">Semester 3</button>
+      <button onclick="filterSemester('Sem 4')" id="sem-Sem 4" class="bg-slate-100 hover:bg-slate-200 text-slate-700 px-3.5 py-1.5 rounded-xl text-xs font-bold border border-slate-200 shrink-0 transition">Semester 4</button>
+      <button onclick="filterSemester('Sem 5')" id="sem-Sem 5" class="bg-slate-100 hover:bg-slate-200 text-slate-700 px-3.5 py-1.5 rounded-xl text-xs font-bold border border-slate-200 shrink-0 transition">Semester 5</button>
+      <button onclick="filterSemester('Sem 6')" id="sem-Sem 6" class="bg-slate-100 hover:bg-slate-200 text-slate-700 px-3.5 py-1.5 rounded-xl text-xs font-bold border border-slate-200 shrink-0 transition">Semester 6</button>
+      <button onclick="filterSemester('Sem 7')" id="sem-Sem 7" class="bg-slate-100 hover:bg-slate-200 text-slate-700 px-3.5 py-1.5 rounded-xl text-xs font-bold border border-slate-200 shrink-0 transition">Semester 7</button>
+      <button onclick="filterSemester('Sem 8')" id="sem-Sem 8" class="bg-slate-100 hover:bg-slate-200 text-slate-700 px-3.5 py-1.5 rounded-xl text-xs font-bold border border-slate-200 shrink-0 transition">Semester 8</button>
+      <button onclick="filterSemester('CS619')" id="sem-CS619" class="bg-indigo-50 hover:bg-indigo-100 text-indigo-700 px-3.5 py-1.5 rounded-xl text-xs font-extrabold border border-indigo-300 shrink-0 transition">
+        <i class="fa-solid fa-diagram-project mr-1"></i> CS619 Final Project
+      </button>
     </div>
   </div>
 
@@ -149,26 +184,499 @@
     <div class="flex items-center justify-between mb-6">
       <div>
         <h2 class="text-xl font-bold text-slate-900 heading-font flex items-center gap-2">
-          <i class="fa-solid fa-layer-group text-amber-500"></i> Course & Preparation Library
+          <i class="fa-solid fa-book-open text-amber-500"></i> Course Packs & Handout Solutions
         </h2>
-        <p class="text-xs text-slate-500">Select any course pack to review syllabus coverage or enroll for instant access.</p>
+        <p class="text-xs text-slate-500">Official pricing: Select Midterm or Finalterm pack to enroll.</p>
       </div>
-      <div class="text-xs font-bold text-slate-600 bg-white px-3 py-1.5 rounded-lg border border-slate-200" id="totalCoursesCounter">
-        Showing Courses
+      <div class="text-xs font-bold text-slate-600 bg-white px-3.5 py-1.5 rounded-xl border border-slate-200 shadow-xs" id="courseCounter">
+        Loading Courses...
       </div>
     </div>
 
-    <!-- CARDS CONTAINER -->
-    <div id="coursesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <!-- CARDS GRID -->
+    <div id="catalogGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       <!-- Injected by JavaScript -->
     </div>
   </main>
 
-  <!-- CONFIDENTIAL ORDER & CHECKOUT MODAL -->
-  <div id="checkoutModal" class="fixed inset-0 bg-slate-950/75 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+  <!-- STRICT VERIFICATION CHECKOUT MODAL -->
+  <div id="checkoutModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
     <div class="bg-white rounded-3xl max-w-lg w-full shadow-2xl overflow-hidden animate-fade-in border border-slate-200">
       
       <!-- MODAL HEADER -->
       <div class="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white p-5 flex items-center justify-between">
         <div class="flex items-center space-x-3">
-          <
+          <div class="w-9 h-9 rounded-xl bg-amber-400 text-slate-950 flex items-center justify-center font-bold">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <div>
+            <h3 class="font-bold text-base leading-tight" id="modalSubjectName">Enrollment Form</h3>
+            <span class="text-[11px] text-amber-300 font-medium" id="modalSubBanner">Official Verification & Anti-Fraud</span>
+          </div>
+        </div>
+        <button onclick="closeModal()" class="text-slate-400 hover:text-white text-xl">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="p-6 max-h-[82vh] overflow-y-auto space-y-4 text-sm">
+        
+        <!-- SUMMARY BOX -->
+        <div class="bg-slate-50 border border-slate-200/80 rounded-2xl p-4 flex justify-between items-center">
+          <div>
+            <span class="text-xs font-bold text-amber-600 uppercase tracking-wider" id="modalTag">Course Pack</span>
+            <h4 class="font-extrabold text-slate-900 text-base" id="modalTitle">CS610 - Computer Networks</h4>
+            <p class="text-[11px] text-slate-500" id="modalDesc">Complete Handout Solved Notes, Key MCQs & Diagrams</p>
+          </div>
+          <div class="text-right">
+            <span class="text-[10px] text-slate-400 font-bold uppercase block">Official Fee</span>
+            <span class="text-lg font-black text-indigo-700" id="modalPrice">Rs. 800</span>
+          </div>
+        </div>
+
+        <!-- PAYMENT METHOD DETAILS -->
+        <div class="bg-indigo-50/50 border border-indigo-100 rounded-2xl p-4 space-y-2.5">
+          <div class="text-xs font-bold uppercase tracking-wider text-indigo-950 flex items-center justify-between">
+            <span><i class="fa-solid fa-wallet text-indigo-600 mr-1"></i> Payment Accounts</span>
+            <span class="text-[10px] bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-md font-semibold">100% Verified</span>
+          </div>
+
+          <!-- EasyPaisa -->
+          <div class="bg-white p-3 rounded-xl border border-slate-200 flex items-center justify-between shadow-xs">
+            <div>
+              <span class="text-xs font-bold text-emerald-700 block">EasyPaisa Account</span>
+              <span class="font-mono text-sm font-bold text-slate-800">03198519637</span>
+              <span class="text-[11px] text-slate-500 block">Title: Munazza mukhtar</span>
+            </div>
+            <button onclick="copyNumber('03198519637')" class="text-xs bg-emerald-50 hover:bg-emerald-100 text-emerald-800 px-3 py-1.5 rounded-lg font-bold transition border border-emerald-200">
+              Copy Number
+            </button>
+          </div>
+
+          <!-- MCB Bank -->
+          <div class="bg-white p-3 rounded-xl border border-slate-200 flex items-center justify-between shadow-xs">
+            <div>
+              <span class="text-xs font-bold text-blue-700 block">MCB Bank Limited</span>
+              <span class="font-mono text-sm font-bold text-slate-800">1708370211010380</span>
+              <span class="text-[11px] text-slate-500 block">Title: MUNAZA MUKHTAR</span>
+            </div>
+            <button onclick="copyNumber('1708370211010380')" class="text-xs bg-blue-50 hover:bg-blue-100 text-blue-800 px-3 py-1.5 rounded-lg font-bold transition border border-blue-200">
+              Copy Account
+            </button>
+          </div>
+        </div>
+
+        <!-- FORM INPUTS -->
+        <div class="space-y-3.5">
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1">
+              طالب علم کا مکمل نام (Student Full Name) <span class="text-red-500">*</span>
+            </label>
+            <input type="text" id="custName" placeholder="e.g. Muhammad Usman" class="w-full border border-slate-300 rounded-xl px-3.5 py-2.5 text-sm focus:ring-2 focus:ring-amber-400 focus:outline-none" />
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1 flex justify-between">
+              <span>وی یو اسٹوڈنٹ آئی ڈی (VU Student ID)</span>
+              <span class="text-[11px] text-slate-400 font-normal">اختیاری (Optional)</span>
+            </label>
+            <input type="text" id="custVuId" placeholder="e.g. BC240440676 / MC..." class="w-full border border-slate-300 rounded-xl px-3.5 py-2.5 text-sm focus:ring-2 focus:ring-amber-400 focus:outline-none" />
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1">
+              جی میل ایڈریس (Gmail for Google Drive Access) <span class="text-red-500">*</span>
+            </label>
+            <input type="email" id="custEmail" placeholder="e.g. student@gmail.com" class="w-full border border-slate-300 rounded-xl px-3.5 py-2.5 text-sm focus:ring-2 focus:ring-amber-400 focus:outline-none" />
+          </div>
+
+          <!-- SELECTED SUBJECTS LIST FOR BUNDLES -->
+          <div id="bundleSubjectsContainer" class="hidden">
+            <label class="block text-xs font-bold text-slate-700 mb-1">
+              کون سے سبجیکٹس چاہیے؟ (Type your 5 or Semester Subjects) <span class="text-red-500">*</span>
+            </label>
+            <input type="text" id="bundleSubjectsInput" placeholder="e.g. CS101, MTH101, ENG101, PHY101, PAK301" class="w-full border border-slate-300 rounded-xl px-3.5 py-2.5 text-sm focus:ring-2 focus:ring-amber-400 focus:outline-none" />
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1">
+              ٹرانزیکشن نمبر (Payment Trx ID / Ref Number) <span class="text-red-500">*</span>
+            </label>
+            <input type="text" id="custTrx" placeholder="e.g. 2489102941" class="w-full border border-slate-300 rounded-xl px-3.5 py-2.5 text-sm focus:ring-2 focus:ring-amber-400 focus:outline-none font-mono" />
+            <span class="text-[10px] text-slate-400">کم از کم 8 ہندسوں کی اصلی رسید آئی ڈی درج کریں۔</span>
+          </div>
+
+          <!-- SCREENSHOT UPLOAD BOX -->
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1">
+              پیمنٹ رسید کا اسکرین شاٹ (Payment Screenshot) <span class="text-red-500">*</span>
+            </label>
+            <div class="border-2 border-dashed border-slate-300 rounded-2xl p-4 text-center hover:border-amber-400 transition bg-slate-50">
+              <input type="file" id="custScreenshot" accept="image/*" onchange="previewReceipt(this)" class="hidden" />
+              <label for="custScreenshot" class="cursor-pointer flex flex-col items-center justify-center">
+                <i class="fa-solid fa-cloud-arrow-up text-2xl text-slate-400 mb-1"></i>
+                <span class="text-xs font-bold text-indigo-700">Choose Screenshot / تصویر منتخب کریں</span>
+                <span class="text-[10px] text-slate-400 mt-0.5">JPG, PNG or WEBP (Max 10MB)</span>
+              </label>
+              
+              <div id="previewContainer" class="mt-3 hidden">
+                <div class="flex items-center justify-center gap-2 bg-white p-2 rounded-xl border border-slate-200">
+                  <img id="receiptImg" src="" alt="Receipt Preview" class="w-16 h-16 object-cover rounded-lg border border-slate-300 shadow-xs" />
+                  <div class="text-left text-xs">
+                    <span id="fileName" class="font-bold text-slate-800 block truncate max-w-[180px]">receipt.png</span>
+                    <span class="text-[11px] text-emerald-600 font-semibold flex items-center gap-1">
+                      <i class="fa-solid fa-check-circle"></i> فائل تیار ہے
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-2 bg-amber-50 border border-amber-200 p-2.5 rounded-xl flex items-start gap-2">
+              <i class="fa-solid fa-triangle-exclamation text-amber-600 text-xs mt-0.5"></i>
+              <p class="urdu-font text-[11px] text-amber-900 leading-snug">
+                صرف اور صرف EasyPaisa یا بینک کی اصلی رسید اپلوڈ کریں۔ جعلی تصویر پر رسائی منسوخ کر دی جائے گی۔
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- SUBMISSION BUTTON -->
+        <button onclick="validateAndSubmitOrder()" id="submitBtn" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold py-3.5 rounded-2xl shadow-lg transition flex items-center justify-center gap-2">
+          <i class="fa-brands fa-whatsapp text-lg"></i>
+          <span>Verify & Send Verification to WhatsApp</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLOATING QUICK HELP -->
+  <div class="fixed bottom-6 right-6 z-40">
+    <a href="https://wa.me/923198519637?text=Assalam-o-Alaikum!%20Mujhe%20SDG%20Insights%20ke%20courses%20aur%20semester%20bundles%20ke%20bare%20mein%20puchna%20hai." target="_blank" class="flex items-center gap-2.5 bg-emerald-600 hover:bg-emerald-700 text-white px-5 py-3.5 rounded-full shadow-2xl transition transform hover:scale-105 border-2 border-white/20">
+      <i class="fa-brands fa-whatsapp text-2xl"></i>
+      <div class="text-left">
+        <div class="text-[10px] uppercase font-bold text-emerald-200">Have a Question?</div>
+        <div class="text-xs font-extrabold">Instant Support</div>
+      </div>
+    </a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-950 text-slate-400 text-xs py-10 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+      <div>
+        <div class="flex items-center space-x-2 text-white font-extrabold text-lg mb-2 heading-font">
+          <i class="fa-solid fa-graduation-cap text-amber-400"></i>
+          <span>SDG Insights</span>
+        </div>
+        <p class="urdu-font text-slate-400 text-xs leading-loose">
+          ورچوئل یونیورسٹی کے طلبہ کے لیے اعلیٰ معیار کی ایجوکیشنل رہنمائی، حل شدہ ہینڈ آؤٹس، اور فائنل پروجیکٹس کا مستند پلیٹ فارم۔
+        </p>
+      </div>
+
+      <div>
+        <div class="text-white font-bold text-sm mb-3">Quick Navigation</div>
+        <ul class="space-y-1.5 text-xs">
+          <li><a href="https://youtube.com/@sdginsights?si=yFODeRKu4Q1S_ORa" target="_blank" class="hover:text-amber-400 transition">Official YouTube Channel</a></li>
+          <li><a href="https://wa.me/c/923198519637" target="_blank" class="hover:text-emerald-400 transition">Official WhatsApp Catalog</a></li>
+          <li><a href="https://whatsapp.com/channel/0029VbB78Xa3WHTReQ1hTF1Q" target="_blank" class="hover:text-emerald-400 transition">Official WhatsApp Community Channel</a></li>
+          <li><a href="#" onclick="filterSemester('CS619')" class="hover:text-amber-400 transition">CS619 Final Year Projects Support</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="text-white font-bold text-sm mb-3">Official Deals</div>
+        <p class="text-[11px] text-slate-400 leading-relaxed">
+          ★ <strong>Full Semester Deal:</strong> Flat 20% OFF on all subjects.<br>
+          ★ <strong>5 Subjects Pack:</strong> Flat 10% OFF on customized choice.
+        </p>
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 border-t border-slate-900 pt-6 text-center text-slate-500 text-[11px]">
+      © 2026 SDG Insights. All Rights Reserved. Haroonabad, Punjab, Pakistan.
+    </div>
+  </footer>
+
+  <!-- DATABASE & SCRIPT WITH OFFICIAL YOUTUBE PREP LINKS -->
+  <script>
+    const vuBScsCourses = [
+      // SEMESTER 1
+      { code: "CS101", title: "Introduction to Computing", sem: "Sem 1", midPrice: "Rs. 500", finalPrice: "Rs. 800", video: "http://www.youtube.com/channel/UCoP6Wjlq-v-bNveHWhnuyQQ", desc: "Foundational computing concepts, hardware/software, algorithms, binary logic & verified past papers." },
+      { code: "MTH101", title: "Calculus And Analytical Geometry", sem: "Sem 1", midPrice: "Rs. 600", finalPrice: "Rs. 900", video: "http://www.youtube.com/watch?v=elDi1mY5KxA", desc: "Limits, continuity, derivatives, tangents, and complete handout exercise steps." },
+      { code: "ENG101", title: "English Comprehension", sem: "Sem 1", midPrice: "Rs. 500", finalPrice: "Rs. 600", video: "http://www.youtube.com/channel/UCoP6Wjlq-v-bNveHWhnuyQQ", desc: "Reading comprehension, sentence structure, grammar mechanics and verified MCQ patterns." },
+      { code: "PHY101", title: "Fundamentals of Physics", sem: "Sem 1", midPrice: "Rs. 500", finalPrice: "Rs. 600", video: "http://www.youtube.com/channel/UCoP6Wjlq-v-bNveHWhnuyQQ", desc: "Mechanics, electric fields, Gauss's law, magnetism, and solved numerical problems." },
+      { code: "PAK301", title: "Pakistan Studies", sem: "Sem 1", midPrice: "Rs. 500", finalPrice: "Rs. 600", video: "http://www.youtube.com/channel/UCoP6Wjlq-v-bNveHWhnuyQQ", desc: "Two-Nation Theory, constitutional developments, historical timeline and key MCQs." },
+
+      // SEMESTER 2
+      { code: "CS201", title: "Introduction to Programming (C++)", sem: "Sem 2", midPrice: "Rs. 600", finalPrice: "Rs. 1000", hasPractical: true, video: "http://www.youtube.com/channel/UCoP6Wjlq-v-bNveHWhnuyQQ", desc: "C++ Variables, loops, functions, pointers, arrays, and CS201P practical viva questions." },
+      { code: "MTH202", title: "Discrete Mathematics", sem: "Sem 2", midPrice: "Rs. 600", finalPrice: "Rs. 900", video: "http://www.youtube.com/playlist?list=PLpIaHMEigBC8w9453EMvH4hryWi-ymZOR", desc: "Sets, truth tables, logic gates, relations, recurrence relations, and graph theory." },
+      { code: "ENG201", title: "Business and Technical English", sem: "Sem 2", midPrice: "Rs. 500", finalPrice: "Rs. 600", video: "http://www.youtube.com/channel/UCoP6Wjlq-v-bNveHWhnuyQQ", desc: "Letters, memo writing, proposals, resume formatting, and oral presentations." },
+      { code: "ISL201", title: "Islamic Studies", sem: "Sem 2", midPrice: "Rs. 500", finalPrice: "Rs. 600", video: "http://www.youtube.com/channel/UCoP6Wjlq-v-bNveHWhnuyQQ", desc: "Tawheed, Prophethood, ethics, social justice in Islam, and verified question banks." },
+      { code: "PHY301", title: "Circuit Theory", sem: "Sem 2", midPrice: "Rs. 500", finalPrice: "Rs. 600", video: "http://www.youtube.com/channel/UCoP6Wjlq-v-bNveHWhnuyQQ", desc: "Ohm's law, Kirchhoff's laws (KVL/KCL), Thevenin/Norton theorems, and AC circuit analysis." },
+
+      // SEMESTER 3
+      { code: "CS301", title: "Data Structures & Algorithms", sem: "Sem 3", midPrice: "Rs. 600", finalPrice: "Rs. 1000", hasPractical: true, video: "http://www.youtube.com/watch?v=5wcKSk29D3U", desc: "Stacks, Queues, Linked Lists, Trees, and CS301P practical viva diagrams." },
+      { code: "CS304", title: "Object Oriented Programming", sem: "Sem 3", midPrice: "Rs. 600", finalPrice: "Rs. 1000", hasPractical: true, video: "http://www.youtube.com/channel/UCoP6Wjlq-v-bNveHWhnuyQQ", desc: "Classes, objects, inheritance, polymorphism, templates, and CS304P practical coding." },
+      { code: "MTH301", title: "Calculus II (Multivariable)", sem: "Sem 3", midPrice: "Rs. 600", finalPrice: "Rs. 900", video: "http://www.youtube.com/playlist?list=PLpIaHMEigBC-qJT1B3Ynuv27aonJakDl_", desc: "Vectors, dot/cross products, partial differentiation, double/triple integrals." },
+      { code: "STA301", title: "Probability & Statistics", sem: "Sem 3", midPrice: "Rs. 600", finalPrice: "Rs. 800", video: "http://www.youtube.com/channel/UCoP6Wjlq-v-bNveHWhnuyQQ", desc: "Mean, median, mode, standard deviation, binomial/normal distribution, and hypothesis testing." },
+
+      // SEMESTER 4
+      { code: "CS401", title: "Computer Architecture & Assembly", sem: "Sem 4", midPrice: "Rs. 600", finalPrice: "Rs. 1000", hasPractical: true, video: "http://www.youtube.com/channel/UCoP6Wjlq-v-bNveHWhnuyQQ", desc: "8086 processor, NASM assembly language, registers, interrupts, and CS401P practical." },
+      { code: "CS402", title: "Theory of Automata", sem: "Sem 4", midPrice: "Rs. 600", finalPrice: "Rs. 800", video: "http://www.youtube.com/channel/UCoP6Wjlq-v-bNveHWhnuyQQ", desc: "Regular expressions, FA, TG, Kleene's theorem, CFG, PDA, and Turing Machines." },
+      { code: "CS403", title: "Database Management Systems", sem: "Sem 4", midPrice: "Rs. 600", finalPrice: "Rs. 1000", hasPractical: true, video: "http://www.youtube.com/channel/UCoP6Wjlq-v-bNveHWhnuyQQ", desc: "ERD diagrams, relational algebra, SQL queries, normalization and CS403P practical." },
+      { code: "MTH401", title: "Differential Equations Master Pack", sem: "Sem 4", midPrice: "Rs. 600", finalPrice: "Rs. 900", video: "http://www.youtube.com/channel/UCoP6Wjlq-v-bNveHWhnuyQQ", desc: "First-order ODEs, homogeneous/exact equations, Laplace transforms, and boundary problems." },
+      { code: "MTH501", title: "Linear Algebra", sem: "Sem 4", midPrice: "Rs. 600", finalPrice: "Rs. 900", video: "http://www.youtube.com/channel/UCoP6Wjlq-v-bNveHWhnuyQQ", desc: "Matrix operations, determinants, vector spaces, eigenvalues, and eigenvectors." },
+
+      // SEMESTER 5
+      { code: "CS501", title: "Advanced Computer Architecture", sem: "Sem 5", midPrice: "Rs. 600", finalPrice: "Rs. 800", video: "http://www.youtube.com/channel/UCoP6Wjlq-v-bNveHWhnuyQQ", desc: "Pipelining, instruction level parallelism, cache memory architecture, and RISC processors." },
+      { code: "CS504", title: "Software Engineering - I", sem: "Sem 5", midPrice: "Rs. 600", finalPrice: "Rs. 800", video: "http://www.youtube.com/channel/UCoP6Wjlq-v-bNveHWhnuyQQ", desc: "Software process models, requirements engineering, software architecture and UML." },
+      { code: "CS506", title: "Web Design and Development", sem: "Sem 5", midPrice: "Rs. 600", finalPrice: "Rs. 800", video: "http://www.youtube.com/channel/UCoP6Wjlq-v-bNveHWhnuyQQ", desc: "Java web programming, servlets, JSP, JDBC database connection, and MVC framework." },
+      { code: "CS601", title: "Data Communication", sem: "Sem 5", midPrice: "Rs. 600", finalPrice: "Rs. 800", video: "http://www.youtube.com/playlist?list=PLpIaHMEigBC_6145imvtEnUee9iUDB_Dq", desc: "Data transmission modes, signal encoding, multiplexing (FDM/TDM), and OSI physical layer." },
+      { code: "CS609", title: "System Programming", sem: "Sem 5", midPrice: "Rs. 600", finalPrice: "Rs. 800", video: "http://www.youtube.com/channel/UCoP6Wjlq-v-bNveHWhnuyQQ", desc: "PC architecture, BIOS/DOS interrupts, TSR programs, hardware ports, and device drivers." },
+
+      // SEMESTER 6
+      { code: "CS604", title: "Operating Systems", sem: "Sem 6", midPrice: "Rs. 600", finalPrice: "Rs. 800", video: "http://www.youtube.com/channel/UCoP6Wjlq-v-bNveHWhnuyQQ", desc: "Process scheduling, deadlocks, semaphores, virtual memory, paging, and disk management." },
+      { code: "CS605", title: "Software Engineering - II", sem: "Sem 6", midPrice: "Rs. 600", finalPrice: "Rs. 800", video: "http://www.youtube.com/channel/UCoP6Wjlq-v-bNveHWhnuyQQ", desc: "Software testing techniques, metrics, quality assurance (SQA), and maintenance." },
+      { code: "CS610", title: "Computer Networks", sem: "Sem 6", midPrice: "Rs. 600", finalPrice: "Rs. 800", video: "http://www.youtube.com/playlist?list=PLpIaHMEigBC-LdhxFxtum9r8Fl4-JpYxz", desc: "TCP/IP suite, routing protocols, subnetting, CIDR, packet switching, and network security." },
+      { code: "CS502", title: "Fundamental of Algorithms", sem: "Sem 6", midPrice: "Rs. 600", finalPrice: "Rs. 800", video: "http://www.youtube.com/channel/UCoP6Wjlq-v-bNveHWhnuyQQ", desc: "Asymptotic notation, Divide & Conquer, Dynamic Programming, Greedy approaches." },
+      { code: "CS507", title: "Information Systems", sem: "Sem 6", midPrice: "Rs. 500", finalPrice: "Rs. 500", video: "http://www.youtube.com/playlist?list=PLpIaHMEigBC-YFSYa7mADA9inlKrlvTZk", desc: "Management Information Systems, ERP, DSS, and supply chain applications." },
+
+      // SEMESTER 7 & 8
+      { code: "CS607", title: "Artificial Intelligence", sem: "Sem 7", midPrice: "Rs. 600", finalPrice: "Rs. 800", video: "http://www.youtube.com/channel/UCoP6Wjlq-v-bNveHWhnuyQQ", desc: "State space search, BFS/DFS, A* algorithm, expert systems, logic programming and neural nets." },
+      { code: "CS614", title: "Data Warehousing", sem: "Sem 7", midPrice: "Rs. 600", finalPrice: "Rs. 800", video: "http://www.youtube.com/channel/UCoP6Wjlq-v-bNveHWhnuyQQ", desc: "OLAP vs OLTP, star/snowflake schema, ETL processes, and multidimensional modeling." },
+      { code: "CS615", title: "Software Project Management", sem: "Sem 7", midPrice: "Rs. 500", finalPrice: "Rs. 500", video: "http://www.youtube.com/channel/UCoP6Wjlq-v-bNveHWhnuyQQ", desc: "Project estimation, COCOMO model, risk management, Gantt charts, and team leadership." },
+      { code: "CS611", title: "Software Quality Assurance", sem: "Sem 8", midPrice: "Rs. 600", finalPrice: "Rs. 800", video: "http://www.youtube.com/channel/UCoP6Wjlq-v-bNveHWhnuyQQ", desc: "Verification and validation, ISO/CMMI standards, defect tracking, and test plans." },
+
+      // CS619 FINAL YEAR PROJECT SPECIAL
+      { code: "CS619", title: "Final Year Project Complete Guidance", sem: "CS619", midPrice: "Contact on WhatsApp", finalPrice: "Contact on WhatsApp", isProject: true, video: "http://www.youtube.com/channel/UCoP6Wjlq-v-bNveHWhnuyQQ", desc: "Complete SRS Documentation, Architecture Design, Test Phase Coding, Prototype Development & Viva Prep." }
+    ];
+
+    let activeSem = 'All';
+    let activeQuery = '';
+    let selectedOrder = null;
+    let isBundle = false;
+    let receiptFile = null;
+
+    function renderCatalog() {
+      const grid = document.getElementById("catalogGrid");
+      grid.innerHTML = "";
+
+      const filtered = vuBScsCourses.filter(c => {
+        const matchSem = activeSem === 'All' || c.sem === activeSem;
+        const matchQuery = activeQuery === '' || 
+          c.code.toLowerCase().includes(activeQuery) || 
+          c.title.toLowerCase().includes(activeQuery) || 
+          c.desc.toLowerCase().includes(activeQuery);
+        return matchSem && matchQuery;
+      });
+
+      document.getElementById("courseCounter").innerText = `Showing ${filtered.length} Courses`;
+
+      filtered.forEach(item => {
+        const isProj = item.isProject;
+        const card = document.createElement("div");
+        card.className = "glass-card rounded-3xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between border hover:border-amber-400 group";
+
+        const practicalBadge = item.hasPractical ? `<span class="bg-purple-100 text-purple-800 text-[10px] font-bold px-2 py-0.5 rounded-md border border-purple-200">+ Practical Included</span>` : '';
+
+        card.innerHTML = `
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-[11px] font-bold px-3 py-1 rounded-full text-white ${isProj ? 'bg-indigo-600' : 'bg-slate-900'} flex items-center gap-1.5 shadow-xs">
+                <i class="fa-solid ${isProj ? 'fa-diagram-project' : 'fa-graduation-cap'}"></i>
+                ${item.sem}
+              </span>
+              <span class="font-mono text-xs font-extrabold text-slate-400 group-hover:text-amber-500 transition">${item.code}</span>
+            </div>
+
+            <h3 class="text-lg font-black text-slate-900 mb-2 heading-font group-hover:text-indigo-900 transition leading-snug">
+              ${item.code} — ${item.title}
+            </h3>
+
+            <div class="mb-3 flex flex-wrap gap-1.5">
+              ${practicalBadge}
+            </div>
+
+            <p class="text-xs text-slate-500 mb-5 leading-relaxed line-clamp-3">
+              ${item.desc}
+            </p>
+
+            <!-- PRICE TAGS BOX -->
+            <div class="bg-slate-50 rounded-2xl p-3 border border-slate-200/80 mb-5 grid grid-cols-2 gap-2 text-center">
+              <div class="bg-white p-2 rounded-xl border border-slate-200">
+                <span class="text-[10px] text-amber-700 font-bold block uppercase">Midterm File</span>
+                <span class="font-extrabold text-sm text-slate-900">${item.midPrice}</span>
+              </div>
+              <div class="bg-white p-2 rounded-xl border border-slate-200">
+                <span class="text-[10px] text-indigo-700 font-bold block uppercase">Final Term File</span>
+                <span class="font-extrabold text-sm text-slate-900">${item.finalPrice}</span>
+              </div>
+            </div>
+
+            <!-- PREPARATION VIDEO LINK -->
+            <div class="mb-5">
+              <a href="${item.video}" target="_blank" class="inline-flex items-center gap-2 text-xs font-bold text-red-600 hover:text-red-700 bg-red-50 hover:bg-red-100 px-3.5 py-2 rounded-xl transition border border-red-200/60">
+                <i class="fa-brands fa-youtube text-sm"></i>
+                <span>پریپریشنل ویڈیو دیکھیں (Watch Prep Video)</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-slate-100 flex items-center justify-between mt-auto gap-2">
+            <button onclick="openCourseCheckout('${item.code}', '${item.title}', '${item.midPrice}', 'Midterm File', '${item.desc}')" class="flex-1 bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-xs py-2.5 rounded-xl shadow-xs transition flex items-center justify-center gap-1.5">
+              <i class="fa-solid fa-file-signature text-xs"></i>
+              <span>Get Midterm</span>
+            </button>
+            <button onclick="openCourseCheckout('${item.code}', '${item.title}', '${item.finalPrice}', 'Final Term File', '${item.desc}')" class="flex-1 bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs py-2.5 rounded-xl shadow-md transition flex items-center justify-center gap-1.5">
+              <i class="fa-solid fa-lock-open text-amber-300 text-xs"></i>
+              <span>Get Finalterm</span>
+            </button>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    function searchCourses() {
+      activeQuery = document.getElementById("courseSearch").value.toLowerCase().trim();
+      renderCatalog();
+    }
+
+    function filterSemester(sem) {
+      activeSem = sem;
+      const allButtons = ['All', 'Sem 1', 'Sem 2', 'Sem 3', 'Sem 4', 'Sem 5', 'Sem 6', 'Sem 7', 'Sem 8', 'CS619'];
+      allButtons.forEach(s => {
+        const btn = document.getElementById(`sem-${s}`);
+        if (btn) {
+          if (s === sem) {
+            btn.className = "sem-active px-3.5 py-1.5 rounded-xl text-xs border shrink-0 transition shadow-xs";
+          } else {
+            btn.className = "bg-slate-100 hover:bg-slate-200 text-slate-700 px-3.5 py-1.5 rounded-xl text-xs font-bold border border-slate-200 shrink-0 transition";
+          }
+        }
+      });
+      renderCatalog();
+    }
+
+    function openCourseCheckout(code, title, price, tag, desc) {
+      isBundle = false;
+      selectedOrder = { code, title, price, tag, desc };
+      document.getElementById("modalSubjectName").innerText = `${code} Pack (${tag})`;
+      document.getElementById("modalSubBanner").innerText = "Official Course Pack Enrollment";
+      document.getElementById("modalTag").innerText = tag;
+      document.getElementById("modalTitle").innerText = `${code} - ${title}`;
+      document.getElementById("modalPrice").innerText = price;
+      document.getElementById("modalDesc").innerText = desc;
+      document.getElementById("bundleSubjectsContainer").classList.add("hidden");
+      resetCheckoutInputs();
+      document.getElementById("checkoutModal").classList.remove("hidden");
+    }
+
+    function openDealCheckout(dealName, desc, price, discountTag) {
+      isBundle = true;
+      selectedOrder = { code: dealName, title: desc, price: price, tag: discountTag, desc: desc };
+      document.getElementById("modalSubjectName").innerText = dealName;
+      document.getElementById("modalSubBanner").innerText = `Special Offer: ${discountTag} Applied!`;
+      document.getElementById("modalTag").innerText = discountTag;
+      document.getElementById("modalTitle").innerText = dealName;
+      document.getElementById("modalPrice").innerText = price;
+      document.getElementById("modalDesc").innerText = desc;
+      document.getElementById("bundleSubjectsContainer").classList.remove("hidden");
+      resetCheckoutInputs();
+      document.getElementById("checkoutModal").classList.remove("hidden");
+    }
+
+    function closeModal() {
+      document.getElementById("checkoutModal").classList.add("hidden");
+    }
+
+    function resetCheckoutInputs() {
+      document.getElementById("custName").value = "";
+      document.getElementById("custVuId").value = "";
+      document.getElementById("custEmail").value = "";
+      document.getElementById("custTrx").value = "";
+      document.getElementById("bundleSubjectsInput").value = "";
+      document.getElementById("custScreenshot").value = "";
+      document.getElementById("previewContainer").classList.add("hidden");
+      receiptFile = null;
+    }
+
+    function copyNumber(num) {
+      navigator.clipboard.writeText(num);
+      alert("نمبر کاپی ہو گیا ہے: " + num);
+    }
+
+    function previewReceipt(input) {
+      if (input.files && input.files[0]) {
+        const file = input.files[0];
+        if (file.size < 15000) {
+          alert("فائل بہت چھوٹی ہے۔ برائے مہربانی اصلی ٹرانزیکشن رسید کا واضح اسکرین شاٹ اپلوڈ کریں۔");
+          input.value = "";
+          return;
+        }
+        if (file.size > 10 * 1024 * 1024) {
+          alert("فائل کا سائز بہت بڑا ہے۔ 10MB سے کم تصویر منتخب کریں۔");
+          input.value = "";
+          return;
+        }
+
+        receiptFile = file;
+        document.getElementById("fileName").innerText = file.name;
+        
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          document.getElementById("receiptImg").src = e.target.result;
+          document.getElementById("previewContainer").classList.remove("hidden");
+        }
+        reader.readAsDataURL(file);
+      }
+    }
+
+    function validateAndSubmitOrder() {
+      const name = document.getElementById("custName").value.trim();
+      const vuId = document.getElementById("custVuId").value.trim();
+      const email = document.getElementById("custEmail").value.trim();
+      const trx = document.getElementById("custTrx").value.trim();
+      const bundleSubjects = document.getElementById("bundleSubjectsInput").value.trim();
+
+      if (name.length < 3) {
+        alert("برائے مہربانی اپنا مکمل اور درست نام درج کریں۔");
+        return;
+      }
+
+      if (!email.includes("@") || !email.includes(".")) {
+        alert("برائے مہربانی درست جی میل ایڈریس درج کریں۔");
+        return;
+      }
+
+      if (isBundle && bundleSubjects.length < 4) {
+        alert("برائے مہربانی اپنے مطلوبہ سبجیکٹس کے نام لکھیں جو بنڈل میں شامل کرنا چاہتے ہیں۔");
+        return;
+      }
+
+      if (trx.length < 8) {
+        alert("برائے مہربانی درست ٹرانزیکشن آئی ڈی (Trx ID) درج کریں (کم از کم 8 ہندسے)۔");
+        return;
+      }
+
+      if (!receiptFile) {
+        alert("پیمنٹ کے ثبوت کے لیے رسید کا اسکرین شاٹ منتخب کرنا لازمی ہے۔");
+        return;
+      }
+
+      const vuIdLine = vuId ? `%0A*VU ID:* ${vuId}` : "";
+      const bundleLine = isBundle ? `%0A*Selected Subjects:* ${bundleSubjects}` : "";
+
+      const msg = `*Assalam-o-Alaikum SDG Insights!*%0A%0AMaine portal se course / bundle order kiya hai:%0A*Order:* ${selectedOrder.code} (${selectedOrder.tag})%0A*Total Fee:* ${selectedOrder.price}${bundleLine}%0A*Student Name:* ${name}${vuIdLine}%0A*Gmail:* ${email}%0A*Trx ID:* ${trx}%0A*Receipt Attachment:* (I am attaching the verified payment screenshot in this chat)%0A%0ABarah-e-Karam portal access allow kar dein. Shukriya!`;
+
+      window.open(`https://wa.me/923198519637?text=${msg}`, '_blank');
+      alert("آپ کی درخواست تصدیق کے لیے تیار ہے۔ واٹس ایپ کھلتے ہی رسید کا اسکرین شاٹ سینڈ کر دیں۔ شکریہ!");
+      closeModal();
+    }
+
+    // Initialize
+    renderCatalog();
+  </script>
+</body>
+</html>
