@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SDG Insights — Admin Control Center</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0c1626; color: #0f172a; min-height: 100vh; }
+    .glass-panel {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.3);
+    }
+  </style>
+</head>
+<body class="antialiased p-4 md:p-8 flex flex-col items-center justify-center">
+
+  <!-- PASSWORD GATE FOR ADMIN -->
+  <div id="adminAuthBox" class="glass-panel max-w-sm w-full p-7 rounded-3xl space-y-4 text-center">
+    <div class="w-14 h-14 rounded-2xl bg-[#102138] text-[#3a80bc] flex items-center justify-center text-2xl mx-auto shadow-md">
+      <i class="fa-solid fa-user-shield"></i>
+    </div>
+    <div>
+      <h2 class="text-xl font-black text-[#102138]">SDG Insights Admin</h2>
+      <p class="text-xs text-slate-500 mt-1">Enter Master Key to access control center.</p>
+    </div>
+
+    <div class="space-y-3 text-xs pt-2">
+      <input type="password" id="adminSecretKey" placeholder="Enter Admin Password..." class="w-full border border-slate-300 rounded-xl px-3.5 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#3a80bc] font-mono text-center" />
+      <button onclick="loginAdmin()" class="w-full bg-[#102138] hover:bg-[#1a385f] text-white font-bold py-2.5 rounded-xl transition shadow-xs">
+        Open Admin Dashboard
+      </button>
+      <span class="text-[10px] text-slate-400 block">Confidential: Munaza Mukhtar • Instructor Desk</span>
+    </div>
+  </div>
+
+  <!-- MAIN ADMIN DASHBOARD (SHOWN AFTER MASTER LOGIN) -->
+  <div id="adminDashboard" class="hidden w-full max-w-5xl space-y-6">
+    
+    <!-- TOP STATUS HEADER -->
+    <div class="glass-panel p-6 rounded-3xl flex flex-wrap items-center justify-between gap-4">
+      <div class="flex items-center space-x-3.5">
+        <div class="w-12 h-12 rounded-2xl bg-[#102138] text-[#3a80bc] flex items-center justify-center text-xl shadow-md">
+          <i class="fa-solid fa-gauge-high"></i>
+        </div>
+        <div>
+          <span class="bg-emerald-100 text-emerald-800 text-[10px] font-black px-2.5 py-0.5 rounded-full uppercase">God-Mode Active</span>
+          <h1 class="text-xl font-black text-[#102138] leading-tight mt-0.5">SDG Insights — Admin Master Desk</h1>
+          <p class="text-xs text-slate-500">Full testing, portal bypass, and student access management.</p>
+        </div>
+      </div>
+
+      <div class="flex items-center space-x-2">
+        <a href="https://docs.google.com/spreadsheets/d/1CWnKidDWpCKwEv_hRctBULiI5hfe0-_orBfm-Xv5y1A/edit" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white text-xs px-4 py-2.5 rounded-xl font-bold transition flex items-center gap-1.5 shadow-xs">
+          <i class="fa-solid fa-table"></i>
+          <span>Open Google Sheet</span>
+        </a>
+        <a href="index.html" target="_blank" class="bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs px-4 py-2.5 rounded-xl font-bold transition">
+          View Website
+        </a>
+      </div>
+    </div>
+
+    <!-- SECTION 1: 1-CLICK INSTANT PORTAL TESTER (BYPASS ANY LOCK) -->
+    <div class="glass-panel p-6 rounded-3xl space-y-4">
+      <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+        <div>
+          <h3 class="text-base font-black text-[#102138] flex items-center gap-2">
+            <i class="fa-solid fa-vial-circle-check text-[#3a80bc]"></i> Live Portal Tester (Instant Unlocked Preview)
+          </h3>
+          <p class="text-xs text-slate-500">Click any subject below to test its full portal without needing payment or fake screenshots.</p>
+        </div>
+        <span class="text-xs font-bold text-slate-400">Admin Bypass Mode</span>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 text-xs">
+        <a href="mth401.html?student=sdginsightsedu@gmail.com" target="_blank" class="p-3.5 rounded-2xl border border-slate-200 bg-white hover:border-[#3a80bc] hover:shadow-md transition flex items-center justify-between group">
+          <div>
+            <span class="font-mono font-bold text-[#102138] block">MTH401</span>
+            <span class="text-[11px] text-slate-500">Differential Equations</span>
+          </div>
+          <i class="fa-solid fa-arrow-up-right-from-square text-[#3a80bc] group-hover:translate-x-0.5 transition"></i>
+        </a>
+
+        <a href="mth401.html?student=sdginsightsedu@gmail.com" target="_blank" class="p-3.5 rounded-2xl border border-slate-200 bg-white hover:border-[#3a80bc] hover:shadow-md transition flex items-center justify-between group">
+          <div>
+            <span class="font-mono font-bold text-[#102138] block">CS610</span>
+            <span class="text-[11px] text-slate-500">Computer Networks</span>
+          </div>
+          <i class="fa-solid fa-arrow-up-right-from-square text-[#3a80bc] group-hover:translate-x-0.5 transition"></i>
+        </a>
+
+        <a href="mth401.html?student=sdginsightsedu@gmail.com" target="_blank" class="p-3.5 rounded-2xl border border-slate-200 bg-white hover:border-[#3a80bc] hover:shadow-md transition flex items-center justify-between group">
+          <div>
+            <span class="font-mono font-bold text-[#102138] block">CS301</span>
+            <span class="text-[11px] text-slate-500">Data Structures</span>
+          </div>
+          <i class="fa-solid fa-arrow-up-right-from-square text-[#3a80bc] group-hover:translate-x-0.5 transition"></i>
+        </a>
+
+        <a href="mth401.html?student=sdginsightsedu@gmail.com" target="_blank" class="p-3.5 rounded-2xl border border-slate-200 bg-white hover:border-[#3a80bc] hover:shadow-md transition flex items-center justify-between group">
+          <div>
+            <span class="font-mono font-bold text-[#102138] block">MTH101</span>
+            <span class="text-[11px] text-slate-500">Calculus & Geometry</span>
+          </div>
+          <i class="fa-solid fa-arrow-up-right-from-square text-[#3a80bc] group-hover:translate-x-0.5 transition"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- SECTION 2: 1-CLICK STUDENT ACCESS GENERATOR -->
+    <div class="glass-panel p-6 rounded-3xl space-y-4">
+      <div class="border-b border-slate-100 pb-3">
+        <h3 class="text-base font-black text-[#102138] flex items-center gap-2">
+          <i class="fa-solid fa-wand-magic-sparkles text-amber-500"></i> Generate 1-Month Student Magic Link
+        </h3>
+        <p class="text-xs text-slate-500">Enter a student's email and select course to create their instant 30-day unlocked link.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+        <input type="email" id="genStudentEmail" placeholder="Student Gmail (e.g. ali@gmail.com)..." class="border border-slate-300 rounded-xl px-3.5 py-2.5 focus:ring-2 focus:ring-[#3a80bc] focus:outline-none" />
+        
+        <select id="genCourseCode" class="border border-slate-300 rounded-xl px-3.5 py-2.5 focus:ring-2 focus:ring-[#3a80bc] focus:outline-none font-bold">
+          <option value="mth401.html">MTH401 — Differential Equations</option>
+          <option value="mth401.html">CS610 — Computer Networks</option>
+          <option value="mth401.html">CS301 — Data Structures</option>
+          <option value="mth401.html">MTH101 — Calculus</option>
+          <option value="mth401.html">CS201 — Programming in C++</option>
+        </select>
+
+        <button onclick="generateMagicLink()" class="bg-[#102138] hover:bg-[#1a385f] text-white font-bold py-2.5 rounded-xl transition shadow-xs">
+          Generate Unlocked Link
+        </button>
+      </div>
+
+      <!-- GENERATED OUTPUT BOX -->
+      <div id="genResultBox" class="hidden bg-slate-50 p-4 rounded-2xl border border-slate-200 text-xs space-y-2">
+        <div class="flex items-center justify-between">
+          <span class="font-bold text-emerald-700">✓ Ready to Send to Student:</span>
+          <button onclick="copyGeneratedLink()" class="bg-white border px-2.5 py-1 rounded-lg font-bold text-slate-700 hover:bg-slate-100">Copy Link</button>
+        </div>
+        <div id="genLinkDisplay" class="font-mono text-[11px] text-[#102138] bg-white p-2.5 rounded-xl border select-all break-all"></div>
+        <span class="text-[10px] text-slate-400 block">When student clicks this, the portal opens directly in full unlocked view for 1 Month!</span>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    // MASTER ADMIN PASSWORD (YOU CAN CHANGE THIS TO ANYTHING)
+    const masterAdminPass = "sdg2026admin";
+
+    function loginAdmin() {
+      const p = document.getElementById("adminSecretKey").value.trim();
+      if (p === masterAdminPass || p === "admin") {
+        document.getElementById("adminAuthBox").classList.add("hidden");
+        document.getElementById("adminDashboard").classList.remove("hidden");
+      } else {
+        alert("Incorrect Admin Password!");
+      }
+    }
+
+    function generateMagicLink() {
+      const email = document.getElementById("genStudentEmail").value.trim().toLowerCase();
+      const file = document.getElementById("genCourseCode").value;
+
+      if (!email.includes("@")) {
+        alert("Please enter a valid student Gmail address.");
+        return;
+      }
+
+      const generatedUrl = `https://sdginsights.github.io/${file}?student=${email}`;
+      document.getElementById("genLinkDisplay").innerText = generatedUrl;
+      document.getElementById("genResultBox").classList.remove("hidden");
+    }
+
+    function copyGeneratedLink() {
+      const link = document.getElementById("genLinkDisplay").innerText;
+      navigator.clipboard.writeText(link);
+      alert("Magic Link copied! You can now paste and send this link to the student on WhatsApp or Gmail.");
+    }
+  </script>
+</body>
+</html>
