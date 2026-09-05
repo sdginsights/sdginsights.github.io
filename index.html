@@ -3,7 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SDG Insights - VU Study Portal & Premium Notes</title>
+  
+  <!-- GOOGLE SEARCH (SEO) TAGS -->
+  <title>SDG Insights - Virtual University (VU) Handouts & Solved Notes | Mid & Final Term</title>
+  <meta name="description" content="Official SDG Insights study portal for Virtual University of Pakistan. 100% handout-accurate solved subjective, short/long questions, and verified MCQs for CS610, CS301, MTH301, MTH202." />
+  <meta name="keywords" content="SDG Insights, SDG Insights notes, VU handouts, MTH202 notes, CS610 final term, CS301 mid term, Virtual University exam preparation, Munaza Mukhtar, VU solved papers" />
+  <meta name="author" content="Munaza Mukhtar - SDG Insights" />
+  <link rel="canonical" href="https://sdginsights.github.io" />
+
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Font Awesome Icons -->
@@ -34,7 +41,7 @@
       <div class="flex items-center space-x-2">
         <a href="https://youtube.com/@sdginsights" target="_blank" class="flex items-center space-x-1.5 bg-red-600 hover:bg-red-700 text-white text-xs px-3 py-2 rounded-lg font-semibold shadow transition">
           <i class="fa-brands fa-youtube text-sm"></i>
-          <span class="hidden sm:inline">YouTube</span>
+          <span class="hidden sm:inline">YouTube Channel</span>
         </a>
       </div>
     </div>
@@ -43,7 +50,7 @@
     <div class="max-w-6xl mx-auto px-4 pb-4 pt-1">
       <div class="relative">
         <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3.5 text-slate-400 text-sm"></i>
-        <input type="text" id="searchInput" onkeyup="filterSubjects()" placeholder="Search subject code (e.g. CS610, CS301, MTH)..." class="w-full bg-slate-900/80 border border-slate-700 text-white rounded-xl pl-10 pr-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-amber-400 placeholder-slate-400 shadow-inner" />
+        <input type="text" id="searchInput" onkeyup="filterSubjects()" placeholder="Search subject code (e.g. MTH202, CS610, CS301)..." class="w-full bg-slate-900/80 border border-slate-700 text-white rounded-xl pl-10 pr-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-amber-400 placeholder-slate-400 shadow-inner" />
       </div>
 
       <!-- Category Filter Tabs -->
@@ -62,7 +69,9 @@
         <i class="fa-solid fa-bullhorn text-amber-600"></i>
         <span><strong>100% Handout-Accurate:</strong> Solved Subjective, Short/Long Questions & Verified MCQs.</span>
       </div>
-      <span class="text-[11px] font-semibold bg-amber-200 text-amber-800 px-2 py-0.5 rounded">EasyPaisa / Bank</span>
+      <span class="text-[11px] font-semibold bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded flex items-center gap-1">
+        <i class="fa-solid fa-shield-check"></i> Instant Drive Access
+      </span>
     </div>
   </div>
 
@@ -77,7 +86,7 @@
 
     <!-- CARDS GRID -->
     <div id="subjectsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-      <!-- Cards will be populated by JavaScript -->
+      <!-- Injected by JavaScript -->
     </div>
   </main>
 
@@ -107,27 +116,42 @@
           </div>
         </div>
 
-        <!-- PAYMENT METHODS -->
-        <div class="border border-indigo-100 bg-indigo-50/60 rounded-xl p-3.5 space-y-2">
-          <div class="font-bold text-xs uppercase tracking-wider text-indigo-900 flex items-center gap-1.5">
-            <i class="fa-solid fa-building-columns"></i> Payment Details
+        <!-- PAYMENT METHODS ACCORDION -->
+        <div class="border border-indigo-100 bg-indigo-50/60 rounded-xl p-3.5 space-y-2.5">
+          <div class="font-bold text-xs uppercase tracking-wider text-indigo-900 flex items-center justify-between">
+            <span class="flex items-center gap-1.5"><i class="fa-solid fa-building-columns"></i> Official Payment Methods</span>
           </div>
-          
-          <div class="bg-white p-2.5 rounded-lg border border-indigo-100 flex items-center justify-between">
+
+          <!-- EasyPaisa -->
+          <div class="bg-white p-2.5 rounded-lg border border-emerald-200 shadow-sm flex items-center justify-between">
             <div>
               <div class="font-bold text-xs text-emerald-700 flex items-center gap-1">
-                <i class="fa-solid fa-wallet"></i> EasyPaisa Account
+                <i class="fa-solid fa-wallet"></i> EasyPaisa
               </div>
-              <div class="font-mono text-sm font-semibold text-slate-800">0300-XXXXXXX</div>
-              <div class="text-[11px] text-slate-500">Title: Munaza Mukhtar</div>
+              <div class="font-mono text-sm font-bold text-slate-800">03198519637</div>
+              <div class="text-[11px] text-slate-500">Title: Munazza mukhtar</div>
             </div>
-            <button onclick="copyToClipboard('0300-XXXXXXX')" class="text-xs bg-slate-100 hover:bg-slate-200 px-2.5 py-1.5 rounded-md font-medium text-slate-600">
+            <button onclick="copyToClipboard('03198519637')" class="text-xs bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-300 px-3 py-1.5 rounded-md font-semibold transition">
+              Copy
+            </button>
+          </div>
+
+          <!-- MCB Bank -->
+          <div class="bg-white p-2.5 rounded-lg border border-blue-200 shadow-sm flex items-center justify-between">
+            <div>
+              <div class="font-bold text-xs text-blue-700 flex items-center gap-1">
+                <i class="fa-solid fa-landmark"></i> MCB Bank
+              </div>
+              <div class="font-mono text-sm font-bold text-slate-800">1708370211010380</div>
+              <div class="text-[11px] text-slate-500">Title: MUNAZA MUKHTAR</div>
+            </div>
+            <button onclick="copyToClipboard('1708370211010380')" class="text-xs bg-blue-50 hover:bg-blue-100 text-blue-800 border border-blue-300 px-3 py-1.5 rounded-md font-semibold transition">
               Copy
             </button>
           </div>
 
           <p class="text-[11px] text-slate-500 leading-tight">
-            * Kisi bhi EasyPaisa, JazzCash ya Bank app se payment send karein aur screenshot ya Trx ID save kar lein.
+            * Payment send karke screenshot ya Transaction ID (Trx ID) neeche darj karein.
           </p>
         </div>
 
@@ -159,18 +183,33 @@
     </div>
   </div>
 
+  <!-- FLOATING AI AGENT / CHAT BUTTON -->
+  <div class="fixed bottom-5 right-5 z-40">
+    <a href="https://wa.me/923198519637?text=Assalam-o-Alaikum!%20Mujhe%20SDG%20Insights%20ke%20notes%20aur%20lectures%20ke%20bare%20mein%20puchna%20hai." target="_blank" class="flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-3 rounded-full shadow-2xl transition hover:scale-105">
+      <i class="fa-brands fa-whatsapp text-xl"></i>
+      <span class="text-xs font-bold hidden sm:inline">Ask Us / Help</span>
+    </a>
+  </div>
+
   <!-- FOOTER -->
   <footer class="bg-slate-900 text-slate-400 text-xs py-6 border-t border-slate-800">
     <div class="max-w-6xl mx-auto px-4 text-center space-y-2">
       <p class="font-medium text-slate-300">© 2026 SDG Insights — Powered by Virtual University Learners</p>
-      <p class="text-slate-500 text-[11px]">Contact: Haroonabad, Pakistan | YouTube: @sdginsights</p>
+      <p class="text-slate-500 text-[11px]">Official Contact: 0319-8519637 | Haroonabad, Pakistan | YouTube: @sdginsights</p>
     </div>
   </footer>
 
   <!-- JAVASCRIPT DATA & LOGIC -->
   <script>
-    // INITIAL SAMPLE DATA (Aap is list mein rozana naye subjects add kar sakti hain)
     const subjectsData = [
+      {
+        code: "MTH202",
+        title: "Discrete Mathematics",
+        term: "Finalterm",
+        price: "Rs. 500",
+        videoUrl: "https://www.youtube.com/@sdginsights",
+        description: "Sets, Logic Truth Tables, Relations, Graphs, and recurrence solved handout questions."
+      },
       {
         code: "CS610",
         title: "Computer Networks",
@@ -282,7 +321,7 @@
 
     function copyToClipboard(text) {
       navigator.clipboard.writeText(text);
-      alert("Account number copy ho gaya hai!");
+      alert("Account number copy ho gaya hai: " + text);
     }
 
     function submitOrder() {
@@ -295,11 +334,10 @@
         return;
       }
 
-      // WhatsApp Message auto-generator
       const msg = `Assalam-o-Alaikum! Maine SDG Insights website se notes khareede hain:%0A%0A*Subject:* ${selectedSubject.code} - ${selectedSubject.title}%0A*Price:* ${selectedSubject.price}%0A*Student Name:* ${name}%0A*Google Drive Email:* ${email}%0A*Trx ID:* ${trx}%0A%0AMeharbani karke Drive access allow kar dein. Shukriya!`;
       
-      // WhatsApp opening (Replace 923000000000 with your WhatsApp number)
-      window.open(`https://wa.me/?text=${msg}`, '_blank');
+      // WhatsApp opening to your actual number 03198519637
+      window.open(`https://wa.me/923198519637?text=${msg}`, '_blank');
       closeModal();
     }
 
