@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>SDG Insights — VU Exam Preparation Portals & LMS Handling services</title>
+  <title>SDG Insights — VU Exam Preparation Portals & LMS Handling</title>
   <meta name="description" content="Official SDG Insights: 100% Handout-Accurate Solved Notes, Final and Mid Term Preparation Portals, LMS Handling & Full Support Packages." />
   <link rel="canonical" href="https://sdginsights.github.io" />
 
@@ -39,7 +39,6 @@
       background: radial-gradient(circle at 50% 15%, #0f2038 0%, #050a12 100%);
     }
 
-    /* 3 GLOWING ORBS THAT SHIFT COLORS CONTINUOUSLY */
     .color-orb-1 {
       position: absolute;
       width: 650px;
@@ -73,7 +72,6 @@
       animation: shiftColors3 15s ease-in-out infinite alternate, floatOrb3 22s ease-in-out infinite alternate;
     }
 
-    /* COLOR SHIFTING ANIMATIONS */
     @keyframes shiftColors1 {
       0% { background: radial-gradient(circle, rgba(58, 128, 188, 0.65) 0%, rgba(58, 128, 188, 0) 70%); }
       33% { background: radial-gradient(circle, rgba(37, 99, 235, 0.6) 0%, rgba(37, 99, 235, 0) 70%); }
@@ -126,7 +124,6 @@
       border-color: rgba(58, 128, 188, 0.8);
     }
 
-    /* TAB VISIBILITY */
     .tab-content { display: none; }
     .tab-active { display: block; animation: fadeInView 0.28s cubic-bezier(0.16, 1, 0.3, 1); }
     @keyframes fadeInView {
@@ -150,7 +147,6 @@
       color: #102138;
     }
 
-    /* 5-SECOND FLOATING STICKY TOAST */
     #stickyNoticeToast {
       transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
       transform: translateY(120px) scale(0.9);
@@ -183,11 +179,11 @@
 
   <div class="relative z-10 flex-1 flex flex-col min-h-screen">
 
-    <!-- NAVBAR WITH EXACT EMBEDDED VECTOR LOGO -->
+    <!-- NAVBAR WITH EXACT VECTOR LOGO -->
     <header class="bg-white/95 backdrop-blur-md border-b border-slate-200/80 sticky top-0 z-40 shadow-xs">
       <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
         
-        <!-- EXACT LOGO EMBED (SUCCESS DIGNITY AND GLORY - SDG INSIGHTS) -->
+        <!-- LOGO EMBED (SUCCESS DIGNITY AND GLORY - SDG INSIGHTS) -->
         <div onclick="switchTab('tab-home')" class="flex items-center space-x-3 cursor-pointer shrink-0">
           <div class="w-12 h-12 rounded-full overflow-hidden shadow-sm flex items-center justify-center bg-[#11253e] shrink-0 border border-[#3a80bc]">
             <svg viewBox="0 0 200 200" class="w-full h-full drop-shadow-xs">
@@ -245,11 +241,10 @@
     </header>
 
     <!-- ======================================================== -->
-    <!-- TAB 1: HOME (GLOWING GLASS MORPHISM) -->
+    <!-- TAB 1: HOME -->
     <!-- ======================================================== -->
     <section id="tab-home" class="tab-content tab-active flex-1">
       
-      <!-- HERO -->
       <div class="py-12 px-4 text-center">
         <div class="max-w-3xl mx-auto space-y-4">
           
@@ -360,8 +355,8 @@
           <input type="text" id="notesSearchInput" onkeyup="filterNotesGrid()" placeholder="Search code: CS610, MTH401, CS301, CS201..." class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-xs focus:bg-white focus:outline-none" />
           
           <div class="flex items-center gap-2 flex-wrap text-xs font-bold">
-            <button onclick="setNotesFilter('MID')" id="flt-MID" class="bg-[#102138] text-white px-3.5 py-2 rounded-xl transition">🎯 Midterm Portals</button>
-            <button onclick="setNotesFilter('FINAL')" id="flt-FINAL" class="bg-slate-100 text-slate-700 hover:bg-slate-200 px-3.5 py-2 rounded-xl transition">🏆 Final Term Portals</button>
+            <button onclick="setNotesFilter('MID')" id="flt-MID" class="bg-[#102138] text-white px-3.5 py-2 rounded-xl transition">🎯 Midterm Portals (1 Month)</button>
+            <button onclick="setNotesFilter('FINAL')" id="flt-FINAL" class="bg-slate-100 text-slate-700 hover:bg-slate-200 px-3.5 py-2 rounded-xl transition">🏆 Final Term Portals (1 Month)</button>
             <button onclick="setNotesFilter('HIGHLIGHTED')" id="flt-HIGHLIGHTED" class="bg-blue-50 text-[#3a80bc] hover:bg-blue-100 px-3.5 py-2 rounded-xl border border-blue-200 transition">📑 Highlighted Handouts (Rs. 300)</button>
             <button onclick="setNotesFilter('NOTES')" id="flt-NOTES" class="bg-slate-100 text-slate-700 hover:bg-slate-200 px-3.5 py-2 rounded-xl transition">📝 Master Notes</button>
           </div>
@@ -477,7 +472,7 @@
     </section>
 
     <!-- ======================================================== -->
-    <!-- TAB 5: START EXAM PREPARATION -->
+    <!-- TAB 5: START EXAM PREPARATION (ZERO PASSCODES - GMAIL ONLY) -->
     <!-- ======================================================== -->
     <section id="tab-portal" class="tab-content flex-1 py-10 px-4">
       <div class="max-w-md mx-auto space-y-4">
@@ -489,20 +484,19 @@
               <i class="fa-solid fa-play"></i>
             </div>
             <h3 class="text-base font-bold text-[#102138]">Start Exam Preparation</h3>
-            <p class="text-xs text-slate-500">Enter your approved Gmail and secret access key.</p>
+            <p class="text-xs text-slate-500">Enter your approved Gmail address to unlock your portal.</p>
           </div>
 
           <div class="bg-amber-50 border border-amber-200 p-3 rounded-2xl text-[11px] text-amber-900 leading-snug">
-            <strong>⚠️ Access Notice:</strong> This interactive preparation software opens strictly after payment verification. Your secret access key is issued on WhatsApp after confirming your transaction.
+            <strong>⚠️ 1-Month Access Policy:</strong> Access opens once approved by instructor. Midterm and Final Term portals remain active for exactly <strong>1 Month (30 Days)</strong> from approval date.
           </div>
 
           <div class="space-y-3 text-xs">
             <input type="email" id="logEmail" placeholder="Approved Gmail Address *" class="w-full border border-slate-300 rounded-xl px-3 py-2.5 focus:outline-none" />
             <input type="text" id="logSubject" placeholder="Course Code (e.g. MTH401, CS610) *" class="w-full border border-slate-300 rounded-xl px-3 py-2.5 uppercase focus:outline-none" />
-            <input type="password" id="logPass" placeholder="Secret Access Passcode *" class="w-full border border-slate-300 rounded-xl px-3 py-2.5 focus:outline-none font-mono" />
             
             <button onclick="verifyAndOpenReader()" class="w-full bg-[#102138] hover:bg-[#1a385f] text-white font-bold py-2.5 rounded-xl transition shadow-xs">
-              Unlock & Start Preparation
+              Open My Preparation Portal
             </button>
           </div>
         </div>
@@ -511,7 +505,7 @@
         <div id="readerBox" class="hidden glass-card rounded-3xl p-6 shadow-sm space-y-4">
           <div class="flex items-center justify-between border-b border-slate-100 pb-3">
             <div>
-              <span class="text-[10px] font-bold text-emerald-600 uppercase block">✓ Active Preparation Software</span>
+              <span class="text-[10px] font-bold text-emerald-600 uppercase block">✓ Active 1-Month Portal</span>
               <h3 class="text-base font-bold text-[#102138]" id="activeCourseTitle">MTH401 Preparation Software</h3>
             </div>
             <button onclick="closeReader()" class="text-xs text-slate-400 hover:text-slate-600">Close</button>
@@ -537,7 +531,7 @@
         <div class="flex items-center justify-between">
           <div>
             <span class="text-[10px] font-bold text-[#3a80bc] uppercase" id="mCode">CS610</span>
-            <h3 class="text-sm font-bold text-[#102138]" id="mTitle">Preparation Portal</h3>
+            <h3 class="text-sm font-bold text-[#102138]" id="mTitle">Preparation Portal (1 Month Access)</h3>
           </div>
           <button onclick="closeOrderModal()" class="text-slate-400 hover:text-slate-600 text-sm">
             <i class="fa-solid fa-xmark"></i>
@@ -546,11 +540,11 @@
 
         <div class="grid grid-cols-2 gap-2 text-center text-xs">
           <div class="p-2 border rounded-xl bg-slate-50">
-            <span class="text-[10px] text-slate-400 block font-bold">Midterm</span>
+            <span class="text-[10px] text-slate-400 block font-bold">Midterm (1 Month)</span>
             <span class="font-bold text-[#102138]" id="mMid">Rs. 600</span>
           </div>
           <div class="p-2 border rounded-xl bg-slate-50">
-            <span class="text-[10px] text-slate-400 block font-bold">Final Term</span>
+            <span class="text-[10px] text-slate-400 block font-bold">Final Term (1 Month)</span>
             <span class="font-bold text-[#102138]" id="mFinal">Rs. 800</span>
           </div>
         </div>
@@ -567,14 +561,12 @@
         </div>
 
         <button onclick="submitOrder()" class="w-full bg-[#102138] hover:bg-[#1a385f] text-white font-bold py-2 rounded-xl text-xs transition">
-          Send to WhatsApp
+          Submit for Instructor Approval
         </button>
       </div>
     </div>
 
-    <!-- ======================================================== -->
-    <!-- 5-SECOND FLOATING STICKY NOTE TOAST (BOTTOM-LEFT POPUP) -->
-    <!-- ======================================================== -->
+    <!-- 5-SECOND FLOATING STICKY NOTE TOAST -->
     <div id="stickyNoticeToast" class="fixed bottom-6 left-6 z-40 max-w-sm w-full">
       <div class="bg-white/95 backdrop-blur-xl border border-white/80 p-4 rounded-3xl shadow-2xl space-y-2 relative overflow-hidden">
         
@@ -599,12 +591,8 @@
       </div>
     </div>
 
-    <!-- ======================================================== -->
-    <!-- RESPECTFUL INSTRUCTOR CHATBOT: "SDG Insights Instructor" -->
-    <!-- ======================================================== -->
+    <!-- RESPECTFUL INSTRUCTOR CHATBOT -->
     <div class="fixed bottom-6 right-6 z-50">
-      
-      <!-- CHAT TRIGGER -->
       <button onclick="toggleTeacherChat()" id="chatTriggerBtn" class="flex items-center gap-2.5 bg-[#102138] hover:bg-[#1a385f] text-white px-4 py-3 rounded-full shadow-2xl transition-all duration-300 border border-[#3a80bc]/40 hover:scale-105">
         <div class="w-8 h-8 rounded-full bg-[#3a80bc] flex items-center justify-center text-white text-sm shrink-0">
           <i class="fa-solid fa-chalkboard-user"></i>
@@ -615,10 +603,8 @@
         </div>
       </button>
 
-      <!-- CHAT WINDOW -->
       <div id="teacherChatWindow" class="hidden absolute bottom-16 right-0 w-[320px] sm:w-[380px] bg-white rounded-3xl shadow-2xl border border-slate-200 overflow-hidden flex flex-col animate-fade-in text-xs">
         
-        <!-- HEADER WITH RESPECTFUL INSTRUCTOR TITLE -->
         <div class="bg-[#102138] text-white p-4 flex items-center justify-between border-b border-slate-700">
           <div class="flex items-center space-x-2.5">
             <div class="w-9 h-9 rounded-full bg-[#3a80bc] flex items-center justify-center text-white font-bold shrink-0">
@@ -637,7 +623,6 @@
         </div>
 
         <div id="chatMessages" class="p-4 h-80 overflow-y-auto chat-scroll space-y-4 bg-slate-50">
-          
           <div class="bg-white p-3.5 rounded-2xl rounded-tl-none border border-slate-200 shadow-2xs space-y-2 leading-relaxed">
             <span class="text-[10px] font-bold text-[#3a80bc] block">SDG Insights Instructor</span>
             <p class="urdu-font text-xs text-slate-800 text-right">
@@ -657,10 +642,9 @@
               • Any discounts or semester packages available? (ڈیلز / ڈسکاؤنٹ)
             </button>
             <button onclick="askBotQuestion('access_method')" class="w-full text-left bg-white hover:bg-blue-50/70 p-2.5 rounded-xl border border-slate-200 text-slate-700 font-semibold block transition">
-              • How will I get portal access passcode? (ایکسیس کیسے ملے گی؟)
+              • How will I get portal access? (ایکسیس کیسے ملے گی؟)
             </button>
           </div>
-
         </div>
 
         <div class="p-2.5 bg-white border-t border-slate-200 flex items-center gap-1.5">
@@ -669,7 +653,6 @@
             <i class="fa-solid fa-paper-plane text-xs"></i>
           </button>
         </div>
-
       </div>
     </div>
 
@@ -677,14 +660,15 @@
     <footer class="bg-white/95 backdrop-blur-md border-t border-slate-200 py-6 text-xs text-slate-400 mt-auto text-center">
       <div class="max-w-6xl mx-auto px-4 space-y-1">
         <p class="font-bold text-slate-700">SDG Insights — Success, Dignity & Glory in Your VU Studies</p>
-        <p>Official Contact: 0319-8519637 • YouTube: @sdginsights</p>
+        <p>Official Contact: 0319-8519637 • Email: sdginsightsedu@gmail.com</p>
       </div>
     </footer>
 
   </div>
 
-  <!-- SCRIPT -->
+  <!-- JAVASCRIPT LOGIC -->
   <script>
+    // TOAST NOTICES (5s SHOW -> 4s REST)
     const toastNotices = [
       "⚠️ All resources, notes and portals are 100% PAID — nothing is free.",
       "💼 LMS Handling + Midterm & Final Term Exam Preparation packages with full 24/7 support.",
@@ -716,7 +700,13 @@
       toastEl.classList.remove("toast-visible");
     }
 
-    const passcodes = ["SDG-PASS-2026", "MTH401-VIP", "CS610-VIP", "CS301-VIP", "VU-VIP"];
+    // WHITELIST OF APPROVED EMAILS (WHEN YOU CLICK "ALLOW" IN GOOGLE SHEET)
+    // Testing student included: ali.student@gmail.com
+    const approvedStudents = [
+      { email: "ali.student@gmail.com", course: "MTH401", expiry: "2026-10-05" },
+      { email: "test.student@gmail.com", course: "MTH401", expiry: "2026-10-05" },
+      { email: "sdginsightsedu@gmail.com", course: "ALL", expiry: "2099-01-01" }
+    ];
 
     const courses = [
       { code: "CS101", title: "Introduction to Computing", types: ["MID", "FINAL", "HIGHLIGHTED", "NOTES"], mid: "Rs. 500", final: "Rs. 800", hl: "Rs. 300" },
@@ -798,21 +788,19 @@
           <div>
             <div class="flex items-center justify-between mb-2">
               <span class="font-mono text-xs font-bold text-[#102138] bg-slate-100 px-2 py-0.5 rounded">${item.code}</span>
-              <span class="text-[10px] text-[#3a80bc] font-bold">Fee: ${p}</span>
+              <span class="text-[10px] text-[#3a80bc] font-bold">1 Month: ${p}</span>
             </div>
             <h4 class="font-bold text-xs text-slate-900 leading-snug mb-3">${item.title}</h4>
           </div>
           <button onclick="openOrderModal('${item.code}')" class="w-full bg-[#102138] hover:bg-[#1a385f] text-white text-[11px] font-bold py-2 rounded-xl transition shadow-xs">
-            Enroll & Unlock
+            Enroll & Unlock (1 Month)
           </button>
         `;
         grid.appendChild(card);
       });
     }
 
-    function filterNotesGrid() {
-      renderNotes();
-    }
+    function filterNotesGrid() { renderNotes(); }
 
     function setNotesFilter(flt) {
       currentFilter = flt;
@@ -853,7 +841,7 @@
         return;
       }
 
-      const msg = `*Assalam-o-Alaikum SDG Insights!*%0A%0AI want to enroll in preparation portal:%0A*Course:* ${selectedCourse.code} - ${selectedCourse.title}%0A*Name:* ${name}%0A*Gmail:* ${email}%0A*Trx ID:* ${trx}%0A%0APlease verify payment and send secret key to Start Exam Preparation. Thank you!`;
+      const msg = `*Assalam-o-Alaikum SDG Insights!*%0A%0AI have placed an order for 1-Month Portal Access:%0A*Course:* ${selectedCourse.code} - ${selectedCourse.title}%0A*Name:* ${name}%0A*Gmail:* ${email}%0A*Trx ID:* ${trx}%0A%0ABarah-e-Karam payment verify karke portal access ALLOW kar dein. Shukriya!`;
       window.open(`https://wa.me/923198519637?text=${msg}`, '_blank');
       closeOrderModal();
     }
@@ -863,24 +851,35 @@
       window.open(`https://wa.me/923198519637?text=${msg}`, '_blank');
     }
 
+    // ZERO-PASSCODE VERIFICATION: GMAIL ONLY
     function verifyAndOpenReader() {
-      const email = document.getElementById("logEmail").value.trim();
-      const sub = document.getElementById("logSubject").value.trim().toUpperCase();
-      const pass = document.getElementById("logPass").value.trim();
+      const email = document.getElementById("logEmail").value.trim().toLowerCase();
+      const sub = document.getElementById("logSubject").value.trim().toUpperCase() || "MTH401";
 
       if (!email.includes("@")) {
         alert("Please enter a valid Gmail address.");
         return;
       }
 
-      if (!passcodes.includes(pass)) {
-        alert("Access Denied! Incorrect access passcode. All portals are paid. Please verify payment on WhatsApp first.");
+      // Check if student's email is allowed
+      const match = approvedStudents.find(s => s.email === email && (s.course === sub || s.course === "ALL"));
+
+      if (!match) {
+        alert("❌ Access Pending!\n\nThis Gmail address has not been approved yet. Once you send payment proof on WhatsApp (0319-8519637), the instructor will click ALLOW to activate your 1-month access.");
+        return;
+      }
+
+      // Check 1-Month Expiry
+      const today = new Date();
+      const expiryDate = new Date(match.expiry);
+      if (today > expiryDate) {
+        alert("⚠️ Access Expired!\n\nYour 1-month access period for this course has completed. Please contact instructor on WhatsApp to renew.");
         return;
       }
 
       document.getElementById("loginBox").classList.add("hidden");
       document.getElementById("readerBox").classList.remove("hidden");
-      document.getElementById("activeCourseTitle").innerText = `${sub || 'MTH401'} Preparation Software`;
+      document.getElementById("activeCourseTitle").innerText = `${sub} (Active 1-Month Access)`;
     }
 
     function closeReader() {
@@ -888,8 +887,23 @@
       document.getElementById("loginBox").classList.remove("hidden");
     }
 
+    // 1-CLICK MAGIC LINK AUTO-UNLOCK (When student clicks link from email)
+    // Example: sdginsights.github.io/?portal=MTH401&student=ali.student@gmail.com
+    window.addEventListener("DOMContentLoaded", () => {
+      const params = new URLSearchParams(window.location.search);
+      if (params.has('portal') && params.has('student')) {
+        const pCourse = params.get('portal').toUpperCase();
+        const pStudent = params.get('student').toLowerCase();
+
+        switchTab('tab-portal');
+        document.getElementById("logEmail").value = pStudent;
+        document.getElementById("logSubject").value = pCourse;
+        verifyAndOpenReader();
+      }
+    });
+
     // ========================================================
-    // CHATBOT SCRIPT (RESPECTFUL & AUTHENTIC)
+    // CHATBOT SCRIPT
     // ========================================================
     function toggleTeacherChat() {
       document.getElementById("teacherChatWindow").classList.toggle("hidden");
@@ -912,9 +926,9 @@
         english: "Yes, we offer special package discounts:\n\n• Full Semester Bundle: Flat 20% OFF on all courses of your semester (Rs. 2400 instead of Rs. 3000).\n\n• Pick Any 5 Pack: Flat 10% OFF on any 5 subjects of your choice (Rs. 2250 instead of Rs. 2500)."
       },
       access_method: {
-        roman: "Access ka tariqa bohat aasan hai:\n\n1. EasyPaisa (03198519637) ya MCB Bank par fee send karein.\n\n2. WhatsApp par screenshot aur apni Gmail send karein.\n\n3. Payment verify hote hi aapko portal ka Secret Passcode mil jayega.\n\n4. Wo passcode website par 'Start Exam Preparation' me laga kar foran study shuru karein!",
-        urdu: "پورٹل کی رسائی حاصل کرنے کا طریقہ انتہائی آسان ہے:\n\n1. ایزی پیسہ (03198519637) یا MCB Bank پر فیس بھیجیں۔\n\n2. واٹس ایپ پر رسید کا اسکرین شاٹ اور اپنی جی میل بھیجیں۔\n\n3. تصدیق کے بعد آپ کو پورٹل کا خفیہ پاس کوڈ (Secret Passcode) مل جائے گا۔\n\n4. ویب سائٹ پر 'Start Exam Preparation' میں وہ کوڈ درج کر کے نوٹس کھول لیں۔",
-        english: "Getting portal access is simple:\n\n1. Transfer fee via EasyPaisa (03198519637) or MCB Bank.\n\n2. Send the receipt screenshot and your Gmail to WhatsApp.\n\n3. After verification, you receive your official secret access key.\n\n4. Enter the key under 'Start Exam Preparation' to unlock your study portal immediately."
+        roman: "Access ka tariqa bohat aasan hai, koi code yaad rakhne ki zaroorat nahi:\n\n1. EasyPaisa (03198519637) ya MCB Bank par fee send karein.\n\n2. WhatsApp par screenshot aur apni Gmail send karein.\n\n3. Instructor sirf ALLOW ka button press karengi aur aapki 1 Month ki access foran active ho jayegi!\n\n4. Aap apni Gmail laga kar ya email me mile link par click karke direct notes open kar sakenge.",
+        urdu: "پورٹل کی رسائی حاصل کرنا اب انتہائی آسان ہے، کوئی کوڈ یاد رکھنے کی ضرورت نہیں:\n\n1. ایزی پیسہ (03198519637) یا MCB Bank پر فیس بھیجیں۔\n\n2. واٹس ایپ پر رسید کا اسکرین شاٹ اور اپنی جی میل بھیجیں۔\n\n3. انسٹرکٹر صرف ALLOW بٹن دبائیں گی اور آپ کی 1 ماہ کی ایکسیس فعال ہو جائے گی!\n\n4. آپ ڈائریکٹ ای میل درج کر کے نوٹس کھول سکیں گے۔",
+        english: "Getting portal access is effortless — no passcodes to remember:\n\n1. Transfer fee via EasyPaisa (03198519637) or MCB Bank.\n\n2. Send receipt screenshot and Gmail to WhatsApp.\n\n3. The instructor clicks ALLOW, instantly activating your 1-month access.\n\n4. You can open your notes directly using your registered Gmail."
       }
     };
 
