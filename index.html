@@ -6,7 +6,7 @@
   
   <!-- SEO & METADATA -->
   <title>SDG Insights — Virtual University Premium Study Portal</title>
-  <meta name="description" content="Official SDG Insights: 100% Handout-Accurate Solved Notes, Semester Bundles (20% OFF), and CS619 Final Projects for Virtual University Students." />
+  <meta name="description" content="Official SDG Insights: 100% Handout-Accurate VU Solved Notes, Highlighted Handouts (Rs. 300), Mid/Final Portals, Assignments & CS619 Projects." />
   <link rel="canonical" href="https://sdginsights.github.io" />
 
   <!-- TAILWIND CSS & ICONS & FONTS -->
@@ -21,7 +21,6 @@
     .urdu-text { font-family: 'Noto Nastaliq Urdu', serif; line-height: 2.2; }
     .rough-note { font-family: 'Caveat', cursive; }
     
-    /* CLEAN SMOOTH SHADOWS & TRANSITIONS */
     .card-hover {
       transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
     }
@@ -30,21 +29,22 @@
       box-shadow: 0 16px 32px -8px rgba(19, 38, 68, 0.08);
       border-color: #3b7eb9;
     }
-    .tab-active {
+    .btn-cat-active {
       background-color: #132644;
       color: #ffffff;
-      font-weight: 700;
+      border-color: #132644;
+      box-shadow: 0 4px 12px rgba(19, 38, 68, 0.15);
     }
   </style>
 </head>
 <body class="min-h-screen flex flex-col antialiased">
 
-  <!-- MINIMAL PROMO BAR -->
+  <!-- TOP ANNOUNCEMENT -->
   <div class="bg-[#132644] text-slate-200 text-xs py-2 px-4 border-b border-slate-800">
     <div class="max-w-6xl mx-auto flex items-center justify-between">
       <div class="flex items-center space-x-2">
-        <span class="bg-[#3b7eb9] text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">Offer</span>
-        <span>مکمل سمسٹر پر <strong>20% رعایت</strong> اور 5 سبجیکٹس پر <strong>10% رعایت</strong> حاصل کریں۔</span>
+        <span class="bg-[#3b7eb9] text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">Deal</span>
+        <span>تمام سمسٹر فائلز پر <strong>20% رعایت</strong> اور 5 سبجیکٹس پر <strong>10% رعایت</strong>!</span>
       </div>
       <div class="hidden sm:flex items-center space-x-4 text-[11px] text-slate-300">
         <a href="https://wa.me/c/923198519637" target="_blank" class="hover:text-amber-300 transition">WhatsApp Catalog</a>
@@ -54,11 +54,11 @@
     </div>
   </div>
 
-  <!-- CLEAN TOP NAVBAR -->
+  <!-- NAVBAR -->
   <nav class="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-xs">
     <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
       
-      <!-- LOGO (OFFICIAL SDG INSIGHTS EMBLEM) -->
+      <!-- LOGO -->
       <a href="#" class="flex items-center space-x-3 group">
         <div class="w-11 h-11 rounded-full overflow-hidden shadow-sm flex items-center justify-center bg-[#132644] p-0.5 shrink-0">
           <svg viewBox="0 0 200 200" class="w-full h-full">
@@ -81,10 +81,9 @@
       </a>
 
       <!-- RIGHT NAV ACTIONS -->
-      <div class="flex items-center space-x-2.5">
-        <!-- Secure Portal Login Button -->
+      <div class="flex items-center space-x-2">
         <button onclick="openPortalModal()" class="bg-[#132644] hover:bg-slate-800 text-white text-xs px-4 py-2.5 rounded-xl font-bold transition flex items-center gap-1.5 shadow-sm">
-          <i class="fa-solid fa-lock-open text-amber-300"></i>
+          <i class="fa-solid fa-lock text-amber-300"></i>
           <span>سٹوڈنٹ پورٹل لاگ ان</span>
         </button>
 
@@ -96,7 +95,7 @@
     </div>
   </nav>
 
-  <!-- SECURE STUDY READER (OPENED UPON PORTAL ACCESS) -->
+  <!-- SECURE STUDY READER (AUTHENTICATED ONLY) -->
   <section id="studyReaderView" class="hidden flex-1 bg-white min-h-[85vh]">
     <div class="max-w-7xl mx-auto flex flex-col md:flex-row h-full border-b border-slate-200">
       
@@ -105,77 +104,71 @@
         <div class="space-y-4">
           <div class="flex items-center justify-between border-b border-slate-200 pb-3">
             <div>
-              <span class="text-[10px] font-bold text-[#3b7eb9] uppercase tracking-wider block" id="readerSubBadge">MTH401 Verified</span>
-              <h3 class="font-extrabold text-sm text-slate-900" id="readerCourseName">Differential Equations</h3>
+              <span class="text-[10px] font-bold text-emerald-700 uppercase tracking-wider block">✓ Verified Access Active</span>
+              <h3 class="font-extrabold text-sm text-slate-900" id="readerCourseName">MTH401 Differential Equations</h3>
             </div>
             <button onclick="closeStudyReader()" class="text-xs text-slate-400 hover:text-slate-700">
               <i class="fa-solid fa-arrow-left"></i> Exit
             </button>
           </div>
 
-          <!-- TOPICS LIST -->
           <div class="space-y-1.5 text-xs font-semibold text-slate-600">
-            <button onclick="loadReaderSection('lec1')" id="rNav-lec1" class="w-full text-left px-3 py-2.5 rounded-xl bg-white border border-slate-200 text-[#132644] font-bold shadow-xs">
-              📘 Lecture 01–05: Core Concepts
+            <button onclick="loadReaderContent('lec1')" class="w-full text-left px-3 py-2.5 rounded-xl bg-white border border-slate-200 text-[#132644] font-bold shadow-xs">
+              📘 Lectures 01–05: Handout Foundation
             </button>
-            <button onclick="loadReaderSection('lec6')" id="rNav-lec6" class="w-full text-left px-3 py-2.5 rounded-xl hover:bg-white hover:border hover:border-slate-200 transition">
-              📘 Lecture 06–10: Advanced ODEs
+            <button onclick="loadReaderContent('lec6')" class="w-full text-left px-3 py-2.5 rounded-xl hover:bg-white transition">
+              📘 Lectures 06–10: Advanced Solved Steps
             </button>
-            <button onclick="loadReaderSection('subjective')" id="rNav-subjective" class="w-full text-left px-3 py-2.5 rounded-xl hover:bg-white hover:border hover:border-slate-200 transition">
-              📝 Solved Past Short & Long Questions
+            <button onclick="loadReaderContent('subjective')" class="w-full text-left px-3 py-2.5 rounded-xl hover:bg-white transition">
+              📝 Solved Short & Long Past Papers
             </button>
-            <button onclick="loadReaderSection('mcqs')" id="rNav-mcqs" class="w-full text-left px-3 py-2.5 rounded-xl hover:bg-white hover:border hover:border-slate-200 transition">
-              ✓ Verified MCQ Quiz Bank
+            <button onclick="loadReaderContent('quiz')" class="w-full text-left px-3 py-2.5 rounded-xl hover:bg-white transition">
+              ✓ Verified MCQ Quiz Bank (Auto-Check)
             </button>
           </div>
         </div>
 
         <div class="pt-4 border-t border-slate-200 text-[11px] text-slate-400 text-center">
-          Protected Student View • SDG Insights
+          Strictly Online Reading • Protected by SDG Insights
         </div>
       </aside>
 
-      <!-- MAIN READING CANVAS -->
+      <!-- READER MAIN CANVAS -->
       <main class="flex-1 p-6 md:p-10 max-w-4xl mx-auto overflow-y-auto">
-        <div id="readerContentArea" class="space-y-6">
-          
+        <div class="space-y-6">
           <div class="border-b border-slate-200 pb-4">
             <span class="text-xs font-bold text-[#3b7eb9] uppercase">Chapter 01</span>
-            <h1 class="text-2xl md:text-3xl font-extrabold text-slate-900 mt-1">Introduction to Differential Equations</h1>
+            <h1 class="text-2xl md:text-3xl font-extrabold text-slate-900 mt-1">Official Master Notes & Handout Solution</h1>
             <p class="text-xs text-slate-500 mt-1">100% Handout-Accurate Step-by-Step Solved Theory.</p>
           </div>
 
-          <!-- THEORY ARTICLE -->
-          <article class="prose prose-slate max-w-none text-slate-700 text-sm md:text-base leading-relaxed space-y-4">
+          <article class="text-slate-700 text-sm md:text-base leading-relaxed space-y-4">
             <p>
-              In classical algebra, the unknown quantity is always a scalar number. In <strong>Differential Equations</strong>, the unknown is never a single number—the unknown is an entire continuous function $y = f(x)$ that describes rates of change.
+              In classical algebra, the unknown quantity is always a scalar number. In <strong>Differential Equations</strong>, the unknown is an entire function $y = f(x)$ describing continuous rates of change.
             </p>
 
             <div class="bg-amber-50 border-l-4 border-amber-400 p-4 rounded-r-2xl my-4">
               <span class="text-xs font-bold text-amber-900 uppercase block mb-1">✎ SDG Insights Rough Work / Key Concept:</span>
               <p class="rough-note text-lg text-amber-950">
-                Notice that differentiation annihilates constants: d/dx(C) = 0. Therefore, integration must always restore the arbitrary constant C, representing the full family of solution curves!
+                Notice that differentiation eliminates constants: d/dx(C) = 0. Therefore, integration must always restore the arbitrary constant C!
               </p>
             </div>
 
             <h3 class="font-bold text-slate-900 text-lg mt-6">Differential Operator D and Linearity</h3>
-            <p>
-              The symbol $D$ denotes differentiation with respect to $x$. The linearity property states that for constants $a, b$ and differentiable functions $f, g$:
-            </p>
+            <p>The symbol $D$ denotes differentiation with respect to $x$. The linearity property states:</p>
             <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200 text-center font-mono text-sm text-[#132644]">
               D[a f(x) + b g(x)] = a D[f(x)] + b D[g(x)]
             </div>
           </article>
-
         </div>
       </main>
     </div>
   </section>
 
-  <!-- PUBLIC HOMEPAGE (CLEAN & AESTHETIC) -->
+  <!-- PUBLIC HOMEPAGE VIEW -->
   <div id="publicHomepage" class="flex-1">
     
-    <!-- SEARCH & HERO -->
+    <!-- SEARCH & TITLE -->
     <section class="bg-white border-b border-slate-200 py-10 px-4">
       <div class="max-w-4xl mx-auto text-center space-y-4">
         
@@ -185,67 +178,89 @@
         </div>
 
         <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
-          Find Your Subject Notes & Handouts
+          Virtual University Study Materials
         </h1>
 
         <p class="text-slate-500 text-sm md:text-base max-w-xl mx-auto">
-          بی ایس کمپیوٹر سائنس، میتھس اور مینجمنٹ کے سمسٹر وائز حل شدہ نوٹس اور CS619 فائنل پروجیکٹس۔
+          مڈٹرم و فائنل ٹرم ہینڈ آؤٹس، حل شدہ شارٹ و لانگ نوٹس، اور CS619 فائنل پروجیکٹس۔
         </p>
 
-        <!-- CLEAN SEARCH INPUT -->
+        <!-- CLEAN SEARCH -->
         <div class="max-w-xl mx-auto relative pt-2">
           <i class="fa-solid fa-magnifying-glass absolute left-4 top-6 text-slate-400"></i>
-          <input type="text" id="courseSearch" onkeyup="filterCourses()" placeholder="Search by subject code (e.g. CS610, MTH401, CS301, CS619)..." class="w-full bg-slate-50 border border-slate-300 rounded-2xl pl-11 pr-4 py-3.5 text-sm font-medium focus:bg-white focus:ring-2 focus:ring-[#3b7eb9] focus:outline-none transition shadow-xs" />
+          <input type="text" id="courseSearch" onkeyup="filterCatalog()" placeholder="Search subject code (e.g. CS610, MTH401, CS301, CS619)..." class="w-full bg-slate-50 border border-slate-300 rounded-2xl pl-11 pr-4 py-3.5 text-sm font-medium focus:bg-white focus:ring-2 focus:ring-[#3b7eb9] focus:outline-none transition shadow-xs" />
         </div>
 
-        <!-- CATEGORY PILLS -->
-        <div class="flex items-center justify-center gap-2 pt-2 flex-wrap text-xs">
-          <button onclick="setCategory('All')" id="cat-All" class="tab-active px-4 py-2 rounded-xl transition">All Subjects</button>
-          <button onclick="setCategory('BSCS')" id="cat-BSCS" class="bg-slate-100 hover:bg-slate-200 text-slate-700 px-4 py-2 rounded-xl font-semibold transition">Computer Science</button>
-          <button onclick="setCategory('MATH')" id="cat-MATH" class="bg-slate-100 hover:bg-slate-200 text-slate-700 px-4 py-2 rounded-xl font-semibold transition">Mathematics</button>
-          <button onclick="setCategory('MGMT')" id="cat-MGMT" class="bg-slate-100 hover:bg-slate-200 text-slate-700 px-4 py-2 rounded-xl font-semibold transition">Management</button>
-          <button onclick="setCategory('CS619')" id="cat-CS619" class="bg-indigo-50 hover:bg-indigo-100 text-indigo-700 px-4 py-2 rounded-xl font-bold border border-indigo-200 transition">CS619 Final Project</button>
+        <!-- 5 DEDICATED SERVICE BUTTONS -->
+        <div class="flex items-center justify-center gap-2 pt-4 flex-wrap text-xs font-bold">
+          <button onclick="setServiceCategory('ALL')" id="svc-ALL" class="btn-cat-active px-4 py-2.5 rounded-xl border transition">All Materials</button>
+          <button onclick="setServiceCategory('MID')" id="svc-MID" class="bg-white hover:bg-slate-50 text-slate-700 px-4 py-2.5 rounded-xl border border-slate-200 transition">🎯 مڈ ٹرم پورٹلز</button>
+          <button onclick="setServiceCategory('FINAL')" id="svc-FINAL" class="bg-white hover:bg-slate-50 text-slate-700 px-4 py-2.5 rounded-xl border border-slate-200 transition">🏆 فائنل ٹرم پورٹلز</button>
+          <button onclick="setServiceCategory('HIGHLIGHTED')" id="svc-HIGHLIGHTED" class="bg-amber-50 hover:bg-amber-100 text-amber-900 px-4 py-2.5 rounded-xl border border-amber-300 transition">📑 ہائی لائٹڈ ہینڈ آؤٹس (Rs. 300)</button>
+          <button onclick="setServiceCategory('NOTES')" id="svc-NOTES" class="bg-white hover:bg-slate-50 text-slate-700 px-4 py-2.5 rounded-xl border border-slate-200 transition">📝 ماسٹر حل شدہ نوٹس</button>
+          <button onclick="setServiceCategory('ASSIGNMENT')" id="svc-ASSIGNMENT" class="bg-white hover:bg-slate-50 text-slate-700 px-4 py-2.5 rounded-xl border border-slate-200 transition">✍️ اسائنمنٹس و کوئز</button>
         </div>
 
       </div>
     </section>
 
-    <!-- CLEAN CARDS GRID SECTION -->
-    <section class="max-w-6xl mx-auto px-4 py-10">
+    <!-- CATALOG GRID -->
+    <section class="max-w-6xl mx-auto px-4 py-10 space-y-6">
       
-      <div class="flex items-center justify-between mb-6">
-        <div>
-          <h2 class="text-lg font-bold text-slate-900" id="catalogTitle">Course Catalog</h2>
-          <p class="text-xs text-slate-500">Select any subject to view Mid/Final pricing and lecture details.</p>
+      <!-- CS619 SPECIAL COMPACT CARD -->
+      <div class="bg-gradient-to-r from-[#132644] to-[#1e3a8a] text-white rounded-3xl p-6 shadow-sm flex flex-col md:flex-row items-center justify-between gap-4">
+        <div class="flex items-center space-x-4">
+          <div class="w-12 h-12 rounded-2xl bg-amber-400 text-slate-950 flex items-center justify-center font-black text-xl shrink-0">
+            <i class="fa-solid fa-code"></i>
+          </div>
+          <div>
+            <span class="bg-amber-400/20 text-amber-300 text-[10px] font-bold px-2.5 py-0.5 rounded-full border border-amber-400/30 uppercase">Final Year Project</span>
+            <h3 class="text-lg font-bold text-white mt-1">CS619 / IT619 Final Project Complete Guidance</h3>
+            <p class="text-xs text-slate-300">ہم آپ کا مکمل فائنل ایئر پروجیکٹ (SRS دستاویز، پروٹو ٹائپ کوڈنگ اور فائنل وائیوا) کامیابی سے تیار کروا دیتے ہیں۔</p>
+          </div>
         </div>
-        <span class="text-xs font-semibold text-slate-500 bg-white px-3 py-1 rounded-lg border border-slate-200" id="resultsCount">Loading...</span>
+        <button onclick="openCustomWhatsApp('CS619 Final Year Project Guidance')" class="bg-amber-400 hover:bg-amber-500 text-slate-950 font-extrabold text-xs px-5 py-3 rounded-xl shrink-0 transition shadow-md">
+          Get Project Details on WhatsApp
+        </button>
+      </div>
+
+      <!-- CATALOG COUNTER -->
+      <div class="flex items-center justify-between pt-2">
+        <div>
+          <h2 class="text-lg font-bold text-slate-900" id="catHeading">Available Materials</h2>
+          <p class="text-xs text-slate-500">Click any card to view syllabus coverage or register.</p>
+        </div>
+        <span class="text-xs font-semibold text-slate-500 bg-white px-3 py-1 rounded-lg border border-slate-200" id="itemCount">Loading...</span>
       </div>
 
       <!-- CARDS CONTAINER -->
-      <div id="cardsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div id="catalogGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         <!-- Injected by JavaScript -->
       </div>
 
       <!-- CUSTOM SUBJECT BANNER -->
-      <div class="mt-10 bg-white border border-slate-200 rounded-3xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-xs">
+      <div class="mt-8 bg-white border border-slate-200 rounded-3xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-xs">
         <div>
-          <span class="text-xs font-bold text-[#3b7eb9] uppercase tracking-wider block">Custom Service</span>
-          <h3 class="text-base font-bold text-slate-900">آپ کا سبجیکٹ لسٹ میں موجود نہیں ہے؟</h3>
-          <p class="text-xs text-slate-500">اپنی مرضی کا کوئی بھی وی یو سبجیکٹ یا اسائنمنٹ حل کروانے کے لیے واٹس ایپ پر رابطہ کریں۔</p>
+          <div class="flex items-center space-x-2">
+            <span class="text-xs font-bold text-amber-600 bg-amber-50 px-2.5 py-0.5 rounded-full border border-amber-200 uppercase">Customization</span>
+            <span class="text-xs font-bold text-[#132644]">اپنی مرضی کا سبجیکٹ تیار کروائیں</span>
+          </div>
+          <h3 class="text-base font-bold text-slate-900 mt-1">کیا آپ کا مطلوبہ سبجیکٹ ویب سائٹ پر موجود نہیں ہے؟</h3>
+          <p class="text-xs text-slate-500">اگر آپ اپنے کسی بھی سبجیکٹ کی پریپریشن یا نوٹس چاہتے ہیں جو یہاں موجود نہیں ہے تو ہم سے واٹس ایپ پر کسٹمائز کروا لیں۔</p>
         </div>
-        <button onclick="openCustomRequest()" class="bg-[#132644] hover:bg-slate-800 text-white font-bold text-xs px-5 py-3 rounded-xl shrink-0 transition shadow-sm">
-          Request Custom Notes
+        <button onclick="openCustomWhatsApp('Custom Subject Notes & Preparation Request')" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs px-5 py-3 rounded-xl shrink-0 transition shadow-sm flex items-center gap-2">
+          <i class="fa-brands fa-whatsapp text-sm"></i>
+          <span>واٹس ایپ پر کسٹمائز کروائیں</span>
         </button>
       </div>
 
     </section>
   </div>
 
-  <!-- CLEAN DETAIL & ENROLLMENT SHEET (MODAL) -->
+  <!-- DETAIL MODAL -->
   <div id="detailModal" class="fixed inset-0 bg-slate-950/60 backdrop-blur-xs z-50 hidden flex items-center justify-center p-4">
     <div class="bg-white rounded-3xl max-w-lg w-full shadow-2xl overflow-hidden animate-fade-in border border-slate-200">
       
-      <!-- MODAL HEADER -->
       <div class="p-5 border-b border-slate-100 flex items-center justify-between">
         <div>
           <span class="text-xs font-bold text-[#3b7eb9] uppercase" id="mCode">CS610</span>
@@ -256,35 +271,31 @@
         </button>
       </div>
 
-      <!-- MODAL BODY -->
       <div class="p-6 max-h-[80vh] overflow-y-auto space-y-4 text-sm">
-        
         <p class="text-xs text-slate-500 leading-relaxed" id="mDesc"></p>
 
-        <!-- PREP VIDEO LINK -->
         <div id="mVideoBox">
           <a id="mVideoLink" href="#" target="_blank" class="inline-flex items-center gap-2 text-xs font-bold text-red-600 bg-red-50 hover:bg-red-100 px-3.5 py-2 rounded-xl transition border border-red-200/60">
             <i class="fa-brands fa-youtube text-sm"></i>
-            <span>پریپریشنل ویڈیو دیکھیں (Watch Video Lecture)</span>
+            <span>پریپریشنل ویڈیو دیکھیں (Watch Preparation Video)</span>
           </a>
         </div>
 
-        <!-- SELECT FILE TYPE (MID VS FINAL) -->
         <div class="space-y-2 pt-2">
-          <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider">Select Preparation File</label>
-          <div class="grid grid-cols-2 gap-2" id="priceOptionsGrid">
-            <label onclick="selectPriceType('mid')" class="cursor-pointer border-2 border-[#132644] bg-slate-50 p-3 rounded-2xl flex flex-col justify-between transition" id="lblMid">
-              <span class="text-xs font-bold text-slate-800">Midterm File</span>
+          <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider">Select Option</label>
+          <div class="grid grid-cols-2 gap-2" id="optionsGrid">
+            <label onclick="selectType('mid')" class="cursor-pointer border-2 border-[#132644] bg-slate-50 p-3 rounded-2xl flex flex-col justify-between transition" id="lblMid">
+              <span class="text-xs font-bold text-slate-800">Midterm Pack</span>
               <span class="text-sm font-extrabold text-[#132644] mt-1" id="mMidPrice">Rs. 600</span>
             </label>
-            <label onclick="selectPriceType('final')" class="cursor-pointer border-2 border-slate-200 bg-white p-3 rounded-2xl flex flex-col justify-between transition" id="lblFinal">
-              <span class="text-xs font-bold text-slate-800">Final Term File</span>
+            <label onclick="selectType('final')" class="cursor-pointer border-2 border-slate-200 bg-white p-3 rounded-2xl flex flex-col justify-between transition opacity-70" id="lblFinal">
+              <span class="text-xs font-bold text-slate-800">Final Term Pack</span>
               <span class="text-sm font-extrabold text-[#132644] mt-1" id="mFinalPrice">Rs. 800</span>
             </label>
           </div>
         </div>
 
-        <!-- PAYMENT DETAILS (CLEAN ACCORDION) -->
+        <!-- PAYMENT DETAILS -->
         <div class="bg-slate-50 p-3.5 rounded-2xl border border-slate-200 space-y-2">
           <span class="text-[11px] font-bold text-slate-600 uppercase tracking-wider block">Official Payment Accounts:</span>
           
@@ -293,7 +304,7 @@
               <span class="font-bold text-emerald-700">EasyPaisa:</span> <span class="font-mono font-bold text-slate-800">03198519637</span>
               <span class="text-[10px] text-slate-400 block">Title: Munazza mukhtar</span>
             </div>
-            <button onclick="navigator.clipboard.writeText('03198519637'); alert('Number Copied: 03198519637');" class="text-xs bg-slate-100 hover:bg-slate-200 px-2.5 py-1 rounded-lg font-bold text-slate-600">Copy</button>
+            <button onclick="navigator.clipboard.writeText('03198519637'); alert('Copied: 03198519637');" class="text-xs bg-slate-100 hover:bg-slate-200 px-2.5 py-1 rounded-lg font-bold text-slate-600">Copy</button>
           </div>
 
           <div class="bg-white p-2.5 rounded-xl border border-slate-200 flex items-center justify-between">
@@ -301,19 +312,18 @@
               <span class="font-bold text-blue-700">MCB Bank:</span> <span class="font-mono font-bold text-slate-800">1708370211010380</span>
               <span class="text-[10px] text-slate-400 block">Title: MUNAZA MUKHTAR</span>
             </div>
-            <button onclick="navigator.clipboard.writeText('1708370211010380'); alert('Account Copied: 1708370211010380');" class="text-xs bg-slate-100 hover:bg-slate-200 px-2.5 py-1 rounded-lg font-bold text-slate-600">Copy</button>
+            <button onclick="navigator.clipboard.writeText('1708370211010380'); alert('Copied: 1708370211010380');" class="text-xs bg-slate-100 hover:bg-slate-200 px-2.5 py-1 rounded-lg font-bold text-slate-600">Copy</button>
           </div>
         </div>
 
-        <!-- FORM INPUTS -->
         <div class="space-y-3 pt-1">
           <div>
-            <label class="block text-xs font-semibold text-slate-700 mb-1">طالب علم کا نام (Student Name) *</label>
+            <label class="block text-xs font-semibold text-slate-700 mb-1">طالب علم کا نام *</label>
             <input type="text" id="cName" placeholder="e.g. Ali Ahmed" class="w-full border border-slate-300 rounded-xl px-3 py-2 text-xs focus:ring-2 focus:ring-[#3b7eb9] focus:outline-none" />
           </div>
 
           <div>
-            <label class="block text-xs font-semibold text-slate-700 mb-1">جی میل (Gmail for Portal Access) *</label>
+            <label class="block text-xs font-semibold text-slate-700 mb-1">جی میل ایڈریس *</label>
             <input type="email" id="cEmail" placeholder="e.g. student@gmail.com" class="w-full border border-slate-300 rounded-xl px-3 py-2 text-xs focus:ring-2 focus:ring-[#3b7eb9] focus:outline-none" />
           </div>
 
@@ -323,35 +333,45 @@
           </div>
         </div>
 
-        <!-- SUBMISSION -->
         <button onclick="submitOrderWhatsApp()" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 rounded-xl transition flex items-center justify-center gap-2 shadow-sm text-xs">
           <i class="fa-brands fa-whatsapp text-sm"></i>
           <span>Send Verification to WhatsApp</span>
         </button>
-
       </div>
     </div>
   </div>
 
-  <!-- PORTAL LOGIN MODAL -->
+  <!-- STRICT AUTHENTICATED PORTAL LOGIN MODAL -->
   <div id="portalModal" class="fixed inset-0 bg-slate-950/60 backdrop-blur-xs z-50 hidden flex items-center justify-center p-4">
-    <div class="bg-white rounded-3xl max-w-sm w-full shadow-2xl p-6 space-y-4 border border-slate-200">
+    <div class="bg-white rounded-3xl max-w-sm w-full shadow-2xl p-6 space-y-4 border border-slate-200 animate-fade-in">
       <div class="text-center space-y-1">
         <div class="w-10 h-10 rounded-2xl bg-[#132644] text-white flex items-center justify-center mx-auto text-base">
-          <i class="fa-solid fa-book-open text-amber-300"></i>
+          <i class="fa-solid fa-shield-halved text-amber-300"></i>
         </div>
-        <h3 class="text-base font-bold text-slate-900">سٹوڈنٹ پورٹل لاگ ان</h3>
-        <p class="text-xs text-slate-500">اپنی منظور شدہ جی میل درج کر کے نوٹس کھولیں۔</p>
+        <h3 class="text-base font-bold text-slate-900">محفوظ سٹوڈنٹ پورٹل</h3>
+        <p class="text-xs text-slate-500">ادائیگی کے بعد موصول شدہ پاس کوڈ کے بغیر رسائی ممکن نہیں ہے۔</p>
       </div>
 
       <div class="space-y-3 text-xs">
-        <input type="email" id="loginEmail" placeholder="Enter Approved Gmail..." class="w-full border border-slate-300 rounded-xl px-3 py-2.5 focus:ring-2 focus:ring-[#3b7eb9] focus:outline-none" />
-        <input type="text" id="loginSubject" placeholder="Enter Course Code (e.g. MTH401)..." class="w-full border border-slate-300 rounded-xl px-3 py-2.5 uppercase focus:ring-2 focus:ring-[#3b7eb9] focus:outline-none" />
-        <button onclick="unlockStudentReader()" class="w-full bg-[#132644] hover:bg-slate-800 text-white font-bold py-2.5 rounded-xl transition">
-          اوپن پورٹل (Read Notes)
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">منظور شدہ جی میل (Approved Gmail)</label>
+          <input type="email" id="loginEmail" placeholder="student@gmail.com" class="w-full border border-slate-300 rounded-xl px-3 py-2.5 focus:ring-2 focus:ring-[#3b7eb9] focus:outline-none" />
+        </div>
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">کورس کوڈ (Course Code)</label>
+          <input type="text" id="loginSubject" placeholder="MTH401, CS610 وغیرہ" class="w-full border border-slate-300 rounded-xl px-3 py-2.5 uppercase focus:ring-2 focus:ring-[#3b7eb9] focus:outline-none" />
+        </div>
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">سیکریٹ ایکسیس کی / پاس کوڈ (Access Passcode) *</label>
+          <input type="password" id="loginPasscode" placeholder="Enter Secret Access Passcode..." class="w-full border border-slate-300 rounded-xl px-3 py-2.5 font-mono focus:ring-2 focus:ring-amber-400 focus:outline-none" />
+          <span class="text-[10px] text-slate-400 mt-0.5 block">یہ پاس کوڈ آپ کو واٹس ایپ پر پیمنٹ ویریفیکیشن کے بعد دیا جاتا ہے۔</span>
+        </div>
+
+        <button onclick="unlockStudentReaderStrict()" class="w-full bg-[#132644] hover:bg-slate-800 text-white font-bold py-2.5 rounded-xl transition">
+          ویریفائی کر کے پورٹل کھولیں
         </button>
         <button onclick="closePortalModal()" class="w-full text-slate-400 hover:text-slate-600 py-1">
-          Cancel
+          بند کریں (Cancel)
         </button>
       </div>
     </div>
@@ -363,7 +383,7 @@
       <div class="flex items-center space-x-2 text-slate-700 font-bold">
         <span>SDG Insights</span>
         <span class="text-slate-300">|</span>
-        <span class="font-normal text-slate-500">Virtual University Exam Prep Hub</span>
+        <span class="font-normal text-slate-500">Virtual University Exam Preparation Portal</span>
       </div>
       <div class="flex items-center space-x-4">
         <a href="https://wa.me/923198519637" target="_blank" class="text-emerald-700 font-semibold hover:underline">WhatsApp: 0319-8519637</a>
@@ -372,62 +392,78 @@
     </div>
   </footer>
 
-  <!-- DATABASE & JAVASCRIPT LOGIC -->
+  <!-- JAVASCRIPT LOGIC & AUTHENTICATION -->
   <script>
-    const courses = [
-      // COMPUTER SCIENCE
-      { code: "CS101", title: "Introduction to Computing", cat: "BSCS", sem: "Semester 1", mid: "Rs. 500", final: "Rs. 800", video: "http://www.youtube.com/channel/UCoP6Wjlq-v-bNveHWhnuyQQ", desc: "Foundational computing, binary logic, algorithms, hardware/software, and verified MCQs." },
-      { code: "CS201", title: "Introduction to Programming (C++)", cat: "BSCS", sem: "Semester 2", mid: "Rs. 600", final: "Rs. 1000", practical: true, video: "http://www.youtube.com/channel/UCoP6Wjlq-v-bNveHWhnuyQQ", desc: "C++ syntax, functions, pointers, memory allocation, and CS201P practical viva files." },
-      { code: "CS301", title: "Data Structures & Algorithms", cat: "BSCS", sem: "Semester 3", mid: "Rs. 600", final: "Rs. 1000", practical: true, video: "http://www.youtube.com/watch?v=5wcKSk29D3U", desc: "Stacks, Queues, Singly/Doubly Linked Lists, Binary Trees, and CS301P viva diagrams." },
-      { code: "CS304", title: "Object Oriented Programming", cat: "BSCS", sem: "Semester 3", mid: "Rs. 600", final: "Rs. 1000", practical: true, video: "http://www.youtube.com/playlist?list=PLeFlYJE1s0Pk", desc: "OOP classes, inheritance, polymorphism, operator overloading, and CS304P practical coding." },
-      { code: "CS401", title: "Computer Architecture & Assembly", cat: "BSCS", sem: "Semester 4", mid: "Rs. 600", final: "Rs. 1000", practical: true, video: "http://www.youtube.com/channel/UCoP6Wjlq-v-bNveHWhnuyQQ", desc: "8086 processor, NASM assembly language, registers, interrupts, and CS401P practical." },
-      { code: "CS402", title: "Theory of Automata", cat: "BSCS", sem: "Semester 4", mid: "Rs. 600", final: "Rs. 800", video: "http://www.youtube.com/channel/UCoP6Wjlq-v-bNveHWhnuyQQ", desc: "Regular expressions, FA, TG, CFG, PDA, and Turing Machines." },
-      { code: "CS403", title: "Database Management Systems", cat: "BSCS", sem: "Semester 4", mid: "Rs. 600", final: "Rs. 1000", practical: true, video: "http://www.youtube.com/playlist?list=PLpIaHMEigBC_0nZU9WZZYnkyitjrNmvAF", desc: "ERD diagrams, SQL queries, normalization 1NF to BCNF, and CS403P." },
-      { code: "CS504", title: "Software Engineering - I", cat: "BSCS", sem: "Semester 5", mid: "Rs. 600", final: "Rs. 800", video: "http://www.youtube.com/channel/UCoP6Wjlq-v-bNveHWhnuyQQ", desc: "Software process models, requirements engineering, and UML architecture." },
-      { code: "CS506", title: "Web Design and Development", cat: "BSCS", sem: "Semester 5", mid: "Rs. 600", final: "Rs. 800", video: "http://www.youtube.com/channel/UCoP6Wjlq-v-bNveHWhnuyQQ", desc: "Java EE web programming, servlets, JSP, JDBC database connection, and MVC." },
-      { code: "CS601", title: "Data Communication", cat: "BSCS", sem: "Semester 5", mid: "Rs. 600", final: "Rs. 800", video: "http://www.youtube.com/playlist?list=PLpIaHMEigBC_6145imvtEnUee9iUDB_Dq", desc: "Data transmission modes, signal encoding, multiplexing, and OSI physical layer." },
-      { code: "CS604", title: "Operating Systems", cat: "BSCS", sem: "Semester 6", mid: "Rs. 600", final: "Rs. 800", video: "http://www.youtube.com/channel/UCoP6Wjlq-v-bNveHWhnuyQQ", desc: "Process scheduling, deadlocks, semaphores, virtual memory, and disk management." },
-      { code: "CS610", title: "Computer Networks", cat: "BSCS", sem: "Semester 6", mid: "Rs. 600", final: "Rs. 800", video: "http://www.youtube.com/playlist?list=PLpIaHMEigBC-LdhxFxtum9r8Fl4-JpYxz", desc: "TCP/IP suite, routing protocols, subnetting, CIDR, packet switching, and security." },
-      
-      // MATHEMATICS
-      { code: "MTH101", title: "Calculus And Analytical Geometry", cat: "MATH", sem: "Semester 1", mid: "Rs. 600", final: "Rs. 900", video: "http://www.youtube.com/watch?v=elDi1mY5KxA", desc: "Limits, continuity, derivatives, tangents, and complete handout exercise steps." },
-      { code: "MTH202", title: "Discrete Mathematics", cat: "MATH", sem: "Semester 2", mid: "Rs. 600", final: "Rs. 900", video: "http://www.youtube.com/playlist?list=PLpIaHMEigBC8w9453EMvH4hryWi-ymZOR", desc: "Sets, truth tables, logic gates, relations, recurrence relations, and graph theory." },
-      { code: "MTH301", title: "Calculus II (Multivariable)", cat: "MATH", sem: "Semester 3", mid: "Rs. 600", final: "Rs. 900", video: "http://www.youtube.com/playlist?list=PLpIaHMEigBC-qJT1B3Ynuv27aonJakDl_", desc: "Vectors, dot/cross products, partial differentiation, multiple integrals." },
-      { code: "MTH401", title: "Differential Equations Master Notes", cat: "MATH", sem: "Semester 4", mid: "Rs. 600", final: "Rs. 900", video: "http://www.youtube.com/channel/UCoP6Wjlq-v-bNveHWhnuyQQ", desc: "100% Handout-Accurate Solved ODEs, Laplace transforms, and boundary problems." },
-      { code: "MTH501", title: "Linear Algebra", cat: "MATH", sem: "Semester 4", mid: "Rs. 600", final: "Rs. 900", video: "http://www.youtube.com/channel/UCoP6Wjlq-v-bNveHWhnuyQQ", desc: "Matrix operations, determinants, vector spaces, eigenvalues, and eigenvectors." },
-      
-      // MANAGEMENT
-      { code: "MGT101", title: "Financial Accounting", cat: "MGMT", sem: "Semester 1", mid: "Rs. 500", final: "Rs. 500", video: "http://www.youtube.com/channel/UCoP6Wjlq-v-bNveHWhnuyQQ", desc: "Journal entries, ledgers, trial balance, and financial statement solutions." },
-      { code: "MGT501", title: "Human Resource Management", cat: "MGMT", sem: "Semester 4", mid: "Rs. 500", final: "Rs. 500", video: "http://www.youtube.com/playlist?list=PLpIaHMEigBC-YFSYa7mADA9inlKrlvTZk", desc: "Recruitment, performance appraisal, compensation, and labor relations." },
-      { code: "MGT503", title: "Principles of Management", cat: "MGMT", sem: "Semester 3", mid: "Rs. 500", final: "Rs. 500", video: "http://www.youtube.com/playlist?list=PLpIaHMEigBC8VVB2lslzv4lPapD_wpKX0", desc: "POLC framework, leadership theories, and strategic motivation." },
-      { code: "MGT602", title: "Entrepreneurship", cat: "MGMT", sem: "Semester 5", mid: "Rs. 500", final: "Rs. 500", video: "http://www.youtube.com/playlist?list=PLpIaHMEigBC-04LF6CH_lzlppgyAllJ3g", desc: "Business model canvas, opportunity recognition, and venture financing." },
-      
-      // CS619 PROJECT
-      { code: "CS619", title: "Final Year Project Complete Guidance", cat: "CS619", sem: "Semester 7/8", mid: "Contact on WhatsApp", final: "Contact on WhatsApp", isProject: true, video: "http://www.youtube.com/channel/UCoP6Wjlq-v-bNveHWhnuyQQ", desc: "Complete SRS Documentation, Architecture Design, Test Phase Coding, Prototype & Viva Prep." }
+    // PRE-DEFINED VALID AUTHORIZATION CODES (YOU CONTROL THESE)
+    // Aap jo bhi passcode student ko dengi wo yahan likha hoga
+    const authorizedPasscodes = [
+      "SDG-PASS-2026", 
+      "MTH401-VIP", 
+      "CS610-VIP", 
+      "CS301-VIP", 
+      "VU-EXAM-PREP"
     ];
 
-    let currentCategory = 'All';
-    let activeSearch = '';
-    let selectedCourse = null;
-    let selectedPriceType = 'mid'; // 'mid' or 'final'
+    const catalogData = [
+      // CS COURSES
+      { code: "CS101", title: "Introduction to Computing", types: ["MID", "FINAL", "NOTES", "HIGHLIGHTED"], midPrice: "Rs. 500", finalPrice: "Rs. 800", hlPrice: "Rs. 300", video: "http://www.youtube.com/channel/UCoP6Wjlq-v-bNveHWhnuyQQ", desc: "Foundational computing, binary logic, algorithms & verified past papers." },
+      { code: "CS201", title: "Introduction to Programming (C++)", types: ["MID", "FINAL", "NOTES", "HIGHLIGHTED", "ASSIGNMENT"], midPrice: "Rs. 600", finalPrice: "Rs. 1000", hlPrice: "Rs. 300", video: "http://www.youtube.com/channel/UCoP6Wjlq-v-bNveHWhnuyQQ", desc: "C++ syntax, loops, functions, memory allocation, and CS201P practical files." },
+      { code: "CS301", title: "Data Structures & Algorithms", types: ["MID", "FINAL", "NOTES", "HIGHLIGHTED", "ASSIGNMENT"], midPrice: "Rs. 600", finalPrice: "Rs. 1000", hlPrice: "Rs. 300", video: "http://www.youtube.com/watch?v=5wcKSk29D3U", desc: "Stacks, Queues, Linked Lists, Trees, and CS301P practical viva diagrams." },
+      { code: "CS304", title: "Object Oriented Programming", types: ["MID", "FINAL", "NOTES", "HIGHLIGHTED"], midPrice: "Rs. 600", finalPrice: "Rs. 1000", hlPrice: "Rs. 300", video: "http://www.youtube.com/playlist?list=PLeFlYJE1s0Pk", desc: "OOP classes, inheritance, polymorphism, operator overloading, and CS304P." },
+      { code: "CS401", title: "Computer Architecture & Assembly", types: ["MID", "FINAL", "NOTES", "HIGHLIGHTED"], midPrice: "Rs. 600", finalPrice: "Rs. 1000", hlPrice: "Rs. 300", video: "http://www.youtube.com/channel/UCoP6Wjlq-v-bNveHWhnuyQQ", desc: "8086 processor, NASM assembly language, registers, interrupts, and CS401P." },
+      { code: "CS402", title: "Theory of Automata", types: ["MID", "FINAL", "NOTES", "HIGHLIGHTED"], midPrice: "Rs. 600", finalPrice: "Rs. 800", hlPrice: "Rs. 300", video: "http://www.youtube.com/channel/UCoP6Wjlq-v-bNveHWhnuyQQ", desc: "Regular expressions, FA, TG, Kleene's theorem, CFG, PDA, and Turing Machines." },
+      { code: "CS403", title: "Database Management Systems", types: ["MID", "FINAL", "NOTES", "HIGHLIGHTED", "ASSIGNMENT"], midPrice: "Rs. 600", finalPrice: "Rs. 1000", hlPrice: "Rs. 300", video: "http://www.youtube.com/playlist?list=PLpIaHMEigBC_0nZU9WZZYnkyitjrNmvAF", desc: "ERD diagrams, SQL queries, normalization 1NF to BCNF, and CS403P." },
+      { code: "CS610", title: "Computer Networks", types: ["MID", "FINAL", "NOTES", "HIGHLIGHTED"], midPrice: "Rs. 600", finalPrice: "Rs. 800", hlPrice: "Rs. 300", video: "http://www.youtube.com/playlist?list=PLpIaHMEigBC-LdhxFxtum9r8Fl4-JpYxz", desc: "TCP/IP suite, routing protocols, subnetting, CIDR, and network security." },
+      { code: "CS601", title: "Data Communication", types: ["MID", "FINAL", "NOTES", "HIGHLIGHTED"], midPrice: "Rs. 600", finalPrice: "Rs. 800", hlPrice: "Rs. 300", video: "http://www.youtube.com/playlist?list=PLpIaHMEigBC_6145imvtEnUee9iUDB_Dq", desc: "Data transmission modes, signal encoding, multiplexing, and OSI layer." },
 
-    function renderCards() {
-      const grid = document.getElementById("cardsGrid");
+      // MATH COURSES
+      { code: "MTH101", title: "Calculus And Analytical Geometry", types: ["MID", "FINAL", "NOTES", "HIGHLIGHTED"], midPrice: "Rs. 600", finalPrice: "Rs. 900", hlPrice: "Rs. 300", video: "http://www.youtube.com/watch?v=elDi1mY5KxA", desc: "Limits, continuity, derivatives, tangents, and complete handout exercise steps." },
+      { code: "MTH202", title: "Discrete Mathematics", types: ["MID", "FINAL", "NOTES", "HIGHLIGHTED"], midPrice: "Rs. 600", finalPrice: "Rs. 900", hlPrice: "Rs. 300", video: "http://www.youtube.com/playlist?list=PLpIaHMEigBC8w9453EMvH4hryWi-ymZOR", desc: "Sets, truth tables, logic gates, relations, recurrence relations, and graph theory." },
+      { code: "MTH301", title: "Calculus II (Multivariable)", types: ["MID", "FINAL", "NOTES", "HIGHLIGHTED"], midPrice: "Rs. 600", finalPrice: "Rs. 900", hlPrice: "Rs. 300", video: "http://www.youtube.com/playlist?list=PLpIaHMEigBC-qJT1B3Ynuv27aonJakDl_", desc: "Vectors, dot/cross products, partial differentiation, multiple integrals." },
+      { code: "MTH401", title: "Differential Equations Master Notes", types: ["MID", "FINAL", "NOTES", "HIGHLIGHTED"], midPrice: "Rs. 600", finalPrice: "Rs. 900", hlPrice: "Rs. 300", video: "http://www.youtube.com/channel/UCoP6Wjlq-v-bNveHWhnuyQQ", desc: "First-order ODEs, homogeneous/exact equations, Laplace transforms." },
+
+      // MANAGEMENT COURSES
+      { code: "MGT101", title: "Financial Accounting", types: ["MID", "FINAL", "NOTES", "HIGHLIGHTED", "ASSIGNMENT"], midPrice: "Rs. 500", finalPrice: "Rs. 500", hlPrice: "Rs. 300", video: "http://www.youtube.com/channel/UCoP6Wjlq-v-bNveHWhnuyQQ", desc: "Ledgers, trial balance, adjustments, and financial statements." },
+      { code: "MGT501", title: "Human Resource Management", types: ["MID", "FINAL", "NOTES", "HIGHLIGHTED"], midPrice: "Rs. 500", finalPrice: "Rs. 500", hlPrice: "Rs. 300", video: "http://www.youtube.com/playlist?list=PLpIaHMEigBC-YFSYa7mADA9inlKrlvTZk", desc: "Recruitment, performance appraisal, compensation, and labor relations." },
+      { code: "MGT503", title: "Principles of Management", types: ["MID", "FINAL", "NOTES", "HIGHLIGHTED"], midPrice: "Rs. 500", finalPrice: "Rs. 500", hlPrice: "Rs. 300", video: "http://www.youtube.com/playlist?list=PLpIaHMEigBC8VVB2lslzv4lPapD_wpKX0", desc: "POLC framework, leadership theories, and strategic motivation." },
+      { code: "MGT602", title: "Entrepreneurship", types: ["MID", "FINAL", "NOTES", "HIGHLIGHTED"], midPrice: "Rs. 500", finalPrice: "Rs. 500", hlPrice: "Rs. 300", video: "http://www.youtube.com/playlist?list=PLpIaHMEigBC-04LF6CH_lzlppgyAllJ3g", desc: "Business model canvas, opportunity recognition, and funding." }
+    ];
+
+    let currentService = 'ALL';
+    let searchQuery = '';
+    let selectedItem = null;
+    let selectedChoice = 'mid';
+
+    function renderCatalog() {
+      const grid = document.getElementById("catalogGrid");
       grid.innerHTML = "";
 
-      const filtered = courses.filter(c => {
-        const matchCat = currentCategory === 'All' || c.cat === currentCategory || (currentCategory === 'CS619' && c.code === 'CS619');
-        const matchSearch = activeSearch === '' || 
-          c.code.toLowerCase().includes(activeSearch) || 
-          c.title.toLowerCase().includes(activeSearch);
-        return matchCat && matchSearch;
+      const filtered = catalogData.filter(item => {
+        const matchSvc = currentService === 'ALL' || item.types.includes(currentService);
+        const matchSearch = searchQuery === '' || 
+          item.code.toLowerCase().includes(searchQuery) || 
+          item.title.toLowerCase().includes(searchQuery);
+        return matchSvc && matchSearch;
       });
 
-      document.getElementById("resultsCount").innerText = `${filtered.length} Subjects`;
+      document.getElementById("itemCount").innerText = `${filtered.length} Items`;
 
       filtered.forEach(item => {
         const card = document.createElement("div");
         card.className = "bg-white border border-slate-200 rounded-3xl p-5 card-hover flex flex-col justify-between";
+
+        let priceTag = item.midPrice;
+        let badgeText = "Exam Preparation";
+        if (currentService === 'HIGHLIGHTED') {
+          priceTag = item.hlPrice;
+          badgeText = "Highlighted Handout";
+        } else if (currentService === 'FINAL') {
+          priceTag = item.finalPrice;
+          badgeText = "Final Term";
+        } else if (currentService === 'MID') {
+          priceTag = item.midPrice;
+          badgeText = "Midterm";
+        }
 
         card.innerHTML = `
           <div>
@@ -435,8 +471,8 @@
               <span class="font-mono text-xs font-black text-[#132644] bg-slate-100 px-2.5 py-1 rounded-lg">
                 ${item.code}
               </span>
-              <span class="text-[11px] font-semibold text-slate-400">
-                ${item.sem}
+              <span class="text-[11px] font-bold text-slate-400">
+                ${badgeText}
               </span>
             </div>
 
@@ -451,10 +487,10 @@
 
           <div class="pt-3 border-t border-slate-100 flex items-center justify-between mt-auto">
             <div>
-              <span class="text-[10px] text-slate-400 font-bold uppercase block">Starting From</span>
-              <span class="font-extrabold text-sm text-[#132644]">${item.mid}</span>
+              <span class="text-[10px] text-slate-400 font-bold uppercase block">Starting</span>
+              <span class="font-extrabold text-sm text-[#132644]">${priceTag}</span>
             </div>
-            <button onclick="openCourseDetails('${item.code}')" class="bg-[#132644] hover:bg-slate-800 text-white font-bold text-xs px-4 py-2 rounded-xl transition shadow-xs">
+            <button onclick="openDetailModal('${item.code}')" class="bg-[#132644] hover:bg-slate-800 text-white font-bold text-xs px-4 py-2 rounded-xl transition shadow-xs">
               View Details & Notes
             </button>
           </div>
@@ -463,38 +499,38 @@
       });
     }
 
-    function filterCourses() {
-      activeSearch = document.getElementById("courseSearch").value.toLowerCase().trim();
-      renderCards();
+    function filterCatalog() {
+      searchQuery = document.getElementById("courseSearch").value.toLowerCase().trim();
+      renderCatalog();
     }
 
-    function setCategory(cat) {
-      currentCategory = cat;
-      ['All', 'BSCS', 'MATH', 'MGMT', 'CS619'].forEach(c => {
-        const btn = document.getElementById(`cat-${c}`);
+    function setServiceCategory(svc) {
+      currentService = svc;
+      ['ALL', 'MID', 'FINAL', 'HIGHLIGHTED', 'NOTES', 'ASSIGNMENT'].forEach(s => {
+        const btn = document.getElementById(`svc-${s}`);
         if (btn) {
-          if (c === cat) {
-            btn.className = "tab-active px-4 py-2 rounded-xl transition shadow-xs";
+          if (s === svc) {
+            btn.className = "btn-cat-active px-4 py-2.5 rounded-xl border transition";
           } else {
-            btn.className = "bg-slate-100 hover:bg-slate-200 text-slate-700 px-4 py-2 rounded-xl font-semibold transition";
+            btn.className = "bg-white hover:bg-slate-50 text-slate-700 px-4 py-2.5 rounded-xl border border-slate-200 transition";
           }
         }
       });
-      renderCards();
+      renderCatalog();
     }
 
-    function openCourseDetails(code) {
-      selectedCourse = courses.find(c => c.code === code);
-      if (!selectedCourse) return;
+    function openDetailModal(code) {
+      selectedItem = catalogData.find(c => c.code === code);
+      if (!selectedItem) return;
 
-      document.getElementById("mCode").innerText = `${selectedCourse.code} • ${selectedCourse.sem}`;
-      document.getElementById("mTitle").innerText = selectedCourse.title;
-      document.getElementById("mDesc").innerText = selectedCourse.desc;
-      document.getElementById("mMidPrice").innerText = selectedCourse.mid;
-      document.getElementById("mFinalPrice").innerText = selectedCourse.final;
-      document.getElementById("mVideoLink").href = selectedCourse.video;
+      document.getElementById("mCode").innerText = `${selectedItem.code}`;
+      document.getElementById("mTitle").innerText = selectedItem.title;
+      document.getElementById("mDesc").innerText = selectedItem.desc;
+      document.getElementById("mMidPrice").innerText = selectedItem.midPrice;
+      document.getElementById("mFinalPrice").innerText = selectedItem.finalPrice;
+      document.getElementById("mVideoLink").href = selectedItem.video;
 
-      selectPriceType('mid');
+      selectType('mid');
       document.getElementById("detailModal").classList.remove("hidden");
     }
 
@@ -502,8 +538,8 @@
       document.getElementById("detailModal").classList.add("hidden");
     }
 
-    function selectPriceType(type) {
-      selectedPriceType = type;
+    function selectType(type) {
+      selectedChoice = type;
       const lblMid = document.getElementById("lblMid");
       const lblFinal = document.getElementById("lblFinal");
 
@@ -521,24 +557,25 @@
       const email = document.getElementById("cEmail").value.trim();
       const trx = document.getElementById("cTrx").value.trim();
 
-      if (name.length < 3) { alert("براہِ کرم اپنا درست نام درج کریں۔"); return; }
-      if (!email.includes("@")) { alert("براہِ کرم درست جی میل ایڈریس درج کریں۔"); return; }
-      if (trx.length < 8) { alert("براہِ کرم درست ٹرانزیکشن آئی ڈی (Trx ID) درج کریں۔"); return; }
+      if (name.length < 3) { alert("براہِ کرم اپنا نام درج کریں۔"); return; }
+      if (!email.includes("@")) { alert("براہِ کرم درست جی میل درج کریں۔"); return; }
+      if (trx.length < 8) { alert("براہِ کرم درست ٹرانزیکشن نمبر (Trx ID) درج کریں۔"); return; }
 
-      const fee = selectedPriceType === 'mid' ? selectedCourse.mid : selectedCourse.final;
-      const typeText = selectedPriceType === 'mid' ? "Midterm Pack" : "Final Term Pack";
+      const price = selectedChoice === 'mid' ? selectedItem.midPrice : selectedItem.finalPrice;
+      const termName = selectedChoice === 'mid' ? "Midterm Pack" : "Finalterm Pack";
 
-      const msg = `*Assalam-o-Alaikum SDG Insights!*%0A%0AMaine website se course enroll kiya hai:%0A*Course:* ${selectedCourse.code} - ${selectedCourse.title}%0A*Type:* ${typeText}%0A*Fee:* ${fee}%0A*Student Name:* ${name}%0A*Gmail:* ${email}%0A*Trx ID:* ${trx}%0A%0ABarah-e-Karam portal access allow kar dein. Shukriya!`;
+      const msg = `*Assalam-o-Alaikum SDG Insights!*%0A%0AMaine website se course pack khareeda hai:%0A*Course:* ${selectedItem.code} - ${selectedItem.title}%0A*Type:* ${termName}%0A*Fee:* ${price}%0A*Student Name:* ${name}%0A*Gmail:* ${email}%0A*Trx ID:* ${trx}%0A%0ABarah-e-Karam payment verify karke mujhe portal ka Passcode (Secret Key) faraham kar dein. Shukriya!`;
 
       window.open(`https://wa.me/923198519637?text=${msg}`, '_blank');
       closeDetailModal();
     }
 
-    function openCustomRequest() {
-      window.open("https://wa.me/923198519637?text=Assalam-o-Alaikum!%20Mujhe%20apne%20custom%20subject%20ke%20notes%20aur%20assignment%20ke%20bare%20mein%20rabta%20karna%20hai.", "_blank");
+    function openCustomWhatsApp(topic) {
+      const msg = `*Assalam-o-Alaikum SDG Insights!*%0A%0AMujhe custom requirement ke bare mein rabta karna hai:%0A*Requirement:* ${topic}%0A%0APlease guide me with pricing and details. Shukriya!`;
+      window.open(`https://wa.me/923198519637?text=${msg}`, '_blank');
     }
 
-    // SECURE PORTAL CONTROLS
+    // STRICT AUTHENTICATION (NO RANDOM ACCESS ALLOWED)
     function openPortalModal() {
       document.getElementById("portalModal").classList.remove("hidden");
     }
@@ -547,21 +584,29 @@
       document.getElementById("portalModal").classList.add("hidden");
     }
 
-    function unlockStudentReader() {
+    function unlockStudentReaderStrict() {
       const email = document.getElementById("loginEmail").value.trim();
       const subject = document.getElementById("loginSubject").value.trim().toUpperCase() || "MTH401";
+      const passcode = document.getElementById("loginPasscode").value.trim();
 
       if (!email.includes("@")) {
-        alert("براہِ کرم اپنی رجسٹرڈ جی میل درج کریں۔");
+        alert("براہِ کرم اپنی درست جی میل درج کریں۔");
         return;
       }
 
+      // STRICT CHECK: Code must match your approved list!
+      if (!passcode || !authorizedPasscodes.includes(passcode)) {
+        alert("❌ رسائی مسترد کر دی گئی ہے!\n\nآپ کا درج کردہ پاس کوڈ یا جی میل تصدیق شدہ نہیں ہے۔ پورٹل کا خفیہ کوڈ حاصل کرنے کے لیے پہلے واٹس ایپ پر ادائیگی مکمل کریں۔");
+        return;
+      }
+
+      // Only authorized students reach here
       closePortalModal();
       document.getElementById("publicHomepage").classList.add("hidden");
       document.getElementById("studyReaderView").classList.remove("hidden");
 
-      document.getElementById("readerSubBadge").innerText = `${subject} • Verified Access`;
-      document.getElementById("readerCourseName").innerText = `${subject} Interactive Master Study Notes`;
+      document.getElementById("readerCourseName").innerText = `${subject} Master Interactive Notes`;
+      alert("✓ رسائی منظور ہو گئی ہے! خوش آمدید۔");
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
@@ -570,12 +615,12 @@
       document.getElementById("publicHomepage").classList.remove("hidden");
     }
 
-    function loadReaderSection(sec) {
-      alert("سیکشن لوڈ ہو گیا ہے۔ سٹوڈنٹ صرف اسی اسکرین پر نوٹس پڑھے گا، کوئی فائل ڈاؤن لوڈ نہیں ہوگی۔");
+    function loadReaderContent(sec) {
+      alert("سیکشن تبدیل ہو گیا۔ سٹوڈنٹ نوٹس کو صرف آن لائن پڑھے گا، کوئی فائل ڈاؤن لوڈ نہیں ہو سکے گی۔");
     }
 
     // Initialize
-    renderCards();
+    renderCatalog();
   </script>
 </body>
 </html>
