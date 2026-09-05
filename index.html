@@ -16,15 +16,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Noto+Nastaliq+Urdu:wght@400;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
 
   <style>
-    :root {
-      --brand-navy: #102138;
-      --brand-blue: #3a80bc;
-      --brand-sky: #60a5fa;
-    }
-
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
-      background-color: #0c1626; /* Deep Canvas */
+      background-color: #09121f;
       color: #0f172a;
       overflow-x: hidden;
       min-height: 100vh;
@@ -32,8 +26,8 @@
     .urdu-font { font-family: 'Noto Nastaliq Urdu', serif; line-height: 2.3; }
     .handwriting { font-family: 'Caveat', cursive; }
 
-    /* DYNAMIC AURORA GLOW MORPHISM BACKGROUND */
-    .aurora-bg {
+    /* DYNAMIC COLOR-SHIFTING AURORA GLOW MORPHISM */
+    .aurora-canvas {
       position: fixed;
       top: 0;
       left: 0;
@@ -42,74 +36,94 @@
       z-index: 0;
       pointer-events: none;
       overflow: hidden;
-      background: radial-gradient(circle at 50% 10%, #102138 0%, #080f1a 100%);
+      background: radial-gradient(circle at 50% 15%, #0f2038 0%, #050a12 100%);
     }
 
-    .glow-orb-1 {
-      position: absolute;
-      width: 600px;
-      height: 600px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(58, 128, 188, 0.45) 0%, rgba(58, 128, 188, 0) 70%);
-      top: -100px;
-      left: -100px;
-      filter: blur(90px);
-      animation: floatGlow1 12s ease-in-out infinite alternate;
-    }
-
-    .glow-orb-2 {
+    /* 3 GLOWING ORBS THAT SHIFT COLORS CONTINUOUSLY */
+    .color-orb-1 {
       position: absolute;
       width: 650px;
       height: 650px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(96, 165, 250, 0.38) 0%, rgba(96, 165, 250, 0) 70%);
+      top: -100px;
+      left: -100px;
+      filter: blur(100px);
+      animation: shiftColors1 14s ease-in-out infinite alternate, floatOrb1 18s ease-in-out infinite alternate;
+    }
+
+    .color-orb-2 {
+      position: absolute;
+      width: 700px;
+      height: 700px;
+      border-radius: 50%;
       top: 30%;
       right: -150px;
-      filter: blur(100px);
-      animation: floatGlow2 14s ease-in-out infinite alternate;
+      filter: blur(110px);
+      animation: shiftColors2 16s ease-in-out infinite alternate, floatOrb2 20s ease-in-out infinite alternate;
     }
 
-    .glow-orb-3 {
+    .color-orb-3 {
       position: absolute;
-      width: 500px;
-      height: 500px;
+      width: 550px;
+      height: 550px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(37, 99, 235, 0.35) 0%, rgba(37, 99, 235, 0) 70%);
       bottom: -100px;
-      left: 25%;
-      filter: blur(95px);
-      animation: floatGlow3 16s ease-in-out infinite alternate;
+      left: 20%;
+      filter: blur(100px);
+      animation: shiftColors3 15s ease-in-out infinite alternate, floatOrb3 22s ease-in-out infinite alternate;
     }
 
-    @keyframes floatGlow1 {
-      0% { transform: translate(0, 0) scale(1); }
-      50% { transform: translate(120px, 80px) scale(1.15); }
-      100% { transform: translate(60px, 160px) scale(0.95); }
-    }
-    @keyframes floatGlow2 {
-      0% { transform: translate(0, 0) scale(1); }
-      50% { transform: translate(-140px, 100px) scale(1.2); }
-      100% { transform: translate(-70px, -60px) scale(1); }
-    }
-    @keyframes floatGlow3 {
-      0% { transform: translate(0, 0) scale(1); }
-      50% { transform: translate(-80px, -120px) scale(1.18); }
-      100% { transform: translate(100px, -40px) scale(1); }
+    /* COLOR SHIFTING ANIMATIONS */
+    @keyframes shiftColors1 {
+      0% { background: radial-gradient(circle, rgba(58, 128, 188, 0.65) 0%, rgba(58, 128, 188, 0) 70%); }
+      33% { background: radial-gradient(circle, rgba(37, 99, 235, 0.6) 0%, rgba(37, 99, 235, 0) 70%); }
+      66% { background: radial-gradient(circle, rgba(99, 102, 241, 0.55) 0%, rgba(99, 102, 241, 0) 70%); }
+      100% { background: radial-gradient(circle, rgba(14, 165, 233, 0.6) 0%, rgba(14, 165, 233, 0) 70%); }
     }
 
-    /* GLASSMORPHIC LUXURY CARDS */
+    @keyframes shiftColors2 {
+      0% { background: radial-gradient(circle, rgba(96, 165, 250, 0.55) 0%, rgba(96, 165, 250, 0) 70%); }
+      33% { background: radial-gradient(circle, rgba(56, 189, 248, 0.55) 0%, rgba(56, 189, 248, 0) 70%); }
+      66% { background: radial-gradient(circle, rgba(129, 140, 248, 0.5) 0%, rgba(129, 140, 248, 0) 70%); }
+      100% { background: radial-gradient(circle, rgba(37, 99, 235, 0.55) 0%, rgba(37, 99, 235, 0) 70%); }
+    }
+
+    @keyframes shiftColors3 {
+      0% { background: radial-gradient(circle, rgba(37, 99, 235, 0.5) 0%, rgba(37, 99, 235, 0) 70%); }
+      33% { background: radial-gradient(circle, rgba(79, 70, 229, 0.45) 0%, rgba(79, 70, 229, 0) 70%); }
+      66% { background: radial-gradient(circle, rgba(14, 165, 233, 0.55) 0%, rgba(14, 165, 233, 0) 70%); }
+      100% { background: radial-gradient(circle, rgba(58, 128, 188, 0.55) 0%, rgba(58, 128, 188, 0) 70%); }
+    }
+
+    @keyframes floatOrb1 {
+      0% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(140px, 90px) scale(1.15); }
+      100% { transform: translate(70px, 180px) scale(0.95); }
+    }
+    @keyframes floatOrb2 {
+      0% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(-160px, 120px) scale(1.2); }
+      100% { transform: translate(-80px, -70px) scale(1); }
+    }
+    @keyframes floatOrb3 {
+      0% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(-90px, -140px) scale(1.18); }
+      100% { transform: translate(120px, -50px) scale(1); }
+    }
+
+    /* FROSTED GLASSMORPHIC LUXURY CARDS */
     .glass-card {
       background: rgba(255, 255, 255, 0.94);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.6);
-      box-shadow: 0 16px 32px -8px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.5) inset;
-      transition: all 0.26s cubic-bezier(0.16, 1, 0.3, 1);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.6) inset;
+      transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .glass-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 24px 40px -10px rgba(16, 33, 56, 0.25), 0 0 25px rgba(58, 128, 188, 0.25);
-      border-color: rgba(58, 128, 188, 0.7);
+      box-shadow: 0 24px 44px -10px rgba(16, 33, 56, 0.35), 0 0 30px rgba(58, 128, 188, 0.35);
+      border-color: rgba(58, 128, 188, 0.8);
     }
 
     /* TAB VISIBILITY */
@@ -124,7 +138,7 @@
       background: linear-gradient(135deg, #102138 0%, #1e3a61 100%);
       color: #ffffff;
       font-weight: 700;
-      box-shadow: 0 4px 14px rgba(16, 33, 56, 0.25);
+      box-shadow: 0 4px 14px rgba(16, 33, 56, 0.3);
     }
     .nav-btn-inactive {
       background-color: transparent;
@@ -136,7 +150,7 @@
       color: #102138;
     }
 
-    /* 5-SECOND FLOATING STICKY TOAST ANIMATION */
+    /* 5-SECOND FLOATING STICKY TOAST */
     #stickyNoticeToast {
       transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
       transform: translateY(120px) scale(0.9);
@@ -149,7 +163,6 @@
       pointer-events: auto;
     }
 
-    /* TIMER BAR FOR 5 SECONDS */
     @keyframes timerProgress {
       0% { width: 0%; }
       100% { width: 100%; }
@@ -161,23 +174,40 @@
 </head>
 <body class="antialiased relative flex flex-col">
 
-  <!-- AURORA GLOWING BACKGROUND (BREATHING & COLOR SHIFTING) -->
-  <div class="aurora-bg">
-    <div class="glow-orb-1"></div>
-    <div class="glow-orb-2"></div>
-    <div class="glow-orb-3"></div>
+  <!-- DYNAMIC COLOR-SHIFTING AURORA GLOW BACKGROUND -->
+  <div class="aurora-canvas">
+    <div class="color-orb-1"></div>
+    <div class="color-orb-2"></div>
+    <div class="color-orb-3"></div>
   </div>
 
-  <!-- CONTENT WRAPPER -->
   <div class="relative z-10 flex-1 flex flex-col min-h-screen">
 
-    <!-- NAVBAR -->
+    <!-- NAVBAR WITH EXACT EMBEDDED VECTOR LOGO -->
     <header class="bg-white/95 backdrop-blur-md border-b border-slate-200/80 sticky top-0 z-40 shadow-xs">
       <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
         
-        <!-- LOGO -->
+        <!-- EXACT LOGO EMBED (SUCCESS DIGNITY AND GLORY - SDG INSIGHTS) -->
         <div onclick="switchTab('tab-home')" class="flex items-center space-x-3 cursor-pointer shrink-0">
-          <img src="logo.png" alt="SDG Insights" onerror="this.src='https://ui-avatars.com/api/?name=SDG+Insights&background=102138&color=3a80bc&bold=true&size=128';" class="w-11 h-11 rounded-full object-cover border-2 border-[#3a80bc] shadow-xs" />
+          <div class="w-12 h-12 rounded-full overflow-hidden shadow-sm flex items-center justify-center bg-[#11253e] shrink-0 border border-[#3a80bc]">
+            <svg viewBox="0 0 200 200" class="w-full h-full drop-shadow-xs">
+              <defs>
+                <path id="textArc" d="M 24,100 A 76,76 0 1,1 176,100" fill="none" />
+              </defs>
+              <circle cx="100" cy="100" r="98" fill="#11253e" />
+              <text font-family="'Plus Jakarta Sans', sans-serif" font-size="12.5" font-weight="900" fill="#ffffff" letter-spacing="2.2">
+                <textPath href="#textArc" startOffset="50%" text-anchor="middle">
+                  SUCCESS DIGNITY AND GLORY
+                </textPath>
+              </text>
+              <circle cx="32" cy="122" r="5" fill="#ffffff" />
+              <circle cx="168" cy="122" r="5" fill="#ffffff" />
+              <circle cx="100" cy="100" r="69" fill="none" stroke="#ffffff" stroke-width="3" />
+              <circle cx="100" cy="100" r="67.5" fill="#3a80bc" />
+              <text x="100" y="98" font-family="'Plus Jakarta Sans', sans-serif" font-size="36" font-weight="900" fill="#11253e" text-anchor="middle" letter-spacing="-1">SDG</text>
+              <text x="100" y="126" font-family="'Plus Jakarta Sans', sans-serif" font-size="18" font-weight="800" fill="#ffffff" text-anchor="middle" letter-spacing="1.5">INSIGHTS</text>
+            </svg>
+          </div>
           <div>
             <span class="text-lg font-black text-[#102138] tracking-tight block leading-tight">SDG Insights</span>
             <span class="text-[11px] text-slate-400 font-semibold">VU Preparation Portals</span>
@@ -215,7 +245,7 @@
     </header>
 
     <!-- ======================================================== -->
-    <!-- TAB 1: HOME (CLEAN, GLOWING GLASS HERO) -->
+    <!-- TAB 1: HOME (GLOWING GLASS MORPHISM) -->
     <!-- ======================================================== -->
     <section id="tab-home" class="tab-content tab-active flex-1">
       
@@ -326,7 +356,6 @@
           <span class="text-xs font-bold text-white bg-white/20 backdrop-blur-sm px-3 py-1 rounded-xl" id="notesCount">Loading...</span>
         </div>
 
-        <!-- FILTER BUTTONS (NO ALL OPTION) -->
         <div class="glass-card p-4 rounded-3xl space-y-3 shadow-md">
           <input type="text" id="notesSearchInput" onkeyup="filterNotesGrid()" placeholder="Search code: CS610, MTH401, CS301, CS201..." class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-xs focus:bg-white focus:outline-none" />
           
@@ -338,7 +367,6 @@
           </div>
         </div>
 
-        <!-- PORTAL CARDS -->
         <div id="notesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           <!-- Injected by JS -->
         </div>
@@ -464,7 +492,6 @@
             <p class="text-xs text-slate-500">Enter your approved Gmail and secret access key.</p>
           </div>
 
-          <!-- HELPFUL ACCESS NOTE -->
           <div class="bg-amber-50 border border-amber-200 p-3 rounded-2xl text-[11px] text-amber-900 leading-snug">
             <strong>⚠️ Access Notice:</strong> This interactive preparation software opens strictly after payment verification. Your secret access key is issued on WhatsApp after confirming your transaction.
           </div>
@@ -565,7 +592,6 @@
           ⚠️ All resources, notes and portals are 100% PAID — nothing is free.
         </p>
 
-        <!-- 5-SECOND PROGRESS BAR -->
         <div class="w-full bg-slate-100 h-1 rounded-full overflow-hidden mt-2">
           <div id="toastProgressBar" class="bg-[#3a80bc] h-full timer-bar-animate"></div>
         </div>
@@ -574,7 +600,7 @@
     </div>
 
     <!-- ======================================================== -->
-    <!-- AI TEACHER CHATBOT ENGINE (BOTTOM-RIGHT) -->
+    <!-- RESPECTFUL INSTRUCTOR CHATBOT: "SDG Insights Instructor" -->
     <!-- ======================================================== -->
     <div class="fixed bottom-6 right-6 z-50">
       
@@ -585,22 +611,23 @@
         </div>
         <div class="text-left leading-tight">
           <span class="text-[10px] text-slate-300 block">Have a Question?</span>
-          <span class="text-xs font-bold text-amber-300">Talk to Teacher</span>
+          <span class="text-xs font-bold text-amber-300">Talk to Instructor</span>
         </div>
       </button>
 
       <!-- CHAT WINDOW -->
       <div id="teacherChatWindow" class="hidden absolute bottom-16 right-0 w-[320px] sm:w-[380px] bg-white rounded-3xl shadow-2xl border border-slate-200 overflow-hidden flex flex-col animate-fade-in text-xs">
         
+        <!-- HEADER WITH RESPECTFUL INSTRUCTOR TITLE -->
         <div class="bg-[#102138] text-white p-4 flex items-center justify-between border-b border-slate-700">
           <div class="flex items-center space-x-2.5">
             <div class="w-9 h-9 rounded-full bg-[#3a80bc] flex items-center justify-center text-white font-bold shrink-0">
               <i class="fa-solid fa-graduation-cap"></i>
             </div>
             <div>
-              <h4 class="font-extrabold text-sm">SDG Insights Teacher Desk</h4>
+              <h4 class="font-extrabold text-sm">SDG Insights Instructor Desk</h4>
               <span class="text-[10px] text-emerald-400 flex items-center gap-1">
-                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span> Teacher Online
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span> Instructor Online
               </span>
             </div>
           </div>
@@ -612,9 +639,9 @@
         <div id="chatMessages" class="p-4 h-80 overflow-y-auto chat-scroll space-y-4 bg-slate-50">
           
           <div class="bg-white p-3.5 rounded-2xl rounded-tl-none border border-slate-200 shadow-2xs space-y-2 leading-relaxed">
-            <span class="text-[10px] font-bold text-[#3a80bc] block">Munaza Mukhtar • SDG Insights</span>
+            <span class="text-[10px] font-bold text-[#3a80bc] block">SDG Insights Instructor</span>
             <p class="urdu-font text-xs text-slate-800 text-right">
-              السلام علیکم عزیز طالب علم! میں آپ کی ٹیچر ہوں۔ نوٹس، ایگزام تیاری، ایل ایم ایس یا کسی بھی سوال کے لیے نیچے میسج لکھیں یا بٹن منتخب کریں:
+              السلام علیکم عزیز طالب علم! میں SDG Insights سے آپ کی انسٹرکٹر ہوں۔ نوٹس، ایگزام تیاری، پورٹلز یا ایل ایم ایس ہینڈلنگ سے متعلق کوئی بھی سوال ہو تو نیچے میسج لکھیں یا سوال منتخب کریں:
             </p>
           </div>
 
@@ -656,9 +683,8 @@
 
   </div>
 
-  <!-- MULTILINGUAL & ANIMATION SCRIPT -->
+  <!-- SCRIPT -->
   <script>
-    // 5-SECOND FLOATING STICKY NOTE LOGIC (POPUP -> 5s STAY -> REST -> REPEAT)
     const toastNotices = [
       "⚠️ All resources, notes and portals are 100% PAID — nothing is free.",
       "💼 LMS Handling + Midterm & Final Term Exam Preparation packages with full 24/7 support.",
@@ -673,22 +699,17 @@
       toastText.innerText = toastNotices[toastIndex];
       toastEl.classList.add("toast-visible");
 
-      // Reset progress bar animation
       const bar = document.getElementById("toastProgressBar");
       bar.classList.remove("timer-bar-animate");
-      void bar.offsetWidth; // Trigger reflow
+      void bar.offsetWidth;
       bar.classList.add("timer-bar-animate");
 
-      // Stay for 5 seconds
       setTimeout(() => {
         toastEl.classList.remove("toast-visible");
         toastIndex = (toastIndex + 1) % toastNotices.length;
-        // 4 seconds rest before next note pops up
         setTimeout(showNextToast, 4000);
       }, 5000);
     }
-
-    // Start toast loop after 2 seconds
     setTimeout(showNextToast, 2000);
 
     function hideStickyToastManual() {
@@ -868,7 +889,7 @@
     }
 
     // ========================================================
-    // INTELLIGENT MULTI-LINGUAL CHATBOT
+    // CHATBOT SCRIPT (RESPECTFUL & AUTHENTIC)
     // ========================================================
     function toggleTeacherChat() {
       document.getElementById("teacherChatWindow").classList.toggle("hidden");
@@ -876,7 +897,7 @@
 
     const knowledgeBase = {
       paid: {
-        roman: "Ji bilkul, SDG Insights ke tamam solved notes, preparation portals aur interactive software 100% PAID hain.\n\nHumari koi bhi file ya portal bilkul free nahi hai. Har course professional mehnat se 100% handout-accurate tayar kiya gaya hai.",
+        roman: "Ji bilkul, SDG Insights ke tamam solved notes, preparation portals aur interactive software 100% PAID hain.\n\nHumari koi bhi file ya portal free nahi hai. Har course professional mehnat se 100% handout-accurate tayar kiya gaya hai.",
         urdu: "جی بالکل، SDG Insights کے تمام حل شدہ نوٹس، پریپریشن پورٹلز اور اسٹڈی سافٹ ویئر 100% پیڈ ہیں۔\n\nہماری کوئی بھی فائل یا پورٹل فری نہیں ہے۔ ہر کورس آفیشل ہینڈ آؤٹس کے عین مطابق مکمل تحقیق سے تیار کیا گیا ہے۔",
         english: "Yes, all study notes, preparation portals, and interactive software from SDG Insights are 100% PAID.\n\nWe do not offer free resources. Every single file is systematically verified according to official VU handouts."
       },
@@ -891,7 +912,7 @@
         english: "Yes, we offer special package discounts:\n\n• Full Semester Bundle: Flat 20% OFF on all courses of your semester (Rs. 2400 instead of Rs. 3000).\n\n• Pick Any 5 Pack: Flat 10% OFF on any 5 subjects of your choice (Rs. 2250 instead of Rs. 2500)."
       },
       access_method: {
-        roman: "Access ka tariqa bohat aasan hai:\n\n1. EasyPaisa (03198519637 - Munazza mukhtar) ya MCB Bank par fee send karein.\n\n2. WhatsApp par screenshot aur apni Gmail send karein.\n\n3. Payment verify hote hi aapko portal ka Secret Passcode mil jayega.\n\n4. Wo passcode website par 'Start Exam Preparation' me laga kar foran study shuru karein!",
+        roman: "Access ka tariqa bohat aasan hai:\n\n1. EasyPaisa (03198519637) ya MCB Bank par fee send karein.\n\n2. WhatsApp par screenshot aur apni Gmail send karein.\n\n3. Payment verify hote hi aapko portal ka Secret Passcode mil jayega.\n\n4. Wo passcode website par 'Start Exam Preparation' me laga kar foran study shuru karein!",
         urdu: "پورٹل کی رسائی حاصل کرنے کا طریقہ انتہائی آسان ہے:\n\n1. ایزی پیسہ (03198519637) یا MCB Bank پر فیس بھیجیں۔\n\n2. واٹس ایپ پر رسید کا اسکرین شاٹ اور اپنی جی میل بھیجیں۔\n\n3. تصدیق کے بعد آپ کو پورٹل کا خفیہ پاس کوڈ (Secret Passcode) مل جائے گا۔\n\n4. ویب سائٹ پر 'Start Exam Preparation' میں وہ کوڈ درج کر کے نوٹس کھول لیں۔",
         english: "Getting portal access is simple:\n\n1. Transfer fee via EasyPaisa (03198519637) or MCB Bank.\n\n2. Send the receipt screenshot and your Gmail to WhatsApp.\n\n3. After verification, you receive your official secret access key.\n\n4. Enter the key under 'Start Exam Preparation' to unlock your study portal immediately."
       }
@@ -922,13 +943,13 @@
       let answerKey = 'paid';
       if (/salam|aoa|hello|hi|hey|assalam/.test(lower)) {
         if (lang === 'urdu') {
-          setTimeout(() => appendTeacherMsg("وعلیکم السلام عزیز طالب علم! میں آپ کی ٹیچر ہوں۔ آپ کو کس کورس یا ایل ایم ایس ہینڈلنگ کے سلسلے میں معلومات چاہیے؟", 'urdu'), 400);
+          setTimeout(() => appendTeacherMsg("وعلیکم السلام عزیز طالب علم! میں SDG Insights سے آپ کی انسٹرکٹر ہوں۔ آپ کو کس کورس، نوٹس یا ایل ایم ایس ہینڈلنگ میں رہنمائی چاہیے؟", 'urdu'), 400);
           return;
         } else if (lang === 'roman') {
-          setTimeout(() => appendTeacherMsg("Walaikum Assalam! Main SDG Insights se aapki teacher hoon.\n\nAapko kis subject ya LMS service me help chahiye? Mujhe batayein.", 'roman'), 400);
+          setTimeout(() => appendTeacherMsg("Walaikum Assalam! Main SDG Insights se aapki instructor hoon.\n\nAapko kis subject ya LMS service me help chahiye? Mujhe batayein.", 'roman'), 400);
           return;
         } else {
-          setTimeout(() => appendTeacherMsg("Hello! Welcome to SDG Insights. How can I assist you with course notes or LMS handling?", 'english'), 400);
+          setTimeout(() => appendTeacherMsg("Hello! Welcome to SDG Insights. How can I assist you with course portals or LMS handling?", 'english'), 400);
           return;
         }
       } else if (/percentage|percent|kitna ata|kitna paper|guarantee/.test(lower)) {
@@ -961,7 +982,7 @@
       const isUrdu = lang === 'urdu' || /[\u0600-\u06FF]/.test(msg);
       box.innerHTML += `
         <div class="bg-white p-3.5 rounded-2xl rounded-tl-none border border-slate-200 shadow-2xs max-w-[92%] space-y-1.5 leading-relaxed">
-          <span class="text-[10px] font-bold text-[#3a80bc] block">Munaza Mukhtar • Teacher</span>
+          <span class="text-[10px] font-bold text-[#3a80bc] block">SDG Insights Instructor</span>
           <div class="text-xs text-slate-800 whitespace-pre-line ${isUrdu ? 'urdu-font text-right' : 'text-left'}">
             ${msg}
           </div>
