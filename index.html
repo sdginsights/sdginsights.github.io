@@ -4,7 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>SDG Insights — VU Exam Preparation Portals & Paid Highlighted Handouts & paid Notes & LMS Handling</title>
+  <!-- SEO & METADATA -->
+  <title>SDG Insights — VU Exam Preparation Portals & LMS Handling</title>
   <meta name="description" content="Official SDG Insights: 100% Handout-Accurate Solved Notes, Final and Mid Term Preparation Portals, LMS Handling & Full Support Packages." />
   <link rel="canonical" href="https://sdginsights.github.io" />
 
@@ -13,22 +14,43 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Noto+Nastaliq+Urdu:wght@400;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
 
   <style>
+    :root {
+      --brand-navy: #102138;
+      --brand-blue: #3a80bc;
+      --brand-light: #f8fafc;
+    }
+
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
-      background-color: #f8fafc;
+      background-color: var(--brand-light);
       color: #0f172a;
     }
+    .urdu-font { font-family: 'Noto Nastaliq Urdu', serif; line-height: 2.3; }
     .handwriting { font-family: 'Caveat', cursive; }
 
     /* TAB VISIBILITY */
     .tab-content { display: none; }
-    .tab-active { display: block; animation: fadeIn 0.25s ease-out; }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(4px); }
+    .tab-active { display: block; animation: fadeInView 0.28s cubic-bezier(0.16, 1, 0.3, 1); }
+    @keyframes fadeInView {
+      from { opacity: 0; transform: translateY(6px); }
       to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* GLASSMORPHIC LUXURY CARDS */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(226, 232, 240, 0.8);
+      transition: all 0.26s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .glass-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 30px -8px rgba(16, 33, 56, 0.09);
+      border-color: rgba(58, 128, 188, 0.5);
     }
 
     /* NAVIGATION BUTTON STYLES */
@@ -48,21 +70,14 @@
       color: #102138;
     }
 
-    .clean-card {
-      background: #ffffff;
-      border: 1px solid #e2e8f0;
-      transition: all 0.22s ease;
-    }
-    .clean-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 24px -6px rgba(16, 33, 56, 0.08);
-      border-color: #3a80bc;
+    /* SMOOTH 5-SEC ROTATING NOTICE */
+    #rotatingNoticeText {
+      transition: opacity 0.4s ease-in-out;
     }
 
-    /* SMOOTH ROTATING FADE FOR NOTICES */
-    #rotatingNoticeText {
-      transition: opacity 0.3s ease-in-out;
-    }
+    /* CHATBOT SCROLLBAR */
+    .chat-scroll::-webkit-scrollbar { width: 5px; }
+    .chat-scroll::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 9999px; }
   </style>
 </head>
 <body class="min-h-screen flex flex-col antialiased">
@@ -79,25 +94,25 @@
       <div class="hidden sm:flex items-center space-x-4 text-slate-300 font-medium text-[11px] shrink-0">
         <a href="https://wa.me/c/923198519637" target="_blank" class="hover:text-[#3a80bc] transition">WhatsApp Catalog</a>
         <span>•</span>
-        <a href="https://whatsapp.com/channel/0029VbB78Xa3WHTReQ1hTF1Q" target="_blank" class="hover:text-[#3a80bc] transition">WhatsApp Channel</a>
+        <a href="https://whatsapp.com/channel/0029VbB78Xa3WHTReQ1hTF1Q" target="_blank" class="hover:text-[#3a80bc] transition">Community Channel</a>
       </div>
     </div>
   </div>
 
-  <!-- NAVBAR & MAIN TABS -->
-  <header class="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-xs">
+  <!-- NAVBAR & TABS -->
+  <header class="bg-white/95 backdrop-blur-md border-b border-slate-200 sticky top-0 z-40 shadow-xs">
     <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
       
       <!-- LOGO -->
       <div onclick="switchTab('tab-home')" class="flex items-center space-x-3 cursor-pointer shrink-0">
-        <img src="logo.png" alt="SDG Insights Logo" onerror="this.src='https://ui-avatars.com/api/?name=SDG+Insights&background=102138&color=3a80bc&bold=true&size=128';" class="w-11 h-11 rounded-full object-cover border-2 border-[#3a80bc] shadow-xs" />
+        <img src="logo.png" alt="SDG Insights" onerror="this.src='https://ui-avatars.com/api/?name=SDG+Insights&background=102138&color=3a80bc&bold=true&size=128';" class="w-11 h-11 rounded-full object-cover border-2 border-[#3a80bc] shadow-xs" />
         <div>
           <span class="text-lg font-black text-[#102138] tracking-tight block leading-tight">SDG Insights</span>
           <span class="text-[11px] text-slate-400 font-semibold">VU Preparation Portals</span>
         </div>
       </div>
 
-      <!-- MAIN TABS -->
+      <!-- MAIN NAVIGATION TABS -->
       <nav class="hidden md:flex items-center bg-slate-100 p-1 rounded-2xl border border-slate-200 text-xs">
         <button onclick="switchTab('tab-home')" id="btn-tab-home" class="nav-btn-active px-3.5 py-2 rounded-xl transition">Home</button>
         <button onclick="switchTab('tab-notes')" id="btn-tab-notes" class="nav-btn-inactive px-3.5 py-2 rounded-xl transition">Preparation Portals</button>
@@ -117,7 +132,7 @@
       </div>
     </div>
 
-    <!-- MOBILE TABS ROW -->
+    <!-- MOBILE TABS -->
     <div class="flex md:hidden items-center justify-around border-t border-slate-100 bg-slate-50 px-2 py-2 text-[11px] font-bold overflow-x-auto">
       <button onclick="switchTab('tab-home')" class="px-2.5 py-1 text-[#102138]">Home</button>
       <button onclick="switchTab('tab-notes')" class="px-2.5 py-1 text-slate-600">Portals</button>
@@ -128,15 +143,14 @@
   </header>
 
   <!-- ======================================================== -->
-  <!-- TAB 1: HOME -->
+  <!-- TAB 1: HOME (CLEAN & AESTHETIC) -->
   <!-- ======================================================== -->
   <section id="tab-home" class="tab-content tab-active flex-1">
     
-    <!-- SIMPLE HERO -->
     <div class="bg-white border-b border-slate-200 py-12 px-4 text-center">
       <div class="max-w-3xl mx-auto space-y-4">
         
-        <div class="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 text-[#102138] px-4 py-1.5 rounded-full text-xs font-bold">
+        <div class="inline-flex items-center gap-2 bg-blue-50/80 border border-blue-100 text-[#102138] px-4 py-1.5 rounded-full text-xs font-bold">
           <i class="fa-solid fa-shield-halved text-[#3a80bc]"></i>
           <span>Success, Dignity & Glory in Your VU Studies</span>
         </div>
@@ -146,7 +160,7 @@
         </h1>
 
         <p class="text-slate-500 text-sm md:text-base max-w-lg mx-auto">
-          100% handout-accurate solved exam portals, preparation software, and complete LMS handling.
+          100% handout-accurate solved exam portals, interactive study software, and complete LMS handling.
         </p>
 
         <!-- CTA TO START PREPARATION -->
@@ -176,8 +190,7 @@
     <div class="max-w-5xl mx-auto px-4 py-12">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
         
-        <!-- CARD 1 -->
-        <div onclick="switchTab('tab-notes')" class="clean-card rounded-3xl p-6 cursor-pointer flex flex-col justify-between group">
+        <div onclick="switchTab('tab-notes')" class="glass-card rounded-3xl p-6 cursor-pointer flex flex-col justify-between group">
           <div class="space-y-3">
             <div class="w-12 h-12 rounded-2xl bg-blue-50 text-[#3a80bc] flex items-center justify-center text-xl group-hover:bg-[#102138] group-hover:text-white transition">
               <i class="fa-solid fa-laptop-code"></i>
@@ -192,15 +205,14 @@
           </span>
         </div>
 
-        <!-- CARD 2 -->
-        <div onclick="switchTab('tab-lms')" class="clean-card rounded-3xl p-6 cursor-pointer flex flex-col justify-between group">
+        <div onclick="switchTab('tab-lms')" class="glass-card rounded-3xl p-6 cursor-pointer flex flex-col justify-between group">
           <div class="space-y-3">
             <div class="w-12 h-12 rounded-2xl bg-indigo-50 text-indigo-700 flex items-center justify-center text-xl group-hover:bg-[#102138] group-hover:text-white transition">
               <i class="fa-solid fa-headset"></i>
             </div>
             <h3 class="text-lg font-bold text-[#102138]">LMS Handling Packages</h3>
             <p class="text-xs text-slate-500 leading-relaxed">
-              Complete semester coursework handling: assignments, quizzes, and GDBs with high score targets.
+              Complete coursework handling: assignments, quizzes, and GDBs with high score targets.
             </p>
           </div>
           <span class="text-xs font-bold text-indigo-700 pt-4 mt-2 block border-t border-slate-100">
@@ -208,8 +220,7 @@
           </span>
         </div>
 
-        <!-- CARD 3 -->
-        <div onclick="switchTab('tab-deals')" class="clean-card rounded-3xl p-6 cursor-pointer flex flex-col justify-between group">
+        <div onclick="switchTab('tab-deals')" class="glass-card rounded-3xl p-6 cursor-pointer flex flex-col justify-between group">
           <div class="space-y-3">
             <div class="w-12 h-12 rounded-2xl bg-amber-50 text-amber-700 flex items-center justify-center text-xl group-hover:bg-[#102138] group-hover:text-amber-300 transition">
               <i class="fa-solid fa-gift"></i>
@@ -230,32 +241,32 @@
   </section>
 
   <!-- ======================================================== -->
-  <!-- TAB 2: FINAL & MID TERM PREPARATION PORTALS -->
+  <!-- TAB 2: FINAL & MID TERM PREPARATION PORTALS (NO ALL OPTION) -->
   <!-- ======================================================== -->
   <section id="tab-notes" class="tab-content flex-1 py-8 px-4">
     <div class="max-w-5xl mx-auto space-y-6">
       
       <div class="flex items-center justify-between border-b border-slate-200 pb-3">
         <div>
-          <h2 class="text-xl font-bold text-[#102138]">Final & Mid Term Preparation Portals</h2>
-          <p class="text-xs text-slate-500">Select any subject portal to enroll or begin preparation.</p>
+          <h2 class="text-xl font-bold text-[#102138]">Preparation Portals & Notes</h2>
+          <p class="text-xs text-slate-500">Filtered by examination terms. All portals are strictly paid.</p>
         </div>
         <span class="text-xs font-bold text-[#3a80bc]" id="notesCount">Loading...</span>
       </div>
 
-      <!-- FILTER BUTTONS -->
-      <div class="bg-white p-4 rounded-2xl border border-slate-200 space-y-3 shadow-xs">
+      <!-- FILTER BUTTONS (WITHOUT "ALL" OPTION) -->
+      <div class="glass-card p-4 rounded-3xl space-y-3 shadow-xs">
         <input type="text" id="notesSearchInput" onkeyup="filterNotesGrid()" placeholder="Search code: CS610, MTH401, CS301, CS201..." class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-xs focus:bg-white focus:outline-none" />
         
         <div class="flex items-center gap-2 flex-wrap text-xs font-bold">
-          <button onclick="setNotesFilter('ALL')" id="flt-ALL" class="bg-[#102138] text-white px-3 py-1.5 rounded-lg">All Portals</button>
-          <button onclick="setNotesFilter('MID')" id="flt-MID" class="bg-slate-100 text-slate-700 px-3 py-1.5 rounded-lg">Midterm Portals</button>
-          <button onclick="setNotesFilter('FINAL')" id="flt-FINAL" class="bg-slate-100 text-slate-700 px-3 py-1.5 rounded-lg">Final Term Portals</button>
-          <button onclick="setNotesFilter('HIGHLIGHTED')" id="flt-HIGHLIGHTED" class="bg-blue-50 text-[#3a80bc] px-3 py-1.5 rounded-lg">Highlighted Handouts (Rs. 300)</button>
+          <button onclick="setNotesFilter('MID')" id="flt-MID" class="bg-[#102138] text-white px-3.5 py-2 rounded-xl transition">🎯 Midterm Portals</button>
+          <button onclick="setNotesFilter('FINAL')" id="flt-FINAL" class="bg-slate-100 text-slate-700 hover:bg-slate-200 px-3.5 py-2 rounded-xl transition">🏆 Final Term Portals</button>
+          <button onclick="setNotesFilter('HIGHLIGHTED')" id="flt-HIGHLIGHTED" class="bg-blue-50 text-[#3a80bc] hover:bg-blue-100 px-3.5 py-2 rounded-xl border border-blue-200 transition">📑 Highlighted Handouts (Rs. 300)</button>
+          <button onclick="setNotesFilter('NOTES')" id="flt-NOTES" class="bg-slate-100 text-slate-700 hover:bg-slate-200 px-3.5 py-2 rounded-xl transition">📝 Master Notes</button>
         </div>
       </div>
 
-      <!-- PORTAL CARDS -->
+      <!-- PORTAL CARDS GRID -->
       <div id="notesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         <!-- Injected by JS -->
       </div>
@@ -279,8 +290,7 @@
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         
-        <!-- PACKAGE 1 -->
-        <div class="clean-card rounded-3xl p-6 flex flex-col justify-between space-y-4">
+        <div class="glass-card rounded-3xl p-6 flex flex-col justify-between space-y-4">
           <div class="space-y-3">
             <span class="text-[10px] font-bold text-slate-500 uppercase">Standard Service</span>
             <h3 class="text-lg font-bold text-[#102138]">Complete LMS Handling</h3>
@@ -299,8 +309,7 @@
           </button>
         </div>
 
-        <!-- PACKAGE 2 -->
-        <div class="clean-card border-2 border-[#3a80bc] rounded-3xl p-6 flex flex-col justify-between space-y-4 shadow-sm">
+        <div class="glass-card border-2 border-[#3a80bc] rounded-3xl p-6 flex flex-col justify-between space-y-4 shadow-sm">
           <div class="space-y-3">
             <span class="bg-[#3a80bc] text-white text-[10px] font-black px-2.5 py-0.5 rounded-full uppercase">VIP All-In-One</span>
             <h3 class="text-lg font-bold text-[#102138]">LMS Handling + Exam Prep + Full Support</h3>
@@ -338,8 +347,7 @@
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
         
-        <!-- 20% OFF -->
-        <div class="clean-card border-2 border-[#3a80bc] rounded-3xl p-6 space-y-3">
+        <div class="glass-card border-2 border-[#3a80bc] rounded-3xl p-6 space-y-3">
           <span class="bg-[#102138] text-white text-[10px] font-bold px-2 py-0.5 rounded-md uppercase">20% OFF</span>
           <h3 class="text-base font-bold text-[#102138]">Full Semester Bundle</h3>
           <p class="text-xs text-slate-500 leading-relaxed">
@@ -351,8 +359,7 @@
           </div>
         </div>
 
-        <!-- 10% OFF -->
-        <div class="clean-card rounded-3xl p-6 space-y-3">
+        <div class="glass-card rounded-3xl p-6 space-y-3">
           <span class="bg-[#3a80bc] text-white text-[10px] font-bold px-2 py-0.5 rounded-md uppercase">10% OFF</span>
           <h3 class="text-base font-bold text-[#102138]">Pick Any 5 Courses</h3>
           <p class="text-xs text-slate-500 leading-relaxed">
@@ -370,37 +377,42 @@
   </section>
 
   <!-- ======================================================== -->
-  <!-- TAB 5: START EXAM PREPARATION (ONLINE PREP SOFTWARE / PORTAL) -->
+  <!-- TAB 5: START EXAM PREPARATION (WITH HELPFUL PAYMENT NOTE) -->
   <!-- ======================================================== -->
   <section id="tab-portal" class="tab-content flex-1 py-10 px-4">
     <div class="max-w-md mx-auto space-y-4">
       
       <!-- LOGIN BOX -->
-      <div id="loginBox" class="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm space-y-4">
+      <div id="loginBox" class="glass-card rounded-3xl p-6 shadow-md space-y-4">
         <div class="text-center space-y-1">
           <div class="w-10 h-10 rounded-2xl bg-[#102138] text-[#3a80bc] flex items-center justify-center text-lg mx-auto">
             <i class="fa-solid fa-play"></i>
           </div>
           <h3 class="text-base font-bold text-[#102138]">Start Exam Preparation</h3>
-          <p class="text-xs text-slate-400">Enter your approved Gmail and secret passcode to unlock your preparation software.</p>
+          <p class="text-xs text-slate-500">Enter your approved Gmail and secret access key.</p>
+        </div>
+
+        <!-- HELPFUL NOTE AS INSTRUCTED -->
+        <div class="bg-amber-50 border border-amber-200 p-3 rounded-2xl text-[11px] text-amber-900 leading-snug">
+          <strong>⚠️ Access Notice:</strong> This interactive preparation software opens strictly after payment verification. Your secret access key is issued on WhatsApp after confirming your transaction.
         </div>
 
         <div class="space-y-3 text-xs">
           <input type="email" id="logEmail" placeholder="Approved Gmail Address *" class="w-full border border-slate-300 rounded-xl px-3 py-2.5 focus:outline-none" />
           <input type="text" id="logSubject" placeholder="Course Code (e.g. MTH401, CS610) *" class="w-full border border-slate-300 rounded-xl px-3 py-2.5 uppercase focus:outline-none" />
-          <input type="password" id="logPass" placeholder="Secret Access Key / Passcode *" class="w-full border border-slate-300 rounded-xl px-3 py-2.5 focus:outline-none font-mono" />
-          <span class="text-[10px] text-slate-400 block">Note: All preparation software portals are strictly paid. Secret keys are issued upon payment verification.</span>
+          <input type="password" id="logPass" placeholder="Secret Access Passcode *" class="w-full border border-slate-300 rounded-xl px-3 py-2.5 focus:outline-none font-mono" />
+          
           <button onclick="verifyAndOpenReader()" class="w-full bg-[#102138] hover:bg-[#1a385f] text-white font-bold py-2.5 rounded-xl transition shadow-xs">
-            Start Exam Preparation
+            Unlock & Start Preparation
           </button>
         </div>
       </div>
 
-      <!-- PREPARATION SOFTWARE CANVAS (SHOWN AFTER VERIFIED UNLOCK) -->
-      <div id="readerBox" class="hidden bg-white rounded-3xl p-6 border border-slate-200 shadow-sm space-y-4">
+      <!-- SOFTWARE CANVAS -->
+      <div id="readerBox" class="hidden glass-card rounded-3xl p-6 shadow-sm space-y-4">
         <div class="flex items-center justify-between border-b border-slate-100 pb-3">
           <div>
-            <span class="text-[10px] font-bold text-emerald-600 uppercase block">✓ Active Preparation Portal</span>
+            <span class="text-[10px] font-bold text-emerald-600 uppercase block">✓ Active Preparation Software</span>
             <h3 class="text-base font-bold text-[#102138]" id="activeCourseTitle">MTH401 Preparation Software</h3>
           </div>
           <button onclick="closeReader()" class="text-xs text-slate-400 hover:text-slate-600">Close</button>
@@ -413,14 +425,6 @@
           <div class="bg-blue-50/70 p-3.5 rounded-xl border border-blue-100 text-slate-700">
             <span class="font-bold text-[#102138] block mb-0.5">✎ SDG Insights Concept Note:</span>
             <span class="handwriting text-base">d/dx [ln|x| + C] = 1/x. Integration must always restore the arbitrary constant C!</span>
-          </div>
-
-          <div class="pt-2 border-t border-slate-100">
-            <span class="font-bold text-slate-800 block mb-1">Quick Practice Question:</span>
-            <p>What is the linearity property of differential operator D?</p>
-            <div class="bg-slate-50 p-2.5 rounded-lg border font-mono text-slate-800 mt-1">
-              D[a f(x) + b g(x)] = a D[f(x)] + b D[g(x)]
-            </div>
           </div>
         </div>
       </div>
@@ -469,6 +473,99 @@
     </div>
   </div>
 
+  <!-- ======================================================== -->
+  <!-- FLOATING AI TEACHER CHATBOT: "اپنے ٹیچر سے بات کریں" -->
+  <!-- ======================================================== -->
+  <div class="fixed bottom-5 right-5 z-50">
+    
+    <!-- CHAT TRIGGER BUTTON -->
+    <button onclick="toggleTeacherChat()" id="chatTriggerBtn" class="flex items-center gap-2.5 bg-[#102138] hover:bg-[#1a385f] text-white px-4 py-3 rounded-full shadow-2xl transition-all duration-300 border border-[#3a80bc]/40 hover:scale-105">
+      <div class="w-8 h-8 rounded-full bg-[#3a80bc] flex items-center justify-center text-white text-sm shrink-0">
+        <i class="fa-solid fa-chalkboard-user"></i>
+      </div>
+      <div class="text-left leading-tight">
+        <span class="text-[10px] text-slate-300 block">کوئی سوال پوچھیں؟</span>
+        <span class="urdu-font text-xs font-bold text-amber-300">اپنے ٹیچر سے بات کریں</span>
+      </div>
+    </button>
+
+    <!-- CHAT WINDOW (ELEGANT & URDU RESPONSIVE) -->
+    <div id="teacherChatWindow" class="hidden absolute bottom-16 right-0 w-[330px] sm:w-[370px] bg-white rounded-3xl shadow-2xl border border-slate-200 overflow-hidden flex flex-col animate-fade-in text-xs">
+      
+      <!-- CHAT HEADER -->
+      <div class="bg-[#102138] text-white p-4 flex items-center justify-between border-b border-slate-700">
+        <div class="flex items-center space-x-2.5">
+          <div class="w-9 h-9 rounded-full bg-[#3a80bc] flex items-center justify-center text-white font-bold shrink-0">
+            <i class="fa-solid fa-graduation-cap"></i>
+          </div>
+          <div>
+            <h4 class="font-extrabold text-sm">SDG Insights Teacher Desk</h4>
+            <span class="text-[10px] text-emerald-400 flex items-center gap-1">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span> آن لائن ٹیچر
+            </span>
+          </div>
+        </div>
+        <button onclick="toggleTeacherChat()" class="text-slate-400 hover:text-white text-base">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <!-- CHAT MESSAGES LOG -->
+      <div id="chatMessages" class="p-4 h-72 overflow-y-auto chat-scroll space-y-3 bg-slate-50">
+        
+        <!-- TEACHER WELCOME MESSAGE -->
+        <div class="bg-white p-3 rounded-2xl rounded-tl-none border border-slate-200 shadow-2xs max-w-[90%] space-y-1">
+          <span class="text-[10px] font-bold text-[#3a80bc] block">SDG Insights Official</span>
+          <p class="urdu-font text-xs text-slate-800">
+            السلام علیکم عزیز طالب علم! میں آپ کی ٹیچر ہوں—آپ کے امتحانی نوٹس، پورٹلز یا ایل ایم ایس سے متعلق کوئی بھی سوال ہو تو نیچے دیے گئے بٹن پر کلک کریں یا میسج لکھیں:
+          </p>
+        </div>
+
+        <!-- QUICK FAQ PILLS -->
+        <div class="space-y-1.5 pt-1">
+          <span class="text-[10px] font-bold text-slate-400 block uppercase">اکثر پوچھے جانے والے سوالات:</span>
+          <button onclick="askBotQuestion(1)" class="w-full text-right urdu-font bg-white hover:bg-blue-50/70 p-2 rounded-xl border border-slate-200 text-slate-700 font-semibold block transition">
+            • کیا یہ نوٹس اور پورٹلز پیڈ ہیں؟
+          </button>
+          <button onclick="askBotQuestion(2)" class="w-full text-right urdu-font bg-white hover:bg-blue-50/70 p-2 rounded-xl border border-slate-200 text-slate-700 font-semibold block transition">
+            • امتحان اس میں سے کتنے فیصد آتا ہے؟
+          </button>
+          <button onclick="askBotQuestion(3)" class="w-full text-right urdu-font bg-white hover:bg-blue-50/70 p-2 rounded-xl border border-slate-200 text-slate-700 font-semibold block transition">
+            • کیا ڈسکاؤنٹ یا ڈیلز مل سکتی ہیں؟
+          </button>
+          <button onclick="askBotQuestion(4)" class="w-full text-right urdu-font bg-white hover:bg-blue-50/70 p-2 rounded-xl border border-slate-200 text-slate-700 font-semibold block transition">
+            • فیس کس اکاؤنٹ میں بھیجنی ہے؟ کیا جیز کیش ہے؟
+          </button>
+          <button onclick="askBotQuestion(5)" class="w-full text-right urdu-font bg-white hover:bg-blue-50/70 p-2 rounded-xl border border-slate-200 text-slate-700 font-semibold block transition">
+            • ویڈیو میں فری بولا تھا، اب پیڈ کیوں ہے؟
+          </button>
+          <button onclick="askBotQuestion(6)" class="w-full text-right urdu-font bg-white hover:bg-blue-50/70 p-2 rounded-xl border border-slate-200 text-slate-700 font-semibold block transition">
+            • کیا یہ سافٹ ویئر لائف ٹائم ملے گا؟
+          </button>
+          <button onclick="askBotQuestion(7)" class="w-full text-right urdu-font bg-white hover:bg-blue-50/70 p-2 rounded-xl border border-slate-200 text-slate-700 font-semibold block transition">
+            • ڈیمو ویڈیو کہاں سے دیکھ سکتے ہیں؟
+          </button>
+          <button onclick="askBotQuestion(8)" class="w-full text-right urdu-font bg-white hover:bg-blue-50/70 p-2 rounded-xl border border-slate-200 text-slate-700 font-semibold block transition">
+            • پورٹل کی ایکسیس کیسے ملے گی؟
+          </button>
+          <button onclick="askBotQuestion(9)" class="w-full text-right urdu-font bg-white hover:bg-blue-50/70 p-2 rounded-xl border border-slate-200 text-slate-700 font-semibold block transition">
+            • کیا نوٹس پی ڈی ایف (PDF) میں مل جائیں گے؟
+          </button>
+        </div>
+
+      </div>
+
+      <!-- CHAT INPUT -->
+      <div class="p-2.5 bg-white border-t border-slate-200 flex items-center gap-1.5">
+        <input type="text" id="userChatInput" placeholder="اپنا سوال لکھیں..." class="urdu-font flex-1 bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs focus:bg-white focus:outline-none" onkeypress="if(event.key==='Enter') sendCustomTeacherMsg()" />
+        <button onclick="sendCustomTeacherMsg()" class="bg-[#102138] text-white p-2.5 rounded-xl transition hover:bg-[#1a385f]">
+          <i class="fa-solid fa-paper-plane text-xs"></i>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
   <!-- FOOTER -->
   <footer class="bg-white border-t border-slate-200 py-6 text-xs text-slate-400 mt-auto text-center">
     <div class="max-w-6xl mx-auto px-4 space-y-1">
@@ -495,33 +592,33 @@
         setTimeout(() => {
           el.innerHTML = rotatingNotices[noticeIdx];
           el.style.opacity = "1";
-        }, 300);
+        }, 400);
       }
     }, 5000);
 
     const passcodes = ["SDG-PASS-2026", "MTH401-VIP", "CS610-VIP", "CS301-VIP", "VU-VIP"];
 
     const courses = [
-      { code: "CS101", title: "Introduction to Computing", types: ["MID", "FINAL", "HIGHLIGHTED"], mid: "Rs. 500", final: "Rs. 800", hl: "Rs. 300" },
-      { code: "CS201", title: "Introduction to Programming (C++)", types: ["MID", "FINAL", "HIGHLIGHTED"], mid: "Rs. 600", final: "Rs. 1000", hl: "Rs. 300" },
-      { code: "CS301", title: "Data Structures & Algorithms", types: ["MID", "FINAL", "HIGHLIGHTED"], mid: "Rs. 600", final: "Rs. 1000", hl: "Rs. 300" },
-      { code: "CS304", title: "Object Oriented Programming", types: ["MID", "FINAL", "HIGHLIGHTED"], mid: "Rs. 600", final: "Rs. 1000", hl: "Rs. 300" },
-      { code: "CS401", title: "Computer Architecture & Assembly", types: ["MID", "FINAL", "HIGHLIGHTED"], mid: "Rs. 600", final: "Rs. 1000", hl: "Rs. 300" },
-      { code: "CS402", title: "Theory of Automata", types: ["MID", "FINAL", "HIGHLIGHTED"], mid: "Rs. 600", final: "Rs. 800", hl: "Rs. 300" },
-      { code: "CS403", title: "Database Management Systems", types: ["MID", "FINAL", "HIGHLIGHTED"], mid: "Rs. 600", final: "Rs. 1000", hl: "Rs. 300" },
-      { code: "CS610", title: "Computer Networks", types: ["MID", "FINAL", "HIGHLIGHTED"], mid: "Rs. 600", final: "Rs. 800", hl: "Rs. 300" },
-      { code: "CS601", title: "Data Communication", types: ["MID", "FINAL", "HIGHLIGHTED"], mid: "Rs. 600", final: "Rs. 800", hl: "Rs. 300" },
-      { code: "MTH101", title: "Calculus And Analytical Geometry", types: ["MID", "FINAL", "HIGHLIGHTED"], mid: "Rs. 600", final: "Rs. 900", hl: "Rs. 300" },
-      { code: "MTH202", title: "Discrete Mathematics", types: ["MID", "FINAL", "HIGHLIGHTED"], mid: "Rs. 600", final: "Rs. 900", hl: "Rs. 300" },
-      { code: "MTH301", title: "Calculus II (Multivariable)", types: ["MID", "FINAL", "HIGHLIGHTED"], mid: "Rs. 600", final: "Rs. 900", hl: "Rs. 300" },
-      { code: "MTH401", title: "Differential Equations Master Notes", types: ["MID", "FINAL", "HIGHLIGHTED"], mid: "Rs. 600", final: "Rs. 900", hl: "Rs. 300" },
-      { code: "MGT101", title: "Financial Accounting", types: ["MID", "FINAL", "HIGHLIGHTED"], mid: "Rs. 500", final: "Rs. 500", hl: "Rs. 300" },
-      { code: "MGT501", title: "Human Resource Management", types: ["MID", "FINAL", "HIGHLIGHTED"], mid: "Rs. 500", final: "Rs. 500", hl: "Rs. 300" },
-      { code: "MGT503", title: "Principles of Management", types: ["MID", "FINAL", "HIGHLIGHTED"], mid: "Rs. 500", final: "Rs. 500", hl: "Rs. 300" }
+      { code: "CS101", title: "Introduction to Computing", types: ["MID", "FINAL", "HIGHLIGHTED", "NOTES"], mid: "Rs. 500", final: "Rs. 800", hl: "Rs. 300" },
+      { code: "CS201", title: "Introduction to Programming (C++)", types: ["MID", "FINAL", "HIGHLIGHTED", "NOTES"], mid: "Rs. 600", final: "Rs. 1000", hl: "Rs. 300" },
+      { code: "CS301", title: "Data Structures & Algorithms", types: ["MID", "FINAL", "HIGHLIGHTED", "NOTES"], mid: "Rs. 600", final: "Rs. 1000", hl: "Rs. 300" },
+      { code: "CS304", title: "Object Oriented Programming", types: ["MID", "FINAL", "HIGHLIGHTED", "NOTES"], mid: "Rs. 600", final: "Rs. 1000", hl: "Rs. 300" },
+      { code: "CS401", title: "Computer Architecture & Assembly", types: ["MID", "FINAL", "HIGHLIGHTED", "NOTES"], mid: "Rs. 600", final: "Rs. 1000", hl: "Rs. 300" },
+      { code: "CS402", title: "Theory of Automata", types: ["MID", "FINAL", "HIGHLIGHTED", "NOTES"], mid: "Rs. 600", final: "Rs. 800", hl: "Rs. 300" },
+      { code: "CS403", title: "Database Management Systems", types: ["MID", "FINAL", "HIGHLIGHTED", "NOTES"], mid: "Rs. 600", final: "Rs. 1000", hl: "Rs. 300" },
+      { code: "CS610", title: "Computer Networks", types: ["MID", "FINAL", "HIGHLIGHTED", "NOTES"], mid: "Rs. 600", final: "Rs. 800", hl: "Rs. 300" },
+      { code: "CS601", title: "Data Communication", types: ["MID", "FINAL", "HIGHLIGHTED", "NOTES"], mid: "Rs. 600", final: "Rs. 800", hl: "Rs. 300" },
+      { code: "MTH101", title: "Calculus And Analytical Geometry", types: ["MID", "FINAL", "HIGHLIGHTED", "NOTES"], mid: "Rs. 600", final: "Rs. 900", hl: "Rs. 300" },
+      { code: "MTH202", title: "Discrete Mathematics", types: ["MID", "FINAL", "HIGHLIGHTED", "NOTES"], mid: "Rs. 600", final: "Rs. 900", hl: "Rs. 300" },
+      { code: "MTH301", title: "Calculus II (Multivariable)", types: ["MID", "FINAL", "HIGHLIGHTED", "NOTES"], mid: "Rs. 600", final: "Rs. 900", hl: "Rs. 300" },
+      { code: "MTH401", title: "Differential Equations Master Notes", types: ["MID", "FINAL", "HIGHLIGHTED", "NOTES"], mid: "Rs. 600", final: "Rs. 900", hl: "Rs. 300" },
+      { code: "MGT101", title: "Financial Accounting", types: ["MID", "FINAL", "HIGHLIGHTED", "NOTES"], mid: "Rs. 500", final: "Rs. 500", hl: "Rs. 300" },
+      { code: "MGT501", title: "Human Resource Management", types: ["MID", "FINAL", "HIGHLIGHTED", "NOTES"], mid: "Rs. 500", final: "Rs. 500", hl: "Rs. 300" },
+      { code: "MGT503", title: "Principles of Management", types: ["MID", "FINAL", "HIGHLIGHTED", "NOTES"], mid: "Rs. 500", final: "Rs. 500", hl: "Rs. 300" }
     ];
 
     let currentTab = 'tab-home';
-    let currentFilter = 'ALL';
+    let currentFilter = 'MID'; // Default without ALL
     let selectedCourse = null;
 
     function switchTab(tabId) {
@@ -563,7 +660,7 @@
 
       const q = (document.getElementById("notesSearchInput") ? document.getElementById("notesSearchInput").value : "").toLowerCase().trim();
       const filtered = courses.filter(c => {
-        const matchType = currentFilter === 'ALL' || c.types.includes(currentFilter);
+        const matchType = c.types.includes(currentFilter);
         const matchQ = q === '' || c.code.toLowerCase().includes(q) || c.title.toLowerCase().includes(q);
         return matchType && matchQ;
       });
@@ -576,17 +673,17 @@
         if (currentFilter === 'HIGHLIGHTED') p = item.hl;
 
         const card = document.createElement("div");
-        card.className = "clean-card rounded-2xl p-4 flex flex-col justify-between";
+        card.className = "glass-card rounded-3xl p-4 flex flex-col justify-between";
         card.innerHTML = `
           <div>
             <div class="flex items-center justify-between mb-2">
               <span class="font-mono text-xs font-bold text-[#102138] bg-slate-100 px-2 py-0.5 rounded">${item.code}</span>
-              <span class="text-[10px] text-slate-400 font-bold">From ${p}</span>
+              <span class="text-[10px] text-[#3a80bc] font-bold">Fee: ${p}</span>
             </div>
             <h4 class="font-bold text-xs text-slate-900 leading-snug mb-3">${item.title}</h4>
           </div>
-          <button onclick="openOrderModal('${item.code}')" class="w-full bg-[#102138] hover:bg-[#1a385f] text-white text-[11px] font-bold py-1.5 rounded-lg transition">
-            Get Portal Access
+          <button onclick="openOrderModal('${item.code}')" class="w-full bg-[#102138] hover:bg-[#1a385f] text-white text-[11px] font-bold py-2 rounded-xl transition shadow-xs">
+            Enroll & Unlock
           </button>
         `;
         grid.appendChild(card);
@@ -599,13 +696,13 @@
 
     function setNotesFilter(flt) {
       currentFilter = flt;
-      ['ALL', 'MID', 'FINAL', 'HIGHLIGHTED'].forEach(f => {
+      ['MID', 'FINAL', 'HIGHLIGHTED', 'NOTES'].forEach(f => {
         const btn = document.getElementById(`flt-${f}`);
         if (btn) {
           if (f === flt) {
-            btn.className = "bg-[#102138] text-white px-3 py-1.5 rounded-lg";
+            btn.className = "bg-[#102138] text-white px-3.5 py-2 rounded-xl transition";
           } else {
-            btn.className = "bg-slate-100 text-slate-700 px-3 py-1.5 rounded-lg";
+            btn.className = "bg-slate-100 text-slate-700 hover:bg-slate-200 px-3.5 py-2 rounded-xl transition";
           }
         }
       });
@@ -636,7 +733,7 @@
         return;
       }
 
-      const msg = `*Assalam-o-Alaikum SDG Insights!*%0A%0AI want to order preparation portal access:%0A*Course:* ${selectedCourse.code} - ${selectedCourse.title}%0A*Name:* ${name}%0A*Gmail:* ${email}%0A*Trx ID:* ${trx}%0A%0APlease verify payment and send secret key to Start Exam Preparation. Thank you!`;
+      const msg = `*Assalam-o-Alaikum SDG Insights!*%0A%0AI want to enroll in preparation portal:%0A*Course:* ${selectedCourse.code} - ${selectedCourse.title}%0A*Name:* ${name}%0A*Gmail:* ${email}%0A*Trx ID:* ${trx}%0A%0APlease verify payment and send secret key to Start Exam Preparation. Thank you!`;
       window.open(`https://wa.me/923198519637?text=${msg}`, '_blank');
       closeOrderModal();
     }
@@ -669,6 +766,85 @@
     function closeReader() {
       document.getElementById("readerBox").classList.add("hidden");
       document.getElementById("loginBox").classList.remove("hidden");
+    }
+
+    // ========================================================
+    // INTERACTIVE AI TEACHER CHATBOT SCRIPT
+    // ========================================================
+    function toggleTeacherChat() {
+      const win = document.getElementById("teacherChatWindow");
+      win.classList.toggle("hidden");
+    }
+
+    const teacherAnswers = {
+      1: "جی ہاں، SDG Insights کے تمام ہینڈ آؤٹ نوٹس، پریپریشن پورٹلز اور اسٹڈی سافٹ ویئر 100% پیڈ ہیں۔ ہمارا کوئی بھی مٹیریل یا ریسورس فری نہیں ہے۔",
+      2: "یہ تمام نوٹس ورچوئل یونیورسٹی کے آفیشل ہینڈ آؤٹس اور لیکچرز سے لفظ بہ لفظ تیار کیے گئے ہیں۔ اگر آپ نوٹس کا ایک بھی لفظ سکپ کیے بغیر 100% اچھے سے یاد کر لیں، تو امتحان 80% سے 90% انہی میں سے آتا ہے۔ ساتھ ہی ہماری یوٹیوب ویڈیوز دیکھ کر اپنے کنسیپٹس بھی لازمی کلیئر کریں۔",
+      3: "جی ہاں! اگر آپ مکمل سمسٹر کی تمام فائلز لیتے ہیں تو فلیٹ 20% رعایت ہے، اور اپنی مرضی کے کوئی سے بھی 5 سبجیکٹس لینے پر 10% رعایت دی جاتی ہے۔",
+      4: "ادائیگی صرف ہمارے آفیشل اکاؤنٹس EasyPaisa (03198519637 - Munazza mukhtar) یا MCB Bank (1708370211010380 - MUNAZA MUKHTAR) میں قبول کی جاتی ہے۔ دیگر کسی غیر متعلقہ نمبر پر ادائیگی نہ بھیجیں۔",
+      5: "ویڈیو والے لنکس ایک محدود پرانے وقت کے لیے تھے جو اب ایکسپائر ہو چکے ہیں۔ اب تمام نوٹس اور پورٹلز نئے پیپر پیٹرن کے مطابق نئے سرے سے اپڈیٹ کیے گئے ہیں جو محفوظ طریقے سے ملتے ہیں، اس لیے اب یہ پیڈ ہیں۔",
+      6: "جی ہاں، ادائیگی کے بعد متعلقہ سمسٹر کی پوری تیاری کے لیے (تقریباً 6 ماہ کا عرصہ) یہ پورٹل سافٹ ویئر آپ کے پاس فعال رہتا ہے اور آپ جب چاہیں لاگ ان کر کے پڑھ سکتے ہیں۔",
+      7: "ہر سبجیکٹ کے ساتھ ہماری یوٹیوب پریپریشنل ویڈیو منسلک ہے۔ آپ ہمارے آفیشل یوٹیوب چینل @sdginsights پر جا کر تمام ویڈیوز مفت دیکھ سکتے ہیں۔",
+      8: "آپ فیس ادا کر کے واٹس ایپ (0319-8519637) پر اپنی جی میل اور رسید کا اسکرین شاٹ بھیجیں گے۔ رسید تصدیق ہوتے ہی آپ کو پورٹل کا خفیہ پاس کوڈ مل جائے گا جسے لگا کر آپ اسی ویب سائٹ پر نوٹس کھول سکیں گے۔",
+      9: "جی ہاں، کچھ مخصوص سبجیکٹس کے نوٹس پی ڈی ایف فارمیٹ میں بھی مل جاتے ہیں۔ اپنے مطلوبہ سبجیکٹ کی پی ڈی ایف کی تصدیق کے لیے آپ ہم سے واٹس ایپ پر رابطہ کر سکتے ہیں۔"
+    };
+
+    function askBotQuestion(id) {
+      const box = document.getElementById("chatMessages");
+      const questionText = event.target.innerText.replace('• ', '');
+      
+      // Append Student Msg
+      box.innerHTML += `
+        <div class="flex justify-end">
+          <div class="bg-[#102138] text-white p-2.5 rounded-2xl rounded-tr-none text-xs urdu-font max-w-[85%] text-right">
+            ${questionText}
+          </div>
+        </div>
+      `;
+
+      // Append Teacher Response
+      setTimeout(() => {
+        box.innerHTML += `
+          <div class="bg-white p-3 rounded-2xl rounded-tl-none border border-slate-200 shadow-2xs max-w-[90%] space-y-1">
+            <span class="text-[10px] font-bold text-[#3a80bc] block">SDG Insights Teacher</span>
+            <p class="urdu-font text-xs text-slate-800 text-right">
+              ${teacherAnswers[id]}
+            </p>
+          </div>
+        `;
+        box.scrollTop = box.scrollHeight;
+      }, 400);
+
+      box.scrollTop = box.scrollHeight;
+    }
+
+    function sendCustomTeacherMsg() {
+      const input = document.getElementById("userChatInput");
+      const text = input.value.trim();
+      if (!text) return;
+
+      const box = document.getElementById("chatMessages");
+      box.innerHTML += `
+        <div class="flex justify-end">
+          <div class="bg-[#102138] text-white p-2.5 rounded-2xl rounded-tr-none text-xs urdu-font max-w-[85%] text-right">
+            ${text}
+          </div>
+        </div>
+      `;
+      input.value = "";
+
+      setTimeout(() => {
+        box.innerHTML += `
+          <div class="bg-white p-3 rounded-2xl rounded-tl-none border border-slate-200 shadow-2xs max-w-[90%] space-y-1">
+            <span class="text-[10px] font-bold text-[#3a80bc] block">SDG Insights Teacher</span>
+            <p class="urdu-font text-xs text-slate-800 text-right">
+              بہت شکریہ! آپ کے اس سوال کی مزید رہنمائی کے لیے آپ براہِ راست میرے واٹس ایپ نمبر (03198519637) پر رابطہ کر سکتے ہیں تاکہ میں آپ کو مکمل تفصیلات فراہم کر سکوں۔
+            </p>
+          </div>
+        `;
+        box.scrollTop = box.scrollHeight;
+      }, 500);
+
+      box.scrollTop = box.scrollHeight;
     }
 
     // Initialize
