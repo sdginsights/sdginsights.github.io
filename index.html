@@ -3,308 +3,991 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MTH401 Differential Equations — Master Preparation Portal | SDG Insights</title>
   
+  <title>SDG Insights — VU Exam Preparation Portals & LMS Handling</title>
+  <meta name="description" content="Official SDG Insights: 100% Handout-Accurate Solved Notes, Final and Mid Term Preparation Portals, LMS Handling & Full Support Packages." />
+  <link rel="canonical" href="https://sdginsights.github.io" />
+
+  <!-- TAILWIND CSS & FONTS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Caveat:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Noto+Nastaliq+Urdu:wght@400;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
 
   <style>
-    body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #f8fafc; color: #0f172a; }
-    .rough-font { font-family: 'Caveat', cursive; }
-    .nav-btn.active { background-color: #102138; color: #ffffff; font-weight: 700; }
-    .portal-section { display: none; }
-    .portal-section.active { display: block; animation: fadeIn 0.3s ease-out; }
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+    :root {
+      --brand-navy: #102138;
+      --brand-blue: #3a80bc;
+      --brand-sky: #60a5fa;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #09121f;
+      color: #0f172a;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+    .urdu-font { font-family: 'Noto Nastaliq Urdu', serif; line-height: 2.3; }
+    .handwriting { font-family: 'Caveat', cursive; }
+
+    /* DYNAMIC COLOR-SHIFTING AURORA GLOW MORPHISM */
+    .aurora-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+      background: radial-gradient(circle at 50% 15%, #0f2038 0%, #050a12 100%);
+    }
+
+    .color-orb-1 {
+      position: absolute;
+      width: 650px;
+      height: 650px;
+      border-radius: 50%;
+      top: -100px;
+      left: -100px;
+      filter: blur(100px);
+      animation: shiftColors1 14s ease-in-out infinite alternate, floatOrb1 18s ease-in-out infinite alternate;
+    }
+
+    .color-orb-2 {
+      position: absolute;
+      width: 700px;
+      height: 700px;
+      border-radius: 50%;
+      top: 30%;
+      right: -150px;
+      filter: blur(110px);
+      animation: shiftColors2 16s ease-in-out infinite alternate, floatOrb2 20s ease-in-out infinite alternate;
+    }
+
+    .color-orb-3 {
+      position: absolute;
+      width: 550px;
+      height: 550px;
+      border-radius: 50%;
+      bottom: -100px;
+      left: 20%;
+      filter: blur(100px);
+      animation: shiftColors3 15s ease-in-out infinite alternate, floatOrb3 22s ease-in-out infinite alternate;
+    }
+
+    @keyframes shiftColors1 {
+      0% { background: radial-gradient(circle, rgba(58, 128, 188, 0.65) 0%, rgba(58, 128, 188, 0) 70%); }
+      33% { background: radial-gradient(circle, rgba(37, 99, 235, 0.6) 0%, rgba(37, 99, 235, 0) 70%); }
+      66% { background: radial-gradient(circle, rgba(99, 102, 241, 0.55) 0%, rgba(99, 102, 241, 0) 70%); }
+      100% { background: radial-gradient(circle, rgba(14, 165, 233, 0.6) 0%, rgba(14, 165, 233, 0) 70%); }
+    }
+
+    @keyframes shiftColors2 {
+      0% { background: radial-gradient(circle, rgba(96, 165, 250, 0.55) 0%, rgba(96, 165, 250, 0) 70%); }
+      33% { background: radial-gradient(circle, rgba(56, 189, 248, 0.55) 0%, rgba(56, 189, 248, 0) 70%); }
+      66% { background: radial-gradient(circle, rgba(129, 140, 248, 0.5) 0%, rgba(129, 140, 248, 0) 70%); }
+      100% { background: radial-gradient(circle, rgba(37, 99, 235, 0.55) 0%, rgba(37, 99, 235, 0) 70%); }
+    }
+
+    @keyframes shiftColors3 {
+      0% { background: radial-gradient(circle, rgba(37, 99, 235, 0.5) 0%, rgba(37, 99, 235, 0) 70%); }
+      33% { background: radial-gradient(circle, rgba(79, 70, 229, 0.45) 0%, rgba(79, 70, 229, 0) 70%); }
+      66% { background: radial-gradient(circle, rgba(14, 165, 233, 0.55) 0%, rgba(14, 165, 233, 0) 70%); }
+      100% { background: radial-gradient(circle, rgba(58, 128, 188, 0.55) 0%, rgba(58, 128, 188, 0) 70%); }
+    }
+
+    @keyframes floatOrb1 {
+      0% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(140px, 90px) scale(1.15); }
+      100% { transform: translate(70px, 180px) scale(0.95); }
+    }
+    @keyframes floatOrb2 {
+      0% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(-160px, 120px) scale(1.2); }
+      100% { transform: translate(-80px, -70px) scale(1); }
+    }
+    @keyframes floatOrb3 {
+      0% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(-90px, -140px) scale(1.18); }
+      100% { transform: translate(120px, -50px) scale(1); }
+    }
+
+    /* FROSTED GLASS CARDS */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.6) inset;
+      transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .glass-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 24px 44px -10px rgba(16, 33, 56, 0.35), 0 0 30px rgba(58, 128, 188, 0.35);
+      border-color: rgba(58, 128, 188, 0.8);
+    }
+
+    /* TAB VISIBILITY */
+    .tab-content { display: none; }
+    .tab-active { display: block; animation: fadeInView 0.28s cubic-bezier(0.16, 1, 0.3, 1); }
+    @keyframes fadeInView {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .nav-btn-active {
+      background: linear-gradient(135deg, #102138 0%, #1e3a61 100%);
+      color: #ffffff;
+      font-weight: 700;
+      box-shadow: 0 4px 14px rgba(16, 33, 56, 0.3);
+    }
+    .nav-btn-inactive {
+      background-color: transparent;
+      color: #475569;
+      font-weight: 600;
+    }
+    .nav-btn-inactive:hover {
+      background-color: #f1f5f9;
+      color: #102138;
+    }
+
+    /* 5-SECOND FLOATING STICKY TOAST */
+    #stickyNoticeToast {
+      transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+      transform: translateY(120px) scale(0.9);
+      opacity: 0;
+      pointer-events: none;
+    }
+    #stickyNoticeToast.toast-visible {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    @keyframes timerProgress {
+      0% { width: 0%; }
+      100% { width: 100%; }
+    }
+    .timer-bar-animate {
+      animation: timerProgress 5s linear infinite;
+    }
   </style>
 </head>
-<body class="min-h-screen flex flex-col antialiased">
+<body class="antialiased relative flex flex-col">
 
-  <!-- TOP BRAND BAR -->
-  <div class="bg-[#102138] text-white text-xs py-2 px-4 flex items-center justify-between border-b border-slate-800">
-    <div class="flex items-center space-x-2">
-      <a href="index.html" class="text-[#3a80bc] hover:underline font-bold flex items-center gap-1">
-        <i class="fa-solid fa-arrow-left"></i> Main SDG Insights Portal
-      </a>
-      <span>•</span>
-      <span class="text-slate-300">MTH401 Master Portal</span>
-    </div>
-    <span class="bg-amber-400 text-slate-950 px-2 py-0.5 rounded font-bold text-[10px]">1-Month Access</span>
+  <!-- DYNAMIC COLOR-SHIFTING AURORA GLOW BACKGROUND -->
+  <div class="aurora-canvas">
+    <div class="color-orb-1"></div>
+    <div class="color-orb-2"></div>
+    <div class="color-orb-3"></div>
   </div>
 
-  <!-- NAVBAR WITH 4 MAIN TABS -->
-  <header class="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-xs">
-    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-      <div class="flex items-center space-x-3">
-        <div class="w-10 h-10 rounded-2xl bg-[#102138] text-[#3a80bc] flex items-center justify-center font-black text-lg">
-          <i class="fa-solid fa-calculator"></i>
-        </div>
-        <div>
-          <h1 class="text-base font-black text-[#102138] leading-tight">MTH401 Preparation Portal</h1>
-          <p class="text-[11px] text-slate-500 font-medium">Virtual University • Differential Equations</p>
-        </div>
-      </div>
+  <div class="relative z-10 flex-1 flex flex-col min-h-screen">
 
-      <!-- 4 NAVIGATION BUTTONS -->
-      <nav class="flex items-center bg-slate-100 p-1 rounded-2xl border border-slate-200 text-xs font-bold">
-        <button onclick="switchPortalView('home')" id="tab-home" class="nav-btn active px-3.5 py-2 rounded-xl transition">
-          Home (Overview)
-        </button>
-        <button onclick="switchPortalView('lectures')" id="tab-lectures" class="nav-btn text-slate-600 px-3.5 py-2 rounded-xl transition flex items-center gap-1.5">
-          <i class="fa-solid fa-lock text-amber-500 text-[10px]"></i>
-          <span>Lectures (1-10)</span>
-        </button>
-        <button onclick="switchPortalView('quiz')" id="tab-quiz" class="nav-btn text-slate-600 px-3.5 py-2 rounded-xl transition flex items-center gap-1.5">
-          <i class="fa-solid fa-lock text-amber-500 text-[10px]"></i>
-          <span>Quiz Bank (MCQs)</span>
-        </button>
-        <button onclick="switchPortalView('subjective')" id="tab-subjective" class="nav-btn text-slate-600 px-3.5 py-2 rounded-xl transition flex items-center gap-1.5">
-          <i class="fa-solid fa-lock text-amber-500 text-[10px]"></i>
-          <span>Solved Questions</span>
-        </button>
-      </nav>
-    </div>
-  </header>
-
-  <!-- ======================================================== -->
-  <!-- 1. HOME SECTION (100% FREE & VISIBLE TO ALL STUDENTS) -->
-  <!-- ======================================================== -->
-  <main id="view-home" class="portal-section active flex-1 py-12 px-4">
-    <div class="max-w-4xl mx-auto space-y-8 text-center">
-      
-      <div class="space-y-3">
-        <span class="bg-blue-50 text-[#3a80bc] text-xs font-extrabold px-3 py-1 rounded-full uppercase border border-blue-200">
-          Course Overview & Syllabus
-        </span>
-        <h2 class="text-3xl md:text-5xl font-black text-[#102138] tracking-tight">
-          MTH401: Differential Equations <br/>
-          <span class="text-[#3a80bc]">Master Preparation Portal</span>
-        </h2>
-        <p class="text-sm md:text-base text-slate-500 max-w-xl mx-auto leading-relaxed">
-          100% handout-accurate solved theory, step-by-step rough work, verified quiz bank, and past examination papers.
-        </p>
-      </div>
-
-      <!-- DEMO VIDEO & QUICK ACTIONS -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 text-left max-w-3xl mx-auto">
+    <!-- NAVBAR WITH EMBEDDED VECTOR LOGO -->
+    <header class="bg-white/95 backdrop-blur-md border-b border-slate-200/80 sticky top-0 z-40 shadow-xs">
+      <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
         
-        <!-- CARD 1 -->
-        <div class="bg-white p-5 rounded-3xl border border-slate-200 shadow-xs space-y-2">
-          <div class="w-10 h-10 rounded-xl bg-red-50 text-red-600 flex items-center justify-center text-lg">
-            <i class="fa-brands fa-youtube"></i>
+        <!-- LOGO -->
+        <div onclick="switchTab('tab-home')" class="flex items-center space-x-3 cursor-pointer shrink-0">
+          <div class="w-12 h-12 rounded-full overflow-hidden shadow-sm flex items-center justify-center bg-[#11253e] shrink-0 border border-[#3a80bc]">
+            <svg viewBox="0 0 200 200" class="w-full h-full drop-shadow-xs">
+              <defs>
+                <path id="textArc" d="M 24,100 A 76,76 0 1,1 176,100" fill="none" />
+              </defs>
+              <circle cx="100" cy="100" r="98" fill="#11253e" />
+              <text font-family="'Plus Jakarta Sans', sans-serif" font-size="12.5" font-weight="900" fill="#ffffff" letter-spacing="2.2">
+                <textPath href="#textArc" startOffset="50%" text-anchor="middle">
+                  SUCCESS DIGNITY AND GLORY
+                </textPath>
+              </text>
+              <circle cx="32" cy="122" r="5" fill="#ffffff" />
+              <circle cx="168" cy="122" r="5" fill="#ffffff" />
+              <circle cx="100" cy="100" r="69" fill="none" stroke="#ffffff" stroke-width="3" />
+              <circle cx="100" cy="100" r="67.5" fill="#3a80bc" />
+              <text x="100" y="98" font-family="'Plus Jakarta Sans', sans-serif" font-size="36" font-weight="900" fill="#11253e" text-anchor="middle" letter-spacing="-1">SDG</text>
+              <text x="100" y="126" font-family="'Plus Jakarta Sans', sans-serif" font-size="18" font-weight="800" fill="#ffffff" text-anchor="middle" letter-spacing="1.5">INSIGHTS</text>
+            </svg>
           </div>
-          <h4 class="font-bold text-sm text-[#102138]">Watch Prep Lecture</h4>
-          <p class="text-xs text-slate-500">Free concept lecture from our YouTube channel @sdginsights.</p>
-          <a href="https://youtube.com/@sdginsights" target="_blank" class="text-xs font-bold text-red-600 block pt-2 hover:underline">
-            Watch on YouTube →
+          <div>
+            <span class="text-lg font-black text-[#102138] tracking-tight block leading-tight">SDG Insights</span>
+            <span class="text-[11px] text-slate-400 font-semibold">VU Preparation Portals</span>
+          </div>
+        </div>
+
+        <!-- MAIN TABS -->
+        <nav class="hidden md:flex items-center bg-slate-100 p-1 rounded-2xl border border-slate-200 text-xs">
+          <button onclick="switchTab('tab-home')" id="btn-tab-home" class="nav-btn-active px-3.5 py-2 rounded-xl transition">Home</button>
+          <button onclick="switchTab('tab-notes')" id="btn-tab-notes" class="nav-btn-inactive px-3.5 py-2 rounded-xl transition">Preparation Portals</button>
+          <button onclick="switchTab('tab-lms')" id="btn-tab-lms" class="nav-btn-inactive px-3.5 py-2 rounded-xl transition">LMS Handling</button>
+          <button onclick="switchTab('tab-deals')" id="btn-tab-deals" class="nav-btn-inactive px-3.5 py-2 rounded-xl transition">Deals</button>
+          <button onclick="switchTab('tab-portal')" id="btn-tab-portal" class="nav-btn-inactive px-3.5 py-2 rounded-xl transition flex items-center gap-1.5 text-[#3a80bc]">
+            <i class="fa-solid fa-lock"></i> Start Exam Preparation
+          </button>
+        </nav>
+
+        <!-- WHATSAPP -->
+        <div class="flex items-center space-x-2">
+          <a href="https://wa.me/923198519637" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white text-xs px-3.5 py-2 rounded-xl font-bold transition flex items-center gap-1.5 shadow-xs">
+            <i class="fa-brands fa-whatsapp text-sm"></i>
+            <span>WhatsApp</span>
           </a>
         </div>
+      </div>
 
-        <!-- CARD 2 -->
-        <div class="bg-white p-5 rounded-3xl border border-slate-200 shadow-xs space-y-2">
-          <div class="w-10 h-10 rounded-xl bg-blue-50 text-[#3a80bc] flex items-center justify-center text-lg">
-            <i class="fa-solid fa-list-check"></i>
+      <!-- MOBILE TABS -->
+      <div class="flex md:hidden items-center justify-around border-t border-slate-100 bg-slate-50 px-2 py-2 text-[11px] font-bold overflow-x-auto">
+        <button onclick="switchTab('tab-home')" class="px-2.5 py-1 text-[#102138]">Home</button>
+        <button onclick="switchTab('tab-notes')" class="px-2.5 py-1 text-slate-600">Portals</button>
+        <button onclick="switchTab('tab-lms')" class="px-2.5 py-1 text-slate-600">LMS</button>
+        <button onclick="switchTab('tab-deals')" class="px-2.5 py-1 text-slate-600">Deals</button>
+        <button onclick="switchTab('tab-portal')" class="px-2.5 py-1 text-[#3a80bc]">Start Prep</button>
+      </div>
+    </header>
+
+    <!-- ======================================================== -->
+    <!-- TAB 1: HOME -->
+    <!-- ======================================================== -->
+    <section id="tab-home" class="tab-content tab-active flex-1">
+      
+      <!-- HERO -->
+      <div class="py-12 px-4 text-center">
+        <div class="max-w-3xl mx-auto space-y-4">
+          
+          <div class="inline-flex items-center gap-2 bg-white/90 backdrop-blur-md border border-blue-200/60 text-[#102138] px-4 py-1.5 rounded-full text-xs font-bold shadow-xs">
+            <i class="fa-solid fa-shield-halved text-[#3a80bc]"></i>
+            <span>Success, Dignity & Glory in Your VU Studies</span>
           </div>
-          <h4 class="font-bold text-sm text-[#102138]">Lectures Coverage</h4>
-          <p class="text-xs text-slate-500">Lectures 01 to 10 accumulated. Homogeneous, Exact ODEs & Laplace.</p>
-          <span class="text-xs font-bold text-[#3a80bc] block pt-2">100% Handout Aligned</span>
+
+          <h1 class="text-3xl md:text-5xl font-black text-white tracking-tight drop-shadow-md">
+            Final & Mid Term Preparation Portals
+          </h1>
+
+          <p class="text-slate-300 text-sm md:text-base max-w-lg mx-auto">
+            100% handout-accurate solved exam portals, interactive study software, and complete LMS handling.
+          </p>
+
+          <div class="pt-2 flex items-center justify-center gap-3 flex-wrap text-xs font-bold">
+            <button onclick="switchTab('tab-notes')" class="bg-white/90 hover:bg-white text-[#102138] px-5 py-3 rounded-2xl transition shadow-lg flex items-center gap-2 border border-white">
+              <i class="fa-solid fa-book-open text-[#3a80bc]"></i>
+              <span>Browse Preparation Portals</span>
+            </button>
+            <button onclick="switchTab('tab-portal')" class="bg-gradient-to-r from-[#3a80bc] to-[#2563eb] text-white px-5 py-3 rounded-2xl transition shadow-lg flex items-center gap-2 border border-blue-400/40">
+              <i class="fa-solid fa-play"></i>
+              <span>Start Exam Preparation</span>
+            </button>
+          </div>
+
+          <!-- SEARCH -->
+          <div class="max-w-md mx-auto pt-3">
+            <div class="relative">
+              <i class="fa-solid fa-magnifying-glass absolute left-4 top-3.5 text-slate-400"></i>
+              <input type="text" id="homeSearch" onkeyup="searchFromHome()" placeholder="Search subject code (e.g. MGT101, CS610, MTH401)..." class="w-full bg-white/95 backdrop-blur-md border border-white/80 rounded-2xl pl-11 pr-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#3a80bc] shadow-lg text-slate-800" />
+            </div>
+          </div>
+
         </div>
+      </div>
 
-        <!-- CARD 3 -->
-        <div class="bg-white p-5 rounded-3xl border border-slate-200 shadow-xs space-y-2">
-          <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-lg">
-            <i class="fa-solid fa-shield-halved"></i>
+      <!-- FEATURED MGT101 PORTAL PROMINENT CARD -->
+      <div class="max-w-5xl mx-auto px-4 pb-6">
+        <div class="glass-card rounded-3xl p-6 border-2 border-[#3a80bc] shadow-xl flex flex-col md:flex-row items-center justify-between gap-4">
+          <div class="flex items-center space-x-4">
+            <div class="w-14 h-14 rounded-2xl bg-[#102138] text-[#3a80bc] flex items-center justify-center text-2xl font-black shrink-0">
+              <i class="fa-solid fa-file-invoice-dollar"></i>
+            </div>
+            <div>
+              <span class="bg-emerald-100 text-emerald-800 text-[10px] font-black px-2.5 py-0.5 rounded-full uppercase">Featured Active Portal</span>
+              <h3 class="text-xl font-black text-[#102138] mt-1">MGT101: Financial Accounting Master Portal</h3>
+              <p class="text-xs text-slate-500">Official Midterm Preparation Portal with free overview, video lectures, and verified solutions.</p>
+            </div>
           </div>
-          <h4 class="font-bold text-sm text-[#102138]">1-Month Full Access</h4>
-          <p class="text-xs text-slate-500">Fee: Rs. 600 (Midterm) / Rs. 900 (Final Term). Unlock all sections.</p>
-          <a href="https://wa.me/923198519637?text=Assalam-o-Alaikum!%20Mujhe%20MTH401%20portal%20unlock%20karwana%20hai." target="_blank" class="text-xs font-bold text-emerald-600 block pt-2 hover:underline">
-            Unlock via WhatsApp →
+          <a href="mgt101.html" class="bg-gradient-to-r from-[#102138] to-[#1e3a61] hover:from-slate-900 hover:to-[#102138] text-white font-bold text-xs px-6 py-3 rounded-2xl transition shadow-md shrink-0 flex items-center gap-2">
+            <span>Open MGT101 Portal</span>
+            <i class="fa-solid fa-arrow-right"></i>
           </a>
         </div>
-
       </div>
 
-      <!-- FREE SAMPLE PREVIEW -->
-      <div class="bg-white p-6 md:p-8 rounded-3xl border border-slate-200 shadow-sm max-w-3xl mx-auto text-left space-y-4">
-        <h3 class="text-lg font-bold text-[#102138] border-b pb-2">Sample Handout Preview: Concept 01</h3>
-        <p class="text-sm text-slate-700 leading-relaxed">
-          In classical algebra, the unknown quantity is always a scalar number. In <strong>Differential Equations</strong>, the unknown is an entire function $y = f(x)$ that describes continuous rates of change.
-        </p>
-        <div class="bg-blue-50/70 p-4 rounded-2xl border border-blue-100 text-xs">
-          <span class="font-bold text-[#102138] block mb-1">✎ SDG Insights Rough Work Note:</span>
-          <span class="rough-font text-base text-slate-800">Differentiation annihilates constants: d/dx(C) = 0. Integration must restore C, representing the full 1-parameter family of solution curves!</span>
-        </div>
-      </div>
+      <!-- 3 KEY DOORS -->
+      <div class="max-w-5xl mx-auto px-4 pb-12">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <div onclick="switchTab('tab-notes')" class="glass-card rounded-3xl p-6 cursor-pointer flex flex-col justify-between group">
+            <div class="space-y-3">
+              <div class="w-12 h-12 rounded-2xl bg-blue-50 text-[#3a80bc] flex items-center justify-center text-xl group-hover:bg-[#102138] group-hover:text-white transition">
+                <i class="fa-solid fa-laptop-code"></i>
+              </div>
+              <h3 class="text-lg font-bold text-[#102138]">Preparation Portals</h3>
+              <p class="text-xs text-slate-500 leading-relaxed">Final & Mid Term preparation portals, handout solutions, and verified MCQs.</p>
+            </div>
+            <span class="text-xs font-bold text-[#3a80bc] pt-4 mt-2 block border-t border-slate-100">Open Portals Library →</span>
+          </div>
 
-    </div>
-  </main>
+          <div onclick="switchTab('tab-lms')" class="glass-card rounded-3xl p-6 cursor-pointer flex flex-col justify-between group">
+            <div class="space-y-3">
+              <div class="w-12 h-12 rounded-2xl bg-indigo-50 text-indigo-700 flex items-center justify-center text-xl group-hover:bg-[#102138] group-hover:text-white transition">
+                <i class="fa-solid fa-headset"></i>
+              </div>
+              <h3 class="text-lg font-bold text-[#102138]">LMS Handling Packages</h3>
+              <p class="text-xs text-slate-500 leading-relaxed">Complete coursework handling: assignments, quizzes, and GDBs with high score targets.</p>
+            </div>
+            <span class="text-xs font-bold text-indigo-700 pt-4 mt-2 block border-t border-slate-100">View LMS Packages →</span>
+          </div>
 
-  <!-- ======================================================== -->
-  <!-- 2. PAID SECTION: LECTURES (LOCKED FOR UNAPPROVED USERS) -->
-  <!-- ======================================================== -->
-  <section id="view-lectures" class="portal-section flex-1 py-8 px-4">
-    <div class="max-w-4xl mx-auto bg-white rounded-3xl border border-slate-200 p-8 shadow-sm space-y-6">
-      <div class="border-b pb-4">
-        <span class="text-xs font-bold text-[#3a80bc] uppercase">Verified Student Area</span>
-        <h2 class="text-2xl font-black text-[#102138]">MTH401: Lectures 01 to 10 Detailed Handout Notes</h2>
-      </div>
-
-      <div class="space-y-4 text-sm text-slate-700 leading-relaxed">
-        <h3 class="font-bold text-base text-[#102138]">1. The Differential Operator D and Linearity</h3>
-        <p>The symbol $D$ denotes differentiation: $D = d/dx, D^2 = d^2/dx^2$. The linearity property states that for constants $a, b$ and differentiable functions $f, g$:</p>
-        <div class="bg-slate-50 p-3 rounded-xl border text-center font-mono font-bold text-[#102138]">
-          D[a f(x) + b g(x)] = a D[f(x)] + b D[g(x)]
-        </div>
-        <p>This allows polynomial operators $L(D) = a_2 D^2 + a_1 D + a_0$ to be treated algebraically.</p>
-
-        <h3 class="font-bold text-base text-[#102138] mt-6">2. First-Order ODE Classification</h3>
-        <p>Separable equations: Can be written as $M(x)dx + N(y)dy = 0$. Integrated directly on both sides.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ======================================================== -->
-  <!-- 3. PAID SECTION: QUIZ BANK (MCQS) -->
-  <!-- ======================================================== -->
-  <section id="view-quiz" class="portal-section flex-1 py-8 px-4">
-    <div class="max-w-4xl mx-auto bg-white rounded-3xl border border-slate-200 p-8 shadow-sm space-y-6">
-      <div class="border-b pb-4">
-        <span class="text-xs font-bold text-emerald-600 uppercase">Verified MCQ Bank</span>
-        <h2 class="text-2xl font-black text-[#102138]">MTH401: 100 Auto-Solved Handout MCQs</h2>
-      </div>
-
-      <div class="space-y-4 text-sm">
-        <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
-          <p class="font-bold text-slate-800">Q1: An equation involving derivatives of one or more dependent variables with respect to a single independent variable is called:</p>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
-            <button onclick="alert('Correct Answer! ODE')" class="p-2.5 bg-white border rounded-xl hover:bg-blue-50 text-left font-semibold">A) Ordinary Differential Equation (ODE)</button>
-            <button onclick="alert('Incorrect, try again!')" class="p-2.5 bg-white border rounded-xl hover:bg-red-50 text-left font-semibold">B) Partial Differential Equation (PDE)</button>
+          <div onclick="switchTab('tab-deals')" class="glass-card rounded-3xl p-6 cursor-pointer flex flex-col justify-between group">
+            <div class="space-y-3">
+              <div class="w-12 h-12 rounded-2xl bg-amber-50 text-amber-700 flex items-center justify-center text-xl group-hover:bg-[#102138] group-hover:text-amber-300 transition">
+                <i class="fa-solid fa-gift"></i>
+              </div>
+              <h3 class="text-lg font-bold text-[#102138]">Package Deals</h3>
+              <p class="text-xs text-slate-500 leading-relaxed">Flat 20% discount on full semester packages or 10% on any 5 subjects.</p>
+            </div>
+            <span class="text-xs font-bold text-amber-700 pt-4 mt-2 block border-t border-slate-100">View Discount Deals →</span>
           </div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- ======================================================== -->
-  <!-- 4. PAID SECTION: SOLVED QUESTIONS (SUBJECTIVE) -->
-  <!-- ======================================================== -->
-  <section id="view-subjective" class="portal-section flex-1 py-8 px-4">
-    <div class="max-w-4xl mx-auto bg-white rounded-3xl border border-slate-200 p-8 shadow-sm space-y-6">
-      <div class="border-b pb-4">
-        <span class="text-xs font-bold text-purple-600 uppercase">Subjective Exam Key</span>
-        <h2 class="text-2xl font-black text-[#102138]">MTH401: Solved Short & Long Problems</h2>
-      </div>
+    </section>
 
-      <div class="space-y-4 text-sm">
-        <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
-          <div class="flex justify-between text-xs font-bold text-[#102138]">
-            <span>Short Question [3 Marks]</span>
-            <span class="text-slate-400">Handout Solved</span>
+    <!-- ======================================================== -->
+    <!-- TAB 2: FINAL & MID TERM PREPARATION PORTALS (MGT101 AT TOP) -->
+    <!-- ======================================================== -->
+    <section id="tab-notes" class="tab-content flex-1 py-8 px-4">
+      <div class="max-w-5xl mx-auto space-y-6">
+        
+        <div class="flex items-center justify-between border-b border-white/20 pb-3">
+          <div>
+            <h2 class="text-xl font-bold text-white">Preparation Portals & Notes</h2>
+            <p class="text-xs text-slate-300">Filtered by examination terms. All portals are strictly paid.</p>
           </div>
-          <p class="font-semibold text-slate-900">State the conditions for a first-order ODE to be exact.</p>
-          <div class="p-3 bg-white rounded-xl border text-xs text-slate-700">
-            <strong>Solution:</strong> The equation $M(x, y)dx + N(x, y)dy = 0$ is exact if and only if $\frac{\partial M}{\partial y} = \frac{\partial N}{\partial x}$ in the domain of definition.
+          <span class="text-xs font-bold text-white bg-white/20 backdrop-blur-sm px-3 py-1 rounded-xl" id="notesCount">Loading...</span>
+        </div>
+
+        <!-- FILTER BUTTONS -->
+        <div class="glass-card p-4 rounded-3xl space-y-3 shadow-md">
+          <input type="text" id="notesSearchInput" onkeyup="filterNotesGrid()" placeholder="Search code: MGT101, CS610, MTH401, CS301..." class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-xs focus:bg-white focus:outline-none" />
+          
+          <div class="flex items-center gap-2 flex-wrap text-xs font-bold">
+            <button onclick="setNotesFilter('MID')" id="flt-MID" class="bg-[#102138] text-white px-3.5 py-2 rounded-xl transition">🎯 Midterm Portals</button>
+            <button onclick="setNotesFilter('FINAL')" id="flt-FINAL" class="bg-slate-100 text-slate-700 hover:bg-slate-200 px-3.5 py-2 rounded-xl transition">🏆 Final Term Portals</button>
+            <button onclick="setNotesFilter('HIGHLIGHTED')" id="flt-HIGHLIGHTED" class="bg-blue-50 text-[#3a80bc] hover:bg-blue-100 px-3.5 py-2 rounded-xl border border-blue-200 transition">📑 Highlighted Handouts (Rs. 300)</button>
+            <button onclick="setNotesFilter('NOTES')" id="flt-NOTES" class="bg-slate-100 text-slate-700 hover:bg-slate-200 px-3.5 py-2 rounded-xl transition">📝 Master Notes</button>
+          </div>
+        </div>
+
+        <!-- PORTAL CARDS (MGT101 IS FIRST) -->
+        <div id="notesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <!-- Injected by JS -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================== -->
+    <!-- TAB 3: LMS HANDLING -->
+    <!-- ======================================================== -->
+    <section id="tab-lms" class="tab-content flex-1 py-10 px-4">
+      <div class="max-w-4xl mx-auto space-y-8">
+        
+        <div class="text-center space-y-2">
+          <span class="bg-white/20 text-white text-xs font-bold px-3 py-1 rounded-full uppercase">Services</span>
+          <h2 class="text-2xl md:text-3xl font-black text-white">LMS Handling & Exam Preparation Packages</h2>
+          <p class="text-xs text-slate-300 max-w-md mx-auto">Complete semester coursework handling and exam preparation with dedicated 24/7 academic support.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="glass-card rounded-3xl p-6 flex flex-col justify-between space-y-4">
+            <div class="space-y-3">
+              <span class="text-[10px] font-bold text-slate-500 uppercase">Standard Service</span>
+              <h3 class="text-lg font-bold text-[#102138]">Complete LMS Handling</h3>
+              <p class="text-xs text-slate-500 leading-relaxed">Full semester handling of all your online graded activities with target marks.</p>
+              <ul class="text-xs space-y-2 text-slate-700 pt-2 font-medium">
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Assignments (100% Plagiarism Free)</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Quizzes (High Score Target)</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Graded Discussion Boards (GDBs)</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Timely LMS Submissions & Proofs</li>
+              </ul>
+            </div>
+            <button onclick="orderViaWhatsApp('Complete LMS Handling Package')" class="w-full bg-[#102138] hover:bg-[#1a385f] text-white font-bold text-xs py-2.5 rounded-xl transition">
+              Book on WhatsApp
+            </button>
+          </div>
+
+          <div class="glass-card border-2 border-[#3a80bc] rounded-3xl p-6 flex flex-col justify-between space-y-4 shadow-md">
+            <div class="space-y-3">
+              <span class="bg-[#3a80bc] text-white text-[10px] font-black px-2.5 py-0.5 rounded-full uppercase">VIP All-In-One</span>
+              <h3 class="text-lg font-bold text-[#102138]">LMS Handling + Exam Prep + Full Support</h3>
+              <p class="text-xs text-slate-500 leading-relaxed">Complete semester care including coursework, exam portals, and mentor access.</p>
+              <ul class="text-xs space-y-2 text-slate-700 pt-2 font-medium">
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-[#3a80bc]"></i> Complete LMS Handling (Assignments, Quizzes, GDBs)</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-[#3a80bc]"></i> Midterm Preparation Portals & Notes</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-[#3a80bc]"></i> Final Term Preparation Portals & Verified MCQs</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-[#3a80bc]"></i> Highlighted Handouts Included</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-[#3a80bc]"></i> Dedicated 24/7 WhatsApp Support</li>
+              </ul>
+            </div>
+            <button onclick="orderViaWhatsApp('VIP All-in-One: LMS Handling + Exam Prep + Full Support')" class="w-full bg-[#3a80bc] hover:bg-[#2f6fa7] text-white font-bold text-xs py-2.5 rounded-xl transition shadow-xs">
+              Book VIP Package
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================== -->
+    <!-- TAB 4: DEALS -->
+    <!-- ======================================================== -->
+    <section id="tab-deals" class="tab-content flex-1 py-10 px-4">
+      <div class="max-w-3xl mx-auto space-y-6">
+        <div class="text-center space-y-1">
+          <h2 class="text-2xl font-black text-white">Semester Package Deals</h2>
+          <p class="text-xs text-slate-300">Order bundled preparation portals and save fees.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div class="glass-card border-2 border-[#3a80bc] rounded-3xl p-6 space-y-3">
+            <span class="bg-[#102138] text-white text-[10px] font-bold px-2 py-0.5 rounded-md uppercase">20% OFF</span>
+            <h3 class="text-base font-bold text-[#102138]">Full Semester Bundle</h3>
+            <p class="text-xs text-slate-500 leading-relaxed">All preparation portals and notes for your complete semester (5 to 6 courses).</p>
+            <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
+              <span class="text-xs font-bold text-[#102138]">Rs. 3000 ➔ <strong>Rs. 2400</strong></span>
+              <button onclick="orderViaWhatsApp('Full Semester Super Bundle (20% OFF) - Rs. 2400')" class="bg-[#102138] text-white text-xs font-bold px-3.5 py-1.5 rounded-lg">Claim 20% Deal</button>
+            </div>
+          </div>
+
+          <div class="glass-card rounded-3xl p-6 space-y-3">
+            <span class="bg-[#3a80bc] text-white text-[10px] font-bold px-2 py-0.5 rounded-md uppercase">10% OFF</span>
+            <h3 class="text-base font-bold text-[#102138]">Pick Any 5 Courses</h3>
+            <p class="text-xs text-slate-500 leading-relaxed">Choose any 5 preparation portals across your degree.</p>
+            <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
+              <span class="text-xs font-bold text-[#102138]">Rs. 2500 ➔ <strong>Rs. 2250</strong></span>
+              <button onclick="orderViaWhatsApp('Pick Any 5 Subjects Pack (10% OFF) - Rs. 2250')" class="bg-[#3a80bc] text-white text-xs font-bold px-3.5 py-1.5 rounded-lg">Claim 10% Deal</button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ======================================================== -->
-  <!-- LOCK MODAL (POPS UP WHEN UNPAID STUDENT CLICKS PAID TABS) -->
-  <!-- ======================================================== -->
-  <div id="portalLockModal" class="fixed inset-0 bg-slate-950/60 backdrop-blur-xs z-50 hidden flex items-center justify-center p-4">
-    <div class="bg-white rounded-3xl max-w-sm w-full p-6 text-center space-y-4 shadow-2xl border border-slate-200 animate-fade-in">
-      <div class="w-12 h-12 rounded-2xl bg-amber-100 text-amber-600 flex items-center justify-center mx-auto text-xl">
-        <i class="fa-solid fa-lock"></i>
-      </div>
-      <div>
-        <h3 class="text-base font-black text-[#102138]">Section Locked</h3>
-        <p class="text-xs text-slate-500 mt-1 leading-relaxed">
-          یہ سیکشن صرف منظور شدہ طلبہ کے لیے ہے۔ اگر آپ نے فیس ادا کر دی ہے تو اپنی منظور شدہ جی میل درج کریں۔
-        </p>
-      </div>
+    <!-- ======================================================== -->
+    <!-- TAB 5: START EXAM PREPARATION -->
+    <!-- ======================================================== -->
+    <section id="tab-portal" class="tab-content flex-1 py-10 px-4">
+      <div class="max-w-md mx-auto space-y-4">
+        
+        <div id="loginBox" class="glass-card rounded-3xl p-6 shadow-xl space-y-4">
+          <div class="text-center space-y-1">
+            <div class="w-10 h-10 rounded-2xl bg-[#102138] text-[#3a80bc] flex items-center justify-center text-lg mx-auto">
+              <i class="fa-solid fa-play"></i>
+            </div>
+            <h3 class="text-base font-bold text-[#102138]">Start Exam Preparation</h3>
+            <p class="text-xs text-slate-500">Enter your approved Gmail and course code.</p>
+          </div>
 
-      <div class="space-y-2 text-xs">
-        <input type="email" id="unlockUserEmail" placeholder="Enter Approved Gmail..." class="w-full border border-slate-300 rounded-xl px-3 py-2.5 focus:outline-none" />
-        <button onclick="verifyAndUnlockPortal()" class="w-full bg-[#102138] text-white font-bold py-2.5 rounded-xl transition">
-          Unlock Full Portal (1 Month)
+          <div class="bg-amber-50 border border-amber-200 p-3 rounded-2xl text-[11px] text-amber-900 leading-snug">
+            <strong>⚠️ 1-Month Access Policy:</strong> Access opens once approved by instructor. Midterm and Final Term portals remain active for exactly <strong>1 Month (30 Days)</strong> from approval date.
+          </div>
+
+          <div class="space-y-3 text-xs">
+            <input type="email" id="logEmail" placeholder="Approved Gmail Address *" class="w-full border border-slate-300 rounded-xl px-3 py-2.5 focus:outline-none" />
+            <input type="text" id="logSubject" value="MGT101" placeholder="Course Code (e.g. MGT101, MTH401) *" class="w-full border border-slate-300 rounded-xl px-3 py-2.5 uppercase focus:outline-none" />
+            
+            <button onclick="verifyAndOpenReader()" class="w-full bg-[#102138] hover:bg-[#1a385f] text-white font-bold py-2.5 rounded-xl transition shadow-xs">
+              Open My Preparation Portal
+            </button>
+          </div>
+        </div>
+
+        <div id="readerBox" class="hidden glass-card rounded-3xl p-6 shadow-sm space-y-4">
+          <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+            <div>
+              <span class="text-[10px] font-bold text-emerald-600 uppercase block">✓ Active 1-Month Portal</span>
+              <h3 class="text-base font-bold text-[#102138]" id="activeCourseTitle">MGT101 Preparation Software</h3>
+            </div>
+            <button onclick="closeReader()" class="text-xs text-slate-400 hover:text-slate-600">Close</button>
+          </div>
+          
+          <div class="text-xs text-slate-600 space-y-3 leading-relaxed">
+            <p><strong>MGT101: Basic Accounting Equation & Rules of Debit/Credit</strong></p>
+            <p>Assets = Liabilities + Owner's Equity. Increase in assets/expenses is debited, increase in liabilities/equity is credited.</p>
+            <a href="mgt101.html" class="inline-block bg-[#102138] text-white px-4 py-2 rounded-xl font-bold mt-2">
+              Launch Full Dedicated MGT101 Portal →
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ORDER MODAL -->
+    <div id="orderModal" class="fixed inset-0 bg-slate-950/70 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+      <div class="bg-white rounded-3xl max-w-sm w-full p-5 space-y-3.5 border border-slate-200 shadow-2xl">
+        <div class="flex items-center justify-between">
+          <div>
+            <span class="text-[10px] font-bold text-[#3a80bc] uppercase" id="mCode">MGT101</span>
+            <h3 class="text-sm font-bold text-[#102138]" id="mTitle">Preparation Portal (1 Month Access)</h3>
+          </div>
+          <button onclick="closeOrderModal()" class="text-slate-400 hover:text-slate-600 text-sm">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+
+        <div class="grid grid-cols-2 gap-2 text-center text-xs">
+          <div class="p-2 border rounded-xl bg-slate-50">
+            <span class="text-[10px] text-slate-400 block font-bold">Midterm (1 Month)</span>
+            <span class="font-bold text-[#102138]" id="mMid">Rs. 500</span>
+          </div>
+          <div class="p-2 border rounded-xl bg-slate-50">
+            <span class="text-[10px] text-slate-400 block font-bold">Final Term (1 Month)</span>
+            <span class="font-bold text-[#102138]" id="mFinal">Rs. 500</span>
+          </div>
+        </div>
+
+        <div class="bg-slate-50 p-2.5 rounded-xl text-[11px] space-y-1">
+          <div><strong>EasyPaisa:</strong> 03198519637 (Munazza mukhtar)</div>
+          <div><strong>MCB Bank:</strong> 1708370211010380 (MUNAZA MUKHTAR)</div>
+        </div>
+
+        <div class="space-y-2 text-xs">
+          <input type="text" id="stuName" placeholder="Your Name *" class="w-full border rounded-lg px-3 py-1.5" />
+          <input type="email" id="stuEmail" placeholder="Gmail Address *" class="w-full border rounded-lg px-3 py-1.5" />
+          <input type="text" id="stuTrx" placeholder="Payment Trx ID *" class="w-full border rounded-lg px-3 py-1.5 font-mono" />
+        </div>
+
+        <button onclick="submitOrder()" class="w-full bg-[#102138] hover:bg-[#1a385f] text-white font-bold py-2 rounded-xl text-xs transition">
+          Submit for Instructor Approval
         </button>
       </div>
-
-      <div class="pt-2 border-t text-xs">
-        <a href="https://wa.me/923198519637?text=Assalam-o-Alaikum!%20Mujhe%20MTH401%20portal%20fees%20bhej%20kar%20unlock%20karwana%20hai." target="_blank" class="text-emerald-600 font-bold hover:underline flex items-center justify-center gap-1.5">
-          <i class="fa-brands fa-whatsapp text-sm"></i>
-          <span>Pay & Unlock on WhatsApp (0319-8519637)</span>
-        </a>
-      </div>
-
-      <button onclick="closeLockModal()" class="text-xs text-slate-400 hover:text-slate-600 block mx-auto">
-        Back to Home
-      </button>
     </div>
+
+    <!-- 5-SECOND FLOATING STICKY NOTE TOAST -->
+    <div id="stickyNoticeToast" class="fixed bottom-6 left-6 z-40 max-w-sm w-full">
+      <div class="bg-white/95 backdrop-blur-xl border border-white/80 p-4 rounded-3xl shadow-2xl space-y-2 relative overflow-hidden">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center space-x-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-[#3a80bc] animate-ping"></span>
+            <span class="text-[10px] font-black text-[#102138] uppercase tracking-wider">Official Notification</span>
+          </div>
+          <button onclick="hideStickyToastManual()" class="text-slate-400 hover:text-slate-600 text-xs">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <p id="stickyToastText" class="text-xs text-slate-800 font-semibold leading-relaxed">
+          ⚠️ All resources, notes and portals are 100% PAID — nothing is free.
+        </p>
+        <div class="w-full bg-slate-100 h-1 rounded-full overflow-hidden mt-2">
+          <div id="toastProgressBar" class="bg-[#3a80bc] h-full timer-bar-animate"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RESPECTFUL INSTRUCTOR CHATBOT -->
+    <div class="fixed bottom-6 right-6 z-50">
+      <button onclick="toggleTeacherChat()" id="chatTriggerBtn" class="flex items-center gap-2.5 bg-[#102138] hover:bg-[#1a385f] text-white px-4 py-3 rounded-full shadow-2xl transition-all duration-300 border border-[#3a80bc]/40 hover:scale-105">
+        <div class="w-8 h-8 rounded-full bg-[#3a80bc] flex items-center justify-center text-white text-sm shrink-0">
+          <i class="fa-solid fa-chalkboard-user"></i>
+        </div>
+        <div class="text-left leading-tight">
+          <span class="text-[10px] text-slate-300 block">Have a Question?</span>
+          <span class="text-xs font-bold text-amber-300">Talk to Instructor</span>
+        </div>
+      </button>
+
+      <div id="teacherChatWindow" class="hidden absolute bottom-16 right-0 w-[320px] sm:w-[380px] bg-white rounded-3xl shadow-2xl border border-slate-200 overflow-hidden flex flex-col animate-fade-in text-xs">
+        <div class="bg-[#102138] text-white p-4 flex items-center justify-between border-b border-slate-700">
+          <div class="flex items-center space-x-2.5">
+            <div class="w-9 h-9 rounded-full bg-[#3a80bc] flex items-center justify-center text-white font-bold shrink-0">
+              <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+            <div>
+              <h4 class="font-extrabold text-sm">SDG Insights Instructor Desk</h4>
+              <span class="text-[10px] text-emerald-400 flex items-center gap-1">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span> Instructor Online
+              </span>
+            </div>
+          </div>
+          <button onclick="toggleTeacherChat()" class="text-slate-400 hover:text-white text-base">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+
+        <div id="chatMessages" class="p-4 h-80 overflow-y-auto chat-scroll space-y-4 bg-slate-50">
+          <div class="bg-white p-3.5 rounded-2xl rounded-tl-none border border-slate-200 shadow-2xs space-y-2 leading-relaxed">
+            <span class="text-[10px] font-bold text-[#3a80bc] block">SDG Insights Instructor</span>
+            <p class="urdu-font text-xs text-slate-800 text-right">
+              السلام علیکم عزیز طالب علم! میں SDG Insights سے آپ کی انسٹرکٹر ہوں۔ نوٹس، ایگزام تیاری، پورٹلز یا ایل ایم ایس ہینڈلنگ سے متعلق کوئی بھی سوال ہو تو نیچے میسج لکھیں یا سوال منتخب کریں:
+            </p>
+          </div>
+
+          <div class="space-y-1.5 pt-1">
+            <span class="text-[10px] font-bold text-slate-400 block uppercase">Quick Questions:</span>
+            <button onclick="askBotQuestion('paid')" class="w-full text-left bg-white hover:bg-blue-50/70 p-2.5 rounded-xl border border-slate-200 text-slate-700 font-semibold block transition">
+              • Are all notes and portals paid? (کیا یہ پیڈ ہیں؟)
+            </button>
+            <button onclick="askBotQuestion('exam_percentage')" class="w-full text-left bg-white hover:bg-blue-50/70 p-2.5 rounded-xl border border-slate-200 text-slate-700 font-semibold block transition">
+              • How much exam comes from these notes? (پیپر کتنا آتا ہے؟)
+            </button>
+            <button onclick="askBotQuestion('discounts')" class="w-full text-left bg-white hover:bg-blue-50/70 p-2.5 rounded-xl border border-slate-200 text-slate-700 font-semibold block transition">
+              • Any discounts or semester packages available? (ڈیلز / ڈسکاؤنٹ)
+            </button>
+            <button onclick="askBotQuestion('access_method')" class="w-full text-left bg-white hover:bg-blue-50/70 p-2.5 rounded-xl border border-slate-200 text-slate-700 font-semibold block transition">
+              • How will I get portal access? (ایکسیس کیسے ملے گی؟)
+            </button>
+          </div>
+        </div>
+
+        <div class="p-2.5 bg-white border-t border-slate-200 flex items-center gap-1.5">
+          <input type="text" id="userChatInput" placeholder="Type in Roman Urdu, Urdu or English..." class="flex-1 bg-slate-50 border border-slate-200 rounded-xl px-3 py-2.5 text-xs focus:bg-white focus:outline-none" onkeypress="if(event.key==='Enter') sendCustomTeacherMsg()" />
+          <button onclick="sendCustomTeacherMsg()" class="bg-[#102138] hover:bg-[#1a385f] text-white p-2.5 rounded-xl transition">
+            <i class="fa-solid fa-paper-plane text-xs"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-white/95 backdrop-blur-md border-t border-slate-200 py-6 text-xs text-slate-400 mt-auto text-center">
+      <div class="max-w-6xl mx-auto px-4 space-y-1">
+        <p class="font-bold text-slate-700">SDG Insights — Success, Dignity & Glory in Your VU Studies</p>
+        <p>Official Contact: 0319-8519637 • Email: sdginsightsedu@gmail.com</p>
+      </div>
+    </footer>
+
   </div>
 
+  <!-- JAVASCRIPT LOGIC -->
   <script>
-    // APPROVED STUDENTS FOR MTH401
-    // Aap jo email Google Sheet me allow karengi wo yahan unlock hogi
-    let isStudentApproved = false;
-    let approvedUserEmail = "";
+    const toastNotices = [
+      "⚠️ All resources, notes and portals are 100% PAID — nothing is free.",
+      "💼 LMS Handling + Midterm & Final Term Exam Preparation packages with full 24/7 support.",
+      "🎁 Special Deals: Flat 20% OFF on Full Semester • 10% OFF on any 5 subjects.",
+      "💻 Preparation Portals & Interactive Study Software — Practice & prepare online directly."
+    ];
+    let toastIndex = 0;
+    const toastEl = document.getElementById("stickyNoticeToast");
+    const toastText = document.getElementById("stickyToastText");
 
-    const whitelist = [
-      "ali.student@gmail.com",
-      "test.student@gmail.com",
-      "sdginsightsedu@gmail.com"
+    function showNextToast() {
+      toastText.innerText = toastNotices[toastIndex];
+      toastEl.classList.add("toast-visible");
+
+      const bar = document.getElementById("toastProgressBar");
+      bar.classList.remove("timer-bar-animate");
+      void bar.offsetWidth;
+      bar.classList.add("timer-bar-animate");
+
+      setTimeout(() => {
+        toastEl.classList.remove("toast-visible");
+        toastIndex = (toastIndex + 1) % toastNotices.length;
+        setTimeout(showNextToast, 4000);
+      }, 5000);
+    }
+    setTimeout(showNextToast, 2000);
+
+    function hideStickyToastManual() {
+      toastEl.classList.remove("toast-visible");
+    }
+
+    // WHITELIST OF APPROVED EMAILS (ADMIN + STUDENTS)
+    const approvedStudents = [
+      { email: "sdginsightsedu@gmail.com", course: "ALL", expiry: "2099-01-01" },
+      { email: "ali.student@gmail.com", course: "ALL", expiry: "2026-10-05" },
+      { email: "test.student@gmail.com", course: "ALL", expiry: "2026-10-05" }
     ];
 
-    function switchPortalView(viewName) {
-      if (viewName !== 'home' && !isStudentApproved) {
-        document.getElementById("portalLockModal").classList.remove("hidden");
+    // MGT101 IS PLACED AS NUMBER 1 IN THE CATALOGUE
+    const courses = [
+      { code: "MGT101", title: "Financial Accounting Master Portal", types: ["MID", "FINAL", "HIGHLIGHTED", "NOTES"], mid: "Rs. 500", final: "Rs. 500", hl: "Rs. 300", link: "mgt101.html" },
+      { code: "CS101", title: "Introduction to Computing", types: ["MID", "FINAL", "HIGHLIGHTED", "NOTES"], mid: "Rs. 500", final: "Rs. 800", hl: "Rs. 300" },
+      { code: "CS201", title: "Introduction to Programming (C++)", types: ["MID", "FINAL", "HIGHLIGHTED", "NOTES"], mid: "Rs. 600", final: "Rs. 1000", hl: "Rs. 300" },
+      { code: "CS301", title: "Data Structures & Algorithms", types: ["MID", "FINAL", "HIGHLIGHTED", "NOTES"], mid: "Rs. 600", final: "Rs. 1000", hl: "Rs. 300" },
+      { code: "CS304", title: "Object Oriented Programming", types: ["MID", "FINAL", "HIGHLIGHTED", "NOTES"], mid: "Rs. 600", final: "Rs. 1000", hl: "Rs. 300" },
+      { code: "CS401", title: "Computer Architecture & Assembly", types: ["MID", "FINAL", "HIGHLIGHTED", "NOTES"], mid: "Rs. 600", final: "Rs. 1000", hl: "Rs. 300" },
+      { code: "CS402", title: "Theory of Automata", types: ["MID", "FINAL", "HIGHLIGHTED", "NOTES"], mid: "Rs. 600", final: "Rs. 800", hl: "Rs. 300" },
+      { code: "CS403", title: "Database Management Systems", types: ["MID", "FINAL", "HIGHLIGHTED", "NOTES"], mid: "Rs. 600", final: "Rs. 1000", hl: "Rs. 300" },
+      { code: "CS610", title: "Computer Networks", types: ["MID", "FINAL", "HIGHLIGHTED", "NOTES"], mid: "Rs. 600", final: "Rs. 800", hl: "Rs. 300" },
+      { code: "CS601", title: "Data Communication", types: ["MID", "FINAL", "HIGHLIGHTED", "NOTES"], mid: "Rs. 600", final: "Rs. 800", hl: "Rs. 300" },
+      { code: "MTH101", title: "Calculus And Analytical Geometry", types: ["MID", "FINAL", "HIGHLIGHTED", "NOTES"], mid: "Rs. 600", final: "Rs. 900", hl: "Rs. 300" },
+      { code: "MTH202", title: "Discrete Mathematics", types: ["MID", "FINAL", "HIGHLIGHTED", "NOTES"], mid: "Rs. 600", final: "Rs. 900", hl: "Rs. 300" },
+      { code: "MTH301", title: "Calculus II (Multivariable)", types: ["MID", "FINAL", "HIGHLIGHTED", "NOTES"], mid: "Rs. 600", final: "Rs. 900", hl: "Rs. 300" },
+      { code: "MTH401", title: "Differential Equations Master Notes", types: ["MID", "FINAL", "HIGHLIGHTED", "NOTES"], mid: "Rs. 600", final: "Rs. 900", hl: "Rs. 300" }
+    ];
+
+    let currentTab = 'tab-home';
+    let currentFilter = 'MID';
+    let selectedCourse = null;
+
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('tab-active'));
+      const activeEl = document.getElementById(tabId);
+      if (activeEl) {
+        activeEl.classList.add('tab-active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      ['tab-home', 'tab-notes', 'tab-lms', 'tab-deals', 'tab-portal'].forEach(t => {
+        const btn = document.getElementById(`btn-${t}`);
+        if (btn) {
+          if (t === tabId) {
+            btn.className = "nav-btn-active px-3.5 py-2 rounded-xl transition";
+          } else {
+            btn.className = "nav-btn-inactive px-3.5 py-2 rounded-xl transition";
+          }
+        }
+      });
+
+      if (tabId === 'tab-notes') {
+        renderNotes();
+      }
+    }
+
+    function searchFromHome() {
+      const q = document.getElementById("homeSearch").value.trim();
+      if (q.length > 0) {
+        switchTab('tab-notes');
+        document.getElementById("notesSearchInput").value = q;
+        filterNotesGrid();
+      }
+    }
+
+    function renderNotes() {
+      const grid = document.getElementById("notesGrid");
+      grid.innerHTML = "";
+
+      const q = (document.getElementById("notesSearchInput") ? document.getElementById("notesSearchInput").value : "").toLowerCase().trim();
+      const filtered = courses.filter(c => {
+        const matchType = c.types.includes(currentFilter);
+        const matchQ = q === '' || c.code.toLowerCase().includes(q) || c.title.toLowerCase().includes(q);
+        return matchType && matchQ;
+      });
+
+      document.getElementById("notesCount").innerText = `${filtered.length} Portals Available`;
+
+      filtered.forEach(item => {
+        let p = item.mid;
+        if (currentFilter === 'FINAL') p = item.final;
+        if (currentFilter === 'HIGHLIGHTED') p = item.hl;
+
+        const isMgt = item.code === "MGT101";
+
+        const card = document.createElement("div");
+        card.className = `glass-card rounded-3xl p-4 flex flex-col justify-between ${isMgt ? 'border-2 border-[#3a80bc]' : ''}`;
+        card.innerHTML = `
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="font-mono text-xs font-bold text-[#102138] bg-slate-100 px-2 py-0.5 rounded">${item.code}</span>
+              <span class="text-[10px] text-[#3a80bc] font-bold">1 Month: ${p}</span>
+            </div>
+            <h4 class="font-bold text-xs text-slate-900 leading-snug mb-3">${item.title}</h4>
+          </div>
+          
+          <div class="space-y-2 mt-auto">
+            ${item.link ? `
+              <a href="${item.link}" class="w-full bg-[#3a80bc] hover:bg-[#2563eb] text-white text-[11px] font-bold py-2 rounded-xl transition shadow-xs flex items-center justify-center gap-1.5">
+                <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                <span>Open ${item.code} Portal</span>
+              </a>
+            ` : ''}
+            <button onclick="openOrderModal('${item.code}')" class="w-full bg-[#102138] hover:bg-[#1a385f] text-white text-[11px] font-bold py-2 rounded-xl transition shadow-xs">
+              Enroll & Unlock
+            </button>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    function filterNotesGrid() { renderNotes(); }
+
+    function setNotesFilter(flt) {
+      currentFilter = flt;
+      ['MID', 'FINAL', 'HIGHLIGHTED', 'NOTES'].forEach(f => {
+        const btn = document.getElementById(`flt-${f}`);
+        if (btn) {
+          if (f === flt) {
+            btn.className = "bg-[#102138] text-white px-3.5 py-2 rounded-xl transition";
+          } else {
+            btn.className = "bg-slate-100 text-slate-700 hover:bg-slate-200 px-3.5 py-2 rounded-xl transition";
+          }
+        }
+      });
+      renderNotes();
+    }
+
+    function openOrderModal(code) {
+      selectedCourse = courses.find(c => c.code === code);
+      if (!selectedCourse) return;
+      document.getElementById("mCode").innerText = selectedCourse.code;
+      document.getElementById("mTitle").innerText = selectedCourse.title;
+      document.getElementById("mMid").innerText = selectedCourse.mid;
+      document.getElementById("mFinal").innerText = selectedCourse.final;
+      document.getElementById("orderModal").classList.remove("hidden");
+    }
+
+    function closeOrderModal() {
+      document.getElementById("orderModal").classList.add("hidden");
+    }
+
+    function submitOrder() {
+      const name = document.getElementById("stuName").value.trim();
+      const email = document.getElementById("stuEmail").value.trim();
+      const trx = document.getElementById("stuTrx").value.trim();
+
+      if (name.length < 3 || !email.includes("@") || trx.length < 8) {
+        alert("Please enter your name, valid email, and 8+ digit Trx ID.");
         return;
       }
 
-      document.querySelectorAll('.portal-section').forEach(s => s.classList.remove('active'));
-      const target = document.getElementById(`view-${viewName}`);
-      if (target) target.classList.add('active');
-
-      document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active', 'bg-[#102138]', 'text-white'));
-      const activeBtn = document.getElementById(`tab-${viewName}`);
-      if (activeBtn) activeBtn.classList.add('active');
+      const msg = `*Assalam-o-Alaikum SDG Insights!*%0A%0AI have placed an order for 1-Month Portal Access:%0A*Course:* ${selectedCourse.code} - ${selectedCourse.title}%0A*Name:* ${name}%0A*Gmail:* ${email}%0A*Trx ID:* ${trx}%0A%0ABarah-e-Karam payment verify karke portal access ALLOW kar dein. Shukriya!`;
+      window.open(`https://wa.me/923198519637?text=${msg}`, '_blank');
+      closeOrderModal();
     }
 
-    function closeLockModal() {
-      document.getElementById("portalLockModal").classList.add("hidden");
+    function orderViaWhatsApp(dealText) {
+      const msg = `*Assalam-o-Alaikum SDG Insights!*%0A%0AI want to order:%0A*Service:* ${dealText}%0A%0APlease share details and pricing. Thank you!`;
+      window.open(`https://wa.me/923198519637?text=${msg}`, '_blank');
     }
 
-    function verifyAndUnlockPortal() {
-      const email = document.getElementById("unlockUserEmail").value.trim().toLowerCase();
+    function verifyAndOpenReader() {
+      const email = document.getElementById("logEmail").value.trim().toLowerCase();
+      const sub = document.getElementById("logSubject").value.trim().toUpperCase() || "MGT101";
+
       if (!email.includes("@")) {
         alert("Please enter a valid Gmail address.");
         return;
       }
 
-      if (whitelist.includes(email)) {
-        isStudentApproved = true;
-        approvedUserEmail = email;
-        closeLockModal();
-        alert("✓ Access Approved! You have 1-month full access to MTH401.");
-        switchPortalView('lectures');
-      } else {
-        alert("❌ Access Pending!\n\nThis Gmail is not approved yet. Please send payment proof to instructor on WhatsApp (0319-8519637) to get approved.");
+      const match = approvedStudents.find(s => s.email === email && (s.course === sub || s.course === "ALL"));
+
+      if (!match) {
+        alert("❌ Access Pending!\n\nThis Gmail address has not been approved yet. Once you send payment proof on WhatsApp (0319-8519637), the instructor will click ALLOW to activate your 1-month access.");
+        return;
       }
+
+      // Open directly
+      if (sub === "MGT101") {
+        window.location.href = `mgt101.html?student=${email}`;
+        return;
+      }
+
+      document.getElementById("loginBox").classList.add("hidden");
+      document.getElementById("readerBox").classList.remove("hidden");
+      document.getElementById("activeCourseTitle").innerText = `${sub} (Active 1-Month Access)`;
     }
 
-    // AUTO-UNLOCK VIA 1-CLICK LINK e.g. mth401.html?student=ali.student@gmail.com
-    window.addEventListener("DOMContentLoaded", () => {
-      const params = new URLSearchParams(window.location.search);
-      if (params.has('student')) {
-        const email = params.get('student').toLowerCase();
-        if (whitelist.includes(email)) {
-          isStudentApproved = true;
-          approvedUserEmail = email;
-        }
+    function closeReader() {
+      document.getElementById("readerBox").classList.add("hidden");
+      document.getElementById("loginBox").classList.remove("hidden");
+    }
+
+    // ========================================================
+    // CHATBOT SCRIPT
+    // ========================================================
+    function toggleTeacherChat() {
+      document.getElementById("teacherChatWindow").classList.toggle("hidden");
+    }
+
+    const knowledgeBase = {
+      paid: {
+        roman: "Ji bilkul, SDG Insights ke tamam solved notes, preparation portals aur interactive software 100% PAID hain.\n\nHumari koi bhi file ya portal free nahi hai. Har course professional mehnat se 100% handout-accurate tayar kiya gaya hai.",
+        urdu: "جی بالکل، SDG Insights کے تمام حل شدہ نوٹس، پریپریشن پورٹلز اور اسٹڈی سافٹ ویئر 100% پیڈ ہیں۔\n\nہماری کوئی بھی فائل یا پورٹل فری نہیں ہے۔ ہر کورس آفیشل ہینڈ آؤٹس کے عین مطابق مکمل تحقیق سے تیار کیا گیا ہے۔",
+        english: "Yes, all study notes, preparation portals, and interactive software from SDG Insights are 100% PAID.\n\nWe do not offer free resources. Every single file is systematically verified according to official VU handouts."
+      },
+      exam_percentage: {
+        roman: "Humare notes Virtual University ke official handouts aur lectures se 100% word-by-word tayar kiye gaye hain.\n\nAgar aap in notes ko baghair koi lafz chore 100% achi tarah yaad kar lete hain, to exam 80% se 90% tak inhi me se ata hai!\n\nSaath hi aapko advice di jati hai ke humari YouTube videos dekh kar apne concepts bhi lazmi clear karein.",
+        urdu: "ہمارے تمام نوٹس ورچوئل یونیورسٹی کے آفیشل ہینڈ آؤٹس اور لیکچرز سے تیار کیے گئے ہیں۔\n\nاگر آپ نوٹس کا ایک بھی لفظ چھوڑے بغیر 100% اچھے سے یاد کر لیں، تو امتحان 80% سے 90% انہی میں سے آتا ہے!\n\nساتھ ہی آپ کو مشورہ دیا جاتا ہے کہ ہمارے یوٹیوب چینل پر ویڈیوز دیکھ کر اپنے کنسیپٹس بھی لازمی کلیئر کریں۔",
+        english: "Our materials are prepared directly from official Virtual University handouts and lectures.\n\nIf you prepare the notes 100% thoroughly without skipping anything, 80% to 90% of the exam comes directly from these contents!\n\nWe also strongly advise watching our YouTube lectures to solidify your concepts."
+      },
+      discounts: {
+        roman: "Ji haan! Humare paas special packages available hain:\n\n• Full Semester Super Bundle: Pure semester ki tamam files lene par Flat 20% OFF milta hai (Rs. 3000 ki jagah Rs. 2400).\n\n• Pick Any 5 Pack: Apni marzi ke koi se 5 subjects lene par Flat 10% OFF milta hai (Rs. 2500 ki jagah Rs. 2250).",
+        urdu: "جی ہاں! ہمارے پاس خصوصی ڈیلز دستیاب ہیں:\n\n• مکمل سمسٹر بنڈل: تمام سبجیکٹس پر فلیٹ 20% رعایت ہے (3000 کی بجائے صرف 2400 روپے)۔\n\n• کوئی سے 5 سبجیکٹس: اپنی مرضی کے 5 کورسز پر 10% رعایت ہے (2500 کی بجائے صرف 2250 روپے)۔",
+        english: "Yes, we offer special package discounts:\n\n• Full Semester Bundle: Flat 20% OFF on all courses of your semester (Rs. 2400 instead of Rs. 3000).\n\n• Pick Any 5 Pack: Flat 10% OFF on any 5 subjects of your choice (Rs. 2250 instead of Rs. 2500)."
+      },
+      access_method: {
+        roman: "Access ka tariqa bohat aasan hai, koi code yaad rakhne ki zaroorat nahi:\n\n1. EasyPaisa (03198519637) ya MCB Bank par fee send karein.\n\n2. WhatsApp par screenshot aur apni Gmail send karein.\n\n3. Instructor sirf ALLOW ka button press karengi aur aapki 1 Month ki access foran active ho jayegi!\n\n4. Aap apni Gmail laga kar ya email me mile link par click karke direct notes open kar sakenge.",
+        urdu: "پورٹل کی رسائی حاصل کرنا اب انتہائی آسان ہے، کوئی کوڈ یاد رکھنے کی ضرورت نہیں:\n\n1. ایزی پیسہ (03198519637) یا MCB Bank پر فیس بھیجیں۔\n\n2. واٹس ایپ پر رسید کا اسکرین شاٹ اور اپنی جی میل بھیجیں۔\n\n3. انسٹرکٹر صرف ALLOW بٹن دبائیں گی اور آپ کی 1 ماہ کی ایکسیس فعال ہو جائے گی!\n\n4. آپ ڈائریکٹ ای میل درج کر کے نوٹس کھول سکیں گے۔",
+        english: "Getting portal access is effortless — no passcodes to remember:\n\n1. Transfer fee via EasyPaisa (03198519637) or MCB Bank.\n\n2. Send receipt screenshot and Gmail to WhatsApp.\n\n3. The instructor clicks ALLOW, instantly activating your 1-month access.\n\n4. You can open your notes directly using your registered Gmail."
       }
-    });
+    };
+
+    function askBotQuestion(key) {
+      appendStudentMsg(event.target.innerText.replace('• ', ''));
+      const resp = knowledgeBase[key].roman + "\n\n━━━━━━━━━━━━━━\n" + knowledgeBase[key].urdu;
+      setTimeout(() => appendTeacherMsg(resp, 'both'), 400);
+    }
+
+    function sendCustomTeacherMsg() {
+      const input = document.getElementById("userChatInput");
+      const text = input.value.trim();
+      if (!text) return;
+
+      appendStudentMsg(text);
+      input.value = "";
+
+      const lower = text.toLowerCase();
+      const isUrduScript = /[\u0600-\u06FF]/.test(text);
+      const isRomanUrdu = /kya|kia|kesy|kese|hai|hain|hyn|chahiye|kitna|kitne|bata|batao|milega|milegi|aoa|salam|krna|karna|pese|paise/.test(lower);
+
+      let lang = 'english';
+      if (isUrduScript) lang = 'urdu';
+      else if (isRomanUrdu) lang = 'roman';
+
+      let answerKey = 'paid';
+      if (/salam|aoa|hello|hi|hey|assalam/.test(lower)) {
+        if (lang === 'urdu') {
+          setTimeout(() => appendTeacherMsg("وعلیکم السلام عزیز طالب علم! میں SDG Insights سے آپ کی انسٹرکٹر ہوں۔ آپ کو کس کورس، نوٹس یا ایل ایم ایس ہینڈلنگ میں رہنمائی چاہیے؟", 'urdu'), 400);
+          return;
+        } else if (lang === 'roman') {
+          setTimeout(() => appendTeacherMsg("Walaikum Assalam! Main SDG Insights se aapki instructor hoon.\n\nAapko kis subject ya LMS service me help chahiye? Mujhe batayein.", 'roman'), 400);
+          return;
+        } else {
+          setTimeout(() => appendTeacherMsg("Hello! Welcome to SDG Insights. How can I assist you with course portals or LMS handling?", 'english'), 400);
+          return;
+        }
+      } else if (/percentage|percent|kitna ata|kitna paper|guarantee/.test(lower)) {
+        answerKey = 'exam_percentage';
+      } else if (/deal|discount|off|riayat|bundle|package/.test(lower)) {
+        answerKey = 'discounts';
+      } else if (/access|code|passcode|pass|open|kholna/.test(lower)) {
+        answerKey = 'access_method';
+      }
+
+      const responseText = knowledgeBase[answerKey][lang];
+      setTimeout(() => appendTeacherMsg(responseText, lang), 450);
+    }
+
+    function appendStudentMsg(msg) {
+      const box = document.getElementById("chatMessages");
+      const isUrdu = /[\u0600-\u06FF]/.test(msg);
+      box.innerHTML += `
+        <div class="flex justify-end">
+          <div class="bg-[#102138] text-white p-3 rounded-2xl rounded-tr-none text-xs max-w-[85%] shadow-xs whitespace-pre-line ${isUrdu ? 'urdu-font text-right' : 'text-left'}">
+            ${msg}
+          </div>
+        </div>
+      `;
+      box.scrollTop = box.scrollHeight;
+    }
+
+    function appendTeacherMsg(msg, lang) {
+      const box = document.getElementById("chatMessages");
+      const isUrdu = lang === 'urdu' || /[\u0600-\u06FF]/.test(msg);
+      box.innerHTML += `
+        <div class="bg-white p-3.5 rounded-2xl rounded-tl-none border border-slate-200 shadow-2xs max-w-[92%] space-y-1.5 leading-relaxed">
+          <span class="text-[10px] font-bold text-[#3a80bc] block">SDG Insights Instructor</span>
+          <div class="text-xs text-slate-800 whitespace-pre-line ${isUrdu ? 'urdu-font text-right' : 'text-left'}">
+            ${msg}
+          </div>
+        </div>
+      `;
+      box.scrollTop = box.scrollHeight;
+    }
+
+    // Initialize
+    renderNotes();
   </script>
 </body>
 </html>
