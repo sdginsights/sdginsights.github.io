@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <!-- SEO & METADATA -->
   <title>SDG Insights — VU Exam Preparation Portals & LMS Handling</title>
   <meta name="description" content="Official SDG Insights: 100% Handout-Accurate Solved Notes, Final and Mid Term Preparation Portals, LMS Handling & Full Support Packages." />
   <link rel="canonical" href="https://sdginsights.github.io" />
@@ -14,21 +13,15 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Noto+Nastaliq+Urdu:wght@400;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Nastaliq+Urdu:wght@400;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
 
   <style>
-    :root {
-      --brand-navy: #102138;
-      --brand-blue: #3a80bc;
-      --brand-light: #f8fafc;
-    }
-
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
-      background-color: var(--brand-light);
+      background-color: #f8fafc;
       color: #0f172a;
     }
-    .urdu-font { font-family: 'Noto Nastaliq Urdu', serif; line-height: 2.3; }
+    .urdu-font { font-family: 'Noto Nastaliq Urdu', serif; line-height: 2.4; }
     .handwriting { font-family: 'Caveat', cursive; }
 
     /* TAB VISIBILITY */
@@ -53,7 +46,6 @@
       border-color: rgba(58, 128, 188, 0.5);
     }
 
-    /* NAVIGATION BUTTON STYLES */
     .nav-btn-active {
       background-color: #102138;
       color: #ffffff;
@@ -70,12 +62,10 @@
       color: #102138;
     }
 
-    /* SMOOTH 5-SEC ROTATING NOTICE */
     #rotatingNoticeText {
       transition: opacity 0.4s ease-in-out;
     }
 
-    /* CHATBOT SCROLLBAR */
     .chat-scroll::-webkit-scrollbar { width: 5px; }
     .chat-scroll::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 9999px; }
   </style>
@@ -143,7 +133,7 @@
   </header>
 
   <!-- ======================================================== -->
-  <!-- TAB 1: HOME (CLEAN & AESTHETIC) -->
+  <!-- TAB 1: HOME -->
   <!-- ======================================================== -->
   <section id="tab-home" class="tab-content tab-active flex-1">
     
@@ -163,7 +153,6 @@
           100% handout-accurate solved exam portals, interactive study software, and complete LMS handling.
         </p>
 
-        <!-- CTA TO START PREPARATION -->
         <div class="pt-2 flex items-center justify-center gap-3 flex-wrap text-xs font-bold">
           <button onclick="switchTab('tab-notes')" class="bg-[#102138] hover:bg-[#1a385f] text-white px-5 py-3 rounded-2xl transition shadow-xs flex items-center gap-2">
             <i class="fa-solid fa-book-open text-[#3a80bc]"></i>
@@ -175,7 +164,6 @@
           </button>
         </div>
 
-        <!-- SEARCH -->
         <div class="max-w-md mx-auto pt-3">
           <div class="relative">
             <i class="fa-solid fa-magnifying-glass absolute left-4 top-3.5 text-slate-400"></i>
@@ -254,7 +242,7 @@
         <span class="text-xs font-bold text-[#3a80bc]" id="notesCount">Loading...</span>
       </div>
 
-      <!-- FILTER BUTTONS (WITHOUT "ALL" OPTION) -->
+      <!-- FILTER BUTTONS -->
       <div class="glass-card p-4 rounded-3xl space-y-3 shadow-xs">
         <input type="text" id="notesSearchInput" onkeyup="filterNotesGrid()" placeholder="Search code: CS610, MTH401, CS301, CS201..." class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-xs focus:bg-white focus:outline-none" />
         
@@ -377,7 +365,7 @@
   </section>
 
   <!-- ======================================================== -->
-  <!-- TAB 5: START EXAM PREPARATION (WITH HELPFUL PAYMENT NOTE) -->
+  <!-- TAB 5: START EXAM PREPARATION -->
   <!-- ======================================================== -->
   <section id="tab-portal" class="tab-content flex-1 py-10 px-4">
     <div class="max-w-md mx-auto space-y-4">
@@ -392,7 +380,6 @@
           <p class="text-xs text-slate-500">Enter your approved Gmail and secret access key.</p>
         </div>
 
-        <!-- HELPFUL NOTE AS INSTRUCTED -->
         <div class="bg-amber-50 border border-amber-200 p-3 rounded-2xl text-[11px] text-amber-900 leading-snug">
           <strong>⚠️ Access Notice:</strong> This interactive preparation software opens strictly after payment verification. Your secret access key is issued on WhatsApp after confirming your transaction.
         </div>
@@ -474,25 +461,25 @@
   </div>
 
   <!-- ======================================================== -->
-  <!-- FLOATING AI TEACHER CHATBOT: "اپنے ٹیچر سے بات کریں" -->
+  <!-- SMART MULTILINGUAL AI TEACHER CHATBOT ENGINE -->
   <!-- ======================================================== -->
   <div class="fixed bottom-5 right-5 z-50">
     
-    <!-- CHAT TRIGGER BUTTON -->
+    <!-- CHAT TRIGGER -->
     <button onclick="toggleTeacherChat()" id="chatTriggerBtn" class="flex items-center gap-2.5 bg-[#102138] hover:bg-[#1a385f] text-white px-4 py-3 rounded-full shadow-2xl transition-all duration-300 border border-[#3a80bc]/40 hover:scale-105">
       <div class="w-8 h-8 rounded-full bg-[#3a80bc] flex items-center justify-center text-white text-sm shrink-0">
         <i class="fa-solid fa-chalkboard-user"></i>
       </div>
       <div class="text-left leading-tight">
-        <span class="text-[10px] text-slate-300 block">کوئی سوال پوچھیں؟</span>
-        <span class="urdu-font text-xs font-bold text-amber-300">اپنے ٹیچر سے بات کریں</span>
+        <span class="text-[10px] text-slate-300 block">Have a Question?</span>
+        <span class="text-xs font-bold text-amber-300">Talk to Teacher</span>
       </div>
     </button>
 
-    <!-- CHAT WINDOW (ELEGANT & URDU RESPONSIVE) -->
-    <div id="teacherChatWindow" class="hidden absolute bottom-16 right-0 w-[330px] sm:w-[370px] bg-white rounded-3xl shadow-2xl border border-slate-200 overflow-hidden flex flex-col animate-fade-in text-xs">
+    <!-- CHAT WINDOW -->
+    <div id="teacherChatWindow" class="hidden absolute bottom-16 right-0 w-[320px] sm:w-[380px] bg-white rounded-3xl shadow-2xl border border-slate-200 overflow-hidden flex flex-col animate-fade-in text-xs">
       
-      <!-- CHAT HEADER -->
+      <!-- HEADER -->
       <div class="bg-[#102138] text-white p-4 flex items-center justify-between border-b border-slate-700">
         <div class="flex items-center space-x-2.5">
           <div class="w-9 h-9 rounded-full bg-[#3a80bc] flex items-center justify-center text-white font-bold shrink-0">
@@ -501,7 +488,7 @@
           <div>
             <h4 class="font-extrabold text-sm">SDG Insights Teacher Desk</h4>
             <span class="text-[10px] text-emerald-400 flex items-center gap-1">
-              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span> آن لائن ٹیچر
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span> Teacher Online
             </span>
           </div>
         </div>
@@ -510,55 +497,40 @@
         </button>
       </div>
 
-      <!-- CHAT MESSAGES LOG -->
-      <div id="chatMessages" class="p-4 h-72 overflow-y-auto chat-scroll space-y-3 bg-slate-50">
+      <!-- MESSAGES LOG -->
+      <div id="chatMessages" class="p-4 h-80 overflow-y-auto chat-scroll space-y-4 bg-slate-50">
         
-        <!-- TEACHER WELCOME MESSAGE -->
-        <div class="bg-white p-3 rounded-2xl rounded-tl-none border border-slate-200 shadow-2xs max-w-[90%] space-y-1">
-          <span class="text-[10px] font-bold text-[#3a80bc] block">SDG Insights Official</span>
-          <p class="urdu-font text-xs text-slate-800">
-            السلام علیکم عزیز طالب علم! میں آپ کی ٹیچر ہوں—آپ کے امتحانی نوٹس، پورٹلز یا ایل ایم ایس سے متعلق کوئی بھی سوال ہو تو نیچے دیے گئے بٹن پر کلک کریں یا میسج لکھیں:
+        <!-- TEACHER WELCOME -->
+        <div class="bg-white p-3.5 rounded-2xl rounded-tl-none border border-slate-200 shadow-2xs space-y-2 leading-relaxed">
+          <span class="text-[10px] font-bold text-[#3a80bc] block">Munaza Mukhtar • SDG Insights</span>
+          <p class="urdu-font text-xs text-slate-800 text-right">
+            السلام علیکم عزیز طالب علم! میں آپ کی ٹیچر ہوں۔ نوٹس، ایگزام تیاری، ایل ایم ایس یا کسی بھی سوال کے لیے نیچے میسج لکھیں یا بٹن منتخب کریں:
           </p>
         </div>
 
         <!-- QUICK FAQ PILLS -->
         <div class="space-y-1.5 pt-1">
-          <span class="text-[10px] font-bold text-slate-400 block uppercase">اکثر پوچھے جانے والے سوالات:</span>
-          <button onclick="askBotQuestion(1)" class="w-full text-right urdu-font bg-white hover:bg-blue-50/70 p-2 rounded-xl border border-slate-200 text-slate-700 font-semibold block transition">
-            • کیا یہ نوٹس اور پورٹلز پیڈ ہیں؟
+          <span class="text-[10px] font-bold text-slate-400 block uppercase">Quick Questions / عام سوالات:</span>
+          <button onclick="askBotQuestion('paid')" class="w-full text-left bg-white hover:bg-blue-50/70 p-2.5 rounded-xl border border-slate-200 text-slate-700 font-semibold block transition">
+            • Are all notes and portals paid? (کیا یہ پیڈ ہیں؟)
           </button>
-          <button onclick="askBotQuestion(2)" class="w-full text-right urdu-font bg-white hover:bg-blue-50/70 p-2 rounded-xl border border-slate-200 text-slate-700 font-semibold block transition">
-            • امتحان اس میں سے کتنے فیصد آتا ہے؟
+          <button onclick="askBotQuestion('exam_percentage')" class="w-full text-left bg-white hover:bg-blue-50/70 p-2.5 rounded-xl border border-slate-200 text-slate-700 font-semibold block transition">
+            • How much exam comes from these notes? (پیپر کتنا آتا ہے؟)
           </button>
-          <button onclick="askBotQuestion(3)" class="w-full text-right urdu-font bg-white hover:bg-blue-50/70 p-2 rounded-xl border border-slate-200 text-slate-700 font-semibold block transition">
-            • کیا ڈسکاؤنٹ یا ڈیلز مل سکتی ہیں؟
+          <button onclick="askBotQuestion('discounts')" class="w-full text-left bg-white hover:bg-blue-50/70 p-2.5 rounded-xl border border-slate-200 text-slate-700 font-semibold block transition">
+            • Any discounts or semester packages available? (ڈیلز / ڈسکاؤنٹ)
           </button>
-          <button onclick="askBotQuestion(4)" class="w-full text-right urdu-font bg-white hover:bg-blue-50/70 p-2 rounded-xl border border-slate-200 text-slate-700 font-semibold block transition">
-            • فیس کس اکاؤنٹ میں بھیجنی ہے؟ کیا جیز کیش ہے؟
-          </button>
-          <button onclick="askBotQuestion(5)" class="w-full text-right urdu-font bg-white hover:bg-blue-50/70 p-2 rounded-xl border border-slate-200 text-slate-700 font-semibold block transition">
-            • ویڈیو میں فری بولا تھا، اب پیڈ کیوں ہے؟
-          </button>
-          <button onclick="askBotQuestion(6)" class="w-full text-right urdu-font bg-white hover:bg-blue-50/70 p-2 rounded-xl border border-slate-200 text-slate-700 font-semibold block transition">
-            • کیا یہ سافٹ ویئر لائف ٹائم ملے گا؟
-          </button>
-          <button onclick="askBotQuestion(7)" class="w-full text-right urdu-font bg-white hover:bg-blue-50/70 p-2 rounded-xl border border-slate-200 text-slate-700 font-semibold block transition">
-            • ڈیمو ویڈیو کہاں سے دیکھ سکتے ہیں؟
-          </button>
-          <button onclick="askBotQuestion(8)" class="w-full text-right urdu-font bg-white hover:bg-blue-50/70 p-2 rounded-xl border border-slate-200 text-slate-700 font-semibold block transition">
-            • پورٹل کی ایکسیس کیسے ملے گی؟
-          </button>
-          <button onclick="askBotQuestion(9)" class="w-full text-right urdu-font bg-white hover:bg-blue-50/70 p-2 rounded-xl border border-slate-200 text-slate-700 font-semibold block transition">
-            • کیا نوٹس پی ڈی ایف (PDF) میں مل جائیں گے؟
+          <button onclick="askBotQuestion('access_method')" class="w-full text-left bg-white hover:bg-blue-50/70 p-2.5 rounded-xl border border-slate-200 text-slate-700 font-semibold block transition">
+            • How will I get portal access passcode? (ایکسیس کیسے ملے گی؟)
           </button>
         </div>
 
       </div>
 
-      <!-- CHAT INPUT -->
+      <!-- INPUT BAR -->
       <div class="p-2.5 bg-white border-t border-slate-200 flex items-center gap-1.5">
-        <input type="text" id="userChatInput" placeholder="اپنا سوال لکھیں..." class="urdu-font flex-1 bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs focus:bg-white focus:outline-none" onkeypress="if(event.key==='Enter') sendCustomTeacherMsg()" />
-        <button onclick="sendCustomTeacherMsg()" class="bg-[#102138] text-white p-2.5 rounded-xl transition hover:bg-[#1a385f]">
+        <input type="text" id="userChatInput" placeholder="Type in Roman Urdu, Urdu or English..." class="flex-1 bg-slate-50 border border-slate-200 rounded-xl px-3 py-2.5 text-xs focus:bg-white focus:outline-none" onkeypress="if(event.key==='Enter') sendCustomTeacherMsg()" />
+        <button onclick="sendCustomTeacherMsg()" class="bg-[#102138] hover:bg-[#1a385f] text-white p-2.5 rounded-xl transition">
           <i class="fa-solid fa-paper-plane text-xs"></i>
         </button>
       </div>
@@ -574,9 +546,9 @@
     </div>
   </footer>
 
-  <!-- SCRIPT -->
+  <!-- MULTILINGUAL SCRIPT LOGIC -->
   <script>
-    // 5-SECOND ROTATING NOTICES
+    // 5-SECOND ROTATING NOTICES WITH REST
     const rotatingNotices = [
       "⚠️ All resources, notes and portals are 100% PAID — nothing is free.",
       "💼 LMS Handling + Midterm & Final Term Exam Preparation packages with full 24/7 support.",
@@ -618,7 +590,7 @@
     ];
 
     let currentTab = 'tab-home';
-    let currentFilter = 'MID'; // Default without ALL
+    let currentFilter = 'MID';
     let selectedCourse = null;
 
     function switchTab(tabId) {
@@ -769,81 +741,147 @@
     }
 
     // ========================================================
-    // INTERACTIVE AI TEACHER CHATBOT SCRIPT
+    // INTELLIGENT MULTI-LINGUAL AI TEACHER CHATBOT ENGINE
     // ========================================================
     function toggleTeacherChat() {
-      const win = document.getElementById("teacherChatWindow");
-      win.classList.toggle("hidden");
+      document.getElementById("teacherChatWindow").classList.toggle("hidden");
     }
 
-    const teacherAnswers = {
-      1: "جی ہاں، SDG Insights کے تمام ہینڈ آؤٹ نوٹس، پریپریشن پورٹلز اور اسٹڈی سافٹ ویئر 100% پیڈ ہیں۔ ہمارا کوئی بھی مٹیریل یا ریسورس فری نہیں ہے۔",
-      2: "یہ تمام نوٹس ورچوئل یونیورسٹی کے آفیشل ہینڈ آؤٹس اور لیکچرز سے لفظ بہ لفظ تیار کیے گئے ہیں۔ اگر آپ نوٹس کا ایک بھی لفظ سکپ کیے بغیر 100% اچھے سے یاد کر لیں، تو امتحان 80% سے 90% انہی میں سے آتا ہے۔ ساتھ ہی ہماری یوٹیوب ویڈیوز دیکھ کر اپنے کنسیپٹس بھی لازمی کلیئر کریں۔",
-      3: "جی ہاں! اگر آپ مکمل سمسٹر کی تمام فائلز لیتے ہیں تو فلیٹ 20% رعایت ہے، اور اپنی مرضی کے کوئی سے بھی 5 سبجیکٹس لینے پر 10% رعایت دی جاتی ہے۔",
-      4: "ادائیگی صرف ہمارے آفیشل اکاؤنٹس EasyPaisa (03198519637 - Munazza mukhtar) یا MCB Bank (1708370211010380 - MUNAZA MUKHTAR) میں قبول کی جاتی ہے۔ دیگر کسی غیر متعلقہ نمبر پر ادائیگی نہ بھیجیں۔",
-      5: "ویڈیو والے لنکس ایک محدود پرانے وقت کے لیے تھے جو اب ایکسپائر ہو چکے ہیں۔ اب تمام نوٹس اور پورٹلز نئے پیپر پیٹرن کے مطابق نئے سرے سے اپڈیٹ کیے گئے ہیں جو محفوظ طریقے سے ملتے ہیں، اس لیے اب یہ پیڈ ہیں۔",
-      6: "جی ہاں، ادائیگی کے بعد متعلقہ سمسٹر کی پوری تیاری کے لیے (تقریباً 6 ماہ کا عرصہ) یہ پورٹل سافٹ ویئر آپ کے پاس فعال رہتا ہے اور آپ جب چاہیں لاگ ان کر کے پڑھ سکتے ہیں۔",
-      7: "ہر سبجیکٹ کے ساتھ ہماری یوٹیوب پریپریشنل ویڈیو منسلک ہے۔ آپ ہمارے آفیشل یوٹیوب چینل @sdginsights پر جا کر تمام ویڈیوز مفت دیکھ سکتے ہیں۔",
-      8: "آپ فیس ادا کر کے واٹس ایپ (0319-8519637) پر اپنی جی میل اور رسید کا اسکرین شاٹ بھیجیں گے۔ رسید تصدیق ہوتے ہی آپ کو پورٹل کا خفیہ پاس کوڈ مل جائے گا جسے لگا کر آپ اسی ویب سائٹ پر نوٹس کھول سکیں گے۔",
-      9: "جی ہاں، کچھ مخصوص سبجیکٹس کے نوٹس پی ڈی ایف فارمیٹ میں بھی مل جاتے ہیں۔ اپنے مطلوبہ سبجیکٹ کی پی ڈی ایف کی تصدیق کے لیے آپ ہم سے واٹس ایپ پر رابطہ کر سکتے ہیں۔"
+    // MULTI-LINGUAL KNOWLEDGE BASE WITH GENEROUS SPACING
+    const knowledgeBase = {
+      paid: {
+        roman: "Ji bilkul, SDG Insights ke tamam solved notes, preparation portals aur interactive software 100% PAID hain.\n\nHumari koi bhi file ya portal bilkul free nahi hai. Har course professional mehnat se 100% handout-accurate tayar kiya gaya hai.",
+        urdu: "جی بالکل، SDG Insights کے تمام حل شدہ نوٹس، پریپریشن پورٹلز اور اسٹڈی سافٹ ویئر 100% پیڈ ہیں۔\n\nہماری کوئی بھی فائل یا پورٹل فری نہیں ہے۔ ہر کورس آفیشل ہینڈ آؤٹس کے عین مطابق مکمل تحقیق سے تیار کیا گیا ہے۔",
+        english: "Yes, all study notes, preparation portals, and interactive software from SDG Insights are 100% PAID.\n\nWe do not offer free resources. Every single file is systematically verified according to official VU handouts."
+      },
+      exam_percentage: {
+        roman: "Humare notes Virtual University ke official handouts aur lectures se 100% word-by-word tayar kiye gaye hain.\n\nAgar aap in notes ko baghair koi lafz chore 100% achi tarah yaad kar lete hain, to exam 80% se 90% tak inhi me se ata hai!\n\nSaath hi aapko advice di jati hai ke humari YouTube videos dekh kar apne concepts bhi lazmi clear karein.",
+        urdu: "ہمارے تمام نوٹس ورچوئل یونیورسٹی کے آفیشل ہینڈ آؤٹس اور لیکچرز سے تیار کیے گئے ہیں۔\n\nاگر آپ نوٹس کا ایک بھی لفظ چھوڑے بغیر 100% اچھے سے یاد کر لیں، تو امتحان 80% سے 90% انہی میں سے آتا ہے!\n\nساتھ ہی آپ کو مشورہ دیا جاتا ہے کہ ہمارے یوٹیوب چینل پر ویڈیوز دیکھ کر اپنے کنسیپٹس بھی لازمی کلیئر کریں۔",
+        english: "Our materials are prepared directly from official Virtual University handouts and lectures.\n\nIf you prepare the notes 100% thoroughly without skipping anything, 80% to 90% of the exam comes directly from these contents!\n\nWe also strongly advise watching our YouTube lectures to solidify your concepts."
+      },
+      discounts: {
+        roman: "Ji haan! Humare paas special packages available hain:\n\n• Full Semester Super Bundle: Pure semester ki tamam files lene par Flat 20% OFF milta hai (Rs. 3000 ki jagah Rs. 2400).\n\n• Pick Any 5 Pack: Apni marzi ke koi se 5 subjects lene par Flat 10% OFF milta hai (Rs. 2500 ki jagah Rs. 2250).",
+        urdu: "جی ہاں! ہمارے پاس خصوصی ڈیلز دستیاب ہیں:\n\n• مکمل سمسٹر بنڈل: تمام سبجیکٹس پر فلیٹ 20% رعایت ہے (3000 کی بجائے صرف 2400 روپے)۔\n\n• کوئی سے 5 سبجیکٹس: اپنی مرضی کے 5 کورسز پر 10% رعایت ہے (2500 کی بجائے صرف 2250 روپے)۔",
+        english: "Yes, we offer special package discounts:\n\n• Full Semester Bundle: Flat 20% OFF on all courses of your semester (Rs. 2400 instead of Rs. 3000).\n\n• Pick Any 5 Pack: Flat 10% OFF on any 5 subjects of your choice (Rs. 2250 instead of Rs. 2500)."
+      },
+      access_method: {
+        roman: "Access ka tariqa bohat aasan hai:\n\n1. EasyPaisa (03198519637 - Munazza mukhtar) ya MCB Bank par fee send karein.\n\n2. WhatsApp par screenshot aur apni Gmail send karein.\n\n3. Payment verify hote hi aapko portal ka Secret Passcode mil jayega.\n\n4. Wo passcode website par 'Start Exam Preparation' me laga kar foran study shuru karein!",
+        urdu: "پورٹل کی رسائی حاصل کرنے کا طریقہ انتہائی آسان ہے:\n\n1. ایزی پیسہ (03198519637) یا MCB Bank پر فیس بھیجیں۔\n\n2. واٹس ایپ پر رسید کا اسکرین شاٹ اور اپنی جی میل بھیجیں۔\n\n3. تصدیق کے بعد آپ کو پورٹل کا خفیہ پاس کوڈ (Secret Passcode) مل جائے گا۔\n\n4. ویب سائٹ پر 'Start Exam Preparation' میں وہ کوڈ درج کر کے نوٹس کھول لیں۔",
+        english: "Getting portal access is simple:\n\n1. Transfer fee via EasyPaisa (03198519637) or MCB Bank.\n\n2. Send the receipt screenshot and your Gmail to WhatsApp.\n\n3. After verification, you receive your official secret access key.\n\n4. Enter the key under 'Start Exam Preparation' to unlock your study portal immediately."
+      },
+      duration: {
+        roman: "Ji haan! Payment karne ke baad ye software portal aapke poore semester (taqreeban 6 months) ke liye active rehta hai.\n\nAap is dauran kisi bhi waqt website par login karke apni preparation continue kar sakte hain.",
+        urdu: "جی ہاں، فیس کی ادائیگی کے بعد یہ اسٹڈی سافٹ ویئر آپ کے متعلقہ سمسٹر کی پوری تیاری کے لیے (تقریباً 6 ماہ) فعال رہتا ہے۔\n\nآپ اس دوران کسی بھی وقت ویب سائٹ پر لاگ ان کر کے آن لائن پڑھ سکتے ہیں۔",
+        english: "Yes, once paid, your interactive preparation portal remains active for your entire semester duration (approx. 6 months).\n\nYou can log in and study online at any time."
+      },
+      video_free_query: {
+        roman: "YouTube video me jo purani drive files thin wo ek limited time ke liye thin jo ab expire ho chuki hain.\n\nAb ye تمام notes naye paper pattern ke mutabiq naye siray se tayar kiye gaye hain jo protected portal me milte hain, isliye ye 100% paid hain.",
+        urdu: "یوٹیوب ویڈیو میں جو پرانی فائلز تھیں وہ ایک محدود مدت کے لیے تھیں جو اب ایکسپائر ہو چکی ہیں۔\n\nاب یہ تمام نوٹس نئے سلیبس اور پیپر پیٹرن کے مطابق نئے سرے سے اپڈیٹ کیے گئے ہیں، اس لیے اب یہ 100% پیڈ ہیں۔",
+        english: "The older links shared in past YouTube videos were limited-time and have expired.\n\nAll current notes have been completely re-compiled according to the latest VU syllabus and are securely hosted, making them 100% paid."
+      },
+      greeting: {
+        roman: "Walaikum Assalam! Main SDG Insights se aapki teacher hoon.\n\nAapko kis subject ki preparation ya LMS service me help chahiye? Mujhe batayein taake main guide kar sakun.",
+        urdu: "وعلیکم السلام عزیز طالب علم! میں SDG Insights سے آپ کی ٹیچر ہوں۔\n\nآپ کو کس سبجیکٹ کے نوٹس، پورٹل یا ایل ایم ایس ہینڈلنگ میں مدد چاہیے؟ مجھے بتائیں تاکہ میں رہنمائی کر سکوں۔",
+        english: "Hello and welcome! I am your teacher from SDG Insights.\n\nWhich course notes, preparation portals, or LMS service are you looking for? Feel free to ask."
+      },
+      lms: {
+        roman: "Hum Complete VU LMS Handling provide karte hain:\n\n• Assignments (100% Plagiarism-Free)\n• Quizzes (High Score Target)\n• GDBs Discussion Solutions\n• VIP All-in-One: LMS Handling + Mid/Final Prep + 24/7 Support\n\nWhatsApp par rabta karke details aur pricing hasil karein: 0319-8519637",
+        urdu: "ہم مکمل ورچوئل یونیورسٹی ایل ایم ایس ہینڈلنگ فراہم کرتے ہیں:\n\n• اسائنمنٹس (100% بغیر کسی سرقہ کے)\n• کوئزز (فل مارکس ٹارگٹ)\n• GDBs کے مدلل جوابات\n• VIP پیکیج: مکمل ایل ایم ایس + مڈ و فائنل ٹرم نوٹس + فل سپورٹ\n\nمزید معلومات کے لیے واٹس ایپ پر رابطہ کریں: 0319-8519637",
+        english: "We provide professional VU LMS Handling services:\n\n• Plagiarism-Free Assignments\n• Graded Discussion Boards (GDBs)\n• Quizzes with Top Scores\n• VIP All-in-One: Coursework Handling + Mid & Final Prep + 24/7 WhatsApp Mentorship.\n\nContact WhatsApp for details: 0319-8519637"
+      },
+      pdf: {
+        roman: "Ji haan, kuch specific subjects ke handouts PDF format me bhi mil jate hain.\n\nAap WhatsApp par rabta karke apne subject ki PDF availability confirm kar sakte hain: 0319-8519637",
+        urdu: "جی ہاں، کچھ مخصوص سبجیکٹس کے ہینڈ آؤٹس پی ڈی ایف کی شکل میں بھی دستیاب ہیں۔\n\nاپنے مطلوبہ سبجیکٹ کی پی ڈی ایف کی تصدیق کے لیے واٹس ایپ پر رابطہ کر سکتے ہیں: 0319-8519637",
+        english: "Yes, PDF formats are available for select subjects.\n\nPlease contact our WhatsApp at 0319-8519637 to verify PDF availability for your course."
+      }
     };
 
-    function askBotQuestion(id) {
-      const box = document.getElementById("chatMessages");
-      const questionText = event.target.innerText.replace('• ', '');
-      
-      // Append Student Msg
-      box.innerHTML += `
-        <div class="flex justify-end">
-          <div class="bg-[#102138] text-white p-2.5 rounded-2xl rounded-tr-none text-xs urdu-font max-w-[85%] text-right">
-            ${questionText}
-          </div>
-        </div>
-      `;
-
-      // Append Teacher Response
-      setTimeout(() => {
-        box.innerHTML += `
-          <div class="bg-white p-3 rounded-2xl rounded-tl-none border border-slate-200 shadow-2xs max-w-[90%] space-y-1">
-            <span class="text-[10px] font-bold text-[#3a80bc] block">SDG Insights Teacher</span>
-            <p class="urdu-font text-xs text-slate-800 text-right">
-              ${teacherAnswers[id]}
-            </p>
-          </div>
-        `;
-        box.scrollTop = box.scrollHeight;
-      }, 400);
-
-      box.scrollTop = box.scrollHeight;
+    // INTELLIGENT BOT QUESTION DISPATCHER
+    function askBotQuestion(key) {
+      appendStudentMsg(event.target.innerText.replace('• ', ''));
+      const resp = knowledgeBase[key].roman + "\n\n━━━━━━━━━━━━━━\n" + knowledgeBase[key].urdu;
+      setTimeout(() => appendTeacherMsg(resp, 'both'), 400);
     }
 
+    // CUSTOM USER INPUT MATCHER
     function sendCustomTeacherMsg() {
       const input = document.getElementById("userChatInput");
       const text = input.value.trim();
       if (!text) return;
 
+      appendStudentMsg(text);
+      input.value = "";
+
+      const lower = text.toLowerCase();
+      const isUrduScript = /[\u0600-\u06FF]/.test(text);
+      const isRomanUrdu = /kya|kia|kesy|kese|hai|hain|hyn|chahiye|kitna|kitne|bata|batao|milega|milegi|aoa|salam|krna|karna|pese|paise/.test(lower);
+
+      let lang = 'english';
+      if (isUrduScript) lang = 'urdu';
+      else if (isRomanUrdu) lang = 'roman';
+
+      // KEYWORD MATCHING
+      let answerKey = 'greeting';
+      if (/salam|aoa|hello|hi|hey|assalam|kese|kaise|haal|kaisy/.test(lower)) {
+        answerKey = 'greeting';
+      } else if (/free|muft|paid|charges|fees|pese|paise/.test(lower)) {
+        answerKey = 'paid';
+      } else if (/percentage|percent|kitna ata|kitna paper|guarantee|tayari|tayyari/.test(lower)) {
+        answerKey = 'exam_percentage';
+      } else if (/deal|discount|off|riayat|bundle|package|kam/.test(lower)) {
+        answerKey = 'discounts';
+      } else if (/lms|assignment|quiz|gdb|handling/.test(lower)) {
+        answerKey = 'lms';
+      } else if (/pdf|file/.test(lower)) {
+        answerKey = 'pdf';
+      } else if (/access|code|passcode|pass|open|kholna|kese milega|kaise milega/.test(lower)) {
+        answerKey = 'access_method';
+      } else if (/lifetime|duration|kab tak|kitne time|expire/.test(lower)) {
+        answerKey = 'duration';
+      } else if (/video|purani|pehle free/.test(lower)) {
+        answerKey = 'video_free_query';
+      } else {
+        // DEFAULT FALLBACK IN USER'S MATCHED LANGUAGE
+        if (lang === 'urdu') {
+          setTimeout(() => appendTeacherMsg("بہت شکریہ! آپ کے اس سوال کے فوری اور تفصیلی حل کے لیے آپ براہِ راست میرے واٹس ایپ نمبر (0319-8519637) پر رابطہ کر لیں تاکہ میں آپ کو مکمل تفصیلات فراہم کر سکوں۔", 'urdu'), 500);
+          return;
+        } else if (lang === 'roman') {
+          setTimeout(() => appendTeacherMsg("Bohat shukriya! Aapke is sawal ki mazeed guidance ke liye aap direct mere WhatsApp (0319-8519637) par rabta kar lein taake main aapko complete details send kar sakun.", 'roman'), 500);
+          return;
+        } else {
+          setTimeout(() => appendTeacherMsg("Thank you! For more personalized details regarding this query, please message me directly on WhatsApp at 0319-8519637.", 'english'), 500);
+          return;
+        }
+      }
+
+      const responseText = knowledgeBase[answerKey][lang];
+      setTimeout(() => appendTeacherMsg(responseText, lang), 450);
+    }
+
+    function appendStudentMsg(msg) {
       const box = document.getElementById("chatMessages");
+      const isUrdu = /[\u0600-\u06FF]/.test(msg);
       box.innerHTML += `
         <div class="flex justify-end">
-          <div class="bg-[#102138] text-white p-2.5 rounded-2xl rounded-tr-none text-xs urdu-font max-w-[85%] text-right">
-            ${text}
+          <div class="bg-[#102138] text-white p-3 rounded-2xl rounded-tr-none text-xs max-w-[85%] shadow-xs whitespace-pre-line ${isUrdu ? 'urdu-font text-right' : 'text-left'}">
+            ${msg}
           </div>
         </div>
       `;
-      input.value = "";
+      box.scrollTop = box.scrollHeight;
+    }
 
-      setTimeout(() => {
-        box.innerHTML += `
-          <div class="bg-white p-3 rounded-2xl rounded-tl-none border border-slate-200 shadow-2xs max-w-[90%] space-y-1">
-            <span class="text-[10px] font-bold text-[#3a80bc] block">SDG Insights Teacher</span>
-            <p class="urdu-font text-xs text-slate-800 text-right">
-              بہت شکریہ! آپ کے اس سوال کی مزید رہنمائی کے لیے آپ براہِ راست میرے واٹس ایپ نمبر (03198519637) پر رابطہ کر سکتے ہیں تاکہ میں آپ کو مکمل تفصیلات فراہم کر سکوں۔
-            </p>
+    function appendTeacherMsg(msg, lang) {
+      const box = document.getElementById("chatMessages");
+      const isUrdu = lang === 'urdu' || /[\u0600-\u06FF]/.test(msg);
+      box.innerHTML += `
+        <div class="bg-white p-3.5 rounded-2xl rounded-tl-none border border-slate-200 shadow-2xs max-w-[92%] space-y-1.5 leading-relaxed">
+          <span class="text-[10px] font-bold text-[#3a80bc] block">Munaza Mukhtar • Teacher</span>
+          <div class="text-xs text-slate-800 whitespace-pre-line ${isUrdu ? 'urdu-font text-right' : 'text-left'}">
+            ${msg}
           </div>
-        `;
-        box.scrollTop = box.scrollHeight;
-      }, 500);
-
+        </div>
+      `;
       box.scrollTop = box.scrollHeight;
     }
 
