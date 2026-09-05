@@ -5,23 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <!-- SEO & METADATA -->
-  <title>SDG Insights — Virtual University Study Materials & Exam Portal</title>
-  <meta name="description" content="Official SDG Insights: 100% Handout-Accurate Solved Notes, Highlighted Handouts (Rs. 300), Semester Bundles (20% OFF), and CS619 Final Projects." />
+  <title>SDG Insights — Success, Dignity & Glory in Your VU Studies</title>
+  <meta name="description" content="Official SDG Insights: 100% Handout-Accurate Solved Notes, Highlighted Handouts, VU LMS Handling & Full Semester Support Packages." />
   <link rel="canonical" href="https://sdginsights.github.io" />
 
-  <!-- TAILWIND CSS & ICONS & FONTS -->
+  <!-- TAILWIND CSS & FONTS & ICONS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
 
   <style>
-    /* OFFICIAL BRAND PALETTE */
     :root {
-      --brand-navy: #11253e;
+      --brand-dark: #0d1b2e;
+      --brand-navy: #102138;
       --brand-blue: #3a80bc;
-      --brand-white: #ffffff;
       --brand-light: #f8fafc;
     }
 
@@ -30,80 +29,92 @@
       background-color: var(--brand-light);
       color: #0f172a;
     }
-    .rough-note { font-family: 'Caveat', cursive; }
+    .rough-font { font-family: 'Caveat', cursive; }
 
     /* SMOOTH PAGE TRANSITIONS */
-    .page-view { display: none; animation: fadeIn 0.3s ease-out forwards; }
+    .page-view { display: none; animation: fadeInView 0.32s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
     .page-active { display: block; }
-    @keyframes fadeIn {
+    @keyframes fadeInView {
       from { opacity: 0; transform: translateY(6px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* ANIMATED PROMO BOX */
-    @keyframes wobble {
-      0%, 100% { transform: rotate(0deg) scale(1); }
-      25% { transform: rotate(-5deg) scale(1.04); }
-      75% { transform: rotate(5deg) scale(1.04); }
+    /* PREMIUM CARD HOVER & ELEVATION */
+    .luxury-card {
+      background: #ffffff;
+      border: 1px solid rgba(226, 232, 240, 0.9);
+      transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .gift-animate {
-      animation: wobble 2.8s ease-in-out infinite;
-      transform-origin: bottom center;
+    .luxury-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 35px -8px rgba(16, 33, 56, 0.09), 0 6px 12px -4px rgba(16, 33, 56, 0.04);
+      border-color: var(--brand-blue);
     }
 
-    .hover-lift {
-      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .hover-lift:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 20px 30px -10px rgba(17, 37, 62, 0.1);
-      border-color: #3a80bc;
-    }
-    .btn-brand-active {
-      background-color: #11253e;
+    /* PILL NAVIGATION ACTIVE */
+    .pill-btn-active {
+      background-color: #102138;
       color: #ffffff;
-      border-color: #11253e;
+      border-color: #102138;
+      box-shadow: 0 4px 12px rgba(16, 33, 56, 0.15);
     }
+
+    @keyframes pulseGlow {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.04); }
+    }
+    .glow-pulse { animation: pulseGlow 2.8s ease-in-out infinite; }
   </style>
 </head>
 <body class="min-h-screen flex flex-col antialiased">
 
-  <!-- TOP BRAND ANNOUNCEMENT TICKER -->
-  <div class="bg-[#11253e] text-white text-xs py-2 px-4 border-b border-[#1e3b61]">
+  <!-- TOP PROMO TICKER -->
+  <div class="bg-[#0d1b2e] text-white text-xs py-2 px-4 border-b border-slate-800">
     <div class="max-w-6xl mx-auto flex items-center justify-between">
       <div class="flex items-center space-x-2">
-        <span class="bg-[#3a80bc] text-white text-[10px] font-extrabold px-2.5 py-0.5 rounded-full uppercase tracking-wider">OFFER</span>
-        <span class="text-slate-200">Get <strong>Flat 20% OFF</strong> on Full Semester Bundles & <strong>10% OFF</strong> on 5-Subjects Pack!</span>
+        <span class="bg-[#3a80bc] text-white text-[10px] font-black px-2.5 py-0.5 rounded-full uppercase tracking-wider">OFFER</span>
+        <span class="text-slate-200">Full Semester Bundle: <strong>20% OFF</strong> • Any 5 Courses: <strong>10% OFF</strong>!</span>
       </div>
-      <div class="hidden sm:flex items-center space-x-4 text-[11px] text-slate-300">
-        <a href="https://wa.me/c/923198519637" target="_blank" class="hover:text-[#3a80bc] transition font-semibold">WhatsApp Catalog</a>
+      <div class="hidden sm:flex items-center space-x-4 text-[11px] text-slate-300 font-medium">
+        <a href="https://wa.me/c/923198519637" target="_blank" class="hover:text-[#3a80bc] transition">WhatsApp Catalog</a>
         <span>•</span>
-        <a href="https://whatsapp.com/channel/0029VbB78Xa3WHTReQ1hTF1Q" target="_blank" class="hover:text-[#3a80bc] transition font-semibold">Community Channel</a>
+        <a href="https://whatsapp.com/channel/0029VbB78Xa3WHTReQ1hTF1Q" target="_blank" class="hover:text-[#3a80bc] transition">Community Channel</a>
       </div>
     </div>
   </div>
 
-  <!-- NAVBAR -->
+  <!-- MAIN TOP NAVBAR -->
   <nav class="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-xs">
     <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
       
       <!-- LOGO -->
-      <a href="#" onclick="navigateTo('page-home')" class="flex items-center space-x-3.5 group">
-        <img src="logo.png" alt="SDG Insights" onerror="this.src='https://ui-avatars.com/api/?name=SDG+Insights&background=11253e&color=3a80bc&bold=true&size=128';" class="w-12 h-12 rounded-full object-cover border-2 border-[#3a80bc] shadow-sm shrink-0" />
+      <a href="#" onclick="navigateTo('page-home')" class="flex items-center space-x-3.5 group cursor-pointer">
+        <img src="logo.png" alt="SDG Insights Logo" onerror="this.src='https://ui-avatars.com/api/?name=SDG+Insights&background=102138&color=3a80bc&bold=true&size=128';" class="w-12 h-12 rounded-full object-cover border-2 border-[#3a80bc] shadow-sm shrink-0" />
         <div>
-          <div class="flex items-center space-x-2">
-            <span class="text-xl font-extrabold text-[#11253e] tracking-tight block leading-tight">SDG Insights</span>
-            <span class="bg-[#3a80bc]/10 text-[#3a80bc] text-[10px] font-bold px-2 py-0.5 rounded-full border border-[#3a80bc]/20">Official</span>
-          </div>
-          <p class="text-[11px] text-slate-500 font-medium">Virtual University Examination & Project Portal</p>
+          <span class="text-lg font-black text-[#102138] tracking-tight block leading-tight">SDG Insights</span>
+          <span class="text-[11px] text-slate-400 font-semibold">VU Preparation & LMS Handling Portal</span>
         </div>
       </a>
 
-      <!-- ACTION BUTTONS -->
+      <!-- MAIN SERVICE BUTTONS IN HEADER -->
+      <div class="hidden lg:flex items-center space-x-2 text-xs font-bold">
+        <button onclick="navigateTo('page-courses')" class="px-3.5 py-2 rounded-xl text-slate-700 hover:text-[#102138] hover:bg-slate-100 transition">
+          Course Notes
+        </button>
+        <button onclick="navigateTo('page-lms')" class="px-3.5 py-2 rounded-xl text-[#3a80bc] bg-blue-50/80 hover:bg-blue-100 transition border border-blue-200/60 flex items-center gap-1.5">
+          <i class="fa-solid fa-headset text-xs"></i>
+          <span>LMS Handling Packages</span>
+        </button>
+        <button onclick="navigateTo('page-deals')" class="px-3.5 py-2 rounded-xl text-slate-700 hover:text-[#102138] hover:bg-slate-100 transition">
+          Discounts & Deals
+        </button>
+      </div>
+
+      <!-- RIGHT NAV ACTIONS -->
       <div class="flex items-center space-x-2.5">
-        <button onclick="navigateTo('page-portal-login')" class="bg-[#11253e] hover:bg-[#1a385f] text-white text-xs px-4 py-2.5 rounded-xl font-bold transition flex items-center gap-2 shadow-sm border border-slate-700">
+        <button onclick="navigateTo('page-portal-login')" class="bg-[#102138] hover:bg-[#1a385f] text-white text-xs px-4 py-2.5 rounded-xl font-bold transition flex items-center gap-2 shadow-xs">
           <i class="fa-solid fa-lock text-[#3a80bc]"></i>
-          <span>Student Portal Login</span>
+          <span>Student Study Room</span>
         </button>
 
         <a href="https://youtube.com/@sdginsights?si=yFODeRKu4Q1S_ORa" target="_blank" class="bg-red-50 hover:bg-red-100 text-red-600 text-xs px-3.5 py-2.5 rounded-xl font-bold transition flex items-center gap-1.5 border border-red-200">
@@ -119,57 +130,55 @@
   <!-- ======================================================== -->
   <main id="page-home" class="page-view page-active flex-1">
     
-    <!-- MINIMAL HERO -->
+    <!-- HERO SECTION -->
     <section class="bg-white border-b border-slate-200 py-12 px-4 text-center">
-      <div class="max-w-3xl mx-auto space-y-4">
+      <div class="max-w-4xl mx-auto space-y-4">
         
-        <div class="inline-flex items-center gap-2 bg-slate-50 border border-slate-200 text-[#11253e] px-4 py-1.5 rounded-full text-xs font-bold shadow-xs">
-          <i class="fa-solid fa-certificate text-[#3a80bc]"></i>
-          <span>100% Handout-Accurate Virtual University Preparation</span>
+        <!-- OFFICIAL SLOGAN -->
+        <div class="inline-flex items-center gap-2 bg-blue-50/80 border border-blue-200/70 text-[#102138] px-4 py-1.5 rounded-full text-xs font-bold shadow-2xs">
+          <i class="fa-solid fa-shield-halved text-[#3a80bc]"></i>
+          <span>Success, Dignity & Glory in Your VU Studies</span>
         </div>
 
-        <h1 class="text-3xl md:text-5xl font-black text-[#11253e] tracking-tight leading-tight">
-          Success, Dignity & Glory in Your VU Studies
+        <h1 class="text-3xl md:text-5xl lg:text-6xl font-black text-[#102138] tracking-tight leading-tight">
+          Virtual University Study Materials <br/>
+          <span class="text-[#3a80bc]">& LMS Handling Packages</span>
         </h1>
 
-        <p class="text-slate-500 text-sm md:text-base max-w-lg mx-auto">
-          Comprehensive handouts, verified past papers, midterm/final term preparation packs, and CS619 final projects.
+        <p class="text-slate-500 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
+          100% handout-accurate solved exam notes, complete LMS handling packages, and full academic support.
         </p>
 
-        <!-- ANIMATED PROMO BOX (20% OFF DEALS) -->
-        <div class="pt-3">
-          <div onclick="navigateTo('page-deals')" class="inline-flex items-center gap-4 bg-gradient-to-r from-[#11253e] via-[#1c385c] to-[#11253e] text-white p-4 rounded-3xl shadow-lg cursor-pointer hover-lift border border-[#3a80bc]/40">
-            <div class="w-12 h-12 rounded-2xl bg-[#3a80bc] text-white flex items-center justify-center text-2xl gift-animate shadow-md">
-              <i class="fa-solid fa-gift"></i>
-            </div>
-            <div class="text-left">
-              <span class="bg-[#3a80bc] text-white text-[10px] font-black px-2 py-0.5 rounded-full uppercase tracking-wider">
-                Limited Time Deals
-              </span>
-              <h3 class="text-sm md:text-base font-bold leading-tight mt-1">Full Semester 20% OFF & 5-Subjects Pack</h3>
-              <span class="text-[11px] text-[#3a80bc] font-semibold">Click here to claim exclusive packages →</span>
-            </div>
-          </div>
+        <!-- SERVICE QUICK BUTTONS IN HERO -->
+        <div class="flex items-center justify-center gap-2.5 pt-3 flex-wrap text-xs font-bold">
+          <button onclick="navigateTo('page-courses')" class="bg-[#102138] hover:bg-[#1a385f] text-white px-5 py-3 rounded-2xl transition shadow-xs flex items-center gap-2">
+            <i class="fa-solid fa-book-open text-[#3a80bc]"></i>
+            <span>Browse Subject Notes</span>
+          </button>
+          <button onclick="navigateTo('page-lms')" class="bg-gradient-to-r from-[#102138] to-[#1e3b61] text-white px-5 py-3 rounded-2xl transition shadow-md border border-[#3a80bc]/40 flex items-center gap-2 glow-pulse">
+            <i class="fa-solid fa-crown text-amber-400"></i>
+            <span>LMS Handling & Full Support Packages</span>
+          </button>
         </div>
 
       </div>
     </section>
 
-    <!-- 4 MAIN CLEAN DOORS -->
+    <!-- 4 CLEAN ENTRY DOORS -->
     <section class="max-w-5xl mx-auto px-4 py-12">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         
         <!-- DOOR 1: COURSES -->
-        <div onclick="navigateTo('page-courses')" class="bg-white border border-slate-200 rounded-3xl p-7 hover-lift cursor-pointer flex flex-col justify-between group">
+        <div onclick="navigateTo('page-courses')" class="luxury-card rounded-3xl p-7 cursor-pointer flex flex-col justify-between group">
           <div class="space-y-3">
-            <div class="w-12 h-12 rounded-2xl bg-slate-50 text-[#3a80bc] border border-slate-200 flex items-center justify-center text-xl group-hover:bg-[#11253e] group-hover:text-white transition">
+            <div class="w-12 h-12 rounded-2xl bg-blue-50 text-[#3a80bc] flex items-center justify-center text-xl group-hover:bg-[#102138] group-hover:text-white transition">
               <i class="fa-solid fa-book-bookmark"></i>
             </div>
-            <h3 class="text-xl font-extrabold text-[#11253e] group-hover:text-[#3a80bc] transition">
-              Course Library & Notes
+            <h3 class="text-xl font-extrabold text-[#102138] group-hover:text-[#3a80bc] transition">
+              Course Library & Exam Notes
             </h3>
             <p class="text-xs text-slate-500 leading-relaxed">
-              Explore Computer Science, Mathematics, and Management preparation packs, highlighted handouts, and verified MCQs.
+              Explore Computer Science, Mathematics, and Management preparation packs, highlighted handouts (Rs. 300), and verified MCQs.
             </p>
           </div>
           <div class="pt-6 mt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-[#3a80bc]">
@@ -178,59 +187,62 @@
           </div>
         </div>
 
-        <!-- DOOR 2: SECURE STUDY PORTAL -->
-        <div onclick="navigateTo('page-portal-login')" class="bg-white border border-slate-200 rounded-3xl p-7 hover-lift cursor-pointer flex flex-col justify-between group">
+        <!-- DOOR 2: LMS PACKAGES -->
+        <div onclick="navigateTo('page-lms')" class="luxury-card rounded-3xl p-7 cursor-pointer flex flex-col justify-between group border-2 border-blue-100 hover:border-[#3a80bc]">
           <div class="space-y-3">
-            <div class="w-12 h-12 rounded-2xl bg-blue-50 text-[#3a80bc] border border-blue-100 flex items-center justify-center text-xl group-hover:bg-[#11253e] group-hover:text-white transition">
+            <div class="flex items-center justify-between">
+              <div class="w-12 h-12 rounded-2xl bg-indigo-50 text-indigo-700 flex items-center justify-center text-xl group-hover:bg-[#102138] group-hover:text-amber-300 transition">
+                <i class="fa-solid fa-headset"></i>
+              </div>
+              <span class="bg-blue-50 text-[#3a80bc] text-[10px] font-black px-2.5 py-1 rounded-full uppercase border border-blue-200">Full Support</span>
+            </div>
+            <h3 class="text-xl font-extrabold text-[#102138] group-hover:text-[#3a80bc] transition">
+              LMS Handling & VIP Support Packages
+            </h3>
+            <p class="text-xs text-slate-500 leading-relaxed">
+              Assignments, GDBs, and quizzes handled with high-score targets, plus complete midterm and final term preparation packages.
+            </p>
+          </div>
+          <div class="pt-6 mt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-[#3a80bc]">
+            <span>View Packages & Pricing</span>
+            <i class="fa-solid fa-arrow-right transform group-hover:translate-x-1.5 transition"></i>
+          </div>
+        </div>
+
+        <!-- DOOR 3: STUDY ROOM -->
+        <div onclick="navigateTo('page-portal-login')" class="luxury-card rounded-3xl p-7 cursor-pointer flex flex-col justify-between group">
+          <div class="space-y-3">
+            <div class="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-700 flex items-center justify-center text-xl group-hover:bg-[#102138] group-hover:text-white transition">
               <i class="fa-solid fa-shield-halved"></i>
             </div>
-            <h3 class="text-xl font-extrabold text-[#11253e] group-hover:text-[#3a80bc] transition">
+            <h3 class="text-xl font-extrabold text-[#102138] group-hover:text-[#3a80bc] transition">
               Student Online Study Room
             </h3>
             <p class="text-xs text-slate-500 leading-relaxed">
-              Enrolled students can enter their secret access passcode to unlock and read verified handout solutions online.
+              Enrolled students can unlock online read-only interactive study notes, formula cheatsheets, and verified quiz questions.
             </p>
           </div>
-          <div class="pt-6 mt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-[#3a80bc]">
-            <span>Unlock Study Room</span>
+          <div class="pt-6 mt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-emerald-700">
+            <span>Unlock Online Study Room</span>
             <i class="fa-solid fa-arrow-right transform group-hover:translate-x-1.5 transition"></i>
           </div>
         </div>
 
-        <!-- DOOR 3: CS619 PROJECTS -->
-        <div onclick="navigateTo('page-project')" class="bg-white border border-slate-200 rounded-3xl p-7 hover-lift cursor-pointer flex flex-col justify-between group">
+        <!-- DOOR 4: CUSTOM DESK -->
+        <div onclick="navigateTo('page-custom')" class="luxury-card rounded-3xl p-7 cursor-pointer flex flex-col justify-between group">
           <div class="space-y-3">
-            <div class="w-12 h-12 rounded-2xl bg-slate-50 text-[#11253e] border border-slate-200 flex items-center justify-center text-xl group-hover:bg-[#11253e] group-hover:text-white transition">
-              <i class="fa-solid fa-code"></i>
-            </div>
-            <h3 class="text-xl font-extrabold text-[#11253e] group-hover:text-[#3a80bc] transition">
-              CS619 Final Year Projects
-            </h3>
-            <p class="text-xs text-slate-500 leading-relaxed">
-              Complete professional mentorship for SRS documentation, architecture diagrams, test phase coding, and final viva voce.
-            </p>
-          </div>
-          <div class="pt-6 mt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-[#3a80bc]">
-            <span>View Project Desk</span>
-            <i class="fa-solid fa-arrow-right transform group-hover:translate-x-1.5 transition"></i>
-          </div>
-        </div>
-
-        <!-- DOOR 4: CUSTOM REQUESTS -->
-        <div onclick="navigateTo('page-custom')" class="bg-white border border-slate-200 rounded-3xl p-7 hover-lift cursor-pointer flex flex-col justify-between group">
-          <div class="space-y-3">
-            <div class="w-12 h-12 rounded-2xl bg-slate-50 text-[#3a80bc] border border-slate-200 flex items-center justify-center text-xl group-hover:bg-[#11253e] group-hover:text-white transition">
+            <div class="w-12 h-12 rounded-2xl bg-slate-50 text-[#3a80bc] border border-slate-200 flex items-center justify-center text-xl group-hover:bg-[#102138] group-hover:text-white transition">
               <i class="fa-solid fa-wand-magic-sparkles"></i>
             </div>
-            <h3 class="text-xl font-extrabold text-[#11253e] group-hover:text-[#3a80bc] transition">
-              Custom Subject & Assignments
+            <h3 class="text-xl font-extrabold text-[#102138] group-hover:text-[#3a80bc] transition">
+              Custom Subject & Assistance
             </h3>
             <p class="text-xs text-slate-500 leading-relaxed">
-              If your subject is not listed or you require customized exam prep notes or assignment assistance, request directly on WhatsApp.
+              If your required VU course is not listed, request personalized handouts, solved past papers, or customized academic assistance.
             </p>
           </div>
           <div class="pt-6 mt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-[#3a80bc]">
-            <span>Request Custom Order</span>
+            <span>Request Custom Service</span>
             <i class="fa-solid fa-arrow-right transform group-hover:translate-x-1.5 transition"></i>
           </div>
         </div>
@@ -247,7 +259,7 @@
     <div class="max-w-6xl mx-auto space-y-6">
       
       <div class="flex items-center justify-between border-b border-slate-200 pb-4">
-        <button onclick="navigateTo('page-home')" class="inline-flex items-center gap-2 text-xs font-bold text-slate-600 hover:text-[#11253e] bg-white px-3.5 py-2 rounded-xl border border-slate-200 shadow-xs transition">
+        <button onclick="navigateTo('page-home')" class="inline-flex items-center gap-2 text-xs font-bold text-slate-600 hover:text-[#102138] bg-white px-3.5 py-2 rounded-xl border border-slate-200 shadow-xs transition">
           <i class="fa-solid fa-arrow-left"></i>
           <span>Back to Home</span>
         </button>
@@ -259,7 +271,7 @@
         <input type="text" id="courseSearchInput" onkeyup="filterCoursesList()" placeholder="Search by course code (e.g. CS610, MTH401, CS301, CS201)..." class="w-full bg-slate-50 border border-slate-300 rounded-2xl px-4 py-3 text-sm focus:bg-white focus:ring-2 focus:ring-[#3a80bc] focus:outline-none" />
         
         <div class="flex items-center gap-2 flex-wrap text-xs font-bold">
-          <button onclick="setCourseFilter('ALL')" id="flt-ALL" class="btn-brand-active px-4 py-2.5 rounded-xl border transition">All Courses</button>
+          <button onclick="setCourseFilter('ALL')" id="flt-ALL" class="pill-btn-active px-4 py-2.5 rounded-xl border transition">All Courses</button>
           <button onclick="setCourseFilter('MID')" id="flt-MID" class="bg-slate-100 hover:bg-slate-200 text-slate-700 px-4 py-2.5 rounded-xl transition">Midterm Packs</button>
           <button onclick="setCourseFilter('FINAL')" id="flt-FINAL" class="bg-slate-100 hover:bg-slate-200 text-slate-700 px-4 py-2.5 rounded-xl transition">Final Term Packs</button>
           <button onclick="setCourseFilter('HIGHLIGHTED')" id="flt-HIGHLIGHTED" class="bg-blue-50 text-[#3a80bc] hover:bg-blue-100 px-4 py-2.5 rounded-xl border border-blue-200 transition">Highlighted Handouts (Rs. 300)</button>
@@ -275,13 +287,102 @@
   </section>
 
   <!-- ======================================================== -->
-  <!-- PAGE 3: SPECIAL DEALS -->
+  <!-- PAGE 3: LMS HANDLING & FULL SUPPORT PACKAGES -->
+  <!-- ======================================================== -->
+  <section id="page-lms" class="page-view flex-1 py-10 px-4">
+    <div class="max-w-5xl mx-auto space-y-8">
+      
+      <div class="flex items-center justify-between border-b border-slate-200 pb-4">
+        <button onclick="navigateTo('page-home')" class="inline-flex items-center gap-2 text-xs font-bold text-slate-600 hover:text-[#102138] bg-white px-3.5 py-2 rounded-xl border border-slate-200 shadow-xs transition">
+          <i class="fa-solid fa-arrow-left"></i>
+          <span>Back to Home</span>
+        </button>
+        <span class="text-xs font-bold text-[#3a80bc] uppercase tracking-wider">LMS & Exam Packages</span>
+      </div>
+
+      <!-- SLOGAN & TITLE -->
+      <div class="text-center space-y-2">
+        <div class="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 text-[#102138] px-4 py-1.5 rounded-full text-xs font-bold shadow-2xs">
+          <i class="fa-solid fa-crown text-amber-400"></i>
+          <span>Success, Dignity & Glory in Your VU Studies</span>
+        </div>
+        <h2 class="text-2xl md:text-4xl font-black text-[#102138] tracking-tight">
+          VU LMS Handling & Complete Academic Support
+        </h2>
+        <p class="text-xs md:text-sm text-slate-500 max-w-xl mx-auto">
+          Tailored academic packages for working professionals and university students aiming for a top CGPA.
+        </p>
+      </div>
+
+      <!-- 2 MAIN PACKAGE TIERS -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        
+        <!-- TIER 1: LMS HANDLING ONLY -->
+        <div class="luxury-card rounded-3xl p-7 flex flex-col justify-between space-y-5">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="bg-slate-100 text-slate-700 text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-wider">Coursework Pack</span>
+              <span class="text-xs font-bold text-slate-400">Per Semester / Subject</span>
+            </div>
+            <h3 class="text-xl font-extrabold text-[#102138]">Complete LMS Handling</h3>
+            <p class="text-xs text-slate-500 leading-relaxed">
+              Professional, confidential, and timely management of all regular semester coursework.
+            </p>
+            <ul class="text-xs space-y-2.5 text-slate-700 pt-2 font-medium">
+              <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-emerald-600"></i> 100% Plagiarism-Free Assignments</li>
+              <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-emerald-600"></i> Graded Discussion Boards (GDBs) with Full Marks Target</li>
+              <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-emerald-600"></i> Solved Online Quizzes with High Scores</li>
+              <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-emerald-600"></i> Timely LMS Submissions & Confirmation Proofs</li>
+            </ul>
+          </div>
+          <div class="pt-5 border-t border-slate-100 flex items-center justify-between">
+            <span class="text-xs font-bold text-slate-500">Flexible Rates</span>
+            <button onclick="claimPackageWhatsApp('Complete LMS Handling Package')" class="bg-[#102138] hover:bg-[#1a385f] text-white font-bold text-xs px-5 py-2.5 rounded-xl transition shadow-xs">
+              Inquire on WhatsApp
+            </button>
+          </div>
+        </div>
+
+        <!-- TIER 2: VIP ALL-IN-ONE (LMS + PREP + FULL SUPPORT) -->
+        <div class="bg-gradient-to-br from-white to-blue-50/70 border-2 border-[#3a80bc] rounded-3xl p-7 luxury-card flex flex-col justify-between space-y-5 shadow-sm relative">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="bg-[#3a80bc] text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-wider">All-in-One Premier</span>
+              <span class="text-[10px] font-bold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-md">Full 24/7 Care</span>
+            </div>
+            <h3 class="text-xl font-extrabold text-[#102138]">LMS Handling + Exam Prep + Full Support</h3>
+            <p class="text-xs text-slate-500 leading-relaxed">
+              Our ultimate comprehensive package covering your entire semester coursework, exam preparation, and personal mentor guidance.
+            </p>
+            <ul class="text-xs space-y-2.5 text-slate-700 pt-2 font-medium">
+              <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-[#3a80bc]"></i> Complete LMS Handling (Assignments, Quizzes, GDBs)</li>
+              <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-[#3a80bc]"></i> 100% Handout-Accurate Midterm Preparation Notes</li>
+              <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-[#3a80bc]"></i> Comprehensive Final Term Solved Notes & Verified MCQs</li>
+              <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-[#3a80bc]"></i> Highlighted Handouts Included for All Enrolled Courses</li>
+              <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-[#3a80bc]"></i> Dedicated 24/7 WhatsApp Academic Support & Guidance</li>
+            </ul>
+          </div>
+          <div class="pt-5 border-t border-blue-200/60 flex items-center justify-between">
+            <span class="text-xs font-bold text-[#102138]">VIP Semester Care</span>
+            <button onclick="claimPackageWhatsApp('VIP Package: LMS Handling + Midterm & Final Term Exam Prep + 24/7 Full Support')" class="bg-[#3a80bc] hover:bg-[#2f6fa7] text-white font-bold text-xs px-5 py-2.5 rounded-xl transition shadow-md">
+              Book VIP Package
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ======================================================== -->
+  <!-- PAGE 4: SPECIAL DEALS & BUNDLES -->
   <!-- ======================================================== -->
   <section id="page-deals" class="page-view flex-1 py-10 px-4">
     <div class="max-w-4xl mx-auto space-y-8">
       
       <div class="flex items-center justify-between border-b border-slate-200 pb-4">
-        <button onclick="navigateTo('page-home')" class="inline-flex items-center gap-2 text-xs font-bold text-slate-600 hover:text-[#11253e] bg-white px-3.5 py-2 rounded-xl border border-slate-200 shadow-xs transition">
+        <button onclick="navigateTo('page-home')" class="inline-flex items-center gap-2 text-xs font-bold text-slate-600 hover:text-[#102138] bg-white px-3.5 py-2 rounded-xl border border-slate-200 shadow-xs transition">
           <i class="fa-solid fa-arrow-left"></i>
           <span>Back to Home</span>
         </button>
@@ -289,37 +390,37 @@
       </div>
 
       <div class="text-center space-y-2">
-        <div class="w-16 h-16 rounded-3xl bg-[#11253e] text-[#3a80bc] border-2 border-[#3a80bc] flex items-center justify-center text-3xl mx-auto gift-animate shadow-xl">
+        <div class="w-16 h-16 rounded-3xl bg-[#102138] text-[#3a80bc] border-2 border-[#3a80bc] flex items-center justify-center text-3xl mx-auto shadow-md">
           <i class="fa-solid fa-gift"></i>
         </div>
-        <h2 class="text-2xl md:text-3xl font-black text-[#11253e]">Semester Super Saver Packages</h2>
+        <h2 class="text-2xl md:text-3xl font-black text-[#102138]">Semester Super Saver Packages</h2>
         <p class="text-xs text-slate-500">Save more when purchasing a full semester or any group of 5 courses together.</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         
         <!-- DEAL 1 -->
-        <div class="bg-white border-2 border-[#3a80bc] rounded-3xl p-6 shadow-sm flex flex-col justify-between space-y-4">
+        <div class="luxury-card border-2 border-[#3a80bc] rounded-3xl p-6 shadow-sm flex flex-col justify-between space-y-4">
           <div>
-            <span class="bg-[#11253e] text-white text-[10px] font-black px-3 py-1 rounded-full uppercase">Flat 20% OFF</span>
-            <h3 class="text-xl font-extrabold text-[#11253e] mt-2">Full Semester Super Bundle</h3>
+            <span class="bg-[#102138] text-white text-[10px] font-black px-3 py-1 rounded-full uppercase">Flat 20% OFF</span>
+            <h3 class="text-xl font-extrabold text-[#102138] mt-2">Full Semester Super Bundle</h3>
             <p class="text-xs text-slate-600 mt-2 leading-relaxed">
               Get all handouts, solved notes, and verified keys for all 5 to 6 courses of any single semester with a flat <strong>20% discount</strong>.
             </p>
           </div>
           <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
             <span class="text-xs font-bold text-slate-700">Standard: Rs. 3000 • Now <strong>Rs. 2400</strong></span>
-            <button onclick="claimDealWhatsApp('Full Semester Super Bundle (20% OFF)', 'Rs. 2400')" class="bg-[#11253e] hover:bg-[#1a385f] text-white font-bold text-xs px-4 py-2.5 rounded-xl transition shadow-sm">
+            <button onclick="claimDealWhatsApp('Full Semester Super Bundle (20% OFF)', 'Rs. 2400')" class="bg-[#102138] hover:bg-[#1a385f] text-white font-bold text-xs px-4 py-2.5 rounded-xl transition shadow-sm">
               Claim 20% Deal
             </button>
           </div>
         </div>
 
         <!-- DEAL 2 -->
-        <div class="bg-white border-2 border-slate-300 rounded-3xl p-6 shadow-sm flex flex-col justify-between space-y-4">
+        <div class="luxury-card border-2 border-slate-300 rounded-3xl p-6 shadow-sm flex flex-col justify-between space-y-4">
           <div>
             <span class="bg-[#3a80bc] text-white text-[10px] font-black px-3 py-1 rounded-full uppercase">Flat 10% OFF</span>
-            <h3 class="text-xl font-extrabold text-[#11253e] mt-2">Pick Any 5 Subjects Pack</h3>
+            <h3 class="text-xl font-extrabold text-[#102138] mt-2">Pick Any 5 Subjects Pack</h3>
             <p class="text-xs text-slate-600 mt-2 leading-relaxed">
               Choose any 5 subjects across semesters or degrees of your choice and enjoy an instant <strong>10% package discount</strong>.
             </p>
@@ -338,52 +439,13 @@
   </section>
 
   <!-- ======================================================== -->
-  <!-- PAGE 4: CS619 FINAL YEAR PROJECTS -->
-  <!-- ======================================================== -->
-  <section id="page-project" class="page-view flex-1 py-10 px-4">
-    <div class="max-w-3xl mx-auto space-y-6">
-      
-      <div class="flex items-center justify-between border-b border-slate-200 pb-4">
-        <button onclick="navigateTo('page-home')" class="inline-flex items-center gap-2 text-xs font-bold text-slate-600 hover:text-[#11253e] bg-white px-3.5 py-2 rounded-xl border border-slate-200 shadow-xs transition">
-          <i class="fa-solid fa-arrow-left"></i>
-          <span>Back to Home</span>
-        </button>
-        <span class="text-xs font-bold text-[#3a80bc] uppercase tracking-wider">Project Consultation</span>
-      </div>
-
-      <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm space-y-5 text-center">
-        <div class="w-14 h-14 rounded-2xl bg-slate-50 border border-slate-200 text-[#11253e] flex items-center justify-center text-2xl mx-auto">
-          <i class="fa-solid fa-code"></i>
-        </div>
-        <h2 class="text-2xl font-black text-[#11253e]">CS619 / IT619 Final Year Project Guidance</h2>
-        <p class="text-sm text-slate-600 max-w-lg mx-auto leading-relaxed">
-          Complete end-to-end guidance and development assistance for your Virtual University final year project deliverables.
-        </p>
-
-        <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 text-xs text-left max-w-md mx-auto space-y-2">
-          <div class="flex items-center gap-2 font-semibold text-slate-800"><i class="fa-solid fa-check text-emerald-600"></i> Software Requirement Specification (SRS)</div>
-          <div class="flex items-center gap-2 font-semibold text-slate-800"><i class="fa-solid fa-check text-emerald-600"></i> System Architecture & ERD / Database Design</div>
-          <div class="flex items-center gap-2 font-semibold text-slate-800"><i class="fa-solid fa-check text-emerald-600"></i> Test Phase & Complete Prototype Coding</div>
-          <div class="flex items-center gap-2 font-semibold text-slate-800"><i class="fa-solid fa-check text-emerald-600"></i> Viva Voce Interview Preparation Coaching</div>
-        </div>
-
-        <button onclick="claimDealWhatsApp('CS619 Final Year Project Consultation', 'Custom Fee')" class="bg-[#11253e] hover:bg-[#1a385f] text-white font-bold text-xs px-6 py-3 rounded-xl transition shadow-md inline-flex items-center gap-2">
-          <i class="fa-brands fa-whatsapp text-[#3a80bc] text-base"></i>
-          <span>Inquire Details on WhatsApp</span>
-        </button>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ======================================================== -->
-  <!-- PAGE 5: CUSTOM SUBJECT REQUEST -->
+  <!-- PAGE 5: CUSTOM DESK -->
   <!-- ======================================================== -->
   <section id="page-custom" class="page-view flex-1 py-10 px-4">
     <div class="max-w-2xl mx-auto space-y-6">
       
       <div class="flex items-center justify-between border-b border-slate-200 pb-4">
-        <button onclick="navigateTo('page-home')" class="inline-flex items-center gap-2 text-xs font-bold text-slate-600 hover:text-[#11253e] bg-white px-3.5 py-2 rounded-xl border border-slate-200 shadow-xs transition">
+        <button onclick="navigateTo('page-home')" class="inline-flex items-center gap-2 text-xs font-bold text-slate-600 hover:text-[#102138] bg-white px-3.5 py-2 rounded-xl border border-slate-200 shadow-xs transition">
           <i class="fa-solid fa-arrow-left"></i>
           <span>Back to Home</span>
         </button>
@@ -392,8 +454,8 @@
 
       <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm space-y-5">
         <div class="text-center space-y-2">
-          <h2 class="text-2xl font-black text-[#11253e]">Request a Custom Course or Assignment</h2>
-          <p class="text-xs text-slate-500">If your required VU course is not listed, submit your details below to order customized preparation.</p>
+          <h2 class="text-2xl font-black text-[#102138]">Request Custom Course or Academic Service</h2>
+          <p class="text-xs text-slate-500">If your subject or specific requirement is not listed, submit below for direct assistance.</p>
         </div>
 
         <div class="space-y-3.5 text-xs">
@@ -406,15 +468,15 @@
             <select id="custReqType" class="w-full border border-slate-300 rounded-xl px-3.5 py-2.5 focus:ring-2 focus:ring-[#3a80bc] focus:outline-none font-semibold">
               <option>Midterm Preparation Pack</option>
               <option>Final Term Preparation Pack</option>
-              <option>Assignment / GDB Solution</option>
-              <option>Quiz Assistance</option>
+              <option>LMS Handling (Assignments / Quizzes / GDBs)</option>
+              <option>VIP Semester Care</option>
             </select>
           </div>
           <div>
             <label class="block font-bold text-slate-700 mb-1">Specific Topics or Deadline</label>
             <textarea id="custReqDetails" rows="3" placeholder="Specify any particular requirements..." class="w-full border border-slate-300 rounded-xl p-3 focus:ring-2 focus:ring-[#3a80bc] focus:outline-none"></textarea>
           </div>
-          <button onclick="submitCustomOrderWhatsApp()" class="w-full bg-[#11253e] hover:bg-[#1a385f] text-white font-bold py-3 rounded-xl transition shadow-sm flex items-center justify-center gap-2">
+          <button onclick="submitCustomOrderWhatsApp()" class="w-full bg-[#102138] hover:bg-[#1a385f] text-white font-bold py-3 rounded-xl transition shadow-sm flex items-center justify-center gap-2">
             <i class="fa-brands fa-whatsapp text-[#3a80bc] text-base"></i>
             <span>Send Custom Request to WhatsApp</span>
           </button>
@@ -431,7 +493,7 @@
     <div class="max-w-md mx-auto space-y-6">
       
       <div class="flex items-center justify-between border-b border-slate-200 pb-4">
-        <button onclick="navigateTo('page-home')" class="inline-flex items-center gap-2 text-xs font-bold text-slate-600 hover:text-[#11253e] bg-white px-3.5 py-2 rounded-xl border border-slate-200 shadow-xs transition">
+        <button onclick="navigateTo('page-home')" class="inline-flex items-center gap-2 text-xs font-bold text-slate-600 hover:text-[#102138] bg-white px-3.5 py-2 rounded-xl border border-slate-200 shadow-xs transition">
           <i class="fa-solid fa-arrow-left"></i>
           <span>Back to Home</span>
         </button>
@@ -440,10 +502,10 @@
 
       <div class="bg-white rounded-3xl p-7 border border-slate-200 shadow-lg space-y-4">
         <div class="text-center space-y-1">
-          <div class="w-12 h-12 rounded-2xl bg-[#11253e] text-[#3a80bc] flex items-center justify-center text-xl mx-auto shadow-md">
+          <div class="w-12 h-12 rounded-2xl bg-[#102138] text-[#3a80bc] flex items-center justify-center text-xl mx-auto shadow-md">
             <i class="fa-solid fa-shield-halved"></i>
           </div>
-          <h2 class="text-lg font-black text-[#11253e] mt-2">Protected Student Study Room</h2>
+          <h2 class="text-lg font-black text-[#102138] mt-2">Protected Student Study Room</h2>
           <p class="text-xs text-slate-500">Access requires an approved Gmail and a secret access key.</p>
         </div>
 
@@ -464,7 +526,7 @@
             <span class="text-[10px] text-slate-400 mt-0.5 block">Your secret key is issued upon payment verification on WhatsApp.</span>
           </div>
 
-          <button onclick="verifyPasscodeAndOpenReader()" class="w-full bg-[#11253e] hover:bg-[#1a385f] text-white font-bold py-3 rounded-xl transition shadow-md">
+          <button onclick="verifyPasscodeAndOpenReader()" class="w-full bg-[#102138] hover:bg-[#1a385f] text-white font-bold py-3 rounded-xl transition shadow-md">
             Verify & Unlock Notes
           </button>
         </div>
@@ -479,13 +541,13 @@
   <section id="page-reader" class="page-view flex-1 bg-white min-h-[85vh]">
     <div class="max-w-7xl mx-auto flex flex-col md:flex-row h-full border-b border-slate-200">
       
-      <!-- DIGITAL BOOK SIDEBAR -->
+      <!-- SIDEBAR -->
       <aside class="w-full md:w-80 border-r border-slate-200 bg-slate-50/80 p-5 shrink-0 flex flex-col justify-between">
         <div class="space-y-4">
           <div class="flex items-center justify-between border-b border-slate-200 pb-3">
             <div>
               <span class="text-[10px] font-bold text-emerald-700 uppercase tracking-wider block">✓ Verified Active</span>
-              <h3 class="font-extrabold text-sm text-[#11253e]" id="activeReaderCourse">MTH401 Differential Equations</h3>
+              <h3 class="font-extrabold text-sm text-[#102138]" id="activeReaderCourse">MTH401 Differential Equations</h3>
             </div>
             <button onclick="navigateTo('page-home')" class="text-xs text-slate-400 hover:text-slate-700">
               <i class="fa-solid fa-arrow-left"></i> Exit
@@ -493,7 +555,7 @@
           </div>
 
           <div class="space-y-1.5 text-xs font-semibold text-slate-600">
-            <button class="w-full text-left px-3 py-2.5 rounded-xl bg-white border border-slate-200 text-[#11253e] font-bold shadow-xs">
+            <button class="w-full text-left px-3 py-2.5 rounded-xl bg-white border border-slate-200 text-[#102138] font-bold shadow-xs">
               📘 Lectures 01–05: Handout Foundation
             </button>
             <button class="w-full text-left px-3 py-2.5 rounded-xl hover:bg-white transition">
@@ -518,7 +580,7 @@
         <div class="space-y-6">
           <div class="border-b border-slate-200 pb-4">
             <span class="text-xs font-bold text-[#3a80bc] uppercase">Chapter 01</span>
-            <h1 class="text-2xl md:text-3xl font-extrabold text-[#11253e] mt-1">Official Master Notes & Handout Solution</h1>
+            <h1 class="text-2xl md:text-3xl font-extrabold text-[#102138] mt-1">Official Master Notes & Handout Solution</h1>
             <p class="text-xs text-slate-500 mt-1">100% Handout-Accurate Step-by-Step Solved Theory.</p>
           </div>
 
@@ -528,15 +590,15 @@
             </p>
 
             <div class="bg-blue-50/60 border-l-4 border-[#3a80bc] p-4 rounded-r-2xl my-4">
-              <span class="text-xs font-bold text-[#11253e] uppercase block mb-1">✎ SDG Insights Rough Work / Key Concept:</span>
-              <p class="rough-note text-lg text-slate-800">
+              <span class="text-xs font-bold text-[#102138] uppercase block mb-1">✎ SDG Insights Rough Work / Key Concept:</span>
+              <p class="rough-font text-lg text-slate-800">
                 Notice that differentiation eliminates constants: d/dx(C) = 0. Therefore, integration must always restore the arbitrary constant C!
               </p>
             </div>
 
-            <h3 class="font-bold text-[#11253e] text-lg mt-6">Differential Operator D and Linearity</h3>
+            <h3 class="font-bold text-[#102138] text-lg mt-6">Differential Operator D and Linearity</h3>
             <p>The symbol $D$ denotes differentiation with respect to $x$. The linearity property states:</p>
-            <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200 text-center font-mono text-sm text-[#11253e]">
+            <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200 text-center font-mono text-sm text-[#102138]">
               D[a f(x) + b g(x)] = a D[f(x)] + b D[g(x)]
             </div>
           </article>
@@ -545,13 +607,13 @@
     </div>
   </section>
 
-  <!-- DETAIL MODAL -->
+  <!-- DETAIL MODAL FOR ORDERING NOTES -->
   <div id="orderDetailModal" class="fixed inset-0 bg-slate-950/60 backdrop-blur-xs z-50 hidden flex items-center justify-center p-4">
     <div class="bg-white rounded-3xl max-w-md w-full shadow-2xl overflow-hidden animate-fade-in border border-slate-200">
       <div class="p-5 border-b border-slate-100 flex items-center justify-between">
         <div>
           <span class="text-xs font-bold text-[#3a80bc] uppercase" id="mCode">CS610</span>
-          <h3 class="text-base font-bold text-[#11253e]" id="mTitle">Computer Networks</h3>
+          <h3 class="text-base font-bold text-[#102138]" id="mTitle">Computer Networks</h3>
         </div>
         <button onclick="closeOrderModal()" class="w-8 h-8 rounded-full bg-slate-100 text-slate-500 flex items-center justify-center">
           <i class="fa-solid fa-xmark text-sm"></i>
@@ -568,13 +630,13 @@
         </div>
 
         <div class="grid grid-cols-2 gap-2" id="orderPriceGrid">
-          <div class="border-2 border-[#11253e] bg-slate-50 p-2.5 rounded-2xl">
+          <div class="border-2 border-[#102138] bg-slate-50 p-2.5 rounded-2xl">
             <span class="text-[10px] text-slate-500 uppercase block font-bold">Midterm</span>
-            <span class="text-sm font-extrabold text-[#11253e]" id="mMid">Rs. 600</span>
+            <span class="text-sm font-extrabold text-[#102138]" id="mMid">Rs. 600</span>
           </div>
           <div class="border border-slate-200 bg-white p-2.5 rounded-2xl">
             <span class="text-[10px] text-slate-500 uppercase block font-bold">Final Term</span>
-            <span class="text-sm font-extrabold text-[#11253e]" id="mFinal">Rs. 800</span>
+            <span class="text-sm font-extrabold text-[#102138]" id="mFinal">Rs. 800</span>
           </div>
         </div>
 
@@ -582,21 +644,21 @@
         <div class="bg-slate-50 p-3 rounded-2xl border border-slate-200 space-y-1.5">
           <div class="flex items-center justify-between">
             <div><span class="font-bold text-emerald-700">EasyPaisa:</span> <span class="font-mono font-bold">03198519637</span> (Munazza mukhtar)</div>
-            <button onclick="navigator.clipboard.writeText('03198519637'); alert('Copied');" class="bg-white px-2 py-0.5 rounded border border-slate-200 font-bold">Copy</button>
+            <button onclick="navigator.clipboard.writeText('03198519637'); alert('Copied: 03198519637');" class="bg-white px-2 py-0.5 rounded border border-slate-200 font-bold">Copy</button>
           </div>
           <div class="flex items-center justify-between">
             <div><span class="font-bold text-blue-700">MCB Bank:</span> <span class="font-mono font-bold">1708370211010380</span> (MUNAZA MUKHTAR)</div>
-            <button onclick="navigator.clipboard.writeText('1708370211010380'); alert('Copied');" class="bg-white px-2 py-0.5 rounded border border-slate-200 font-bold">Copy</button>
+            <button onclick="navigator.clipboard.writeText('1708370211010380'); alert('Copied: 1708370211010380');" class="bg-white px-2 py-0.5 rounded border border-slate-200 font-bold">Copy</button>
           </div>
         </div>
 
         <div class="space-y-2">
-          <input type="text" id="custOrderName" placeholder="Student Name *" class="w-full border border-slate-300 rounded-xl px-3 py-2 text-xs" />
+          <input type="text" id="custOrderName" placeholder="Student Full Name *" class="w-full border border-slate-300 rounded-xl px-3 py-2 text-xs" />
           <input type="email" id="custOrderEmail" placeholder="Gmail Address *" class="w-full border border-slate-300 rounded-xl px-3 py-2 text-xs" />
           <input type="text" id="custOrderTrx" placeholder="Payment Trx ID *" class="w-full border border-slate-300 rounded-xl px-3 py-2 text-xs font-mono" />
         </div>
 
-        <button onclick="submitSubjectOrder()" class="w-full bg-[#11253e] hover:bg-[#1a385f] text-white font-bold py-2.5 rounded-xl transition flex items-center justify-center gap-1.5 shadow-sm">
+        <button onclick="submitSubjectOrder()" class="w-full bg-[#102138] hover:bg-[#1a385f] text-white font-bold py-2.5 rounded-xl transition flex items-center justify-center gap-1.5 shadow-sm">
           <i class="fa-brands fa-whatsapp text-[#3a80bc] text-base"></i>
           <span>Send Verification to WhatsApp</span>
         </button>
@@ -610,7 +672,7 @@
       <div class="flex items-center space-x-2 text-slate-700 font-bold">
         <span>SDG Insights</span>
         <span class="text-slate-300">|</span>
-        <span class="font-normal text-slate-500">Virtual University Exam Preparation Portal</span>
+        <span class="font-normal text-slate-500">Success, Dignity & Glory in Your VU Studies</span>
       </div>
       <div class="flex items-center space-x-4">
         <a href="https://wa.me/923198519637" target="_blank" class="text-emerald-700 font-semibold hover:underline">WhatsApp: 0319-8519637</a>
@@ -619,7 +681,7 @@
     </div>
   </footer>
 
-  <!-- MULTI-PAGE & AUTHENTICATION SCRIPT -->
+  <!-- SCRIPT -->
   <script>
     const validPasscodes = ["SDG-PASS-2026", "MTH401-VIP", "CS610-VIP", "CS301-VIP", "VU-VIP"];
 
@@ -673,7 +735,7 @@
         return matchFlt && matchQ;
       });
 
-      document.getElementById("resultsCount").innerText = `${filtered.length} Courses Available`;
+      document.getElementById("resultsCount").innerText = `${filtered.length} Courses Found`;
 
       filtered.forEach(item => {
         let price = item.mid;
@@ -687,23 +749,23 @@
         }
 
         const card = document.createElement("div");
-        card.className = "bg-white border border-slate-200 rounded-3xl p-5 hover-lift flex flex-col justify-between";
+        card.className = "luxury-card rounded-3xl p-5 flex flex-col justify-between";
         card.innerHTML = `
           <div>
             <div class="flex items-center justify-between mb-3">
-              <span class="font-mono text-xs font-black text-[#11253e] bg-slate-100 px-2.5 py-1 rounded-lg">${item.code}</span>
-              <span class="text-[11px] font-bold text-[#3a80bc]">${badge}</span>
+              <span class="font-mono text-xs font-black text-[#102138] bg-slate-100 px-2.5 py-1 rounded-lg">${item.code}</span>
+              <span class="text-[11px] font-bold text-slate-400">${badge}</span>
             </div>
-            <h3 class="font-extrabold text-base text-[#11253e] mb-1 leading-snug">${item.title}</h3>
+            <h3 class="font-extrabold text-base text-slate-900 mb-1 leading-snug">${item.title}</h3>
             <p class="text-xs text-slate-500 mb-4 line-clamp-2">${item.desc}</p>
           </div>
           <div class="pt-3 border-t border-slate-100 flex items-center justify-between mt-auto">
             <div>
               <span class="text-[10px] text-slate-400 block font-bold uppercase">Price</span>
-              <span class="font-black text-sm text-[#11253e]">${price}</span>
+              <span class="font-black text-sm text-[#102138]">${price}</span>
             </div>
-            <button onclick="openSubjectModal('${item.code}')" class="bg-[#11253e] hover:bg-[#1a385f] text-white font-bold text-xs px-4 py-2 rounded-xl transition">
-              View & Enroll
+            <button onclick="openSubjectModal('${item.code}')" class="bg-[#102138] hover:bg-[#1a385f] text-white font-bold text-xs px-4 py-2 rounded-xl transition">
+              View Details
             </button>
           </div>
         `;
@@ -721,7 +783,7 @@
       ['ALL', 'MID', 'FINAL', 'HIGHLIGHTED'].forEach(f => {
         const btn = document.getElementById(`flt-${f}`);
         if (f === flt) {
-          btn.className = "btn-brand-active px-4 py-2.5 rounded-xl border transition";
+          btn.className = "pill-btn-active px-4 py-2.5 rounded-xl border transition";
         } else {
           btn.className = "bg-slate-100 hover:bg-slate-200 text-slate-700 px-4 py-2.5 rounded-xl transition";
         }
@@ -758,6 +820,11 @@
       const msg = `*Assalam-o-Alaikum SDG Insights!*%0A%0AI have placed an order:%0A*Course:* ${selectedSub.code} - ${selectedSub.title}%0A*Student Name:* ${name}%0A*Gmail:* ${email}%0A*Trx ID:* ${trx}%0A%0APlease verify payment and send portal secret passcode. Thank you!`;
       window.open(`https://wa.me/923198519637?text=${msg}`, '_blank');
       closeOrderModal();
+    }
+
+    function claimPackageWhatsApp(pkgName) {
+      const msg = `*Assalam-o-Alaikum SDG Insights!*%0A%0AI am interested in this package:%0A*Package:* ${pkgName}%0A%0APlease share details and semester pricing. Thank you!`;
+      window.open(`https://wa.me/923198519637?text=${msg}`, '_blank');
     }
 
     function claimDealWhatsApp(dealName, price) {
