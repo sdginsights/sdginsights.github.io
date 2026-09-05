@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SDG Insights - VU Study Portal & Premium Notes</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    body { font-family: 'Poppins', sans-serif; }
+    .badge-mid { background: linear-gradient(135deg, #f59e0b, #d97706); }
+    .badge-final { background: linear-gradient(135deg, #3b82f6, #1d4ed8); }
+    .gradient-header { background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #311042 100%); }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col antialiased">
+
+  <!-- TOP APP BAR -->
+  <header class="gradient-header text-white shadow-lg sticky top-0 z-40">
+    <div class="max-w-6xl mx-auto px-4 py-3.5 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-400 to-pink-500 flex items-center justify-center shadow-md font-bold text-lg text-slate-900">
+          <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+        <div>
+          <h1 class="text-xl font-bold tracking-tight leading-tight">SDG Insights</h1>
+          <p class="text-xs text-amber-300 font-medium">VU Handouts & Exam Prep Hub</p>
+        </div>
+      </div>
+      <div class="flex items-center space-x-2">
+        <a href="https://youtube.com/@sdginsights" target="_blank" class="flex items-center space-x-1.5 bg-red-600 hover:bg-red-700 text-white text-xs px-3 py-2 rounded-lg font-semibold shadow transition">
+          <i class="fa-brands fa-youtube text-sm"></i>
+          <span class="hidden sm:inline">YouTube</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- SEARCH & FILTER BAR -->
+    <div class="max-w-6xl mx-auto px-4 pb-4 pt-1">
+      <div class="relative">
+        <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3.5 text-slate-400 text-sm"></i>
+        <input type="text" id="searchInput" onkeyup="filterSubjects()" placeholder="Search subject code (e.g. CS610, CS301, MTH)..." class="w-full bg-slate-900/80 border border-slate-700 text-white rounded-xl pl-10 pr-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-amber-400 placeholder-slate-400 shadow-inner" />
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="flex space-x-2 mt-3 overflow-x-auto pb-1 text-xs font-semibold scrollbar-none">
+        <button onclick="setCategory('All')" id="cat-All" class="px-3.5 py-1.5 rounded-lg bg-amber-400 text-slate-950 shadow">All Notes</button>
+        <button onclick="setCategory('Midterm')" id="cat-Midterm" class="px-3.5 py-1.5 rounded-lg bg-slate-800 text-slate-300 hover:bg-slate-700">Midterm</button>
+        <button onclick="setCategory('Finalterm')" id="cat-Finalterm" class="px-3.5 py-1.5 rounded-lg bg-slate-800 text-slate-300 hover:bg-slate-700">Final Term</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- NOTICE BANNER -->
+  <div class="bg-amber-50 border-b border-amber-200 text-amber-900 text-xs px-4 py-2.5">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+      <div class="flex items-center space-x-2">
+        <i class="fa-solid fa-bullhorn text-amber-600"></i>
+        <span><strong>100% Handout-Accurate:</strong> Solved Subjective, Short/Long Questions & Verified MCQs.</span>
+      </div>
+      <span class="text-[11px] font-semibold bg-amber-200 text-amber-800 px-2 py-0.5 rounded">EasyPaisa / Bank</span>
+    </div>
+  </div>
+
+  <!-- MAIN SUBJECT LIST -->
+  <main class="max-w-6xl mx-auto px-4 py-6 flex-1 w-full">
+    <div class="flex items-center justify-between mb-4">
+      <h2 class="text-lg font-bold text-slate-800 flex items-center gap-2">
+        <i class="fa-solid fa-book-bookmark text-indigo-600"></i> Available Course Packs
+      </h2>
+      <span id="cardCount" class="text-xs text-slate-500 font-medium"></span>
+    </div>
+
+    <!-- CARDS GRID -->
+    <div id="subjectsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <!-- Cards will be populated by JavaScript -->
+    </div>
+  </main>
+
+  <!-- BUY / ORDER MODAL -->
+  <div id="orderModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-md w-full shadow-2xl overflow-hidden animate-fade-in">
+      <div class="bg-gradient-to-r from-slate-900 to-indigo-950 text-white p-4 flex items-center justify-between">
+        <div class="flex items-center space-x-2">
+          <i class="fa-solid fa-cart-shopping text-amber-400"></i>
+          <h3 class="font-bold text-base" id="modalTitle">Course Access</h3>
+        </div>
+        <button onclick="closeModal()" class="text-slate-400 hover:text-white text-lg">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="p-5 max-h-[80vh] overflow-y-auto space-y-4 text-sm">
+        <!-- Item Details -->
+        <div class="bg-slate-50 border border-slate-200 rounded-xl p-3 flex justify-between items-center">
+          <div>
+            <div id="modalSubject" class="font-bold text-slate-900">CS610</div>
+            <div id="modalDesc" class="text-xs text-slate-500">Full Handout Preparation Pack</div>
+          </div>
+          <div class="text-right">
+            <span class="text-xs text-slate-400 block">Price</span>
+            <span id="modalPrice" class="font-extrabold text-indigo-600 text-base">Rs. 500</span>
+          </div>
+        </div>
+
+        <!-- PAYMENT METHODS -->
+        <div class="border border-indigo-100 bg-indigo-50/60 rounded-xl p-3.5 space-y-2">
+          <div class="font-bold text-xs uppercase tracking-wider text-indigo-900 flex items-center gap-1.5">
+            <i class="fa-solid fa-building-columns"></i> Payment Details
+          </div>
+          
+          <div class="bg-white p-2.5 rounded-lg border border-indigo-100 flex items-center justify-between">
+            <div>
+              <div class="font-bold text-xs text-emerald-700 flex items-center gap-1">
+                <i class="fa-solid fa-wallet"></i> EasyPaisa Account
+              </div>
+              <div class="font-mono text-sm font-semibold text-slate-800">0300-XXXXXXX</div>
+              <div class="text-[11px] text-slate-500">Title: Munaza Mukhtar</div>
+            </div>
+            <button onclick="copyToClipboard('0300-XXXXXXX')" class="text-xs bg-slate-100 hover:bg-slate-200 px-2.5 py-1.5 rounded-md font-medium text-slate-600">
+              Copy
+            </button>
+          </div>
+
+          <p class="text-[11px] text-slate-500 leading-tight">
+            * Kisi bhi EasyPaisa, JazzCash ya Bank app se payment send karein aur screenshot ya Trx ID save kar lein.
+          </p>
+        </div>
+
+        <!-- STUDENT FORM -->
+        <div class="space-y-3 pt-1">
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1">Aapka Naam (Student Name) *</label>
+            <input type="text" id="custName" class="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none" placeholder="e.g. Ali Ahmed" />
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1">Email (Jis par Google Drive access chahiye) *</label>
+            <input type="email" id="custEmail" class="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none" placeholder="e.g. student@gmail.com" />
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1">Payment Transaction ID (Trx ID) *</label>
+            <input type="text" id="custTrx" class="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none" placeholder="e.g. 2489102941" />
+          </div>
+        </div>
+
+        <!-- CONFIRM BUTTON -->
+        <button onclick="submitOrder()" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 rounded-xl shadow-lg transition flex items-center justify-center gap-2">
+          <i class="fa-brands fa-whatsapp text-lg"></i>
+          <span>Send Verification to WhatsApp</span>
+        </button>
+        <p class="text-[10px] text-center text-slate-400">Trx verify hote hi Google Drive access foran unlock kar di jayegi.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-900 text-slate-400 text-xs py-6 border-t border-slate-800">
+    <div class="max-w-6xl mx-auto px-4 text-center space-y-2">
+      <p class="font-medium text-slate-300">© 2026 SDG Insights — Powered by Virtual University Learners</p>
+      <p class="text-slate-500 text-[11px]">Contact: Haroonabad, Pakistan | YouTube: @sdginsights</p>
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT DATA & LOGIC -->
+  <script>
+    // INITIAL SAMPLE DATA (Aap is list mein rozana naye subjects add kar sakti hain)
+    const subjectsData = [
+      {
+        code: "CS610",
+        title: "Computer Networks",
+        term: "Finalterm",
+        price: "Rs. 500",
+        videoUrl: "https://www.youtube.com/@sdginsights",
+        description: "Complete Subjective Solved + Handout Accurate MCQs + Key Terminology."
+      },
+      {
+        code: "CS301",
+        title: "Data Structures",
+        term: "Midterm",
+        price: "Rs. 450",
+        videoUrl: "https://www.youtube.com/@sdginsights",
+        description: "Trees, Arrays, Stacks, Linked Lists solved diagrams and past mid papers."
+      },
+      {
+        code: "MTH301",
+        title: "Calculus II",
+        term: "Finalterm",
+        price: "Rs. 500",
+        videoUrl: "https://www.youtube.com/@sdginsights",
+        description: "Formulas, Vector Calculus solved steps & short notes."
+      }
+    ];
+
+    let currentCategory = "All";
+    let selectedSubject = null;
+
+    function renderCards(data) {
+      const grid = document.getElementById("subjectsGrid");
+      grid.innerHTML = "";
+      document.getElementById("cardCount").innerText = `${data.length} Subjects Available`;
+
+      data.forEach(item => {
+        const isMid = item.term === "Midterm";
+        const badgeClass = isMid ? "badge-mid" : "badge-final";
+        const badgeIcon = isMid ? "fa-clock" : "fa-award";
+
+        const card = document.createElement("div");
+        card.className = "bg-white border border-slate-200 rounded-2xl p-5 shadow-sm hover:shadow-md transition flex flex-col justify-between";
+        card.innerHTML = `
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-white text-[11px] font-bold px-2.5 py-1 rounded-full shadow-sm ${badgeClass} flex items-center gap-1">
+                <i class="fa-solid ${badgeIcon}"></i> ${item.term}
+              </span>
+              <span class="text-xs font-semibold text-slate-400">${item.code}</span>
+            </div>
+
+            <h3 class="font-bold text-slate-900 text-base mb-1">${item.code} - ${item.title}</h3>
+            <p class="text-xs text-slate-500 mb-4 line-clamp-2">${item.description}</p>
+
+            <div class="mb-4">
+              <a href="${item.videoUrl}" target="_blank" class="inline-flex items-center gap-1.5 text-xs text-red-600 hover:text-red-700 font-semibold bg-red-50 hover:bg-red-100 px-3 py-1.5 rounded-lg transition">
+                <i class="fa-solid fa-circle-play"></i> Watch Prep Demo Video
+              </a>
+            </div>
+          </div>
+
+          <div class="pt-3 border-t border-slate-100 flex items-center justify-between mt-auto">
+            <div>
+              <span class="text-[10px] text-slate-400 block uppercase font-bold">Price</span>
+              <span class="font-bold text-base text-slate-900">${item.price}</span>
+            </div>
+            <button onclick="openModal('${item.code}', '${item.title}', '${item.price}')" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-xs px-4 py-2.5 rounded-xl shadow-md transition flex items-center gap-1.5">
+              <i class="fa-solid fa-lock-open text-amber-300"></i> Get Notes
+            </button>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    function filterSubjects() {
+      const q = document.getElementById("searchInput").value.toLowerCase();
+      const filtered = subjectsData.filter(item => {
+        const matchesCategory = currentCategory === "All" || item.term === currentCategory;
+        const matchesSearch = item.code.toLowerCase().includes(q) || item.title.toLowerCase().includes(q) || item.description.toLowerCase().includes(q);
+        return matchesCategory && matchesSearch;
+      });
+      renderCards(filtered);
+    }
+
+    function setCategory(cat) {
+      currentCategory = cat;
+      ['All', 'Midterm', 'Finalterm'].forEach(c => {
+        const btn = document.getElementById(`cat-${c}`);
+        if (c === cat) {
+          btn.className = "px-3.5 py-1.5 rounded-lg bg-amber-400 text-slate-950 shadow font-bold";
+        } else {
+          btn.className = "px-3.5 py-1.5 rounded-lg bg-slate-800 text-slate-300 hover:bg-slate-700";
+        }
+      });
+      filterSubjects();
+    }
+
+    function openModal(code, title, price) {
+      selectedSubject = { code, title, price };
+      document.getElementById("modalTitle").innerText = `Get ${code} Notes`;
+      document.getElementById("modalSubject").innerText = `${code} - ${title}`;
+      document.getElementById("modalPrice").innerText = price;
+      document.getElementById("orderModal").classList.remove("hidden");
+    }
+
+    function closeModal() {
+      document.getElementById("orderModal").classList.add("hidden");
+    }
+
+    function copyToClipboard(text) {
+      navigator.clipboard.writeText(text);
+      alert("Account number copy ho gaya hai!");
+    }
+
+    function submitOrder() {
+      const name = document.getElementById("custName").value.trim();
+      const email = document.getElementById("custEmail").value.trim();
+      const trx = document.getElementById("custTrx").value.trim();
+
+      if (!name || !email || !trx) {
+        alert("Meharbani karke tamam details (Naam, Email, aur Trx ID) darj karein.");
+        return;
+      }
+
+      // WhatsApp Message auto-generator
+      const msg = `Assalam-o-Alaikum! Maine SDG Insights website se notes khareede hain:%0A%0A*Subject:* ${selectedSubject.code} - ${selectedSubject.title}%0A*Price:* ${selectedSubject.price}%0A*Student Name:* ${name}%0A*Google Drive Email:* ${email}%0A*Trx ID:* ${trx}%0A%0AMeharbani karke Drive access allow kar dein. Shukriya!`;
+      
+      // WhatsApp opening (Replace 923000000000 with your WhatsApp number)
+      window.open(`https://wa.me/?text=${msg}`, '_blank');
+      closeModal();
+    }
+
+    // Initial load
+    renderCards(subjectsData);
+  </script>
+</body>
+</html>
