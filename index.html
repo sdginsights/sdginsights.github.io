@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>SDG Insights — VU Exam Notes & LMS Handling</title>
-  <meta name="description" content="SDG Insights: 100% Handout-Accurate Solved Notes, Highlighted Handouts, and LMS Handling for Virtual University Students." />
+  <title>SDG Insights — VU Exam Preparation Portals & Paid Highlighted Handouts & paid Notes & LMS Handling</title>
+  <meta name="description" content="Official SDG Insights: 100% Handout-Accurate Solved Notes, Final and Mid Term Preparation Portals, LMS Handling & Full Support Packages." />
   <link rel="canonical" href="https://sdginsights.github.io" />
 
   <!-- TAILWIND CSS & FONTS -->
@@ -58,18 +58,25 @@
       box-shadow: 0 12px 24px -6px rgba(16, 33, 56, 0.08);
       border-color: #3a80bc;
     }
+
+    /* SMOOTH ROTATING FADE FOR NOTICES */
+    #rotatingNoticeText {
+      transition: opacity 0.3s ease-in-out;
+    }
   </style>
 </head>
 <body class="min-h-screen flex flex-col antialiased">
 
-  <!-- TOP BAR -->
-  <div class="bg-[#102138] text-white text-xs py-2 px-4 border-b border-slate-800">
+  <!-- DYNAMIC 5-SECOND ROTATING NOTICE BAR -->
+  <div class="bg-[#102138] text-white text-xs py-2.5 px-4 border-b border-slate-800 shadow-xs">
     <div class="max-w-6xl mx-auto flex items-center justify-between">
-      <div class="flex items-center space-x-2">
-        <span class="bg-[#3a80bc] text-white text-[10px] font-black px-2 py-0.5 rounded-full uppercase">Deal</span>
-        <span>20% Off on Full Semester • 10% Off on 5 Subjects</span>
+      <div class="flex items-center space-x-2.5 overflow-hidden">
+        <span class="bg-[#3a80bc] text-white text-[10px] font-black px-2.5 py-0.5 rounded-full uppercase tracking-wider shrink-0">NOTICE</span>
+        <span id="rotatingNoticeText" class="font-semibold text-slate-100 truncate">
+          ⚠️ All resources, notes and portals are 100% PAID — nothing is free.
+        </span>
       </div>
-      <div class="hidden sm:flex items-center space-x-4 text-slate-300 font-medium text-[11px]">
+      <div class="hidden sm:flex items-center space-x-4 text-slate-300 font-medium text-[11px] shrink-0">
         <a href="https://wa.me/c/923198519637" target="_blank" class="hover:text-[#3a80bc] transition">WhatsApp Catalog</a>
         <span>•</span>
         <a href="https://whatsapp.com/channel/0029VbB78Xa3WHTReQ1hTF1Q" target="_blank" class="hover:text-[#3a80bc] transition">WhatsApp Channel</a>
@@ -86,22 +93,22 @@
         <img src="logo.png" alt="SDG Insights Logo" onerror="this.src='https://ui-avatars.com/api/?name=SDG+Insights&background=102138&color=3a80bc&bold=true&size=128';" class="w-11 h-11 rounded-full object-cover border-2 border-[#3a80bc] shadow-xs" />
         <div>
           <span class="text-lg font-black text-[#102138] tracking-tight block leading-tight">SDG Insights</span>
-          <span class="text-[11px] text-slate-400 font-medium">VU Study Portal</span>
+          <span class="text-[11px] text-slate-400 font-semibold">VU Preparation Portals</span>
         </div>
       </div>
 
-      <!-- DESKTOP SCREEN TABS -->
+      <!-- MAIN TABS -->
       <nav class="hidden md:flex items-center bg-slate-100 p-1 rounded-2xl border border-slate-200 text-xs">
         <button onclick="switchTab('tab-home')" id="btn-tab-home" class="nav-btn-active px-3.5 py-2 rounded-xl transition">Home</button>
-        <button onclick="switchTab('tab-notes')" id="btn-tab-notes" class="nav-btn-inactive px-3.5 py-2 rounded-xl transition">Notes & Handouts</button>
+        <button onclick="switchTab('tab-notes')" id="btn-tab-notes" class="nav-btn-inactive px-3.5 py-2 rounded-xl transition">Preparation Portals</button>
         <button onclick="switchTab('tab-lms')" id="btn-tab-lms" class="nav-btn-inactive px-3.5 py-2 rounded-xl transition">LMS Handling</button>
         <button onclick="switchTab('tab-deals')" id="btn-tab-deals" class="nav-btn-inactive px-3.5 py-2 rounded-xl transition">Deals</button>
-        <button onclick="switchTab('tab-portal')" id="btn-tab-portal" class="nav-btn-inactive px-3.5 py-2 rounded-xl transition flex items-center gap-1.5">
-          <i class="fa-solid fa-lock text-[#3a80bc]"></i> Study Room
+        <button onclick="switchTab('tab-portal')" id="btn-tab-portal" class="nav-btn-inactive px-3.5 py-2 rounded-xl transition flex items-center gap-1.5 text-[#3a80bc]">
+          <i class="fa-solid fa-lock"></i> Start Exam Preparation
         </button>
       </nav>
 
-      <!-- YOUTUBE & CONTACT -->
+      <!-- CONTACT BUTTON -->
       <div class="flex items-center space-x-2">
         <a href="https://wa.me/923198519637" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white text-xs px-3.5 py-2 rounded-xl font-bold transition flex items-center gap-1.5 shadow-xs">
           <i class="fa-brands fa-whatsapp text-sm"></i>
@@ -113,15 +120,15 @@
     <!-- MOBILE TABS ROW -->
     <div class="flex md:hidden items-center justify-around border-t border-slate-100 bg-slate-50 px-2 py-2 text-[11px] font-bold overflow-x-auto">
       <button onclick="switchTab('tab-home')" class="px-2.5 py-1 text-[#102138]">Home</button>
-      <button onclick="switchTab('tab-notes')" class="px-2.5 py-1 text-slate-600">Notes</button>
+      <button onclick="switchTab('tab-notes')" class="px-2.5 py-1 text-slate-600">Portals</button>
       <button onclick="switchTab('tab-lms')" class="px-2.5 py-1 text-slate-600">LMS</button>
       <button onclick="switchTab('tab-deals')" class="px-2.5 py-1 text-slate-600">Deals</button>
-      <button onclick="switchTab('tab-portal')" class="px-2.5 py-1 text-[#3a80bc]">Study Room</button>
+      <button onclick="switchTab('tab-portal')" class="px-2.5 py-1 text-[#3a80bc]">Start Prep</button>
     </div>
   </header>
 
   <!-- ======================================================== -->
-  <!-- TAB 1: HOME (CLEAN, SIMPLE, ZERO CLUTTER) -->
+  <!-- TAB 1: HOME -->
   <!-- ======================================================== -->
   <section id="tab-home" class="tab-content tab-active flex-1">
     
@@ -135,15 +142,27 @@
         </div>
 
         <h1 class="text-3xl md:text-5xl font-black text-[#102138] tracking-tight">
-          Simple & Easy Study Help for VU
+          Final & Mid Term Preparation Portals
         </h1>
 
         <p class="text-slate-500 text-sm md:text-base max-w-lg mx-auto">
-          Get 100% handout-accurate solved exam notes, highlighted handouts, and complete LMS handling.
+          100% handout-accurate solved exam portals, preparation software, and complete LMS handling.
         </p>
 
-        <!-- SIMPLE SEARCH -->
-        <div class="max-w-md mx-auto pt-2">
+        <!-- CTA TO START PREPARATION -->
+        <div class="pt-2 flex items-center justify-center gap-3 flex-wrap text-xs font-bold">
+          <button onclick="switchTab('tab-notes')" class="bg-[#102138] hover:bg-[#1a385f] text-white px-5 py-3 rounded-2xl transition shadow-xs flex items-center gap-2">
+            <i class="fa-solid fa-book-open text-[#3a80bc]"></i>
+            <span>Browse Preparation Portals</span>
+          </button>
+          <button onclick="switchTab('tab-portal')" class="bg-[#3a80bc] hover:bg-[#2f6fa7] text-white px-5 py-3 rounded-2xl transition shadow-md flex items-center gap-2">
+            <i class="fa-solid fa-play"></i>
+            <span>Start Exam Preparation</span>
+          </button>
+        </div>
+
+        <!-- SEARCH -->
+        <div class="max-w-md mx-auto pt-3">
           <div class="relative">
             <i class="fa-solid fa-magnifying-glass absolute left-4 top-3.5 text-slate-400"></i>
             <input type="text" id="homeSearch" onkeyup="searchFromHome()" placeholder="Search subject code (e.g. CS610, MTH401, CS301)..." class="w-full bg-slate-50 border border-slate-300 rounded-2xl pl-11 pr-4 py-3 text-sm focus:bg-white focus:ring-2 focus:ring-[#3a80bc] focus:outline-none" />
@@ -153,7 +172,7 @@
       </div>
     </div>
 
-    <!-- 3 SIMPLE ACTION CARDS -->
+    <!-- 3 KEY DOORS -->
     <div class="max-w-5xl mx-auto px-4 py-12">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
         
@@ -161,15 +180,15 @@
         <div onclick="switchTab('tab-notes')" class="clean-card rounded-3xl p-6 cursor-pointer flex flex-col justify-between group">
           <div class="space-y-3">
             <div class="w-12 h-12 rounded-2xl bg-blue-50 text-[#3a80bc] flex items-center justify-center text-xl group-hover:bg-[#102138] group-hover:text-white transition">
-              <i class="fa-solid fa-book-open"></i>
+              <i class="fa-solid fa-laptop-code"></i>
             </div>
-            <h3 class="text-lg font-bold text-[#102138]">VU Exam Notes</h3>
+            <h3 class="text-lg font-bold text-[#102138]">Preparation Portals</h3>
             <p class="text-xs text-slate-500 leading-relaxed">
-              Solved Midterm and Final Term handouts, short/long questions, and verified MCQs.
+              Final & Mid Term preparation portals, handout solutions, and verified MCQs.
             </p>
           </div>
           <span class="text-xs font-bold text-[#3a80bc] pt-4 mt-2 block border-t border-slate-100">
-            Open Notes Library →
+            Open Portals Library →
           </span>
         </div>
 
@@ -179,9 +198,9 @@
             <div class="w-12 h-12 rounded-2xl bg-indigo-50 text-indigo-700 flex items-center justify-center text-xl group-hover:bg-[#102138] group-hover:text-white transition">
               <i class="fa-solid fa-headset"></i>
             </div>
-            <h3 class="text-lg font-bold text-[#102138]">LMS Handling</h3>
+            <h3 class="text-lg font-bold text-[#102138]">LMS Handling Packages</h3>
             <p class="text-xs text-slate-500 leading-relaxed">
-              We solve your assignments, quizzes, and GDBs with high score targets.
+              Complete semester coursework handling: assignments, quizzes, and GDBs with high score targets.
             </p>
           </div>
           <span class="text-xs font-bold text-indigo-700 pt-4 mt-2 block border-t border-slate-100">
@@ -195,13 +214,13 @@
             <div class="w-12 h-12 rounded-2xl bg-amber-50 text-amber-700 flex items-center justify-center text-xl group-hover:bg-[#102138] group-hover:text-amber-300 transition">
               <i class="fa-solid fa-gift"></i>
             </div>
-            <h3 class="text-lg font-bold text-[#102138]">Discount Deals</h3>
+            <h3 class="text-lg font-bold text-[#102138]">Package Deals</h3>
             <p class="text-xs text-slate-500 leading-relaxed">
-              Save 20% on full semester bundle or 10% on any 5 subjects.
+              Flat 20% discount on full semester packages or 10% on any 5 subjects.
             </p>
           </div>
           <span class="text-xs font-bold text-amber-700 pt-4 mt-2 block border-t border-slate-100">
-            View Discount Offers →
+            View Discount Deals →
           </span>
         </div>
 
@@ -211,32 +230,32 @@
   </section>
 
   <!-- ======================================================== -->
-  <!-- TAB 2: NOTES & HANDOUTS -->
+  <!-- TAB 2: FINAL & MID TERM PREPARATION PORTALS -->
   <!-- ======================================================== -->
   <section id="tab-notes" class="tab-content flex-1 py-8 px-4">
     <div class="max-w-5xl mx-auto space-y-6">
       
       <div class="flex items-center justify-between border-b border-slate-200 pb-3">
         <div>
-          <h2 class="text-xl font-bold text-[#102138]">VU Notes & Handouts</h2>
-          <p class="text-xs text-slate-500">Pick any course to view pricing or order.</p>
+          <h2 class="text-xl font-bold text-[#102138]">Final & Mid Term Preparation Portals</h2>
+          <p class="text-xs text-slate-500">Select any subject portal to enroll or begin preparation.</p>
         </div>
         <span class="text-xs font-bold text-[#3a80bc]" id="notesCount">Loading...</span>
       </div>
 
-      <!-- SIMPLE SEARCH & FILTER BUTTONS -->
+      <!-- FILTER BUTTONS -->
       <div class="bg-white p-4 rounded-2xl border border-slate-200 space-y-3 shadow-xs">
-        <input type="text" id="notesSearchInput" onkeyup="filterNotesGrid()" placeholder="Filter by code: CS610, MTH401, CS301, CS201..." class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-xs focus:bg-white focus:outline-none" />
+        <input type="text" id="notesSearchInput" onkeyup="filterNotesGrid()" placeholder="Search code: CS610, MTH401, CS301, CS201..." class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-xs focus:bg-white focus:outline-none" />
         
         <div class="flex items-center gap-2 flex-wrap text-xs font-bold">
-          <button onclick="setNotesFilter('ALL')" id="flt-ALL" class="bg-[#102138] text-white px-3 py-1.5 rounded-lg">All</button>
-          <button onclick="setNotesFilter('MID')" id="flt-MID" class="bg-slate-100 text-slate-700 px-3 py-1.5 rounded-lg">Midterm</button>
-          <button onclick="setNotesFilter('FINAL')" id="flt-FINAL" class="bg-slate-100 text-slate-700 px-3 py-1.5 rounded-lg">Final Term</button>
+          <button onclick="setNotesFilter('ALL')" id="flt-ALL" class="bg-[#102138] text-white px-3 py-1.5 rounded-lg">All Portals</button>
+          <button onclick="setNotesFilter('MID')" id="flt-MID" class="bg-slate-100 text-slate-700 px-3 py-1.5 rounded-lg">Midterm Portals</button>
+          <button onclick="setNotesFilter('FINAL')" id="flt-FINAL" class="bg-slate-100 text-slate-700 px-3 py-1.5 rounded-lg">Final Term Portals</button>
           <button onclick="setNotesFilter('HIGHLIGHTED')" id="flt-HIGHLIGHTED" class="bg-blue-50 text-[#3a80bc] px-3 py-1.5 rounded-lg">Highlighted Handouts (Rs. 300)</button>
         </div>
       </div>
 
-      <!-- CARDS -->
+      <!-- PORTAL CARDS -->
       <div id="notesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         <!-- Injected by JS -->
       </div>
@@ -252,9 +271,9 @@
       
       <div class="text-center space-y-2">
         <span class="bg-blue-50 text-[#3a80bc] text-xs font-bold px-3 py-1 rounded-full uppercase">Services</span>
-        <h2 class="text-2xl md:text-3xl font-black text-[#102138]">VU LMS Handling Packages</h2>
+        <h2 class="text-2xl md:text-3xl font-black text-[#102138]">LMS Handling & Exam Preparation Packages</h2>
         <p class="text-xs text-slate-500 max-w-md mx-auto">
-          We handle your semester activities so you can focus on studies without missing deadlines.
+          Complete semester coursework handling and exam preparation with dedicated 24/7 academic support.
         </p>
       </div>
 
@@ -263,19 +282,19 @@
         <!-- PACKAGE 1 -->
         <div class="clean-card rounded-3xl p-6 flex flex-col justify-between space-y-4">
           <div class="space-y-3">
-            <span class="text-[10px] font-bold text-slate-500 uppercase">Package 1</span>
-            <h3 class="text-lg font-bold text-[#102138]">LMS Handling Only</h3>
+            <span class="text-[10px] font-bold text-slate-500 uppercase">Standard Service</span>
+            <h3 class="text-lg font-bold text-[#102138]">Complete LMS Handling</h3>
             <p class="text-xs text-slate-500 leading-relaxed">
-              Full semester handling of all your online graded activities.
+              Full semester handling of all your online graded activities with target marks.
             </p>
             <ul class="text-xs space-y-2 text-slate-700 pt-2 font-medium">
               <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Assignments (100% Plagiarism Free)</li>
-              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Quizzes (Target High Scores)</li>
-              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Graded Discussions (GDBs)</li>
-              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Timely LMS Submissions</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Quizzes (High Score Target)</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Graded Discussion Boards (GDBs)</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Timely LMS Submissions & Proofs</li>
             </ul>
           </div>
-          <button onclick="orderViaWhatsApp('LMS Handling Only Package')" class="w-full bg-[#102138] hover:bg-[#1a385f] text-white font-bold text-xs py-2.5 rounded-xl transition">
+          <button onclick="orderViaWhatsApp('Complete LMS Handling Package')" class="w-full bg-[#102138] hover:bg-[#1a385f] text-white font-bold text-xs py-2.5 rounded-xl transition">
             Book on WhatsApp
           </button>
         </div>
@@ -286,13 +305,14 @@
             <span class="bg-[#3a80bc] text-white text-[10px] font-black px-2.5 py-0.5 rounded-full uppercase">VIP All-In-One</span>
             <h3 class="text-lg font-bold text-[#102138]">LMS Handling + Exam Prep + Full Support</h3>
             <p class="text-xs text-slate-500 leading-relaxed">
-              Complete semester care from first quiz to final examination.
+              Complete semester care including coursework, exam portals, and mentor access.
             </p>
             <ul class="text-xs space-y-2 text-slate-700 pt-2 font-medium">
-              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-[#3a80bc]"></i> All LMS Handling (Assignments, Quizzes, GDBs)</li>
-              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-[#3a80bc]"></i> Midterm Solved Handout Notes</li>
-              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-[#3a80bc]"></i> Final Term Preparation Pack & MCQs</li>
-              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-[#3a80bc]"></i> 24/7 WhatsApp Academic Support</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-[#3a80bc]"></i> Complete LMS Handling (Assignments, Quizzes, GDBs)</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-[#3a80bc]"></i> Midterm Preparation Portals & Notes</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-[#3a80bc]"></i> Final Term Preparation Portals & Verified MCQs</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-[#3a80bc]"></i> Highlighted Handouts Included</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-[#3a80bc]"></i> Dedicated 24/7 WhatsApp Support</li>
             </ul>
           </div>
           <button onclick="orderViaWhatsApp('VIP All-in-One: LMS Handling + Exam Prep + Full Support')" class="w-full bg-[#3a80bc] hover:bg-[#2f6fa7] text-white font-bold text-xs py-2.5 rounded-xl transition shadow-xs">
@@ -312,8 +332,8 @@
     <div class="max-w-3xl mx-auto space-y-6">
       
       <div class="text-center space-y-1">
-        <h2 class="text-2xl font-black text-[#102138]">Semester Discount Offers</h2>
-        <p class="text-xs text-slate-500">Order multiple subjects together and save money.</p>
+        <h2 class="text-2xl font-black text-[#102138]">Semester Package Deals</h2>
+        <p class="text-xs text-slate-500">Order bundled preparation portals and save fees.</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -321,26 +341,26 @@
         <!-- 20% OFF -->
         <div class="clean-card border-2 border-[#3a80bc] rounded-3xl p-6 space-y-3">
           <span class="bg-[#102138] text-white text-[10px] font-bold px-2 py-0.5 rounded-md uppercase">20% OFF</span>
-          <h3 class="text-base font-bold text-[#102138]">Full Semester Pack</h3>
+          <h3 class="text-base font-bold text-[#102138]">Full Semester Bundle</h3>
           <p class="text-xs text-slate-500 leading-relaxed">
-            All notes for your complete semester (5 to 6 subjects).
+            All preparation portals and notes for your complete semester (5 to 6 courses).
           </p>
           <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
             <span class="text-xs font-bold text-[#102138]">Rs. 3000 ➔ <strong>Rs. 2400</strong></span>
-            <button onclick="orderViaWhatsApp('Full Semester Super Bundle (20% OFF) - Rs. 2400')" class="bg-[#102138] text-white text-xs font-bold px-3.5 py-1.5 rounded-lg">Claim</button>
+            <button onclick="orderViaWhatsApp('Full Semester Super Bundle (20% OFF) - Rs. 2400')" class="bg-[#102138] text-white text-xs font-bold px-3.5 py-1.5 rounded-lg">Claim 20% Deal</button>
           </div>
         </div>
 
         <!-- 10% OFF -->
         <div class="clean-card rounded-3xl p-6 space-y-3">
           <span class="bg-[#3a80bc] text-white text-[10px] font-bold px-2 py-0.5 rounded-md uppercase">10% OFF</span>
-          <h3 class="text-base font-bold text-[#102138]">Any 5 Subjects</h3>
+          <h3 class="text-base font-bold text-[#102138]">Pick Any 5 Courses</h3>
           <p class="text-xs text-slate-500 leading-relaxed">
-            Pick any 5 courses across your degree.
+            Choose any 5 preparation portals across your degree.
           </p>
           <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
             <span class="text-xs font-bold text-[#102138]">Rs. 2500 ➔ <strong>Rs. 2250</strong></span>
-            <button onclick="orderViaWhatsApp('Pick Any 5 Subjects Pack (10% OFF) - Rs. 2250')" class="bg-[#3a80bc] text-white text-xs font-bold px-3.5 py-1.5 rounded-lg">Claim</button>
+            <button onclick="orderViaWhatsApp('Pick Any 5 Subjects Pack (10% OFF) - Rs. 2250')" class="bg-[#3a80bc] text-white text-xs font-bold px-3.5 py-1.5 rounded-lg">Claim 10% Deal</button>
           </div>
         </div>
 
@@ -350,42 +370,57 @@
   </section>
 
   <!-- ======================================================== -->
-  <!-- TAB 5: STUDY ROOM (STRICT LOGIN) -->
+  <!-- TAB 5: START EXAM PREPARATION (ONLINE PREP SOFTWARE / PORTAL) -->
   <!-- ======================================================== -->
   <section id="tab-portal" class="tab-content flex-1 py-10 px-4">
     <div class="max-w-md mx-auto space-y-4">
       
+      <!-- LOGIN BOX -->
       <div id="loginBox" class="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm space-y-4">
         <div class="text-center space-y-1">
           <div class="w-10 h-10 rounded-2xl bg-[#102138] text-[#3a80bc] flex items-center justify-center text-lg mx-auto">
-            <i class="fa-solid fa-lock"></i>
+            <i class="fa-solid fa-play"></i>
           </div>
-          <h3 class="text-base font-bold text-[#102138]">Student Study Room Login</h3>
-          <p class="text-xs text-slate-400">Access requires an approved Gmail and secret key.</p>
+          <h3 class="text-base font-bold text-[#102138]">Start Exam Preparation</h3>
+          <p class="text-xs text-slate-400">Enter your approved Gmail and secret passcode to unlock your preparation software.</p>
         </div>
 
         <div class="space-y-3 text-xs">
-          <input type="email" id="logEmail" placeholder="Approved Gmail Address *" class="w-full border border-slate-300 rounded-xl px-3 py-2 focus:outline-none" />
-          <input type="text" id="logSubject" placeholder="Course Code (e.g. MTH401) *" class="w-full border border-slate-300 rounded-xl px-3 py-2 uppercase focus:outline-none" />
-          <input type="password" id="logPass" placeholder="Secret Access Key *" class="w-full border border-slate-300 rounded-xl px-3 py-2 focus:outline-none" />
-          <button onclick="verifyAndOpenReader()" class="w-full bg-[#102138] text-white font-bold py-2.5 rounded-xl transition">
-            Unlock & Read Notes
+          <input type="email" id="logEmail" placeholder="Approved Gmail Address *" class="w-full border border-slate-300 rounded-xl px-3 py-2.5 focus:outline-none" />
+          <input type="text" id="logSubject" placeholder="Course Code (e.g. MTH401, CS610) *" class="w-full border border-slate-300 rounded-xl px-3 py-2.5 uppercase focus:outline-none" />
+          <input type="password" id="logPass" placeholder="Secret Access Key / Passcode *" class="w-full border border-slate-300 rounded-xl px-3 py-2.5 focus:outline-none font-mono" />
+          <span class="text-[10px] text-slate-400 block">Note: All preparation software portals are strictly paid. Secret keys are issued upon payment verification.</span>
+          <button onclick="verifyAndOpenReader()" class="w-full bg-[#102138] hover:bg-[#1a385f] text-white font-bold py-2.5 rounded-xl transition shadow-xs">
+            Start Exam Preparation
           </button>
         </div>
       </div>
 
-      <!-- READ ONLY CANVAS (SHOWN AFTER LOGIN) -->
+      <!-- PREPARATION SOFTWARE CANVAS (SHOWN AFTER VERIFIED UNLOCK) -->
       <div id="readerBox" class="hidden bg-white rounded-3xl p-6 border border-slate-200 shadow-sm space-y-4">
         <div class="flex items-center justify-between border-b border-slate-100 pb-3">
-          <h3 class="text-base font-bold text-[#102138]" id="activeCourseTitle">MTH401 Notes</h3>
+          <div>
+            <span class="text-[10px] font-bold text-emerald-600 uppercase block">✓ Active Preparation Portal</span>
+            <h3 class="text-base font-bold text-[#102138]" id="activeCourseTitle">MTH401 Preparation Software</h3>
+          </div>
           <button onclick="closeReader()" class="text-xs text-slate-400 hover:text-slate-600">Close</button>
         </div>
+        
         <div class="text-xs text-slate-600 space-y-3 leading-relaxed">
-          <p><strong>Chapter 01: Core Handout Foundations</strong></p>
+          <p><strong>Lecture 01–10: Core Handout Foundations</strong></p>
           <p>In classical algebra, the unknown quantity is always a scalar number. In differential equations, the unknown is an entire continuous function y = f(x).</p>
-          <div class="bg-blue-50/70 p-3 rounded-xl border border-blue-100 text-slate-700">
-            <span class="font-bold block mb-0.5">✎ SDG Insights Concept Note:</span>
+          
+          <div class="bg-blue-50/70 p-3.5 rounded-xl border border-blue-100 text-slate-700">
+            <span class="font-bold text-[#102138] block mb-0.5">✎ SDG Insights Concept Note:</span>
             <span class="handwriting text-base">d/dx [ln|x| + C] = 1/x. Integration must always restore the arbitrary constant C!</span>
+          </div>
+
+          <div class="pt-2 border-t border-slate-100">
+            <span class="font-bold text-slate-800 block mb-1">Quick Practice Question:</span>
+            <p>What is the linearity property of differential operator D?</p>
+            <div class="bg-slate-50 p-2.5 rounded-lg border font-mono text-slate-800 mt-1">
+              D[a f(x) + b g(x)] = a D[f(x)] + b D[g(x)]
+            </div>
           </div>
         </div>
       </div>
@@ -399,7 +434,7 @@
       <div class="flex items-center justify-between">
         <div>
           <span class="text-[10px] font-bold text-[#3a80bc] uppercase" id="mCode">CS610</span>
-          <h3 class="text-sm font-bold text-[#102138]" id="mTitle">Course Notes</h3>
+          <h3 class="text-sm font-bold text-[#102138]" id="mTitle">Preparation Portal</h3>
         </div>
         <button onclick="closeOrderModal()" class="text-slate-400 hover:text-slate-600 text-sm">
           <i class="fa-solid fa-xmark"></i>
@@ -438,12 +473,32 @@
   <footer class="bg-white border-t border-slate-200 py-6 text-xs text-slate-400 mt-auto text-center">
     <div class="max-w-6xl mx-auto px-4 space-y-1">
       <p class="font-bold text-slate-700">SDG Insights — Success, Dignity & Glory in Your VU Studies</p>
-      <p>WhatsApp: 0319-8519637 • YouTube: @sdginsights</p>
+      <p>Official Contact: 0319-8519637 • YouTube: @sdginsights</p>
     </div>
   </footer>
 
   <!-- SCRIPT -->
   <script>
+    // 5-SECOND ROTATING NOTICES
+    const rotatingNotices = [
+      "⚠️ All resources, notes and portals are 100% PAID — nothing is free.",
+      "💼 LMS Handling + Midterm & Final Term Exam Preparation packages with full 24/7 support.",
+      "🎁 Special Deals: Flat 20% OFF on Full Semester • 10% OFF on any 5 subjects.",
+      "💻 Preparation Portals & Interactive Study Software — Practice & prepare online directly."
+    ];
+    let noticeIdx = 0;
+    setInterval(() => {
+      noticeIdx = (noticeIdx + 1) % rotatingNotices.length;
+      const el = document.getElementById("rotatingNoticeText");
+      if (el) {
+        el.style.opacity = "0";
+        setTimeout(() => {
+          el.innerHTML = rotatingNotices[noticeIdx];
+          el.style.opacity = "1";
+        }, 300);
+      }
+    }, 5000);
+
     const passcodes = ["SDG-PASS-2026", "MTH401-VIP", "CS610-VIP", "CS301-VIP", "VU-VIP"];
 
     const courses = [
@@ -477,7 +532,6 @@
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
 
-      // Update Desktop Buttons
       ['tab-home', 'tab-notes', 'tab-lms', 'tab-deals', 'tab-portal'].forEach(t => {
         const btn = document.getElementById(`btn-${t}`);
         if (btn) {
@@ -514,7 +568,7 @@
         return matchType && matchQ;
       });
 
-      document.getElementById("notesCount").innerText = `${filtered.length} Subjects`;
+      document.getElementById("notesCount").innerText = `${filtered.length} Portals Available`;
 
       filtered.forEach(item => {
         let p = item.mid;
@@ -532,7 +586,7 @@
             <h4 class="font-bold text-xs text-slate-900 leading-snug mb-3">${item.title}</h4>
           </div>
           <button onclick="openOrderModal('${item.code}')" class="w-full bg-[#102138] hover:bg-[#1a385f] text-white text-[11px] font-bold py-1.5 rounded-lg transition">
-            Get Notes
+            Get Portal Access
           </button>
         `;
         grid.appendChild(card);
@@ -582,7 +636,7 @@
         return;
       }
 
-      const msg = `*Assalam-o-Alaikum SDG Insights!*%0A%0AI want to order notes:%0A*Course:* ${selectedCourse.code} - ${selectedCourse.title}%0A*Name:* ${name}%0A*Gmail:* ${email}%0A*Trx ID:* ${trx}%0A%0APlease verify payment and send access key. Thank you!`;
+      const msg = `*Assalam-o-Alaikum SDG Insights!*%0A%0AI want to order preparation portal access:%0A*Course:* ${selectedCourse.code} - ${selectedCourse.title}%0A*Name:* ${name}%0A*Gmail:* ${email}%0A*Trx ID:* ${trx}%0A%0APlease verify payment and send secret key to Start Exam Preparation. Thank you!`;
       window.open(`https://wa.me/923198519637?text=${msg}`, '_blank');
       closeOrderModal();
     }
@@ -603,13 +657,13 @@
       }
 
       if (!passcodes.includes(pass)) {
-        alert("Access Denied! Incorrect access key. Please verify payment on WhatsApp first.");
+        alert("Access Denied! Incorrect access passcode. All portals are paid. Please verify payment on WhatsApp first.");
         return;
       }
 
       document.getElementById("loginBox").classList.add("hidden");
       document.getElementById("readerBox").classList.remove("hidden");
-      document.getElementById("activeCourseTitle").innerText = `${sub || 'MTH401'} Verified Notes`;
+      document.getElementById("activeCourseTitle").innerText = `${sub || 'MTH401'} Preparation Software`;
     }
 
     function closeReader() {
