@@ -59,6 +59,7 @@
       min-height: 100vh;
       -webkit-font-smoothing: antialiased;
     }
+    * { -webkit-tap-highlight-color: transparent; } /* Native App Feel for Mobile */
     .urdu-font { font-family: 'Noto Nastaliq Urdu', serif; line-height: 2.3; }
 
     /* RADIANT DAYLIGHT AURORA BACKGROUND */
@@ -236,7 +237,7 @@
     <div class="light-orb-3"></div>
   </div>
 
-  <div class="relative z-10 flex-1 flex flex-col min-h-screen">
+  <div class="relative z-10 flex-1 flex flex-col min-h-screen pb-28">
 
     <!-- TOP ANNOUNCEMENT & QUICK LINKS -->
     <div class="bg-[#102138] text-white py-1.5 px-4 border-b border-slate-800 hidden sm:block">
@@ -278,39 +279,14 @@
           </div>
         </div>
 
-        <!-- Desktop Navigation -->
-        <nav class="hidden lg:flex items-center bg-slate-50 p-1 rounded-2xl border border-slate-200 text-xs font-semibold shadow-inner">
-          <button onclick="switchTab('tab-home')" id="btn-tab-home" class="nav-btn-active px-3 py-2 rounded-xl transition">Home</button>
-          <button onclick="switchTab('tab-mid-portals')" id="btn-tab-mid-portals" class="nav-btn-inactive px-3 py-2 rounded-xl transition">Mid Term Portals</button>
-          <button onclick="switchTab('tab-final-portals')" id="btn-tab-final-portals" class="nav-btn-inactive px-3 py-2 rounded-xl transition">Final Term Portals</button>
-          <button onclick="switchTab('tab-lms')" id="btn-tab-lms" class="nav-btn-inactive px-3 py-2 rounded-xl transition">LMS Handling</button>
-          <button onclick="switchTab('tab-deals')" id="btn-tab-deals" class="nav-btn-inactive px-3 py-2 rounded-xl transition">Discounted Deals</button>
-        </nav>
-
-        <!-- Right Icons (YouTube + Cart) -->
-        <div class="flex items-center gap-3">
-          <!-- YouTube Button Moved to Top -->
-          <a href="https://youtube.com/@sdginsights" target="_blank" class="flex items-center justify-center gap-2 w-10 h-10 md:w-auto md:px-4 md:py-2 rounded-full md:rounded-xl bg-red-50 hover:bg-red-600 text-red-600 hover:text-white border border-red-200 hover:border-red-600 transition-all shadow-sm group">
-            <i class="fa-brands fa-youtube text-lg group-hover:scale-110 transition-transform"></i>
-            <span class="hidden md:block text-xs font-bold">YouTube</span>
-          </a>
-
-          <!-- Cart Button -->
-          <button onclick="toggleCart()" class="relative w-10 h-10 md:w-11 md:h-11 bg-white border border-slate-200 rounded-full text-slate-600 hover:bg-blue-50 hover:text-[#3a80bc] hover:border-[#3a80bc] transition duration-300 shadow-sm flex items-center justify-center group">
-            <i class="fa-solid fa-cart-shopping text-lg group-hover:scale-110 transition-transform"></i>
-            <span id="headerCartBadge" class="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] w-5 h-5 rounded-full flex items-center justify-center font-bold hidden border-2 border-white shadow-sm">0</span>
-          </button>
-        </div>
-      </div>
-
-      <!-- MOBILE SCROLLABLE TABS (Visible on small screens) -->
+      <!-- MOBILE SCROLLABLE TABS (Visible on small screens - Optimized for Touch) -->
       <div class="lg:hidden bg-white/95 backdrop-blur-md border-t border-slate-200 overflow-x-auto hide-scrollbar">
-        <div class="flex items-center px-4 py-2 gap-2 min-w-max">
-          <button onclick="switchTab('tab-home')" id="mob-btn-tab-home" class="nav-btn-active px-4 py-1.5 rounded-xl text-xs transition btn-shine btn-shine-dark">Home</button>
-          <button onclick="switchTab('tab-mid-portals')" id="mob-btn-tab-mid-portals" class="nav-btn-inactive px-4 py-1.5 rounded-xl text-xs transition">Mid Term Portals</button>
-          <button onclick="switchTab('tab-final-portals')" id="mob-btn-tab-final-portals" class="nav-btn-inactive px-4 py-1.5 rounded-xl text-xs transition">Final Term Portals</button>
-          <button onclick="switchTab('tab-lms')" id="mob-btn-tab-lms" class="nav-btn-inactive px-4 py-1.5 rounded-xl text-xs transition">LMS Handling</button>
-          <button onclick="switchTab('tab-deals')" id="mob-btn-tab-deals" class="nav-btn-inactive px-4 py-1.5 rounded-xl text-xs transition">Discounted Deals</button>
+        <div class="flex items-center px-4 py-3 gap-3 min-w-max">
+          <button onclick="switchTab('tab-home')" id="mob-btn-tab-home" class="nav-btn-active px-5 py-2.5 rounded-2xl text-sm transition btn-shine btn-shine-dark shadow-sm">Home</button>
+          <button onclick="switchTab('tab-mid-portals')" id="mob-btn-tab-mid-portals" class="nav-btn-inactive px-5 py-2.5 rounded-2xl text-sm transition">Mid Term Portals</button>
+          <button onclick="switchTab('tab-final-portals')" id="mob-btn-tab-final-portals" class="nav-btn-inactive px-5 py-2.5 rounded-2xl text-sm transition">Final Term Portals</button>
+          <button onclick="switchTab('tab-lms')" id="mob-btn-tab-lms" class="nav-btn-inactive px-5 py-2.5 rounded-2xl text-sm transition">LMS Handling</button>
+          <button onclick="switchTab('tab-deals')" id="mob-btn-tab-deals" class="nav-btn-inactive px-5 py-2.5 rounded-2xl text-sm transition">Discounted Deals</button>
         </div>
       </div>
     </header>
@@ -358,34 +334,46 @@
         <button onclick="orderViaWhatsApp('Book Your Assignment'); toggleMobileMenu();" class="w-full flex items-center gap-3 px-4 py-3 rounded-xl bg-amber-50 border border-amber-200 text-amber-700 hover:bg-amber-100 font-bold transition mt-2">
           <i class="fa-solid fa-pen-nib"></i> Book Your Assignment
         </button>
+
+        <!-- OFFICIAL CONTACT ADDED TO MENU -->
+        <div class="mt-6 pt-4 border-t border-slate-200">
+          <div class="bg-blue-50/50 p-4 rounded-xl border border-blue-100 text-center shadow-sm">
+            <p class="text-[10px] font-black text-[#3a80bc] uppercase tracking-widest mb-1">Official Contact</p>
+            <div class="flex items-center justify-center gap-2">
+              <i class="fa-solid fa-phone text-[#102138] text-xs"></i>
+              <p class="text-sm font-mono font-black text-[#102138]">0319-8519637</p>
+            </div>
+            <p class="text-[9px] text-slate-500 mt-2 font-bold">Success, Dignity & Glory</p>
+          </div>
+        </div>
       </div>
     </div>
 
-    <section id="tab-home" class="tab-content tab-active flex-1">
-      <div class="py-12 md:py-20 px-4 text-center relative z-10">
-        <div class="max-w-4xl mx-auto space-y-6">
-          
-          <div class="inline-flex items-center gap-2 bg-white/60 backdrop-blur-sm border border-blue-200 text-[#102138] px-5 py-2 rounded-full text-xs font-bold shadow-sm animate-float">
-            <i class="fa-solid fa-star text-amber-400"></i>
-            <span class="tracking-wide">Success, Dignity & Glory in Your VU Studies</span>
+          <!-- PROMINENT YOUTUBE & WHATSAPP BUTTONS (TOP) -->
+          <div class="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3 pt-6 pb-2">
+             <a href="https://youtube.com/@sdginsights" target="_blank" class="bg-gradient-to-r from-red-600 to-red-500 hover:from-red-500 hover:to-red-400 text-white border-2 border-red-700 w-full sm:w-auto px-6 py-3.5 rounded-2xl text-sm font-black transition-all flex items-center justify-center gap-2 shadow-lg group">
+               <i class="fa-brands fa-youtube text-2xl group-hover:scale-110 transition-transform"></i> Subscribe on YouTube
+             </a>
+             <a href="https://whatsapp.com/channel/0029VbB78Xa3WHTReQ1hTF1Q" target="_blank" class="bg-emerald-50 hover:bg-emerald-100 border-2 border-emerald-200 text-emerald-700 w-full sm:w-auto px-6 py-3.5 rounded-2xl text-sm font-black transition-all flex items-center justify-center gap-2 shadow-sm group">
+               <i class="fa-brands fa-whatsapp text-2xl group-hover:scale-110 transition-transform"></i> Join WhatsApp Channel
+             </a>
           </div>
 
-          <h1 class="text-3xl md:text-5xl lg:text-6xl font-black text-[#102138] tracking-tight leading-tight drop-shadow-sm">
-            Final & Mid Term Preparation Portals, <br/>
-            Notes & <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#3a80bc] to-[#2563eb]">Professional LMS Handling</span>
-          </h1>
-
-          <p class="text-slate-600 text-sm md:text-base max-w-2xl mx-auto leading-relaxed font-semibold">
-            100% from the handout of Virtual University (VU). 100% success guarantee for your best CGPA.
-          </p>
-
-          <!-- MAIN PREP BUTTONS (Strictly Mid & Final focuses as requested) -->
-          <div class="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-4 pt-6 pb-2">
-             <button onclick="switchTab('tab-mid-portals')" class="btn-premium btn-shine btn-shine-dark w-full sm:w-auto px-8 py-4 rounded-2xl text-base font-black flex items-center justify-center gap-3 shadow-lg">
-               <i class="fa-solid fa-bullseye text-xl"></i> Mid Term Preparation
+          <!-- MAIN PREP BUTTONS (BOTTOM) -->
+          <div class="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-2.5 pt-2">
+             <button onclick="switchTab('tab-mid-portals')" class="btn-premium btn-shine btn-shine-dark w-full sm:w-auto px-5 py-3.5 rounded-xl text-sm font-bold flex items-center justify-center gap-2">
+               <i class="fa-solid fa-bullseye"></i> Mid Term Preparation
              </button>
-             <button onclick="switchTab('tab-final-portals')" class="btn-premium btn-shine btn-shine-dark w-full sm:w-auto px-8 py-4 rounded-2xl text-base font-black flex items-center justify-center gap-3 shadow-lg">
-               <i class="fa-solid fa-trophy text-amber-300 text-xl"></i> Final Term Preparation
+             <button onclick="switchTab('tab-final-portals')" class="btn-premium btn-shine btn-shine-dark w-full sm:w-auto px-5 py-3.5 rounded-xl text-sm font-bold flex items-center justify-center gap-2">
+               <i class="fa-solid fa-trophy text-amber-300"></i> Final Term Preparation
+             </button>
+             <button onclick="orderViaWhatsApp('Book Your Assignment')" class="bg-white border-2 border-[#102138] text-[#102138] hover:bg-slate-50 w-full sm:w-auto px-5 py-3.5 rounded-xl text-sm font-bold transition-all flex items-center justify-center gap-2 shadow-sm btn-shine">
+               <i class="fa-solid fa-pen-nib text-[#3a80bc]"></i> Book Your Assignment
+             </button>
+             
+             <!-- NEW CUSTOMIZE BUTTON -->
+             <button onclick="orderViaWhatsApp('Customize My Preparation Portal')" class="bg-blue-50 border border-blue-200 text-blue-800 hover:bg-blue-100 w-full sm:w-auto px-4 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5 shadow-sm mt-1 sm:mt-0">
+               <i class="fa-solid fa-wand-magic-sparkles text-[#3a80bc]"></i> Customize Preparation Portal
              </button>
           </div>
 
@@ -532,31 +520,28 @@
     </section>
 
     <!-- FLOATING ICONS -->
-    <div class="fixed bottom-6 left-4 md:left-6 z-40 flex flex-col gap-3">
-      <!-- WhatsApp Channel Icon (Explicitly clearly labeled) -->
-      <a href="https://whatsapp.com/channel/0029VbB78Xa3WHTReQ1hTF1Q" target="_blank" class="flex items-center gap-2.5 px-4 py-3 rounded-full bg-emerald-500 text-white shadow-lg hover:scale-105 transition-transform hover:bg-emerald-600 relative group border border-emerald-400">
-        <i class="fa-brands fa-whatsapp text-xl md:text-2xl"></i>
-        <div class="flex flex-col leading-none pr-1">
-          <span class="text-[9px] font-bold opacity-80 uppercase tracking-wider">Join Official</span>
-          <span class="text-xs md:text-sm font-black">WhatsApp Channel</span>
-        </div>
-        <div class="absolute -inset-2 bg-emerald-400 rounded-full blur opacity-30 group-hover:opacity-60 transition"></div>
+    <div class="fixed bottom-5 md:bottom-6 left-4 md:left-6 z-40 flex flex-col gap-3">
+      <!-- WhatsApp Channel Icon (Small & Subtle) -->
+      <a href="https://whatsapp.com/channel/0029VbB78Xa3WHTReQ1hTF1Q" target="_blank" class="w-10 h-10 rounded-full bg-emerald-500 text-white shadow-md flex items-center justify-center hover:scale-110 transition-transform hover:bg-emerald-600 relative group border border-white/50">
+        <i class="fa-brands fa-whatsapp text-lg"></i>
+        <div class="absolute -inset-1 bg-emerald-400 rounded-full blur opacity-20 group-hover:opacity-40 transition"></div>
       </a>
     </div>
 
     <!-- INSTRUCTOR CHATBOT -->
-    <div class="fixed bottom-6 right-4 md:right-6 z-50">
-      <button onclick="toggleTeacherChat()" id="chatTriggerBtn" class="flex items-center gap-3 bg-[#102138] hover:bg-[#1a385f] text-white px-5 py-3.5 md:px-6 md:py-4 rounded-full shadow-2xl transition-all duration-300 border border-[#3a80bc]/40 hover:scale-105">
-        <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#3a80bc] flex items-center justify-center text-white text-base md:text-lg shrink-0">
-          <i class="fa-solid fa-chalkboard-user"></i>
+    <div class="fixed bottom-5 md:bottom-6 right-4 md:right-6 z-50">
+      <!-- Chatbot Button (Small & Subtle) -->
+      <button onclick="toggleTeacherChat()" id="chatTriggerBtn" class="flex items-center justify-center gap-2 bg-[#102138] hover:bg-[#1a385f] text-white w-10 h-10 sm:w-auto sm:px-3 sm:py-2 rounded-full shadow-md transition-all duration-300 border border-[#3a80bc]/40 hover:scale-105 group">
+        <div class="flex items-center justify-center text-white text-sm sm:w-6 sm:h-6 sm:rounded-full sm:bg-[#3a80bc] shrink-0">
+          <i class="fa-solid fa-chalkboard-user group-hover:animate-pulse"></i>
         </div>
-        <div class="text-left leading-tight hidden sm:block">
-          <span class="text-[11px] md:text-xs text-slate-300 block">Have a Question?</span>
-          <span class="text-sm md:text-base font-bold text-amber-300">Talk to Instructor</span>
+        <div class="text-left leading-none hidden sm:block pr-1">
+          <span class="text-[9px] text-slate-300 block mb-0.5">Have a Question?</span>
+          <span class="text-[10px] font-bold text-amber-300">Talk to Instructor</span>
         </div>
       </button>
 
-      <div id="teacherChatWindow" class="hidden absolute bottom-20 md:bottom-24 right-0 w-[300px] sm:w-[350px] bg-white rounded-3xl shadow-2xl border border-slate-200 overflow-hidden flex flex-col animate-fade-in-up text-xs">
+      <div id="teacherChatWindow" class="hidden absolute bottom-16 sm:bottom-16 right-0 w-[300px] sm:w-[350px] bg-white rounded-3xl shadow-2xl border border-slate-200 overflow-hidden flex flex-col animate-fade-in-up text-xs origin-bottom-right">
         <div class="bg-[#102138] text-white p-4 flex items-center justify-between border-b border-slate-700">
           <div class="flex items-center space-x-2.5">
             <div class="w-9 h-9 rounded-full bg-[#3a80bc] flex items-center justify-center text-white font-bold shrink-0">
@@ -735,13 +720,6 @@
     <!-- CUSTOM TOAST CONTAINER -->
     <div id="toastContainer"></div>
 
-    <!-- FOOTER -->
-    <footer class="bg-white/80 backdrop-blur-md border-t border-slate-200 py-6 text-xs text-slate-500 mt-auto text-center relative z-10">
-      <div class="max-w-6xl mx-auto px-4 space-y-1">
-        <p class="font-bold text-[#102138]">SDG Insights — Success, Dignity & Glory in Your VU Studies</p>
-        <p>Official Contact: 0319-8519637 • Email: sdginsightsedu@gmail.com</p>
-      </div>
-    </footer>
   </div>
 
   <script>
