@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <!-- SEO METADATA FOR GOOGLE #1 RANKING -->
   <title>SDG Insights — Virtual University (VU) Handouts, Solved Notes & LMS Handling</title>
   <meta name="description" content="Official SDG Insights study portal for Virtual University of Pakistan. 100% handout-accurate solved midterm & final term notes, MGT101, CS610, MTH401, highlighted handouts (Rs. 300), and professional LMS handling services." />
   <meta name="keywords" content="SDG Insights, VU Notes, Virtual University Handouts, MGT101 Midterm, MTH401 Final Term, CS610 Solved Papers, CS301 Handouts, VU LMS Handling, Munaza Mukhtar, VU Exam Preparation Portals, VU Past Papers Solved" />
@@ -12,7 +11,7 @@
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
   <link rel="canonical" href="https://sdginsights.github.io" />
 
-  <!-- OPEN GRAPH (WHATSAPP PREVIEW CARDS) -->
+  <!-- OPEN GRAPH -->
   <meta property="og:locale" content="en_US" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="SDG Insights — Success, Dignity & Glory in Your VU Studies" />
@@ -21,7 +20,7 @@
   <meta property="og:site_name" content="SDG Insights" />
   <meta property="og:image" content="https://sdginsights.github.io/logo.png" />
 
-  <!-- GOOGLE STRUCTURED DATA (JSON-LD) -->
+  <!-- SCHEMA JSON-LD -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -38,42 +37,6 @@
           "https://youtube.com/@sdginsights",
           "https://whatsapp.com/channel/0029VbB78Xa3WHTReQ1hTF1Q"
         ]
-      },
-      {
-        "@type": "WebSite",
-        "@id": "https://sdginsights.github.io/#website",
-        "url": "https://sdginsights.github.io",
-        "name": "SDG Insights Portal",
-        "publisher": { "@id": "https://sdginsights.github.io/#organization" }
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Are SDG Insights notes 100% handout accurate?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, all study notes and preparation portals from SDG Insights are 100% compiled from official Virtual University handouts and video lectures, covering 80% to 90% of exam questions."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What services does SDG Insights offer for Virtual University students?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "SDG Insights provides Final and Mid Term Preparation Portals, Highlighted Handouts, Complete LMS Handling (Assignments, Quizzes, GDBs), and 24/7 dedicated academic mentorship."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How to get access to preparation portals on SDG Insights?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Students can transfer the course fee via EasyPaisa (03198519637) or MCB Bank, share payment proof on WhatsApp (+923198519637), and their 1-month portal access is activated immediately."
-            }
-          }
-        ]
       }
     ]
   }
@@ -89,7 +52,7 @@
   <style>
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
-      background-color: #09121f;
+      background-color: #f0f7ff; /* Light, Radiant Canvas */
       color: #0f172a;
       overflow-x: hidden;
       min-height: 100vh;
@@ -97,8 +60,8 @@
     .urdu-font { font-family: 'Noto Nastaliq Urdu', serif; line-height: 2.3; }
     .handwriting { font-family: 'Caveat', cursive; }
 
-    /* DYNAMIC COLOR-SHIFTING AURORA GLOW MORPHISM */
-    .aurora-canvas {
+    /* BRIGHT RADIANT AURORA GLOW BACKGROUND */
+    .radiant-aurora {
       position: fixed;
       top: 0;
       left: 0;
@@ -107,92 +70,73 @@
       z-index: 0;
       pointer-events: none;
       overflow: hidden;
-      background: radial-gradient(circle at 50% 15%, #0f2038 0%, #050a12 100%);
+      background: radial-gradient(circle at 50% 10%, #e0f2fe 0%, #f8fafc 100%);
     }
 
-    .color-orb-1 {
+    .light-orb-1 {
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      top: -100px;
+      left: -100px;
+      filter: blur(90px);
+      animation: shiftLight1 12s ease-in-out infinite alternate;
+    }
+
+    .light-orb-2 {
       position: absolute;
       width: 650px;
       height: 650px;
       border-radius: 50%;
-      top: -100px;
-      left: -100px;
+      top: 25%;
+      right: -100px;
       filter: blur(100px);
-      animation: shiftColors1 14s ease-in-out infinite alternate, floatOrb1 18s ease-in-out infinite alternate;
+      animation: shiftLight2 14s ease-in-out infinite alternate;
     }
 
-    .color-orb-2 {
+    .light-orb-3 {
       position: absolute;
-      width: 700px;
-      height: 700px;
-      border-radius: 50%;
-      top: 30%;
-      right: -150px;
-      filter: blur(110px);
-      animation: shiftColors2 16s ease-in-out infinite alternate, floatOrb2 20s ease-in-out infinite alternate;
-    }
-
-    .color-orb-3 {
-      position: absolute;
-      width: 550px;
-      height: 550px;
+      width: 500px;
+      height: 500px;
       border-radius: 50%;
       bottom: -100px;
       left: 20%;
-      filter: blur(100px);
-      animation: shiftColors3 15s ease-in-out infinite alternate, floatOrb3 22s ease-in-out infinite alternate;
+      filter: blur(90px);
+      animation: shiftLight3 15s ease-in-out infinite alternate;
     }
 
-    @keyframes shiftColors1 {
-      0% { background: radial-gradient(circle, rgba(58, 128, 188, 0.65) 0%, rgba(58, 128, 188, 0) 70%); }
-      33% { background: radial-gradient(circle, rgba(37, 99, 235, 0.6) 0%, rgba(37, 99, 235, 0) 70%); }
-      66% { background: radial-gradient(circle, rgba(99, 102, 241, 0.55) 0%, rgba(99, 102, 241, 0) 70%); }
-      100% { background: radial-gradient(circle, rgba(14, 165, 233, 0.6) 0%, rgba(14, 165, 233, 0) 70%); }
+    @keyframes shiftLight1 {
+      0% { background: radial-gradient(circle, rgba(58, 128, 188, 0.38) 0%, rgba(58, 128, 188, 0) 70%); transform: translate(0, 0) scale(1); }
+      50% { background: radial-gradient(circle, rgba(96, 165, 250, 0.42) 0%, rgba(96, 165, 250, 0) 70%); transform: translate(100px, 60px) scale(1.15); }
+      100% { background: radial-gradient(circle, rgba(56, 189, 248, 0.35) 0%, rgba(56, 189, 248, 0) 70%); transform: translate(50px, 120px) scale(0.95); }
     }
 
-    @keyframes shiftColors2 {
-      0% { background: radial-gradient(circle, rgba(96, 165, 250, 0.55) 0%, rgba(96, 165, 250, 0) 70%); }
-      33% { background: radial-gradient(circle, rgba(56, 189, 248, 0.55) 0%, rgba(56, 189, 248, 0) 70%); }
-      66% { background: radial-gradient(circle, rgba(129, 140, 248, 0.5) 0%, rgba(129, 140, 248, 0) 70%); }
-      100% { background: radial-gradient(circle, rgba(37, 99, 235, 0.55) 0%, rgba(37, 99, 235, 0) 70%); }
+    @keyframes shiftLight2 {
+      0% { background: radial-gradient(circle, rgba(147, 197, 253, 0.45) 0%, rgba(147, 197, 253, 0) 70%); transform: translate(0, 0) scale(1); }
+      50% { background: radial-gradient(circle, rgba(168, 85, 247, 0.28) 0%, rgba(168, 85, 247, 0) 70%); transform: translate(-120px, 80px) scale(1.2); }
+      100% { background: radial-gradient(circle, rgba(58, 128, 188, 0.4) 0%, rgba(58, 128, 188, 0) 70%); transform: translate(-60px, -50px) scale(1); }
     }
 
-    @keyframes shiftColors3 {
-      0% { background: radial-gradient(circle, rgba(37, 99, 235, 0.5) 0%, rgba(37, 99, 235, 0) 70%); }
-      33% { background: radial-gradient(circle, rgba(79, 70, 229, 0.45) 0%, rgba(79, 70, 229, 0) 70%); }
-      66% { background: radial-gradient(circle, rgba(14, 165, 233, 0.55) 0%, rgba(14, 165, 233, 0) 70%); }
-      100% { background: radial-gradient(circle, rgba(58, 128, 188, 0.55) 0%, rgba(58, 128, 188, 0) 70%); }
+    @keyframes shiftLight3 {
+      0% { background: radial-gradient(circle, rgba(192, 132, 252, 0.25) 0%, rgba(192, 132, 252, 0) 70%); transform: translate(0, 0) scale(1); }
+      50% { background: radial-gradient(circle, rgba(56, 189, 248, 0.38) 0%, rgba(56, 189, 248, 0) 70%); transform: translate(-60px, -80px) scale(1.15); }
+      100% { background: radial-gradient(circle, rgba(96, 165, 250, 0.35) 0%, rgba(96, 165, 250, 0) 70%); transform: translate(80px, -30px) scale(1); }
     }
 
-    @keyframes floatOrb1 {
-      0% { transform: translate(0, 0) scale(1); }
-      50% { transform: translate(140px, 90px) scale(1.15); }
-      100% { transform: translate(70px, 180px) scale(0.95); }
-    }
-    @keyframes floatOrb2 {
-      0% { transform: translate(0, 0) scale(1); }
-      50% { transform: translate(-160px, 120px) scale(1.2); }
-      100% { transform: translate(-80px, -70px) scale(1); }
-    }
-    @keyframes floatOrb3 {
-      0% { transform: translate(0, 0) scale(1); }
-      50% { transform: translate(-90px, -140px) scale(1.18); }
-      100% { transform: translate(120px, -50px) scale(1); }
-    }
-
-    /* FROSTED GLASS CARDS */
-    .glass-card {
-      background: rgba(255, 255, 255, 0.94);
-      backdrop-filter: blur(24px);
-      -webkit-backdrop-filter: blur(24px);
-      border: 1px solid rgba(255, 255, 255, 0.8);
-      box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.6) inset;
+    /* PEARLESCENT GLASS CARDS */
+    .glass-card-light {
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      box-shadow: 0 12px 32px -8px rgba(58, 128, 188, 0.12), 0 0 0 1px rgba(255, 255, 255, 0.8) inset;
       transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .glass-card:hover {
+    .glass-card-light:hover {
       transform: translateY(-4px);
-      box-shadow: 0 24px 44px -10px rgba(16, 33, 56, 0.35), 0 0 30px rgba(58, 128, 188, 0.35);
-      border-color: rgba(58, 128, 188, 0.8);
+      box-shadow: 0 20px 40px -10px rgba(58, 128, 188, 0.22), 0 0 25px rgba(96, 165, 250, 0.25);
+      border-color: rgba(58, 128, 188, 0.6);
     }
 
     .tab-content { display: none; }
@@ -203,10 +147,10 @@
     }
 
     .nav-btn-active {
-      background: linear-gradient(135deg, #102138 0%, #1e3a61 100%);
+      background: linear-gradient(135deg, #102138 0%, #3a80bc 100%);
       color: #ffffff;
       font-weight: 700;
-      box-shadow: 0 4px 14px rgba(16, 33, 56, 0.3);
+      box-shadow: 0 4px 14px rgba(58, 128, 188, 0.3);
     }
     .nav-btn-inactive {
       background-color: transparent;
@@ -218,16 +162,25 @@
       color: #102138;
     }
 
-    #stickyNoticeToast {
+    /* ANIMATED 3D GIFT BOX NOTIFICATION POPUP */
+    #giftNoticeBox {
       transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
       transform: translateY(120px) scale(0.9);
       opacity: 0;
       pointer-events: none;
     }
-    #stickyNoticeToast.toast-visible {
+    #giftNoticeBox.box-visible {
       transform: translateY(0) scale(1);
       opacity: 1;
       pointer-events: auto;
+    }
+
+    @keyframes bounceGift {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-6px) rotate(4deg); }
+    }
+    .gift-icon-bounce {
+      animation: bounceGift 2.2s ease-in-out infinite;
     }
 
     @keyframes timerProgress {
@@ -241,22 +194,45 @@
 </head>
 <body class="antialiased relative flex flex-col">
 
-  <!-- DYNAMIC COLOR-SHIFTING AURORA GLOW BACKGROUND -->
-  <div class="aurora-canvas">
-    <div class="color-orb-1"></div>
-    <div class="color-orb-2"></div>
-    <div class="color-orb-3"></div>
+  <!-- RADIANT DAYLIGHT AURORA BACKGROUND -->
+  <div class="radiant-aurora">
+    <div class="light-orb-1"></div>
+    <div class="light-orb-2"></div>
+    <div class="light-orb-3"></div>
   </div>
 
   <div class="relative z-10 flex-1 flex flex-col min-h-screen">
 
-    <!-- NAVBAR WITH EMBEDDED VECTOR LOGO -->
-    <header class="bg-white/95 backdrop-blur-md border-b border-slate-200/80 sticky top-0 z-40 shadow-xs">
+    <!-- TOP ANNOUNCEMENT TICKER WITH DIRECT SOCIALS -->
+    <div class="bg-[#102138] text-white text-xs py-2 px-4 border-b border-slate-800 shadow-xs">
+      <div class="max-w-6xl mx-auto flex items-center justify-between">
+        <div class="flex items-center space-x-2">
+          <span class="bg-[#3a80bc] text-white text-[10px] font-black px-2.5 py-0.5 rounded-full uppercase">Official</span>
+          <span class="text-slate-200">SDG Insights — Success, Dignity & Glory in Your VU Studies</span>
+        </div>
+        <div class="hidden sm:flex items-center space-x-4 text-slate-300 font-bold text-[11px]">
+          <a href="https://youtube.com/@sdginsights?si=yFODeRKu4Q1S_ORa" target="_blank" class="hover:text-red-400 transition flex items-center gap-1">
+            <i class="fa-brands fa-youtube text-red-500"></i> YouTube
+          </a>
+          <span>•</span>
+          <a href="https://wa.me/c/923198519637" target="_blank" class="hover:text-emerald-400 transition flex items-center gap-1">
+            <i class="fa-solid fa-store text-emerald-400"></i> Catalog
+          </a>
+          <span>•</span>
+          <a href="https://whatsapp.com/channel/0029VbB78Xa3WHTReQ1hTF1Q" target="_blank" class="hover:text-blue-400 transition flex items-center gap-1">
+            <i class="fa-solid fa-bullhorn text-[#3a80bc]"></i> Community
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- MAIN NAVBAR WITH EMBEDDED VECTOR LOGO -->
+    <header class="bg-white/90 backdrop-blur-md border-b border-slate-200/80 sticky top-0 z-40 shadow-xs">
       <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
         
-        <!-- LOGO -->
+        <!-- EXACT LOGO EMBED -->
         <div onclick="switchTab('tab-home')" class="flex items-center space-x-3 cursor-pointer shrink-0">
-          <div class="w-12 h-12 rounded-full overflow-hidden shadow-sm flex items-center justify-center bg-[#11253e] shrink-0 border border-[#3a80bc]">
+          <div class="w-12 h-12 rounded-full overflow-hidden shadow-sm flex items-center justify-center bg-[#11253e] shrink-0 border-2 border-[#3a80bc]">
             <svg viewBox="0 0 200 200" class="w-full h-full drop-shadow-xs">
               <defs>
                 <path id="textArc" d="M 24,100 A 76,76 0 1,1 176,100" fill="none" />
@@ -277,7 +253,7 @@
           </div>
           <div>
             <span class="text-lg font-black text-[#102138] tracking-tight block leading-tight">SDG Insights</span>
-            <span class="text-[11px] text-slate-400 font-semibold">VU Preparation Portals</span>
+            <span class="text-[11px] text-slate-500 font-bold">VU Preparation & LMS Portal</span>
           </div>
         </div>
 
@@ -286,17 +262,17 @@
           <button onclick="switchTab('tab-home')" id="btn-tab-home" class="nav-btn-active px-3.5 py-2 rounded-xl transition">Home</button>
           <button onclick="switchTab('tab-notes')" id="btn-tab-notes" class="nav-btn-inactive px-3.5 py-2 rounded-xl transition">Preparation Portals</button>
           <button onclick="switchTab('tab-lms')" id="btn-tab-lms" class="nav-btn-inactive px-3.5 py-2 rounded-xl transition">LMS Handling</button>
-          <button onclick="switchTab('tab-deals')" id="btn-tab-deals" class="nav-btn-inactive px-3.5 py-2 rounded-xl transition">Deals</button>
+          <button onclick="switchTab('tab-deals')" id="btn-tab-deals" class="nav-btn-inactive px-3.5 py-2 rounded-xl transition">Deals (20% OFF)</button>
           <button onclick="switchTab('tab-portal')" id="btn-tab-portal" class="nav-btn-inactive px-3.5 py-2 rounded-xl transition flex items-center gap-1.5 text-[#3a80bc]">
             <i class="fa-solid fa-lock"></i> Start Exam Preparation
           </button>
         </nav>
 
-        <!-- WHATSAPP -->
+        <!-- WHATSAPP CONTACT -->
         <div class="flex items-center space-x-2">
-          <a href="https://wa.me/923198519637" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white text-xs px-3.5 py-2 rounded-xl font-bold transition flex items-center gap-1.5 shadow-xs">
+          <a href="https://wa.me/923198519637" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white text-xs px-3.5 py-2.5 rounded-xl font-bold transition flex items-center gap-1.5 shadow-xs">
             <i class="fa-brands fa-whatsapp text-sm"></i>
-            <span>WhatsApp</span>
+            <span>0319-8519637</span>
           </a>
         </div>
       </div>
@@ -312,73 +288,86 @@
     </header>
 
     <!-- ======================================================== -->
-    <!-- TAB 1: HOME -->
+    <!-- TAB 1: HOME (BRIGHT & RADIANT GLASS HERO) -->
     <!-- ======================================================== -->
     <section id="tab-home" class="tab-content tab-active flex-1">
       
       <!-- HERO -->
       <div class="py-12 px-4 text-center">
-        <div class="max-w-3xl mx-auto space-y-4">
+        <div class="max-w-4xl mx-auto space-y-4">
           
-          <div class="inline-flex items-center gap-2 bg-white/90 backdrop-blur-md border border-blue-200/60 text-[#102138] px-4 py-1.5 rounded-full text-xs font-bold shadow-xs">
+          <div class="inline-flex items-center gap-2 bg-blue-50 border border-blue-200/80 text-[#102138] px-4 py-1.5 rounded-full text-xs font-bold shadow-2xs">
             <i class="fa-solid fa-shield-halved text-[#3a80bc]"></i>
             <span>Success, Dignity & Glory in Your VU Studies</span>
           </div>
 
-          <h1 class="text-3xl md:text-5xl font-black text-white tracking-tight drop-shadow-md">
-            Final & Mid Term Preparation Portals
+          <h1 class="text-3xl md:text-5xl lg:text-6xl font-black text-[#102138] tracking-tight leading-tight">
+            Virtual University Handouts, Solved Notes <br/>
+            <span class="text-[#3a80bc]">& Professional LMS Handling</span>
           </h1>
 
-          <p class="text-slate-300 text-sm md:text-base max-w-lg mx-auto">
-            100% handout-accurate solved exam portals, interactive study software, and complete LMS handling.
+          <p class="text-slate-600 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
+            100% handout-accurate solved exam notes, interactive study software portals, and full semester coursework support.
           </p>
 
-          <div class="pt-2 flex items-center justify-center gap-3 flex-wrap text-xs font-bold">
-            <button onclick="switchTab('tab-notes')" class="bg-white/90 hover:bg-white text-[#102138] px-5 py-3 rounded-2xl transition shadow-lg flex items-center gap-2 border border-white">
-              <i class="fa-solid fa-book-open text-[#3a80bc]"></i>
-              <span>Browse Preparation Portals</span>
-            </button>
-            <button onclick="switchTab('tab-portal')" class="bg-gradient-to-r from-[#3a80bc] to-[#2563eb] text-white px-5 py-3 rounded-2xl transition shadow-lg flex items-center gap-2 border border-blue-400/40">
-              <i class="fa-solid fa-play"></i>
-              <span>Start Exam Preparation</span>
-            </button>
+          <!-- 3 OFFICIAL SOCIAL COMMUNITY ACTION TILES -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-2xl mx-auto pt-3 text-xs font-bold">
+            
+            <!-- YOUTUBE SUBSCRIBE -->
+            <a href="https://youtube.com/@sdginsights?si=yFODeRKu4Q1S_ORa" target="_blank" class="bg-red-50 hover:bg-red-100 border border-red-200/80 text-red-700 p-3 rounded-2xl transition shadow-xs flex items-center justify-center gap-2 group">
+              <i class="fa-brands fa-youtube text-lg text-red-600 group-hover:scale-110 transition"></i>
+              <span>Subscribe YouTube Channel</span>
+            </a>
+
+            <!-- WHATSAPP CATALOG -->
+            <a href="https://wa.me/c/923198519637" target="_blank" class="bg-emerald-50 hover:bg-emerald-100 border border-emerald-200/80 text-emerald-800 p-3 rounded-2xl transition shadow-xs flex items-center justify-center gap-2 group">
+              <i class="fa-solid fa-store text-lg text-emerald-600 group-hover:scale-110 transition"></i>
+              <span>View WhatsApp Catalog</span>
+            </a>
+
+            <!-- WHATSAPP CHANNEL -->
+            <a href="https://whatsapp.com/channel/0029VbB78Xa3WHTReQ1hTF1Q" target="_blank" class="bg-blue-50 hover:bg-blue-100 border border-blue-200/80 text-[#102138] p-3 rounded-2xl transition shadow-xs flex items-center justify-center gap-2 group">
+              <i class="fa-solid fa-bullhorn text-lg text-[#3a80bc] group-hover:scale-110 transition"></i>
+              <span>Join WhatsApp Channel</span>
+            </a>
+
           </div>
 
           <!-- SEARCH -->
-          <div class="max-w-md mx-auto pt-3">
+          <div class="max-w-md mx-auto pt-2">
             <div class="relative">
               <i class="fa-solid fa-magnifying-glass absolute left-4 top-3.5 text-slate-400"></i>
-              <input type="text" id="homeSearch" onkeyup="searchFromHome()" placeholder="Search subject code (e.g. MGT101, CS610, MTH401)..." class="w-full bg-white/95 backdrop-blur-md border border-white/80 rounded-2xl pl-11 pr-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#3a80bc] shadow-lg text-slate-800" />
+              <input type="text" id="homeSearch" onkeyup="searchFromHome()" placeholder="Search subject code (e.g. MGT101, CS610, MTH401)..." class="w-full bg-white border border-slate-300 rounded-2xl pl-11 pr-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#3a80bc] shadow-xs text-slate-800" />
             </div>
           </div>
 
         </div>
       </div>
 
-      <!-- FEATURED MGT101 PORTAL PROMINENT CARD -->
+      <!-- FEATURED MGT101 MASTER PORTAL CARD -->
       <div class="max-w-5xl mx-auto px-4 pb-6">
-        <div class="glass-card rounded-3xl p-6 border-2 border-[#3a80bc] shadow-xl flex flex-col md:flex-row items-center justify-between gap-4">
+        <div class="glass-card-light rounded-3xl p-6 border-2 border-[#3a80bc] shadow-md flex flex-col md:flex-row items-center justify-between gap-4">
           <div class="flex items-center space-x-4">
-            <div class="w-14 h-14 rounded-2xl bg-[#102138] text-[#3a80bc] flex items-center justify-center text-2xl font-black shrink-0">
+            <div class="w-14 h-14 rounded-2xl bg-[#102138] text-[#3a80bc] flex items-center justify-center text-2xl font-black shrink-0 shadow-sm">
               <i class="fa-solid fa-file-invoice-dollar"></i>
             </div>
             <div>
               <span class="bg-emerald-100 text-emerald-800 text-[10px] font-black px-2.5 py-0.5 rounded-full uppercase">Featured Active Portal</span>
               <h3 class="text-xl font-black text-[#102138] mt-1">MGT101: Financial Accounting Master Portal</h3>
-              <p class="text-xs text-slate-500">Official Midterm Preparation Portal with free overview, video lectures, and verified solutions.</p>
+              <p class="text-xs text-slate-500">Complete Midterm & Final Term Preparation Portal with Urdu translations, numericals, and verified MCQs.</p>
             </div>
           </div>
-          <a href="mgt101.html" class="bg-gradient-to-r from-[#102138] to-[#1e3a61] hover:from-slate-900 hover:to-[#102138] text-white font-bold text-xs px-6 py-3 rounded-2xl transition shadow-md shrink-0 flex items-center gap-2">
+          <a href="mgt101.html" class="bg-[#102138] hover:bg-[#1a385f] text-white font-bold text-xs px-6 py-3 rounded-2xl transition shadow-xs shrink-0 flex items-center gap-2">
             <span>Open MGT101 Portal</span>
-            <i class="fa-solid fa-arrow-right"></i>
+            <i class="fa-solid fa-arrow-right text-[#3a80bc]"></i>
           </a>
         </div>
       </div>
 
-      <!-- 3 KEY DOORS -->
+      <!-- 3 ENTRY DOORS -->
       <div class="max-w-5xl mx-auto px-4 pb-12">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-          <div onclick="switchTab('tab-notes')" class="glass-card rounded-3xl p-6 cursor-pointer flex flex-col justify-between group">
+          <div onclick="switchTab('tab-notes')" class="glass-card-light rounded-3xl p-6 cursor-pointer flex flex-col justify-between group">
             <div class="space-y-3">
               <div class="w-12 h-12 rounded-2xl bg-blue-50 text-[#3a80bc] flex items-center justify-center text-xl group-hover:bg-[#102138] group-hover:text-white transition">
                 <i class="fa-solid fa-laptop-code"></i>
@@ -389,7 +378,7 @@
             <span class="text-xs font-bold text-[#3a80bc] pt-4 mt-2 block border-t border-slate-100">Open Portals Library →</span>
           </div>
 
-          <div onclick="switchTab('tab-lms')" class="glass-card rounded-3xl p-6 cursor-pointer flex flex-col justify-between group">
+          <div onclick="switchTab('tab-lms')" class="glass-card-light rounded-3xl p-6 cursor-pointer flex flex-col justify-between group">
             <div class="space-y-3">
               <div class="w-12 h-12 rounded-2xl bg-indigo-50 text-indigo-700 flex items-center justify-center text-xl group-hover:bg-[#102138] group-hover:text-white transition">
                 <i class="fa-solid fa-headset"></i>
@@ -400,7 +389,7 @@
             <span class="text-xs font-bold text-indigo-700 pt-4 mt-2 block border-t border-slate-100">View LMS Packages →</span>
           </div>
 
-          <div onclick="switchTab('tab-deals')" class="glass-card rounded-3xl p-6 cursor-pointer flex flex-col justify-between group">
+          <div onclick="switchTab('tab-deals')" class="glass-card-light rounded-3xl p-6 cursor-pointer flex flex-col justify-between group">
             <div class="space-y-3">
               <div class="w-12 h-12 rounded-2xl bg-amber-50 text-amber-700 flex items-center justify-center text-xl group-hover:bg-[#102138] group-hover:text-amber-300 transition">
                 <i class="fa-solid fa-gift"></i>
@@ -416,21 +405,21 @@
     </section>
 
     <!-- ======================================================== -->
-    <!-- TAB 2: FINAL & MID TERM PREPARATION PORTALS (MGT101 AT TOP) -->
+    <!-- TAB 2: FINAL & MID TERM PREPARATION PORTALS (MGT101 FIRST) -->
     <!-- ======================================================== -->
     <section id="tab-notes" class="tab-content flex-1 py-8 px-4">
       <div class="max-w-5xl mx-auto space-y-6">
         
-        <div class="flex items-center justify-between border-b border-white/20 pb-3">
+        <div class="flex items-center justify-between border-b border-slate-200 pb-3">
           <div>
-            <h2 class="text-xl font-bold text-white">Preparation Portals & Notes</h2>
-            <p class="text-xs text-slate-300">Filtered by examination terms. All portals are strictly paid.</p>
+            <h2 class="text-xl font-bold text-[#102138]">Preparation Portals & Notes</h2>
+            <p class="text-xs text-slate-500">Filtered by examination terms. All portals are strictly paid.</p>
           </div>
-          <span class="text-xs font-bold text-white bg-white/20 backdrop-blur-sm px-3 py-1 rounded-xl" id="notesCount">Loading...</span>
+          <span class="text-xs font-bold text-[#3a80bc] bg-blue-50 px-3 py-1 rounded-xl" id="notesCount">Loading...</span>
         </div>
 
         <!-- FILTER BUTTONS -->
-        <div class="glass-card p-4 rounded-3xl space-y-3 shadow-md">
+        <div class="glass-card-light p-4 rounded-3xl space-y-3 shadow-xs">
           <input type="text" id="notesSearchInput" onkeyup="filterNotesGrid()" placeholder="Search code: MGT101, CS610, MTH401, CS301..." class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-xs focus:bg-white focus:outline-none" />
           
           <div class="flex items-center gap-2 flex-wrap text-xs font-bold">
@@ -456,13 +445,13 @@
       <div class="max-w-4xl mx-auto space-y-8">
         
         <div class="text-center space-y-2">
-          <span class="bg-white/20 text-white text-xs font-bold px-3 py-1 rounded-full uppercase">Services</span>
-          <h2 class="text-2xl md:text-3xl font-black text-white">LMS Handling & Exam Preparation Packages</h2>
-          <p class="text-xs text-slate-300 max-w-md mx-auto">Complete semester coursework handling and exam preparation with dedicated 24/7 academic support.</p>
+          <span class="bg-blue-50 text-[#3a80bc] text-xs font-bold px-3 py-1 rounded-full uppercase border border-blue-100">Services</span>
+          <h2 class="text-2xl md:text-3xl font-black text-[#102138]">LMS Handling & Exam Preparation Packages</h2>
+          <p class="text-xs text-slate-500 max-w-md mx-auto">Complete semester coursework handling and exam preparation with dedicated 24/7 academic support.</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div class="glass-card rounded-3xl p-6 flex flex-col justify-between space-y-4">
+          <div class="glass-card-light rounded-3xl p-6 flex flex-col justify-between space-y-4">
             <div class="space-y-3">
               <span class="text-[10px] font-bold text-slate-500 uppercase">Standard Service</span>
               <h3 class="text-lg font-bold text-[#102138]">Complete LMS Handling</h3>
@@ -479,7 +468,7 @@
             </button>
           </div>
 
-          <div class="glass-card border-2 border-[#3a80bc] rounded-3xl p-6 flex flex-col justify-between space-y-4 shadow-md">
+          <div class="glass-card-light border-2 border-[#3a80bc] rounded-3xl p-6 flex flex-col justify-between space-y-4 shadow-sm">
             <div class="space-y-3">
               <span class="bg-[#3a80bc] text-white text-[10px] font-black px-2.5 py-0.5 rounded-full uppercase">VIP All-In-One</span>
               <h3 class="text-lg font-bold text-[#102138]">LMS Handling + Exam Prep + Full Support</h3>
@@ -507,12 +496,12 @@
     <section id="tab-deals" class="tab-content flex-1 py-10 px-4">
       <div class="max-w-3xl mx-auto space-y-6">
         <div class="text-center space-y-1">
-          <h2 class="text-2xl font-black text-white">Semester Package Deals</h2>
-          <p class="text-xs text-slate-300">Order bundled preparation portals and save fees.</p>
+          <h2 class="text-2xl font-black text-[#102138]">Semester Package Deals</h2>
+          <p class="text-xs text-slate-500">Order bundled preparation portals and save fees.</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-          <div class="glass-card border-2 border-[#3a80bc] rounded-3xl p-6 space-y-3">
+          <div class="glass-card-light border-2 border-[#3a80bc] rounded-3xl p-6 space-y-3">
             <span class="bg-[#102138] text-white text-[10px] font-bold px-2 py-0.5 rounded-md uppercase">20% OFF</span>
             <h3 class="text-base font-bold text-[#102138]">Full Semester Bundle</h3>
             <p class="text-xs text-slate-500 leading-relaxed">All preparation portals and notes for your complete semester (5 to 6 courses).</p>
@@ -522,7 +511,7 @@
             </div>
           </div>
 
-          <div class="glass-card rounded-3xl p-6 space-y-3">
+          <div class="glass-card-light rounded-3xl p-6 space-y-3">
             <span class="bg-[#3a80bc] text-white text-[10px] font-bold px-2 py-0.5 rounded-md uppercase">10% OFF</span>
             <h3 class="text-base font-bold text-[#102138]">Pick Any 5 Courses</h3>
             <p class="text-xs text-slate-500 leading-relaxed">Choose any 5 preparation portals across your degree.</p>
@@ -541,17 +530,17 @@
     <section id="tab-portal" class="tab-content flex-1 py-10 px-4">
       <div class="max-w-md mx-auto space-y-4">
         
-        <div id="loginBox" class="glass-card rounded-3xl p-6 shadow-xl space-y-4">
+        <div id="loginBox" class="glass-card-light rounded-3xl p-6 shadow-md space-y-4">
           <div class="text-center space-y-1">
-            <div class="w-10 h-10 rounded-2xl bg-[#102138] text-[#3a80bc] flex items-center justify-center text-lg mx-auto">
+            <div class="w-10 h-10 rounded-2xl bg-[#102138] text-[#3a80bc] flex items-center justify-center text-lg mx-auto shadow-xs">
               <i class="fa-solid fa-play"></i>
             </div>
             <h3 class="text-base font-bold text-[#102138]">Start Exam Preparation</h3>
-            <p class="text-xs text-slate-500">Enter your approved Gmail and course code.</p>
+            <p class="text-xs text-slate-500">Enter your approved Gmail to access your portal.</p>
           </div>
 
           <div class="bg-amber-50 border border-amber-200 p-3 rounded-2xl text-[11px] text-amber-900 leading-snug">
-            <strong>⚠️ 1-Month Access Policy:</strong> Access opens once approved by instructor. Midterm and Final Term portals remain active for exactly <strong>1 Month (30 Days)</strong> from approval date.
+            <strong>⚠️ 1-Month Access Policy:</strong> Access opens once approved by instructor in database. Portals remain active for exactly <strong>1 Month (30 Days)</strong> from approval date.
           </div>
 
           <div class="space-y-3 text-xs">
@@ -564,7 +553,7 @@
           </div>
         </div>
 
-        <div id="readerBox" class="hidden glass-card rounded-3xl p-6 shadow-sm space-y-4">
+        <div id="readerBox" class="hidden glass-card-light rounded-3xl p-6 shadow-sm space-y-4">
           <div class="flex items-center justify-between border-b border-slate-100 pb-3">
             <div>
               <span class="text-[10px] font-bold text-emerald-600 uppercase block">✓ Active 1-Month Portal</span>
@@ -626,28 +615,38 @@
       </div>
     </div>
 
-    <!-- 5-SECOND FLOATING STICKY NOTE TOAST -->
-    <div id="stickyNoticeToast" class="fixed bottom-6 left-6 z-40 max-w-sm w-full">
-      <div class="bg-white/95 backdrop-blur-xl border border-white/80 p-4 rounded-3xl shadow-2xl space-y-2 relative overflow-hidden">
+    <!-- ======================================================== -->
+    <!-- 3D ANIMATED GIFT BOX NOTIFICATION POPUP (BOTTOM-LEFT) -->
+    <!-- ======================================================== -->
+    <div id="giftNoticeBox" class="fixed bottom-6 left-6 z-40 max-w-sm w-full">
+      <div class="glass-card-light p-4 rounded-3xl shadow-xl space-y-2.5 relative border border-blue-200/80">
+        
         <div class="flex items-center justify-between">
-          <div class="flex items-center space-x-2">
-            <span class="w-2.5 h-2.5 rounded-full bg-[#3a80bc] animate-ping"></span>
-            <span class="text-[10px] font-black text-[#102138] uppercase tracking-wider">Official Notification</span>
+          <div class="flex items-center space-x-2.5">
+            <span class="text-2xl gift-icon-bounce">🎁</span>
+            <div>
+              <span class="text-[10px] font-black text-[#3a80bc] uppercase tracking-wider block leading-none">SDG Insights Special</span>
+              <span id="giftNoticeCategory" class="text-xs font-black text-[#102138]">Semester Offer</span>
+            </div>
           </div>
-          <button onclick="hideStickyToastManual()" class="text-slate-400 hover:text-slate-600 text-xs">
+          <button onclick="hideGiftBoxManual()" class="w-6 h-6 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-400 hover:text-slate-600 flex items-center justify-center text-xs transition">
             <i class="fa-solid fa-xmark"></i>
           </button>
         </div>
-        <p id="stickyToastText" class="text-xs text-slate-800 font-semibold leading-relaxed">
-          ⚠️ All resources, notes and portals are 100% PAID — nothing is free.
+
+        <p id="giftNoticeText" class="text-xs text-slate-700 font-semibold leading-relaxed">
+          Flat 20% OFF on Full Semester Bundles & 10% OFF on any 5 subjects!
         </p>
-        <div class="w-full bg-slate-100 h-1 rounded-full overflow-hidden mt-2">
-          <div id="toastProgressBar" class="bg-[#3a80bc] h-full timer-bar-animate"></div>
+
+        <!-- 5-SECOND PROGRESS TIMER -->
+        <div class="w-full bg-slate-100 h-1.5 rounded-full overflow-hidden">
+          <div id="giftProgressBar" class="bg-gradient-to-r from-[#3a80bc] to-[#2563eb] h-full timer-bar-animate"></div>
         </div>
+
       </div>
     </div>
 
-    <!-- RESPECTFUL INSTRUCTOR CHATBOT -->
+    <!-- INSTRUCTOR CHATBOT -->
     <div class="fixed bottom-6 right-6 z-50">
       <button onclick="toggleTeacherChat()" id="chatTriggerBtn" class="flex items-center gap-2.5 bg-[#102138] hover:bg-[#1a385f] text-white px-4 py-3 rounded-full shadow-2xl transition-all duration-300 border border-[#3a80bc]/40 hover:scale-105">
         <div class="w-8 h-8 rounded-full bg-[#3a80bc] flex items-center justify-center text-white text-sm shrink-0">
@@ -721,48 +720,49 @@
 
   </div>
 
-  <!-- JAVASCRIPT LOGIC WITH LIFETIME MASTER WHITELIST -->
+  <!-- JAVASCRIPT -->
   <script>
-    const toastNotices = [
-      "⚠️ All resources, notes and portals are 100% PAID — nothing is free.",
-      "💼 LMS Handling + Midterm & Final Term Exam Preparation packages with full 24/7 support.",
-      "🎁 Special Deals: Flat 20% OFF on Full Semester • 10% OFF on any 5 subjects.",
-      "💻 Preparation Portals & Interactive Study Software — Practice & prepare online directly."
+    // 3D GIFT BOX NOTIFICATION (5s SHOW -> 4s REST)
+    const giftNotices = [
+      { cat: "Semester Offer", text: "Flat 20% OFF on Full Semester Bundles & 10% OFF on any 5 subjects!" },
+      { cat: "Important Policy", text: "All exam preparation portals and master notes are 100% PAID — nothing is free." },
+      { cat: "VIP Coursework", text: "Complete LMS Handling (Assignments, Quizzes, GDBs) with 24/7 academic support." },
+      { cat: "Interactive Software", text: "Practice & prepare online with zero file downloads directly on your screen!" }
     ];
-    let toastIndex = 0;
-    const toastEl = document.getElementById("stickyNoticeToast");
-    const toastText = document.getElementById("stickyToastText");
+    let giftIndex = 0;
+    const giftBoxEl = document.getElementById("giftNoticeBox");
+    const giftTextEl = document.getElementById("giftNoticeText");
+    const giftCatEl = document.getElementById("giftNoticeCategory");
 
-    function showNextToast() {
-      toastText.innerText = toastNotices[toastIndex];
-      toastEl.classList.add("toast-visible");
+    function showNextGiftNotice() {
+      giftCatEl.innerText = giftNotices[giftIndex].cat;
+      giftTextEl.innerText = giftNotices[giftIndex].text;
+      giftBoxEl.classList.add("box-visible");
 
-      const bar = document.getElementById("toastProgressBar");
+      const bar = document.getElementById("giftProgressBar");
       bar.classList.remove("timer-bar-animate");
       void bar.offsetWidth;
       bar.classList.add("timer-bar-animate");
 
       setTimeout(() => {
-        toastEl.classList.remove("toast-visible");
-        toastIndex = (toastIndex + 1) % toastNotices.length;
-        setTimeout(showNextToast, 4000);
+        giftBoxEl.classList.remove("box-visible");
+        giftIndex = (giftIndex + 1) % giftNotices.length;
+        setTimeout(showNextGiftNotice, 4000);
       }, 5000);
     }
-    setTimeout(showNextToast, 2000);
+    setTimeout(showNextGiftNotice, 2000);
 
-    function hideStickyToastManual() {
-      toastEl.classList.remove("toast-visible");
+    function hideGiftBoxManual() {
+      giftBoxEl.classList.remove("box-visible");
     }
 
-    // WHITELIST OF APPROVED EMAILS (WITH YOUR PERMANENT LIFETIME ACCESS)
     const approvedStudents = [
+      { email: "munazamukhtarmukhtar@gmail.com", course: "ALL", expiry: "2099-12-31" },
       { email: "munazammukhtarmukhtar@gmail.com", course: "ALL", expiry: "2099-12-31" },
       { email: "sdginsightsedu@gmail.com", course: "ALL", expiry: "2099-12-31" },
-      { email: "ali.student@gmail.com", course: "ALL", expiry: "2026-10-05" },
-      { email: "test.student@gmail.com", course: "ALL", expiry: "2026-10-05" }
+      { email: "aonefoodsandcafe@gmail.com", course: "ALL", expiry: "2099-12-31" }
     ];
 
-    // MGT101 IS NUMBER 1 IN THE CATALOGUE
     const courses = [
       { code: "MGT101", title: "Financial Accounting Master Portal", types: ["MID", "FINAL", "HIGHLIGHTED", "NOTES"], mid: "Rs. 500", final: "Rs. 500", hl: "Rs. 300", link: "mgt101.html" },
       { code: "CS101", title: "Introduction to Computing", types: ["MID", "FINAL", "HIGHLIGHTED", "NOTES"], mid: "Rs. 500", final: "Rs. 800", hl: "Rs. 300" },
@@ -838,7 +838,7 @@
         const isMgt = item.code === "MGT101";
 
         const card = document.createElement("div");
-        card.className = `glass-card rounded-3xl p-4 flex flex-col justify-between ${isMgt ? 'border-2 border-[#3a80bc]' : ''}`;
+        card.className = `glass-card-light rounded-3xl p-4 flex flex-col justify-between ${isMgt ? 'border-2 border-[#3a80bc]' : ''}`;
         card.innerHTML = `
           <div>
             <div class="flex items-center justify-between mb-2">
@@ -927,11 +927,10 @@
       const match = approvedStudents.find(s => s.email === email && (s.course === sub || s.course === "ALL"));
 
       if (!match) {
-        alert("❌ Access Pending!\n\nThis Gmail address has not been approved yet. Once you send payment proof on WhatsApp (0319-8519637), the instructor will click ALLOW to activate your 1-month access.");
+        alert("❌ Access Pending!\n\nThis Gmail address has not been approved yet. Once you send payment proof on WhatsApp (0319-8519637), the instructor will click ALLOW in Google Sheet.");
         return;
       }
 
-      // Open directly
       if (sub === "MGT101") {
         window.location.href = `mgt101.html?student=${email}`;
         return;
@@ -969,9 +968,9 @@
         english: "Yes, we offer special package discounts:\n\n• Full Semester Bundle: Flat 20% OFF on all courses of your semester (Rs. 2400 instead of Rs. 3000).\n\n• Pick Any 5 Pack: Flat 10% OFF on any 5 subjects of your choice (Rs. 2250 instead of Rs. 2500)."
       },
       access_method: {
-        roman: "Access ka tariqa bohat aasan hai, koi code yaad rakhne ki zaroorat nahi:\n\n1. EasyPaisa (03198519637) ya MCB Bank par fee send karein.\n\n2. WhatsApp par screenshot aur apni Gmail send karein.\n\n3. Instructor sirf ALLOW ka button press karengi aur aapki 1 Month ki access foran active ho jayegi!\n\n4. Aap apni Gmail laga kar ya email me mile link par click karke direct notes open kar sakenge.",
-        urdu: "پورٹل کی رسائی حاصل کرنا اب انتہائی آسان ہے، کوئی کوڈ یاد رکھنے کی ضرورت نہیں:\n\n1. ایزی پیسہ (03198519637) یا MCB Bank پر فیس بھیجیں۔\n\n2. واٹس ایپ پر رسید کا اسکرین شاٹ اور اپنی جی میل بھیجیں۔\n\n3. انسٹرکٹر صرف ALLOW بٹن دبائیں گی اور آپ کی 1 ماہ کی ایکسیس فعال ہو جائے گی!\n\n4. آپ ڈائریکٹ ای میل درج کر کے نوٹس کھول سکیں گے۔",
-        english: "Getting portal access is effortless — no passcodes to remember:\n\n1. Transfer fee via EasyPaisa (03198519637) or MCB Bank.\n\n2. Send receipt screenshot and Gmail to WhatsApp.\n\n3. The instructor clicks ALLOW, instantly activating your 1-month access.\n\n4. You can open your notes directly using your registered Gmail."
+        roman: "Access ka tariqa bohat aasan hai, koi code yaad rakhne ki zaroorat nahi:\n\n1. EasyPaisa (03198519637) ya MCB Bank par fee send karein.\n\n2. WhatsApp par screenshot aur apni Gmail send karein.\n\n3. Instructor Google Sheet me sirf ALLOW ka button press karengi aur aapki 1 Month ki access foran active ho jayegi!\n\n4. Aap apni Gmail laga kar direct notes open kar sakenge.",
+        urdu: "پورٹل کی رسائی حاصل کرنا اب انتہائی آسان ہے، کوئی کوڈ یاد رکھنے کی ضرورت نہیں:\n\n1. ایزی پیسہ (03198519637) یا MCB Bank پر فیس بھیجیں۔\n\n2. واٹس ایپ پر رسید کا اسکرین شاٹ اور اپنی جی میل بھیجیں۔\n\n3. انسٹرکٹر گوگل شیٹ میں صرف ALLOW لکھیں گی اور آپ کی 1 ماہ کی ایکسیس فعال ہو جائے گی!\n\n4. آپ ڈائریکٹ ای میل درج کر کے نوٹس کھول سکیں گے۔",
+        english: "Getting portal access is effortless — no passcodes to remember:\n\n1. Transfer fee via EasyPaisa (03198519637) or MCB Bank.\n\n2. Send receipt screenshot and Gmail to WhatsApp.\n\n3. The instructor marks ALLOW in Google Sheet, instantly activating your 1-month access.\n\n4. You can open your notes directly using your registered Gmail."
       }
     };
 
