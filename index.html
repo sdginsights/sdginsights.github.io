@@ -37,10 +37,6 @@
             pulseGlow: {
               '0%, 100%': { boxShadow: '0 0 0 0 rgba(58, 128, 188, 0.4)' },
               '50%': { boxShadow: '0 0 0 10px rgba(58, 128, 188, 0)' },
-            },
-            shimmer: {
-              '0%': { transform: 'translateX(-100%) skewX(-15deg)' },
-              '50%, 100%': { transform: 'translateX(200%) skewX(-15deg)' }
             }
           }
         }
@@ -113,16 +109,6 @@
     .hide-scrollbar::-webkit-scrollbar { display: none; }
     .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
-    .btn-shine { position: relative; overflow: hidden; }
-    .btn-shine::before {
-      content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%;
-      background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0) 100%);
-      transform: skewX(-25deg); animation: shimmer 3s infinite; z-index: 1; pointer-events: none;
-    }
-    .btn-shine-dark::before {
-      background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0) 100%);
-    }
-
     .mobile-drawer-bg { opacity: 0; pointer-events: none; transition: opacity 0.2s ease; }
     .mobile-drawer-bg.open { opacity: 1; pointer-events: auto; }
     .mobile-drawer { transform: translateX(-100%); transition: transform 0.3s ease-out; }
@@ -156,7 +142,6 @@
     @keyframes pop { 0% { transform: scale(1); } 50% { transform: scale(1.3); } 100% { transform: scale(1); } }
     .badge-pop { animation: pop 0.2s ease-out; }
 
-    /* COMPACT SQUARE BOX RECURRING NOTIFICATION (BOTTOM-LEFT) */
     #squareNoticeBox {
       transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
       transform: translateY(140px) scale(0.85);
@@ -188,7 +173,7 @@
 
   <div class="relative z-10 flex-1 flex flex-col min-h-screen pb-10">
 
-    <!-- TOP ANNOUNCEMENT BAR (Desktop) -->
+    <!-- TOP ANNOUNCEMENT BAR -->
     <div class="bg-[#102138] text-white py-1 px-4 border-b border-slate-800 hidden sm:block">
       <div class="max-w-7xl mx-auto flex items-center justify-between text-[10px] font-bold">
         <div class="flex items-center gap-2 opacity-90">
@@ -209,10 +194,10 @@
       </div>
     </div>
 
+    <!-- MAIN NAVBAR -->
     <header class="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-sm">
       <div class="max-w-7xl mx-auto px-4 py-2.5 flex items-center justify-between gap-4">
         
-        <!-- Left Section: Hamburger + Logo -->
         <div class="flex items-center gap-3">
           <button onclick="toggleMobileMenu()" class="w-9 h-9 flex items-center justify-center rounded-lg bg-slate-50 text-[#102138] border border-slate-200 hover:bg-slate-100 transition-colors shadow-sm shrink-0">
             <i class="fa-solid fa-bars text-base"></i>
@@ -229,7 +214,6 @@
           </div>
         </div>
 
-        <!-- Desktop Navigation -->
         <nav class="hidden lg:flex items-center bg-slate-50 p-1 rounded-xl border border-slate-200 text-xs font-semibold">
           <button onclick="switchTab('tab-home')" id="btn-tab-home" class="nav-btn-active px-3 py-1.5 rounded-lg transition">Home</button>
           <button onclick="switchTab('tab-mid-portals')" id="btn-tab-mid-portals" class="nav-btn-inactive px-3 py-1.5 rounded-lg transition">Mid Term</button>
@@ -238,7 +222,6 @@
           <button onclick="switchTab('tab-deals')" id="btn-tab-deals" class="nav-btn-inactive px-3 py-1.5 rounded-lg transition">Deals</button>
         </nav>
 
-        <!-- Right Section: Cart -->
         <div class="flex items-center">
           <button onclick="toggleCart()" class="relative w-9 h-9 bg-white border border-slate-200 rounded-full text-slate-600 hover:bg-slate-50 transition-colors shadow-sm flex items-center justify-center">
             <i class="fa-solid fa-cart-shopping text-sm"></i>
@@ -247,7 +230,7 @@
         </div>
       </div>
 
-      <!-- MOBILE SCROLLABLE TABS -->
+      <!-- MOBILE TABS -->
       <div class="lg:hidden bg-white border-t border-slate-100 overflow-x-auto hide-scrollbar">
         <div class="flex items-center px-4 py-1.5 gap-2 min-w-max">
           <button onclick="switchTab('tab-home')" id="mob-btn-tab-home" class="nav-btn-active px-3 py-1 rounded-lg text-xs transition">Home</button>
@@ -259,7 +242,7 @@
       </div>
     </header>
 
-    <!-- MOBILE DRAWER MENU -->
+    <!-- MOBILE MENU DRAWER -->
     <div id="mobileDrawerBg" onclick="toggleMobileMenu()" class="mobile-drawer-bg fixed inset-0 bg-slate-900/40 z-[90]"></div>
     <div id="mobileDrawer" class="mobile-drawer fixed top-0 left-0 h-full w-[260px] bg-white border-r border-slate-200 shadow-xl z-[100] flex flex-col">
       <div class="p-4 border-b border-slate-100 flex items-center justify-between bg-slate-50">
@@ -307,17 +290,15 @@
             100% Success for 4/4 CGPA.
           </p>
 
-          <!-- MAIN PREP BUTTONS -->
           <div class="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3 pt-2">
-             <button onclick="switchTab('tab-mid-portals')" class="btn-premium btn-shine btn-shine-dark w-full sm:w-auto px-6 py-3.5 rounded-2xl text-sm font-bold flex items-center justify-center gap-2">
+             <button onclick="switchTab('tab-mid-portals')" class="btn-premium w-full sm:w-auto px-6 py-3.5 rounded-2xl text-sm font-bold flex items-center justify-center gap-2">
                <i class="fa-solid fa-bullseye"></i> Mid Term Preparation
              </button>
-             <button onclick="switchTab('tab-final-portals')" class="btn-premium btn-shine btn-shine-dark w-full sm:w-auto px-6 py-3.5 rounded-2xl text-sm font-bold flex items-center justify-center gap-2">
+             <button onclick="switchTab('tab-final-portals')" class="btn-premium w-full sm:w-auto px-6 py-3.5 rounded-2xl text-sm font-bold flex items-center justify-center gap-2">
                <i class="fa-solid fa-trophy text-amber-300"></i> Final Term Preparation
              </button>
           </div>
           
-          <!-- ACTION PILLS -->
           <div class="flex flex-wrap items-center justify-center gap-2 pt-4">
              <button onclick="orderViaWhatsApp('Customize My Preparation Portal')" class="bg-blue-50 border border-blue-200 text-blue-800 hover:bg-blue-100 px-3 py-1.5 rounded-lg text-[10px] font-bold transition-all flex items-center gap-1.5 shadow-sm">
                <i class="fa-solid fa-wand-magic-sparkles text-[#3a80bc]"></i> Customize Portal
@@ -333,7 +314,6 @@
              </a>
           </div>
 
-          <!-- Search -->
           <div class="max-w-md mx-auto pt-6">
             <div class="relative group">
               <div class="relative flex items-center">
@@ -348,6 +328,7 @@
       </div>
     </section>
 
+    <!-- MID TERM TAB -->
     <section id="tab-mid-portals" class="tab-content flex-1 py-6 px-4">
       <div class="max-w-6xl mx-auto space-y-4 relative z-10">
         <div class="border-b border-slate-200 pb-3">
@@ -359,6 +340,7 @@
       </div>
     </section>
 
+    <!-- FINAL TERM TAB -->
     <section id="tab-final-portals" class="tab-content flex-1 py-6 px-4">
       <div class="max-w-6xl mx-auto space-y-4 relative z-10">
         <div class="border-b border-slate-200 pb-3">
@@ -370,6 +352,7 @@
       </div>
     </section>
 
+    <!-- LMS SERVICES TAB -->
     <section id="tab-lms" class="tab-content flex-1 py-8 px-4">
       <div class="max-w-5xl mx-auto space-y-6 relative z-10">
         <div class="text-center space-y-2">
@@ -414,6 +397,7 @@
       </div>
     </section>
 
+    <!-- DEALS TAB -->
     <section id="tab-deals" class="tab-content flex-1 py-8 px-4">
       <div class="max-w-4xl mx-auto space-y-6 relative z-10">
         <div class="text-center space-y-2">
@@ -454,10 +438,9 @@
       </div>
     </section>
 
-    <!-- COMPACT SQUARE BOX RECURRING NOTIFICATION -->
+    <!-- SQUARE BOX RECURRING NOTIFICATION -->
     <div id="squareNoticeBox" class="fixed bottom-20 left-4 z-40 w-56 aspect-square">
       <div class="w-full h-full bg-white/95 backdrop-blur-md rounded-2xl border border-blue-200/80 p-4 shadow-xl flex flex-col justify-between relative overflow-hidden">
-        
         <div class="flex items-center justify-between border-b border-slate-100 pb-2">
           <div class="flex items-center gap-2">
             <span id="sqNoticeIcon" class="text-lg icon-bounce">🎁</span>
@@ -477,18 +460,17 @@
         <div class="w-full bg-slate-100 h-1 rounded-full overflow-hidden">
           <div id="sqProgressBar" class="bg-gradient-to-r from-[#3a80bc] to-[#2563eb] h-full timer-line-animate"></div>
         </div>
-
       </div>
     </div>
 
-    <!-- SMALL FLOATING ICONS (Bottom Left) -->
+    <!-- FLOATING WHATSAPP -->
     <div class="fixed bottom-4 left-4 z-40">
       <a href="https://whatsapp.com/channel/0029VbB78Xa3WHTReQ1hTF1Q" target="_blank" class="w-10 h-10 rounded-full bg-emerald-500 text-white shadow-md flex items-center justify-center hover:bg-emerald-600 transition-colors">
         <i class="fa-brands fa-whatsapp text-lg"></i>
       </a>
     </div>
 
-    <!-- SMALL INSTRUCTOR CHATBOT (Bottom Right) -->
+    <!-- INSTRUCTOR CHATBOT -->
     <div class="fixed bottom-4 right-4 z-50">
       <button onclick="toggleTeacherChat()" id="chatTriggerBtn" class="w-10 h-10 rounded-full bg-[#102138] text-white shadow-md flex items-center justify-center hover:bg-[#1a385f] transition-colors border border-slate-700">
         <i class="fa-solid fa-comment-dots text-lg"></i>
@@ -551,7 +533,7 @@
       </div>
     </div>
 
-    <!-- ORDER MODAL WITH SCREENSHOT UPLOAD -->
+    <!-- ORDER MODAL -->
     <div id="orderModal" class="fixed inset-0 bg-slate-900/60 z-50 hidden flex items-center justify-center p-4 transition-opacity">
       <div class="bg-white rounded-2xl max-w-sm w-full p-5 space-y-4 shadow-xl relative border border-slate-200">
         <div class="flex items-center justify-between">
@@ -622,7 +604,7 @@
   </div>
 
   <script>
-    // AUTOMATED GOOGLE SHEET BACKEND API
+    // LIVE CLOUD APPS SCRIPT URL TO AUTOMATICALLY RECORD ORDERS IN GOOGLE SHEET
     const SDG_SHEET_API = "https://script.google.com/macros/s/AKfycbxJARIiUGpoFzuWpKJWZZfSKdu1d3rDXGqgw31jknglYs5ijClp9FC4q-nnXV0GE1fi/exec";
 
     function showToast(message, type = 'info') {
@@ -644,18 +626,18 @@
     }
 
     const courses = [
-      { code: "MGT101", title: "Financial Accounting", types: ["MID", "FINAL"], mid: "Rs. 500", final: "Rs. 500", link: "mgt101.html" },
-      { code: "MTH401", title: "Differential Equations", types: ["MID", "FINAL"], mid: "Rs. 600", final: "Rs. 900", link: "MTH401_Differential_Equations_Master_Preparation_Portal.html" },
-      { code: "CS610", title: "Computer Networks", types: ["MID", "FINAL"], mid: "Rs. 600", final: "Rs. 800", link: "cs610.html" },
-      { code: "CS301", title: "Data Structures", types: ["MID", "FINAL"], mid: "Rs. 600", final: "Rs. 1000", link: "cs301.html" },
-      { code: "CS201", title: "Intro to Programming", types: ["MID", "FINAL"], mid: "Rs. 600", final: "Rs. 1000", link: "cs201.html" },
-      { code: "CS101", title: "Intro to Computing", types: ["MID", "FINAL"], mid: "Rs. 500", final: "Rs. 800", link: "cs101.html" },
-      { code: "MGT501", title: "HR Management", types: ["MID", "FINAL"], mid: "Rs. 500", final: "Rs. 800", link: "mgt501.html" },
-      { code: "ENG101", title: "English Comprehension", types: ["MID", "FINAL"], mid: "Rs. 500", final: "Rs. 800", link: "eng101.html" },
-      { code: "PHY101", title: "Physics", types: ["MID", "FINAL"], mid: "Rs. 500", final: "Rs. 800", link: "phy101.html" },
-      { code: "CS304", title: "Object Oriented", types: ["MID", "FINAL"], mid: "Rs. 600", final: "Rs. 1000", link: "cs304.html" },
-      { code: "CS403", title: "Database Systems", types: ["MID", "FINAL"], mid: "Rs. 600", final: "Rs. 1000", link: "cs403.html" },
-      { code: "MTH101", title: "Calculus", types: ["MID", "FINAL"], mid: "Rs. 600", final: "Rs. 900", link: "mth101.html" }
+      { code: "MGT101", title: "Financial Accounting", types: ["MID", "FINAL"], mid: "Rs. 500", final: "Rs. 500" },
+      { code: "MTH401", title: "Differential Equations", types: ["MID", "FINAL"], mid: "Rs. 600", final: "Rs. 900" },
+      { code: "CS610", title: "Computer Networks", types: ["MID", "FINAL"], mid: "Rs. 600", final: "Rs. 800" },
+      { code: "CS301", title: "Data Structures", types: ["MID", "FINAL"], mid: "Rs. 600", final: "Rs. 1000" },
+      { code: "CS201", title: "Intro to Programming", types: ["MID", "FINAL"], mid: "Rs. 600", final: "Rs. 1000" },
+      { code: "CS101", title: "Intro to Computing", types: ["MID", "FINAL"], mid: "Rs. 500", final: "Rs. 800" },
+      { code: "MGT501", title: "HR Management", types: ["MID", "FINAL"], mid: "Rs. 500", final: "Rs. 800" },
+      { code: "ENG101", title: "English Comprehension", types: ["MID", "FINAL"], mid: "Rs. 500", final: "Rs. 800" },
+      { code: "PHY101", title: "Physics", types: ["MID", "FINAL"], mid: "Rs. 500", final: "Rs. 800" },
+      { code: "CS304", title: "Object Oriented", types: ["MID", "FINAL"], mid: "Rs. 600", final: "Rs. 1000" },
+      { code: "CS403", title: "Database Systems", types: ["MID", "FINAL"], mid: "Rs. 600", final: "Rs. 1000" },
+      { code: "MTH101", title: "Calculus", types: ["MID", "FINAL"], mid: "Rs. 600", final: "Rs. 900" }
     ];
 
     let currentTab = 'tab-home';
@@ -697,7 +679,6 @@
       filtered.forEach(item => {
         let p = (typeFilter === 'MID') ? item.mid : item.final;
         let termLabel = (typeFilter === 'MID') ? 'Mid Term' : 'Final Term';
-        const hasDirectLink = item.link;
         
         const card = document.createElement("div");
         card.className = `glass-card-light rounded-xl p-4 flex flex-col justify-between ${item.code === 'MGT101' ? 'border-2 border-[#3a80bc]' : ''}`;
@@ -711,16 +692,11 @@
             <span class="text-[9px] font-bold text-[#3a80bc] block mt-1 uppercase">${termLabel} Prep</span>
           </div>
           <div class="space-y-1.5 mt-auto">
-            ${hasDirectLink ? `
-              <a href="${item.link}" class="w-full bg-[#3a80bc] hover:bg-[#2563eb] text-white text-[10px] font-bold py-2 rounded-lg flex items-center justify-center gap-1 shadow-xs transition">
-                <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i> Open ${item.code} Portal
-              </a>
-            ` : ''}
             <div class="flex gap-1.5">
               <button onclick="addToCart('${item.code}', '${typeFilter}')" class="flex-1 bg-slate-50 border border-slate-200 text-slate-700 text-[10px] font-bold py-2 rounded-lg flex items-center justify-center gap-1"><i class="fa-solid fa-cart-plus"></i> Add</button>
               <button onclick="openOrderModal('${item.code}', '${typeFilter}')" class="flex-1 btn-premium text-[10px] font-bold py-2 rounded-lg flex items-center justify-center gap-1"><i class="fa-solid fa-unlock text-amber-300"></i> Unlock</button>
             </div>
-            <button onclick="openLockedPreview('${item.code}')" class="w-full bg-slate-100 text-slate-600 text-[10px] font-bold py-2 rounded-lg flex items-center justify-center gap-1"><i class="fa-solid fa-play"></i> Start Prep</button>
+            <button onclick="openLockedPreview('${item.code}')" class="w-full bg-slate-100 text-slate-600 text-[10px] font-bold py-2 rounded-lg flex items-center justify-center gap-1"><i class="fa-solid fa-lock text-red-500"></i> Locked (Login to Read)</button>
           </div>
         `;
         gridElement.appendChild(card);
@@ -829,6 +805,7 @@
       }
     }
 
+    // AUTOMATICALLY SENDS DATA TO GOOGLE SHEET AND OPENS WHATSAPP
     function submitOrderWithScreenshot() {
       const name = document.getElementById("stuName").value.trim();
       const email = document.getElementById("stuEmail").value.trim();
@@ -843,18 +820,18 @@
       const feeAmount = isCartCheckoutMode ? calculateCartTotals().total : (selectedType === 'MID' ? selectedCourse.mid : selectedCourse.final);
       const picName = (picInput.files && picInput.files[0]) ? picInput.files[0].name : "Screenshot attached in chat";
 
-      // 1. AUTOMATICALLY SAVES ORDER IN GOOGLE SHEET
+      // 1. SILENT BACKGROUND SUBMISSION TO GOOGLE SHEET
       const recordUrl = `${SDG_SHEET_API}?action=order&name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&course=${encodeURIComponent(courseTitle)}&fee=${encodeURIComponent(feeAmount)}&receipt=${encodeURIComponent(picName)}`;
       try {
         fetch(recordUrl, { mode: 'no-cors' });
       } catch(e) { console.log(e); }
 
-      // 2. OPENS WHATSAPP FOR INSTRUCTOR
+      // 2. OPEN PRE-FILLED WHATSAPP MESSAGE
       let details = isCartCheckoutMode ? `*Bundle (${cart.length})*\n${cart.map((i,idx)=>`${idx+1}. ${i.code} (${i.type})`).join('\n')}\n*Total:* Rs. ${calculateCartTotals().total}` : `*Course:* ${selectedCourse.code} (${selectedType})\n*Fee:* ${feeAmount}`;
       const msgText = `*Assalam-o-Alaikum SDG Insights!*%0A%0AI have placed an order:%0A${details}%0A*Student Name:* ${name}%0A*Gmail:* ${email}%0A*Proof:* Attached Screenshot Below%0A%0APlease check receipt and ALLOW my access in Google Sheet. Thank you!`;
       
       window.open(`https://wa.me/923198519637?text=${msgText}`, '_blank');
-      showToast("Order recorded in Database! Opening WhatsApp...", "success");
+      showToast("Order sent! Please attach screenshot on WhatsApp.", "success");
       closeOrderModal();
     }
 
@@ -868,11 +845,25 @@
       const code = document.getElementById("loginCourseCode").value.trim().toUpperCase();
       if (!email.includes("@")) { showToast("Enter valid email.", "error"); return; }
       
-      if (code === "MGT101") {
-        window.location.href = `mgt101.html?student=${encodeURIComponent(email)}`;
-        return;
-      }
-      showToast("Verifying access with database...", "info");
+      showToast("Checking access in Google Sheet...", "info");
+      
+      // Verify against Google Sheet
+      fetch(`${SDG_SHEET_API}?email=${encodeURIComponent(email)}&course=${encodeURIComponent(code)}`)
+        .then(res => res.json())
+        .then(data => {
+          if (data.allowed) {
+            sessionStorage.setItem("sdg_verified_student", email);
+            showToast("Access Approved! Opening Portal...", "success");
+            setTimeout(() => {
+              window.location.href = `mgt101.html?student=${encodeURIComponent(email)}`;
+            }, 800);
+          } else {
+            showToast(data.message || "Access Denied: Payment Required.", "error");
+          }
+        })
+        .catch(() => {
+          showToast("Access Denied: Please contact on WhatsApp.", "error");
+        });
     }
 
     function toggleTeacherChat() { document.getElementById("teacherChatWindow").classList.toggle("hidden"); }
