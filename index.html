@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>SDG Insights — Mid & Final Prep Portals</title>
-  <meta name="description" content="Official SDG Insights study portal for Virtual University of Pakistan." />
+  <meta name="description" content="Official SDG Insights study portal for Virtual University of Pakistan. 100% Success for 4/4 CGPA." />
   
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
@@ -156,7 +156,7 @@
     @keyframes pop { 0% { transform: scale(1); } 50% { transform: scale(1.3); } 100% { transform: scale(1); } }
     .badge-pop { animation: pop 0.2s ease-out; }
 
-    /* COMPACT SQUARE BOX RECURRING NOTIFICATION */
+    /* COMPACT SQUARE BOX RECURRING NOTIFICATION (BOTTOM-LEFT) */
     #squareNoticeBox {
       transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
       transform: translateY(140px) scale(0.85);
@@ -317,7 +317,7 @@
              </button>
           </div>
           
-          <!-- CUTE SMALL ACTION PILLS -->
+          <!-- ACTION PILLS -->
           <div class="flex flex-wrap items-center justify-center gap-2 pt-4">
              <button onclick="orderViaWhatsApp('Customize My Preparation Portal')" class="bg-blue-50 border border-blue-200 text-blue-800 hover:bg-blue-100 px-3 py-1.5 rounded-lg text-[10px] font-bold transition-all flex items-center gap-1.5 shadow-sm">
                <i class="fa-solid fa-wand-magic-sparkles text-[#3a80bc]"></i> Customize Portal
@@ -454,9 +454,7 @@
       </div>
     </section>
 
-    <!-- ========================================================
-         COMPACT SQUARE BOX RECURRING NOTIFICATION (BOTTOM-LEFT)
-         ======================================================== -->
+    <!-- COMPACT SQUARE BOX RECURRING NOTIFICATION -->
     <div id="squareNoticeBox" class="fixed bottom-20 left-4 z-40 w-56 aspect-square">
       <div class="w-full h-full bg-white/95 backdrop-blur-md rounded-2xl border border-blue-200/80 p-4 shadow-xl flex flex-col justify-between relative overflow-hidden">
         
@@ -553,7 +551,7 @@
       </div>
     </div>
 
-    <!-- ORDER MODAL WITH SCREENSHOT UPLOAD AND PREVIEW -->
+    <!-- ORDER MODAL WITH SCREENSHOT UPLOAD -->
     <div id="orderModal" class="fixed inset-0 bg-slate-900/60 z-50 hidden flex items-center justify-center p-4 transition-opacity">
       <div class="bg-white rounded-2xl max-w-sm w-full p-5 space-y-4 shadow-xl relative border border-slate-200">
         <div class="flex items-center justify-between">
@@ -584,7 +582,6 @@
           <input type="text" id="stuName" placeholder="Full Name *" class="w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-[#102138] focus:outline-none focus:border-[#3a80bc]" />
           <input type="email" id="stuEmail" placeholder="Gmail (For Access) *" class="w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-[#102138] focus:outline-none focus:border-[#3a80bc]" />
           
-          <!-- Screenshot Picker with Live Preview -->
           <div class="border-2 border-dashed border-blue-200 bg-blue-50/40 p-3 rounded-xl text-center cursor-pointer hover:bg-blue-50 transition" onclick="document.getElementById('stuReceiptPic').click()">
             <i class="fa-solid fa-cloud-arrow-up text-[#3a80bc] text-lg block mb-1"></i>
             <span class="font-bold text-slate-700 text-xs block" id="receiptPicLabel">Upload Payment Screenshot 📷</span>
@@ -594,7 +591,7 @@
         </div>
 
         <button id="submitOrderBtn" onclick="submitOrderWithScreenshot()" class="w-full btn-premium font-bold py-2.5 rounded-lg text-[11px] flex items-center justify-center gap-1.5 shadow-sm">
-          <i class="fa-brands fa-whatsapp text-emerald-400 text-sm"></i> Send to WhatsApp & Sheet
+          <i class="fa-brands fa-whatsapp text-emerald-400 text-sm"></i> Send Order
         </button>
       </div>
     </div>
@@ -625,8 +622,8 @@
   </div>
 
   <script>
-    // LIVE CLOUD APPS SCRIPT URL TO AUTOMATICALLY RECORD ORDERS IN GOOGLE SHEET
-    const SDG_SHEET_API = "https://script.google.com/macros/s/AKfycbwSKD2hKMbDZ3gUtgMu48-M7oVNsSj2nCE1QPTtzfUdjvnSYGq2vHbjRuumJySIvs-RJQ/exec";
+    // AUTOMATED GOOGLE SHEET BACKEND API
+    const SDG_SHEET_API = "https://script.google.com/macros/s/AKfycbxJARIiUGpoFzuWpKJWZZfSKdu1d3rDXGqgw31jknglYs5ijClp9FC4q-nnXV0GE1fi/exec";
 
     function showToast(message, type = 'info') {
       const container = document.getElementById('toastContainer');
@@ -646,7 +643,6 @@
       document.getElementById('mobileDrawer').classList.toggle('open');
     }
 
-    // LIST OF COURSES WITH THEIR EXACT FILENAMES
     const courses = [
       { code: "MGT101", title: "Financial Accounting", types: ["MID", "FINAL"], mid: "Rs. 500", final: "Rs. 500", link: "mgt101.html" },
       { code: "MTH401", title: "Differential Equations", types: ["MID", "FINAL"], mid: "Rs. 600", final: "Rs. 900", link: "MTH401_Differential_Equations_Master_Preparation_Portal.html" },
@@ -833,7 +829,6 @@
       }
     }
 
-    // AUTOMATICALLY SENDS DATA TO GOOGLE SHEET AND OPENS WHATSAPP
     function submitOrderWithScreenshot() {
       const name = document.getElementById("stuName").value.trim();
       const email = document.getElementById("stuEmail").value.trim();
@@ -848,13 +843,13 @@
       const feeAmount = isCartCheckoutMode ? calculateCartTotals().total : (selectedType === 'MID' ? selectedCourse.mid : selectedCourse.final);
       const picName = (picInput.files && picInput.files[0]) ? picInput.files[0].name : "Screenshot attached in chat";
 
-      // 1. SILENT BACKGROUND SUBMISSION DIRECTLY TO GOOGLE SHEET
+      // 1. AUTOMATICALLY SAVES ORDER IN GOOGLE SHEET
       const recordUrl = `${SDG_SHEET_API}?action=order&name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&course=${encodeURIComponent(courseTitle)}&fee=${encodeURIComponent(feeAmount)}&receipt=${encodeURIComponent(picName)}`;
       try {
         fetch(recordUrl, { mode: 'no-cors' });
       } catch(e) { console.log(e); }
 
-      // 2. OPEN WHATSAPP CHAT PRE-FILLED FOR INSTRUCTOR
+      // 2. OPENS WHATSAPP FOR INSTRUCTOR
       let details = isCartCheckoutMode ? `*Bundle (${cart.length})*\n${cart.map((i,idx)=>`${idx+1}. ${i.code} (${i.type})`).join('\n')}\n*Total:* Rs. ${calculateCartTotals().total}` : `*Course:* ${selectedCourse.code} (${selectedType})\n*Fee:* ${feeAmount}`;
       const msgText = `*Assalam-o-Alaikum SDG Insights!*%0A%0AI have placed an order:%0A${details}%0A*Student Name:* ${name}%0A*Gmail:* ${email}%0A*Proof:* Attached Screenshot Below%0A%0APlease check receipt and ALLOW my access in Google Sheet. Thank you!`;
       
@@ -873,7 +868,6 @@
       const code = document.getElementById("loginCourseCode").value.trim().toUpperCase();
       if (!email.includes("@")) { showToast("Enter valid email.", "error"); return; }
       
-      // Auto redirect to course file if MGT101
       if (code === "MGT101") {
         window.location.href = `mgt101.html?student=${encodeURIComponent(email)}`;
         return;
@@ -904,9 +898,7 @@
       box.scrollTop = box.scrollHeight;
     }
 
-    // ========================================================
     // COMPACT SQUARE BOX RECURRING NOTIFICATION ENGINE
-    // ========================================================
     const squareNotices = [
       { icon: "🎁", tag: "Special Deal", text: "Flat 20% OFF on Full Semester & 10% OFF on 5 subjects!" },
       { icon: "⚠️", tag: "Official Policy", text: "All exam preparation portals are 100% PAID — nothing is free." },
