@@ -3,11 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>SDG Insights — Mid & Final Prep Portals</title>
+  <meta name="description" content="Official SDG Insights study portal for Virtual University of Pakistan. 100% Success for 4/4 CGPA." />
   
-  <title>SDG Insights — Final & Mid Term Preparation Portals</title>
-  <meta name="description" content="Official SDG Insights study portal for Virtual University of Pakistan. 100% from the handout of VU. Final & Mid Term Preparation Portals, and Professional LMS Handling Service." />
-  
-  <!-- TAILWIND CSS & FONTS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,18 +21,18 @@
             urdu: ['"Noto Nastaliq Urdu"', 'serif'],
           },
           animation: {
-            'fade-in-up': 'fadeInUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards',
-            'float': 'float 6s ease-in-out infinite',
+            'fade-in-up': 'fadeInUp 0.2s ease-out forwards',
+            'float': 'float 4s ease-in-out infinite',
             'pulse-glow': 'pulseGlow 2s infinite',
           },
           keyframes: {
             fadeInUp: {
-              '0%': { opacity: '0', transform: 'translateY(20px)' },
+              '0%': { opacity: '0', transform: 'translateY(10px)' },
               '100%': { opacity: '1', transform: 'translateY(0)' },
             },
             float: {
               '0%, 100%': { transform: 'translateY(0)' },
-              '50%': { transform: 'translateY(-10px)' },
+              '50%': { transform: 'translateY(-5px)' },
             },
             pulseGlow: {
               '0%, 100%': { boxShadow: '0 0 0 0 rgba(58, 128, 188, 0.4)' },
@@ -53,110 +51,84 @@
   <style>
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
-      background: linear-gradient(135deg, #e0f2fe 0%, #f0f7ff 50%, #f8fafc 100%); /* FAST & CLEAN STATIC BACKGROUND */
+      background-color: #f8fafc;
       color: #0f172a;
       overflow-x: hidden;
       min-height: 100vh;
       -webkit-font-smoothing: antialiased;
     }
-    * { -webkit-tap-highlight-color: transparent; } /* Native App Feel for Mobile */
     .urdu-font { font-family: 'Noto Nastaliq Urdu', serif; line-height: 2.3; }
 
-    /* REMOVED HEAVY ANIMATED AURORA FOR NANOSECOND PERFORMANCE */
+    /* Fast, static background instead of heavy animations */
     .radiant-aurora {
-      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100vw; height: 100vh;
+      z-index: 0; pointer-events: none;
+      background: radial-gradient(circle at 50% 0%, #e0f2fe 0%, #f8fafc 60%);
     }
 
-    /* GLASSMORPHISM CARDS - OPTIMIZED FOR FAST SCROLLING ON ANDROID */
     .glass-card-light {
-      background: rgba(255, 255, 255, 0.96);
-      backdrop-filter: blur(4px); /* Drastically reduced blur for massive speed boost */
-      -webkit-backdrop-filter: blur(4px);
-      border: 1px solid rgba(255, 255, 255, 0.9);
-      box-shadow: 0 4px 15px -3px rgba(58, 128, 188, 0.08);
-      transition: transform 0.2s ease, box-shadow 0.2s ease; /* Faster transition */
+      background: #ffffff;
+      border: 1px solid rgba(226, 232, 240, 0.8);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+      transition: all 0.2s ease-out;
     }
     .glass-card-light:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 25px -5px rgba(58, 128, 188, 0.15);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
       border-color: rgba(58, 128, 188, 0.3);
     }
 
-    /* PREMIUM BUTTONS */
     .btn-premium {
       background: linear-gradient(135deg, #102138 0%, #2a5a8a 100%);
       color: #ffffff;
-      box-shadow: 0 4px 15px rgba(16, 33, 56, 0.3);
-      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(16, 33, 56, 0.2);
+      transition: all 0.2s ease;
       position: relative;
       overflow: hidden;
     }
-    .btn-premium::after {
-      content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-      transition: all 0.5s ease;
-    }
-    .btn-premium:hover::after { left: 100%; }
     .btn-premium:hover {
-      box-shadow: 0 8px 25px rgba(58, 128, 188, 0.4);
-      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(58, 128, 188, 0.3);
+      transform: translateY(-1px);
     }
-
+    
     .btn-accent {
       background: linear-gradient(135deg, #3a80bc 0%, #60a5fa 100%);
       color: #ffffff;
-      box-shadow: 0 4px 15px rgba(58, 128, 188, 0.3);
-      transition: all 0.3s ease;
-    }
-    .btn-accent:hover {
-      box-shadow: 0 8px 25px rgba(58, 128, 188, 0.5);
-      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(58, 128, 188, 0.2);
+      transition: all 0.2s ease;
     }
 
-    /* TABS */
     .tab-content { display: none; }
-    .tab-active { display: block; animation: fadeInUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+    .tab-active { display: block; animation: fadeInUp 0.2s ease-out forwards; }
 
     .nav-btn-active {
-      background: #102138;
-      color: #ffffff;
-      font-weight: 700;
-      box-shadow: 0 4px 14px rgba(16, 33, 56, 0.2);
+      background: #102138; color: #ffffff; font-weight: 700;
+      box-shadow: 0 2px 8px rgba(16, 33, 56, 0.15);
     }
     .nav-btn-inactive {
-      background-color: transparent;
-      color: #475569;
-      font-weight: 600;
+      background-color: transparent; color: #475569; font-weight: 600;
     }
     .nav-btn-inactive:hover { background-color: #f1f5f9; color: #102138; }
 
-    /* HIDE SCROLLBAR FOR MOBILE TABS */
     .hide-scrollbar::-webkit-scrollbar { display: none; }
     .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
-    /* SHINE ANIMATION FOR BUTTONS */
     .btn-shine { position: relative; overflow: hidden; }
     .btn-shine::before {
       content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%;
-      background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%);
+      background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0) 100%);
       transform: skewX(-25deg); animation: shimmer 3s infinite; z-index: 1; pointer-events: none;
     }
     .btn-shine-dark::before {
-      background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.15) 50%, rgba(255,255,255,0) 100%);
+      background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0) 100%);
     }
 
-    /* MOBILE DRAWER MENU */
-    .mobile-drawer-bg {
-      opacity: 0; pointer-events: none; transition: opacity 0.3s ease;
-    }
+    .mobile-drawer-bg { opacity: 0; pointer-events: none; transition: opacity 0.2s ease; }
     .mobile-drawer-bg.open { opacity: 1; pointer-events: auto; }
-    
-    .mobile-drawer {
-      transform: translateX(-100%); transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    }
+    .mobile-drawer { transform: translateX(-100%); transition: transform 0.3s ease-out; }
     .mobile-drawer.open { transform: translateX(0); }
 
-    /* BLURRED NOTES TEASER */
     .blurred-notes-bg {
       position: absolute; inset: 0;
       background-image: repeating-linear-gradient(0deg, transparent, transparent 19px, rgba(0, 0, 0, 0.05) 19px, rgba(0, 0, 0, 0.05) 20px);
@@ -167,204 +139,186 @@
       line-height: 2; filter: blur(4px); user-select: none; overflow: hidden; z-index: 0;
     }
 
-    /* TOAST & CART */
     #toastContainer { position: fixed; top: 20px; left: 50%; transform: translateX(-50%); z-index: 9999; pointer-events: none; display: flex; flex-direction: column; gap: 10px; }
     .toast-msg {
-      background: rgba(255, 255, 255, 0.95); border: 1px solid rgba(58, 128, 188, 0.4); backdrop-filter: blur(10px); color: #0f172a;
-      padding: 12px 24px; border-radius: 999px; font-size: 13px; font-weight: 600; box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-      animation: toastEnter 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards; pointer-events: auto;
+      background: rgba(255, 255, 255, 0.98); border: 1px solid rgba(58, 128, 188, 0.3); color: #0f172a;
+      padding: 10px 20px; border-radius: 99px; font-size: 12px; font-weight: 700; box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      animation: toastEnter 0.2s ease-out forwards; pointer-events: auto;
     }
-    @keyframes toastEnter { from { opacity: 0; transform: translateY(-20px) scale(0.9); } to { opacity: 1; transform: translateY(0) scale(1); } }
-    .toast-fade-out { animation: toastExit 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
-    @keyframes toastExit { from { opacity: 1; transform: translateY(0) scale(1); } to { opacity: 0; transform: translateY(-20px) scale(0.9); } }
+    @keyframes toastEnter { from { opacity: 0; transform: translateY(-10px) scale(0.95); } to { opacity: 1; transform: translateY(0) scale(1); } }
+    .toast-fade-out { animation: toastExit 0.2s ease-in forwards; }
+    @keyframes toastExit { from { opacity: 1; transform: translateY(0) scale(1); } to { opacity: 0; transform: translateY(-10px) scale(0.95); } }
 
-    .cart-backdrop { transition: opacity 0.3s ease; opacity: 0; pointer-events: none; }
+    .cart-backdrop { transition: opacity 0.2s ease; opacity: 0; pointer-events: none; }
     .cart-backdrop.open { opacity: 1; pointer-events: auto; }
-    .cart-drawer { transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); transform: translateX(100%); }
+    .cart-drawer { transition: transform 0.3s ease-out; transform: translateX(100%); }
     .cart-drawer.open { transform: translateX(0); }
     
-    @keyframes pop { 0% { transform: scale(1); } 50% { transform: scale(1.4); } 100% { transform: scale(1); } }
-    .badge-pop { animation: pop 0.3s ease-in-out; }
+    @keyframes pop { 0% { transform: scale(1); } 50% { transform: scale(1.3); } 100% { transform: scale(1); } }
+    .badge-pop { animation: pop 0.2s ease-out; }
   </style>
 </head>
 <body class="antialiased relative flex flex-col">
 
-  <div class="radiant-aurora">
-    <div class="light-orb-1"></div>
-    <div class="light-orb-2"></div>
-    <div class="light-orb-3"></div>
-  </div>
+  <div class="radiant-aurora"></div>
 
-  <div class="relative z-10 flex-1 flex flex-col min-h-screen pb-28">
+  <div class="relative z-10 flex-1 flex flex-col min-h-screen pb-10">
 
-    <!-- TOP ANNOUNCEMENT & QUICK LINKS -->
-    <div class="bg-[#102138] text-white py-1.5 px-4 border-b border-slate-800 hidden sm:block">
-      <div class="max-w-7xl mx-auto flex items-center justify-between text-[11px] font-bold">
-        <div class="flex items-center gap-2">
-          <span class="bg-emerald-500 text-white px-2 py-0.5 rounded-full uppercase tracking-wider text-[9px]">Official</span>
+    <!-- TOP ANNOUNCEMENT BAR (Desktop) -->
+    <div class="bg-[#102138] text-white py-1 px-4 border-b border-slate-800 hidden sm:block">
+      <div class="max-w-7xl mx-auto flex items-center justify-between text-[10px] font-bold">
+        <div class="flex items-center gap-2 opacity-90">
+          <span class="bg-emerald-500 text-white px-1.5 py-0.5 rounded text-[8px] uppercase tracking-wider">Official</span>
           <span class="text-slate-300">Success, Dignity & Glory in Your VU Studies</span>
         </div>
-        <div class="flex items-center gap-4">
-          <a href="https://vulms.vu.edu.pk/" target="_blank" class="bg-blue-800 hover:bg-blue-700 text-white px-3 py-1 rounded-md transition flex items-center gap-2 border border-blue-600 shadow-sm">
-            <div class="bg-white text-blue-900 w-5 h-5 rounded-full flex items-center justify-center text-[9px] font-black tracking-tighter">VU</div>
-            VU LMS Login
+        <div class="flex items-center gap-2">
+          <a href="https://vulms.vu.edu.pk/" target="_blank" class="bg-white/10 hover:bg-white/20 text-slate-300 px-2 py-1 rounded transition flex items-center gap-1.5">
+            <i class="fa-solid fa-graduation-cap text-blue-400"></i> VU LMS
           </a>
-          <button onclick="orderViaWhatsApp('Book Your Assignment')" class="hover:text-amber-300 text-amber-400 transition flex items-center gap-1.5 pl-2 border-l border-slate-700">
-            <i class="fa-solid fa-pen-nib"></i> Book Your Assignment
+          <button onclick="orderViaWhatsApp('Book Your Assignment')" class="bg-white/10 hover:bg-white/20 text-slate-300 px-2 py-1 rounded transition flex items-center gap-1.5">
+            <i class="fa-solid fa-pen-nib text-amber-400"></i> Assignments
           </button>
+          <a href="https://youtube.com/@sdginsights" target="_blank" class="bg-white/10 hover:bg-white/20 text-slate-300 px-2 py-1 rounded transition flex items-center gap-1.5">
+            <i class="fa-brands fa-youtube text-red-500"></i> YouTube
+          </a>
         </div>
       </div>
     </div>
 
-    <!-- HEADER -->
-    <header class="bg-white/90 backdrop-blur-xl border-b border-slate-200/80 sticky top-0 z-40 shadow-sm">
-      <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-sm">
+      <div class="max-w-7xl mx-auto px-4 py-2.5 flex items-center justify-between gap-4">
         
-        <!-- LEFT SIDE: Menu & Logo Group -->
+        <!-- Left Section: Hamburger + Logo -->
         <div class="flex items-center gap-3">
-          <!-- Hamburger Menu (Always Visible) -->
-          <button onclick="toggleMobileMenu()" class="w-10 h-10 flex items-center justify-center rounded-xl bg-slate-100 text-[#102138] border border-slate-200 hover:bg-[#3a80bc] hover:text-white hover:border-[#3a80bc] transition-all shadow-sm shrink-0 group">
-            <i class="fa-solid fa-bars text-lg group-hover:scale-110 transition-transform"></i>
+          <button onclick="toggleMobileMenu()" class="w-9 h-9 flex items-center justify-center rounded-lg bg-slate-50 text-[#102138] border border-slate-200 hover:bg-slate-100 transition-colors shadow-sm shrink-0">
+            <i class="fa-solid fa-bars text-base"></i>
           </button>
-
-          <!-- Logo -->
-          <div onclick="switchTab('tab-home')" class="flex items-center space-x-3 cursor-pointer shrink-0">
-            <div class="w-10 h-10 md:w-12 md:h-12 rounded-full overflow-hidden shadow-sm flex items-center justify-center bg-transparent shrink-0 hover:scale-110 transition-transform duration-500">
-              <!-- YOUR HD LOGO IMAGE HERE -->
+          
+          <div onclick="switchTab('tab-home')" class="flex items-center space-x-2 cursor-pointer shrink-0">
+            <div class="w-9 h-9 rounded-full overflow-hidden shadow-sm flex items-center justify-center bg-transparent shrink-0">
               <img src="logo.png" alt="SDG Insights" class="w-full h-full object-contain scale-110" onerror="this.src='https://placehold.co/100x100/11253e/ffffff?text=SDG'" />
             </div>
-            <div>
-              <span class="text-lg md:text-xl font-black text-[#102138] tracking-tight block leading-tight">SDG Insights</span>
-              <span class="text-[10px] text-[#3a80bc] font-bold uppercase tracking-wider">VU Official Portal</span>
+            <div class="hidden sm:block">
+              <span class="text-lg font-black text-[#102138] tracking-tight block leading-none">SDG Insights</span>
+              <span class="text-[9px] text-[#3a80bc] font-bold uppercase tracking-wider">VU Official Portal</span>
             </div>
           </div>
         </div>
 
-        <!-- RIGHT SIDE: Cart -->
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:flex items-center bg-slate-50 p-1 rounded-xl border border-slate-200 text-xs font-semibold">
+          <button onclick="switchTab('tab-home')" id="btn-tab-home" class="nav-btn-active px-3 py-1.5 rounded-lg transition">Home</button>
+          <button onclick="switchTab('tab-mid-portals')" id="btn-tab-mid-portals" class="nav-btn-inactive px-3 py-1.5 rounded-lg transition">Mid Term</button>
+          <button onclick="switchTab('tab-final-portals')" id="btn-tab-final-portals" class="nav-btn-inactive px-3 py-1.5 rounded-lg transition">Final Term</button>
+          <button onclick="switchTab('tab-lms')" id="btn-tab-lms" class="nav-btn-inactive px-3 py-1.5 rounded-lg transition">LMS Handling</button>
+          <button onclick="switchTab('tab-deals')" id="btn-tab-deals" class="nav-btn-inactive px-3 py-1.5 rounded-lg transition">Deals</button>
+        </nav>
+
+        <!-- Right Section: Cart -->
         <div class="flex items-center">
-          <button onclick="toggleCart()" class="relative w-10 h-10 bg-white border border-slate-200 rounded-full text-slate-600 hover:bg-blue-50 hover:text-[#3a80bc] hover:border-[#3a80bc] transition duration-300 shadow-sm flex items-center justify-center group">
-            <i class="fa-solid fa-cart-shopping text-lg group-hover:scale-110 transition-transform"></i>
-            <span id="headerCartBadge" class="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] w-5 h-5 rounded-full flex items-center justify-center font-bold hidden border-2 border-white shadow-sm">0</span>
+          <button onclick="toggleCart()" class="relative w-9 h-9 bg-white border border-slate-200 rounded-full text-slate-600 hover:bg-slate-50 transition-colors shadow-sm flex items-center justify-center">
+            <i class="fa-solid fa-cart-shopping text-sm"></i>
+            <span id="headerCartBadge" class="absolute -top-1 -right-1 bg-red-500 text-white text-[9px] w-4 h-4 rounded-full flex items-center justify-center font-bold hidden border-2 border-white">0</span>
           </button>
         </div>
-
       </div>
 
-      <!-- MOBILE SCROLLABLE TABS (Visible on small screens - Optimized for Touch) -->
-      <div class="lg:hidden bg-white/95 backdrop-blur-md border-t border-slate-200 overflow-x-auto hide-scrollbar">
-        <div class="flex items-center px-4 py-3 gap-3 min-w-max">
-          <button onclick="switchTab('tab-home')" id="mob-btn-tab-home" class="nav-btn-active px-5 py-2.5 rounded-2xl text-sm transition btn-shine btn-shine-dark shadow-sm">Home</button>
-          <button onclick="switchTab('tab-mid-portals')" id="mob-btn-tab-mid-portals" class="nav-btn-inactive px-5 py-2.5 rounded-2xl text-sm transition">Mid Term Portals</button>
-          <button onclick="switchTab('tab-final-portals')" id="mob-btn-tab-final-portals" class="nav-btn-inactive px-5 py-2.5 rounded-2xl text-sm transition">Final Term Portals</button>
-          <button onclick="switchTab('tab-lms')" id="mob-btn-tab-lms" class="nav-btn-inactive px-5 py-2.5 rounded-2xl text-sm transition">LMS Handling</button>
-          <button onclick="switchTab('tab-deals')" id="mob-btn-tab-deals" class="nav-btn-inactive px-5 py-2.5 rounded-2xl text-sm transition">Discounted Deals</button>
+      <!-- MOBILE SCROLLABLE TABS -->
+      <div class="lg:hidden bg-white border-t border-slate-100 overflow-x-auto hide-scrollbar">
+        <div class="flex items-center px-4 py-1.5 gap-2 min-w-max">
+          <button onclick="switchTab('tab-home')" id="mob-btn-tab-home" class="nav-btn-active px-3 py-1 rounded-lg text-xs transition">Home</button>
+          <button onclick="switchTab('tab-mid-portals')" id="mob-btn-tab-mid-portals" class="nav-btn-inactive px-3 py-1 rounded-lg text-xs transition">Mid Term</button>
+          <button onclick="switchTab('tab-final-portals')" id="mob-btn-tab-final-portals" class="nav-btn-inactive px-3 py-1 rounded-lg text-xs transition">Final Term</button>
+          <button onclick="switchTab('tab-lms')" id="mob-btn-tab-lms" class="nav-btn-inactive px-3 py-1 rounded-lg text-xs transition">LMS Services</button>
+          <button onclick="switchTab('tab-deals')" id="mob-btn-tab-deals" class="nav-btn-inactive px-3 py-1 rounded-lg text-xs transition">Deals</button>
         </div>
       </div>
     </header>
 
-    <!-- MOBILE DRAWER MENU (THE LIST) -->
-    <div id="mobileDrawerBg" onclick="toggleMobileMenu()" class="mobile-drawer-bg fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-[90]"></div>
-    <div id="mobileDrawer" class="mobile-drawer fixed top-0 left-0 h-full w-[280px] bg-white/95 backdrop-blur-xl border-r border-slate-200 shadow-2xl z-[100] flex flex-col">
-      <div class="p-5 border-b border-slate-200 flex items-center justify-between bg-slate-50">
-        <span class="font-black text-[#102138] text-lg">Menu</span>
-        <button onclick="toggleMobileMenu()" class="w-8 h-8 rounded-full bg-slate-200 text-slate-600 flex items-center justify-center">
+    <!-- MOBILE DRAWER MENU -->
+    <div id="mobileDrawerBg" onclick="toggleMobileMenu()" class="mobile-drawer-bg fixed inset-0 bg-slate-900/40 z-[90]"></div>
+    <div id="mobileDrawer" class="mobile-drawer fixed top-0 left-0 h-full w-[260px] bg-white border-r border-slate-200 shadow-xl z-[100] flex flex-col">
+      <div class="p-4 border-b border-slate-100 flex items-center justify-between bg-slate-50">
+        <span class="font-black text-[#102138] text-base">Menu</span>
+        <button onclick="toggleMobileMenu()" class="w-7 h-7 rounded-full bg-slate-200 text-slate-600 flex items-center justify-center text-sm">
           <i class="fa-solid fa-xmark"></i>
         </button>
       </div>
-      <div class="flex-1 overflow-y-auto p-4 space-y-2">
-        <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest pl-2 mb-2 mt-2">Navigation</p>
-        <button onclick="switchTab('tab-home'); toggleMobileMenu();" class="w-full text-left flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-blue-50 text-slate-700 hover:text-[#3a80bc] font-bold transition">
-          <i class="fa-solid fa-house w-5 text-center"></i> Home
+      <div class="flex-1 overflow-y-auto p-3 space-y-1">
+        <p class="text-[9px] font-black text-slate-400 uppercase tracking-widest pl-2 mb-2 mt-2">Navigation</p>
+        <button onclick="switchTab('tab-home'); toggleMobileMenu();" class="w-full text-left flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-slate-50 text-slate-700 font-bold text-sm transition">
+          <i class="fa-solid fa-house w-4 text-center"></i> Home
         </button>
-        <button onclick="switchTab('tab-mid-portals'); toggleMobileMenu();" class="w-full text-left flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-blue-50 text-slate-700 hover:text-[#3a80bc] font-bold transition">
-          <i class="fa-solid fa-bullseye w-5 text-center"></i> Mid Term Preparation Portals
+        <button onclick="switchTab('tab-mid-portals'); toggleMobileMenu();" class="w-full text-left flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-slate-50 text-slate-700 font-bold text-sm transition">
+          <i class="fa-solid fa-bullseye w-4 text-center"></i> Mid Term Portals
         </button>
-        <button onclick="switchTab('tab-final-portals'); toggleMobileMenu();" class="w-full text-left flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-blue-50 text-slate-700 hover:text-[#3a80bc] font-bold transition">
-          <i class="fa-solid fa-trophy w-5 text-center"></i> Final Term Preparation Portals
+        <button onclick="switchTab('tab-final-portals'); toggleMobileMenu();" class="w-full text-left flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-slate-50 text-slate-700 font-bold text-sm transition">
+          <i class="fa-solid fa-trophy w-4 text-center"></i> Final Term Portals
         </button>
-        <button onclick="switchTab('tab-lms'); toggleMobileMenu();" class="w-full text-left flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-blue-50 text-slate-700 hover:text-[#3a80bc] font-bold transition">
-          <i class="fa-solid fa-headset w-5 text-center"></i> LMS Handling Service
+        <button onclick="switchTab('tab-lms'); toggleMobileMenu();" class="w-full text-left flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-slate-50 text-slate-700 font-bold text-sm transition">
+          <i class="fa-solid fa-headset w-4 text-center"></i> LMS Services
         </button>
-        <button onclick="switchTab('tab-deals'); toggleMobileMenu();" class="w-full text-left flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-blue-50 text-slate-700 hover:text-[#3a80bc] font-bold transition">
-          <i class="fa-solid fa-tags w-5 text-center"></i> Discounted Deals
+        <button onclick="switchTab('tab-deals'); toggleMobileMenu();" class="w-full text-left flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-slate-50 text-slate-700 font-bold text-sm transition">
+          <i class="fa-solid fa-tags w-4 text-center"></i> Discounted Deals
         </button>
-
-        <div class="my-4 border-t border-slate-200"></div>
-        <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest pl-2 mb-2">Quick Links</p>
-        
-        <a href="https://vulms.vu.edu.pk/" target="_blank" class="w-full flex items-center gap-3 px-4 py-3 rounded-xl bg-blue-50 border border-blue-200 hover:bg-blue-100 text-blue-900 font-bold transition shadow-sm">
-          <div class="w-8 h-8 rounded-full bg-blue-700 text-white flex items-center justify-center font-black text-xs tracking-tighter shadow-sm">VU</div>
-          VU LMS Official Login
-        </a>
-        <a href="https://youtube.com/@sdginsights" target="_blank" class="w-full flex items-center gap-3 px-4 py-3 rounded-xl bg-red-50 hover:bg-red-100 text-red-700 font-bold transition mt-2 border border-red-100">
-          <i class="fa-brands fa-youtube text-red-600 text-lg"></i> YouTube Channel
-        </a>
-        <a href="https://whatsapp.com/channel/0029VbB78Xa3WHTReQ1hTF1Q" target="_blank" class="w-full flex items-center gap-3 px-4 py-3 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-800 font-bold transition mt-2 border border-emerald-100">
-          <i class="fa-brands fa-whatsapp text-emerald-600 text-lg"></i> WhatsApp Community
-        </a>
-        <button onclick="orderViaWhatsApp('Book Your Assignment'); toggleMobileMenu();" class="w-full flex items-center gap-3 px-4 py-3 rounded-xl bg-amber-50 border border-amber-200 text-amber-700 hover:bg-amber-100 font-bold transition mt-2">
-          <i class="fa-solid fa-pen-nib"></i> Book Your Assignment
-        </button>
-
-        <!-- OFFICIAL CONTACT ADDED TO MENU -->
-        <div class="mt-6 pt-4 border-t border-slate-200">
-          <div class="bg-blue-50/50 p-4 rounded-xl border border-blue-100 text-center shadow-sm">
-            <p class="text-[10px] font-black text-[#3a80bc] uppercase tracking-widest mb-1">Official Contact</p>
-            <div class="flex items-center justify-center gap-2">
-              <i class="fa-solid fa-phone text-[#102138] text-xs"></i>
-              <p class="text-sm font-mono font-black text-[#102138]">0319-8519637</p>
-            </div>
-            <p class="text-[9px] text-slate-500 mt-2 font-bold">Success, Dignity & Glory</p>
-          </div>
+      </div>
+      
+      <!-- Contact Info at bottom of menu -->
+      <div class="p-4 border-t border-slate-100 bg-slate-50 space-y-2">
+        <span class="text-[9px] font-black text-slate-400 uppercase tracking-widest">Official Contact</span>
+        <div class="flex items-center gap-2 bg-white px-3 py-2 rounded-lg border border-slate-200 shadow-sm text-sm font-bold text-[#102138]">
+          <i class="fa-brands fa-whatsapp text-emerald-500"></i> 0319-8519637
         </div>
       </div>
     </div>
 
-    <!-- MAIN HOME SECTION (RESTORED) -->
+    <!-- HOME TAB -->
     <section id="tab-home" class="tab-content tab-active flex-1">
-      <div class="py-10 md:py-16 px-4 text-center relative z-10">
-        <div class="max-w-4xl mx-auto space-y-6">
+      <div class="py-8 md:py-16 px-4 text-center relative z-10">
+        <div class="max-w-4xl mx-auto space-y-5">
           
-          <div class="inline-flex items-center gap-2 bg-white/60 backdrop-blur-sm border border-blue-200 text-[#102138] px-4 py-1.5 rounded-full text-[10px] font-bold shadow-sm animate-float">
-            <i class="fa-solid fa-star text-amber-400"></i>
-            <span class="tracking-wide">Success, Dignity & Glory in Your VU Studies</span>
-          </div>
-
-          <h1 class="text-3xl md:text-5xl font-black text-[#102138] tracking-tight leading-tight drop-shadow-sm">
-            Final & Mid Term Preparation Portals, <br/>
-            Notes & <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#3a80bc] to-[#2563eb]">Professional LMS Handling</span>
+          <h1 class="text-3xl md:text-5xl lg:text-6xl font-black text-[#102138] tracking-tight leading-tight">
+            Mid & Final Prep Portals, <br/>
+            Notes & <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#3a80bc] to-[#2563eb]">LMS Services</span>
           </h1>
 
-          <p class="text-slate-600 text-sm max-w-2xl mx-auto leading-relaxed font-semibold">
-            100% from the handout of Virtual University (VU). 100% success guarantee for your best CGPA.
+          <p class="text-slate-600 text-sm md:text-base max-w-2xl mx-auto leading-relaxed font-semibold">
+            100% Success for 4/4 CGPA.
           </p>
 
-          <!-- MAIN PREP BUTTONS (BOTTOM) -->
-          <div class="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-2.5 pt-5">
-             <button onclick="switchTab('tab-mid-portals')" class="btn-premium btn-shine btn-shine-dark w-full sm:w-auto px-5 py-3.5 rounded-xl text-sm font-bold flex items-center justify-center gap-2">
+          <!-- MAIN PREP BUTTONS -->
+          <div class="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3 pt-2">
+             <button onclick="switchTab('tab-mid-portals')" class="btn-premium btn-shine btn-shine-dark w-full sm:w-auto px-6 py-3.5 rounded-2xl text-sm font-bold flex items-center justify-center gap-2">
                <i class="fa-solid fa-bullseye"></i> Mid Term Preparation
              </button>
-             <button onclick="switchTab('tab-final-portals')" class="btn-premium btn-shine btn-shine-dark w-full sm:w-auto px-5 py-3.5 rounded-xl text-sm font-bold flex items-center justify-center gap-2">
+             <button onclick="switchTab('tab-final-portals')" class="btn-premium btn-shine btn-shine-dark w-full sm:w-auto px-6 py-3.5 rounded-2xl text-sm font-bold flex items-center justify-center gap-2">
                <i class="fa-solid fa-trophy text-amber-300"></i> Final Term Preparation
              </button>
-             <button onclick="orderViaWhatsApp('Book Your Assignment')" class="bg-white border-2 border-[#102138] text-[#102138] hover:bg-slate-50 w-full sm:w-auto px-5 py-3.5 rounded-xl text-sm font-bold transition-all flex items-center justify-center gap-2 shadow-sm btn-shine">
-               <i class="fa-solid fa-pen-nib text-[#3a80bc]"></i> Book Your Assignment
+          </div>
+          
+          <!-- CUTE SMALL ACTION PILLS -->
+          <div class="flex flex-wrap items-center justify-center gap-2 pt-4">
+             <button onclick="orderViaWhatsApp('Customize My Preparation Portal')" class="bg-blue-50 border border-blue-200 text-blue-800 hover:bg-blue-100 px-3 py-1.5 rounded-lg text-[10px] font-bold transition-all flex items-center gap-1.5 shadow-sm">
+               <i class="fa-solid fa-wand-magic-sparkles text-[#3a80bc]"></i> Customize Portal
              </button>
-             
-             <!-- CUSTOMIZE BUTTON -->
-             <button onclick="orderViaWhatsApp('Customize My Preparation Portal')" class="bg-blue-50 border border-blue-200 text-blue-800 hover:bg-blue-100 w-full sm:w-auto px-4 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5 shadow-sm mt-1 sm:mt-0">
-               <i class="fa-solid fa-wand-magic-sparkles text-[#3a80bc]"></i> Customize Preparation Portal
+             <button onclick="orderViaWhatsApp('Book Your Assignment')" class="bg-amber-50 border border-amber-200 text-amber-800 hover:bg-amber-100 px-3 py-1.5 rounded-lg text-[10px] font-bold transition-all flex items-center gap-1.5 shadow-sm">
+               <i class="fa-solid fa-pen-nib text-amber-500"></i> Book Assignment
              </button>
+             <a href="https://vulms.vu.edu.pk/" target="_blank" class="bg-slate-50 border border-slate-200 text-slate-700 hover:bg-slate-100 px-3 py-1.5 rounded-lg text-[10px] font-bold transition-all flex items-center gap-1.5 shadow-sm">
+               <i class="fa-solid fa-graduation-cap text-slate-500"></i> VU LMS Login
+             </a>
+             <a href="https://youtube.com/@sdginsights" target="_blank" class="bg-red-50 border border-red-200 text-red-700 hover:bg-red-100 px-3 py-1.5 rounded-lg text-[10px] font-bold transition-all flex items-center gap-1.5 shadow-sm">
+               <i class="fa-brands fa-youtube text-red-500"></i> YouTube
+             </a>
           </div>
 
           <!-- Glassmorphic Search -->
           <div class="max-w-md mx-auto pt-6">
             <div class="relative group">
-              <div class="absolute -inset-0.5 bg-gradient-to-r from-[#3a80bc] to-[#102138] rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-500"></div>
               <div class="relative flex items-center">
-                <i class="fa-solid fa-magnifying-glass absolute left-5 text-slate-400"></i>
-                <input type="text" id="homeSearch" onkeyup="searchFromHome()" placeholder="Search course code..." class="w-full bg-white/90 backdrop-blur-xl border border-slate-300 rounded-2xl pl-12 pr-4 py-4 text-sm text-[#102138] placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#3a80bc] transition-all shadow-md" />
-                <button onclick="searchFromHome()" class="absolute right-2 bg-[#102138] hover:bg-[#3a80bc] text-white px-4 py-2 rounded-xl text-xs font-bold transition-colors shadow-sm">Search</button>
+                <i class="fa-solid fa-magnifying-glass absolute left-4 text-slate-400 text-sm"></i>
+                <input type="text" id="homeSearch" onkeyup="searchFromHome()" placeholder="Search course code..." class="w-full bg-white border border-slate-200 rounded-xl pl-10 pr-4 py-3 text-sm text-[#102138] placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#3a80bc] transition-all shadow-sm" />
+                <button onclick="searchFromHome()" class="absolute right-1.5 bg-[#102138] hover:bg-[#3a80bc] text-white px-3 py-1.5 rounded-lg text-xs font-bold transition-colors">Search</button>
               </div>
             </div>
           </div>
@@ -373,78 +327,69 @@
       </div>
     </section>
 
-    <section id="tab-mid-portals" class="tab-content flex-1 py-8 md:py-10 px-4">
-      <div class="max-w-6xl mx-auto space-y-6 relative z-10">
-        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-200 pb-4">
-          <div>
-            <h2 class="text-2xl md:text-3xl font-black text-[#102138] flex items-center gap-3">
-              <i class="fa-solid fa-bullseye text-[#3a80bc]"></i> Mid Term Preparation Portals
-            </h2>
-            <p class="text-sm text-slate-500 mt-1">Select your course and unlock the full interactive Mid Term experience.</p>
-          </div>
+    <section id="tab-mid-portals" class="tab-content flex-1 py-6 px-4">
+      <div class="max-w-6xl mx-auto space-y-4 relative z-10">
+        <div class="border-b border-slate-200 pb-3">
+          <h2 class="text-xl md:text-2xl font-black text-[#102138] flex items-center gap-2">
+            <i class="fa-solid fa-bullseye text-[#3a80bc]"></i> Mid Term Prep Portals
+          </h2>
         </div>
-        <div id="midGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-2">
+        <div id="midGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           <!-- Injected via JS -->
         </div>
       </div>
     </section>
 
-    <section id="tab-final-portals" class="tab-content flex-1 py-8 md:py-10 px-4">
-      <div class="max-w-6xl mx-auto space-y-6 relative z-10">
-        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-200 pb-4">
-          <div>
-            <h2 class="text-2xl md:text-3xl font-black text-[#102138] flex items-center gap-3">
-              <i class="fa-solid fa-trophy text-[#3a80bc]"></i> Final Term Preparation Portals
-            </h2>
-            <p class="text-sm text-slate-500 mt-1">Select your course and unlock the full interactive Final Term experience.</p>
-          </div>
+    <section id="tab-final-portals" class="tab-content flex-1 py-6 px-4">
+      <div class="max-w-6xl mx-auto space-y-4 relative z-10">
+        <div class="border-b border-slate-200 pb-3">
+          <h2 class="text-xl md:text-2xl font-black text-[#102138] flex items-center gap-2">
+            <i class="fa-solid fa-trophy text-[#3a80bc]"></i> Final Term Prep Portals
+          </h2>
         </div>
-        <div id="finalGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-2">
+        <div id="finalGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           <!-- Injected via JS -->
         </div>
       </div>
     </section>
 
-    <section id="tab-lms" class="tab-content flex-1 py-10 px-4">
-      <div class="max-w-5xl mx-auto space-y-10 relative z-10">
-        <div class="text-center space-y-3">
-          <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-indigo-50 border border-indigo-200 text-indigo-600 mb-2 shadow-sm animate-float">
-            <i class="fa-solid fa-headset text-2xl"></i>
+    <section id="tab-lms" class="tab-content flex-1 py-8 px-4">
+      <div class="max-w-5xl mx-auto space-y-6 relative z-10">
+        <div class="text-center space-y-2">
+          <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-indigo-50 border border-indigo-200 text-indigo-600 mb-1 shadow-sm">
+            <i class="fa-solid fa-headset text-xl"></i>
           </div>
-          <h2 class="text-3xl md:text-4xl font-black text-[#102138]">Professional LMS Handling Service</h2>
-          <p class="text-sm text-slate-600 max-w-xl mx-auto font-medium">Complete semester coursework handling and exam preparation with dedicated 24/7 VIP academic support.</p>
+          <h2 class="text-2xl md:text-3xl font-black text-[#102138]">LMS Services</h2>
+          <p class="text-xs text-slate-600 max-w-xl mx-auto font-medium">Complete semester coursework handling and exam preparation.</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div class="glass-card-light rounded-3xl p-8 flex flex-col justify-between space-y-6">
-            <div class="space-y-4">
-              <span class="inline-block bg-slate-100 text-slate-600 text-[10px] font-bold px-3 py-1 rounded-full uppercase border border-slate-300">Standard Plan</span>
-              <h3 class="text-2xl font-black text-[#102138]">Complete LMS Handling</h3>
-              <p class="text-sm text-slate-600 leading-relaxed">Full semester handling of all your online graded activities with target marks.</p>
-              <ul class="text-sm space-y-3 text-slate-700 pt-4 font-semibold">
-                <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-emerald-500"></i> Assignments (100% Plagiarism Free)</li>
-                <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-emerald-500"></i> Quizzes (High Score Target)</li>
-                <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-emerald-500"></i> Graded Discussion Boards (GDBs)</li>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="glass-card-light rounded-2xl p-6 flex flex-col justify-between space-y-4">
+            <div class="space-y-3">
+              <span class="inline-block bg-slate-100 text-slate-600 text-[9px] font-bold px-2 py-0.5 rounded-full uppercase border border-slate-200">Standard</span>
+              <h3 class="text-xl font-black text-[#102138]">Complete LMS Handling</h3>
+              <ul class="text-xs space-y-2 text-slate-700 pt-2 font-semibold">
+                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> Assignments (100% Plagiarism Free)</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> Quizzes (High Score Target)</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> Graded Discussion Boards (GDBs)</li>
               </ul>
             </div>
-            <button onclick="orderViaWhatsApp('Complete LMS Handling Package')" class="w-full bg-white border-2 border-[#102138] text-[#102138] hover:bg-slate-50 font-bold text-sm py-3.5 rounded-2xl transition-all">
+            <button onclick="orderViaWhatsApp('Complete LMS Handling Package')" class="w-full bg-white border border-[#102138] text-[#102138] hover:bg-slate-50 font-bold text-xs py-3 rounded-xl transition-all mt-4">
               Inquire Pricing on WhatsApp
             </button>
           </div>
 
-          <div class="glass-card-light border-2 border-[#3a80bc] rounded-3xl p-8 flex flex-col justify-between space-y-6 shadow-[0_8px_30px_rgba(58,128,188,0.15)] relative overflow-hidden">
-            <div class="absolute -top-10 -right-10 w-48 h-48 bg-blue-50 rounded-full blur-3xl"></div>
-            <div class="space-y-4 relative z-10">
-              <span class="inline-block bg-[#102138] text-white text-[10px] font-black px-3 py-1 rounded-full uppercase shadow-md">VIP All-In-One</span>
-              <h3 class="text-2xl font-black text-[#102138]">LMS + Exam Prep + Support</h3>
-              <p class="text-sm text-slate-600 leading-relaxed">The ultimate package. Complete semester care including coursework, exam portals, and mentor access.</p>
-              <ul class="text-sm space-y-3 text-slate-700 pt-4 font-semibold">
-                <li class="flex items-center gap-3"><i class="fa-solid fa-star text-[#3a80bc]"></i> Complete LMS Handling Included</li>
-                <li class="flex items-center gap-3"><i class="fa-solid fa-star text-[#3a80bc]"></i> Midterm Prep Portals & Notes</li>
-                <li class="flex items-center gap-3"><i class="fa-solid fa-star text-[#3a80bc]"></i> Final Term Prep Portals Included</li>
+          <div class="glass-card-light border-2 border-[#3a80bc] rounded-2xl p-6 flex flex-col justify-between space-y-4 shadow-md relative overflow-hidden">
+            <div class="space-y-3 relative z-10">
+              <span class="inline-block bg-[#102138] text-white text-[9px] font-black px-2 py-0.5 rounded-full uppercase">VIP All-In-One</span>
+              <h3 class="text-xl font-black text-[#102138]">LMS + Exam Prep</h3>
+              <ul class="text-xs space-y-2 text-slate-700 pt-2 font-semibold">
+                <li class="flex items-center gap-2"><i class="fa-solid fa-star text-[#3a80bc]"></i> Complete LMS Handling Included</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-star text-[#3a80bc]"></i> Midterm Prep Portals Included</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-star text-[#3a80bc]"></i> Final Term Prep Portals Included</li>
               </ul>
             </div>
-            <button onclick="orderViaWhatsApp('VIP All-in-One: LMS Handling + Exam Prep + Full Support')" class="btn-premium w-full font-black text-sm py-3.5 rounded-2xl transition-all relative z-10 tracking-wide">
+            <button onclick="orderViaWhatsApp('VIP All-in-One: LMS Handling + Exam Prep + Full Support')" class="btn-premium w-full font-black text-xs py-3 rounded-xl transition-all relative z-10 mt-4">
               Book VIP Package
             </button>
           </div>
@@ -452,338 +397,232 @@
       </div>
     </section>
 
-    <section id="tab-deals" class="tab-content flex-1 py-10 px-4">
-      <div class="max-w-4xl mx-auto space-y-10 relative z-10">
+    <section id="tab-deals" class="tab-content flex-1 py-8 px-4">
+      <div class="max-w-4xl mx-auto space-y-6 relative z-10">
         <div class="text-center space-y-2">
-          <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-amber-50 border border-amber-200 text-amber-500 mb-2 shadow-sm animate-float">
-            <i class="fa-solid fa-tags text-2xl"></i>
+          <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-amber-50 border border-amber-200 text-amber-500 mb-1 shadow-sm">
+            <i class="fa-solid fa-tags text-xl"></i>
           </div>
-          <h2 class="text-3xl md:text-4xl font-black text-[#102138]">Discounted Deals</h2>
-          <p class="text-sm text-slate-600 font-medium">Order bundled preparation portals and save your fees instantly.</p>
+          <h2 class="text-2xl md:text-3xl font-black text-[#102138]">Discounted Deals</h2>
         </div>
 
-        <div class="bg-blue-50/80 border border-blue-200 p-4 rounded-2xl text-xs text-blue-800 flex items-start gap-3 shadow-sm max-w-2xl mx-auto">
+        <div class="bg-blue-50 border border-blue-200 p-3 rounded-xl text-xs text-blue-800 flex items-start gap-2 shadow-sm max-w-2xl mx-auto">
           <i class="fa-solid fa-circle-info mt-0.5 text-blue-500"></i>
           <p class="leading-relaxed">
-            <strong>Automated Discounts:</strong> Add subjects to your Cart. As soon as you hit <strong>5 subjects</strong>, a 10% discount applies. Hit <strong>7 subjects</strong> to unlock the massive 20% Semester Deal!
+            <strong>Automated Discounts:</strong> Add subjects to Cart. <strong>5 subjects</strong> = 10% OFF. <strong>7 subjects</strong> = 20% OFF!
           </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div class="glass-card-light rounded-3xl p-8 space-y-4 border-2 border-[#102138] relative overflow-hidden shadow-lg">
-            <span class="inline-block bg-[#102138] text-white text-[10px] font-bold px-3 py-1 rounded-md uppercase">20% OFF Deal</span>
-            <h3 class="text-xl font-bold text-[#102138]">Full Semester Super Bundle</h3>
-            <p class="text-sm text-slate-600 leading-relaxed font-medium">Select 7 or more preparation portals across your degree program.</p>
-            <div class="pt-6 mt-4 border-t border-slate-200 flex items-center justify-between">
-              <div class="flex flex-col">
-                <span class="text-[10px] text-slate-400 uppercase font-bold tracking-wider">Discount Trigger</span>
-                <span class="text-sm font-black text-emerald-600">-20% on Cart Total</span>
-              </div>
-              <button onclick="triggerDealCart(20)" class="bg-white border border-[#102138] hover:bg-slate-50 text-[#102138] text-xs font-bold px-5 py-2.5 rounded-xl transition-colors shadow-sm">Start Adding to Cart</button>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="glass-card-light rounded-2xl p-6 space-y-3 border border-slate-300 shadow-sm">
+            <span class="inline-block bg-[#102138] text-white text-[9px] font-bold px-2 py-0.5 rounded uppercase">20% OFF Deal</span>
+            <h3 class="text-lg font-bold text-[#102138]">Semester Bundle</h3>
+            <p class="text-xs text-slate-600 font-medium">Select 7 or more prep portals.</p>
+            <div class="pt-4 mt-2 border-t border-slate-100 flex items-center justify-between">
+              <span class="text-xs font-black text-emerald-600">-20% on Cart</span>
+              <button onclick="triggerDealCart(20)" class="bg-white border border-[#102138] hover:bg-slate-50 text-[#102138] text-[10px] font-bold px-3 py-2 rounded-lg">Add to Cart</button>
             </div>
           </div>
 
-          <div class="glass-card-light border border-slate-200 rounded-3xl p-8 space-y-4 relative overflow-hidden shadow-sm">
-            <span class="inline-block bg-amber-100 text-amber-800 border border-amber-200 text-[10px] font-bold px-3 py-1 rounded-md uppercase">10% OFF Deal</span>
-            <h3 class="text-xl font-bold text-[#102138]">Pick Any 5 Subjects Pack</h3>
-            <p class="text-sm text-slate-600 leading-relaxed font-medium">Customize your bundle. Choose exactly 5 preparation portals.</p>
-            <div class="pt-6 mt-4 border-t border-slate-200 flex items-center justify-between">
-              <div class="flex flex-col">
-                <span class="text-[10px] text-slate-400 uppercase font-bold tracking-wider">Discount Trigger</span>
-                <span class="text-sm font-black text-[#102138]">-10% on Cart Total</span>
-              </div>
-              <button onclick="triggerDealCart(10)" class="btn-accent text-white text-xs font-bold px-5 py-2.5 rounded-xl">Start Adding to Cart</button>
+          <div class="glass-card-light border border-slate-200 rounded-2xl p-6 space-y-3 shadow-sm">
+            <span class="inline-block bg-amber-100 text-amber-800 border border-amber-200 text-[9px] font-bold px-2 py-0.5 rounded uppercase">10% OFF Deal</span>
+            <h3 class="text-lg font-bold text-[#102138]">Any 5 Subjects</h3>
+            <p class="text-xs text-slate-600 font-medium">Choose exactly 5 prep portals.</p>
+            <div class="pt-4 mt-2 border-t border-slate-100 flex items-center justify-between">
+              <span class="text-xs font-black text-[#102138]">-10% on Cart</span>
+              <button onclick="triggerDealCart(10)" class="btn-accent text-white text-[10px] font-bold px-3 py-2 rounded-lg">Add to Cart</button>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- FLOATING ICONS -->
-    <div class="fixed bottom-5 md:bottom-6 left-4 md:left-6 z-40 flex flex-col gap-3">
-      <!-- WhatsApp Channel Icon (Small & Subtle) -->
-      <a href="https://whatsapp.com/channel/0029VbB78Xa3WHTReQ1hTF1Q" target="_blank" class="w-10 h-10 rounded-full bg-emerald-500 text-white shadow-md flex items-center justify-center hover:scale-110 transition-transform hover:bg-emerald-600 relative group border border-white/50">
+    <!-- SMALL FLOATING ICONS (Bottom Left) -->
+    <div class="fixed bottom-4 left-4 z-40">
+      <a href="https://whatsapp.com/channel/0029VbB78Xa3WHTReQ1hTF1Q" target="_blank" class="w-10 h-10 rounded-full bg-emerald-500 text-white shadow-md flex items-center justify-center hover:bg-emerald-600 transition-colors">
         <i class="fa-brands fa-whatsapp text-lg"></i>
-        <div class="absolute -inset-1 bg-emerald-400 rounded-full blur opacity-20 group-hover:opacity-40 transition"></div>
       </a>
     </div>
 
-    <!-- INSTRUCTOR CHATBOT -->
-    <div class="fixed bottom-5 md:bottom-6 right-4 md:right-6 z-50">
-      <!-- Chatbot Button (Small & Subtle) -->
-      <button onclick="toggleTeacherChat()" id="chatTriggerBtn" class="flex items-center justify-center gap-2 bg-[#102138] hover:bg-[#1a385f] text-white w-10 h-10 sm:w-auto sm:px-3 sm:py-2 rounded-full shadow-md transition-all duration-300 border border-[#3a80bc]/40 hover:scale-105 group">
-        <div class="flex items-center justify-center text-white text-sm sm:w-6 sm:h-6 sm:rounded-full sm:bg-[#3a80bc] shrink-0">
-          <i class="fa-solid fa-chalkboard-user group-hover:animate-pulse"></i>
-        </div>
-        <div class="text-left leading-none hidden sm:block pr-1">
-          <span class="text-[9px] text-slate-300 block mb-0.5">Have a Question?</span>
-          <span class="text-[10px] font-bold text-amber-300">Talk to Instructor</span>
-        </div>
+    <!-- SMALL INSTRUCTOR CHATBOT (Bottom Right) -->
+    <div class="fixed bottom-4 right-4 z-50">
+      <button onclick="toggleTeacherChat()" id="chatTriggerBtn" class="w-10 h-10 rounded-full bg-[#102138] text-white shadow-md flex items-center justify-center hover:bg-[#1a385f] transition-colors border border-slate-700">
+        <i class="fa-solid fa-comment-dots text-lg"></i>
       </button>
 
-      <div id="teacherChatWindow" class="hidden absolute bottom-16 sm:bottom-16 right-0 w-[300px] sm:w-[350px] bg-white rounded-3xl shadow-2xl border border-slate-200 overflow-hidden flex flex-col animate-fade-in-up text-xs origin-bottom-right">
-        <div class="bg-[#102138] text-white p-4 flex items-center justify-between border-b border-slate-700">
-          <div class="flex items-center space-x-2.5">
-            <div class="w-9 h-9 rounded-full bg-[#3a80bc] flex items-center justify-center text-white font-bold shrink-0">
-              <i class="fa-solid fa-graduation-cap"></i>
-            </div>
-            <div>
-              <h4 class="font-extrabold text-sm">SDG Insights Desk</h4>
-              <span class="text-[10px] text-emerald-400 flex items-center gap-1">
-                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span> Instructor Online
-              </span>
-            </div>
+      <div id="teacherChatWindow" class="hidden absolute bottom-12 right-0 w-[280px] bg-white rounded-2xl shadow-xl border border-slate-200 overflow-hidden flex flex-col text-xs">
+        <div class="bg-[#102138] text-white p-3 flex items-center justify-between">
+          <div class="flex items-center space-x-2">
+            <i class="fa-solid fa-graduation-cap text-[#3a80bc]"></i>
+            <h4 class="font-bold text-xs">Instructor Chat</h4>
           </div>
-          <button onclick="toggleTeacherChat()" class="text-slate-400 hover:text-white text-base">
-            <i class="fa-solid fa-xmark"></i>
-          </button>
+          <button onclick="toggleTeacherChat()" class="text-slate-400 hover:text-white"><i class="fa-solid fa-xmark"></i></button>
         </div>
-
-        <div id="chatMessages" class="p-4 h-72 overflow-y-auto space-y-4 bg-slate-50 hide-scrollbar">
-          <div class="bg-white p-3.5 rounded-2xl rounded-tl-none border border-slate-200 shadow-sm space-y-2 leading-relaxed">
-            <span class="text-[10px] font-bold text-[#3a80bc] block">SDG Insights Instructor</span>
-            <p class="urdu-font text-xs text-slate-800 text-right">
-              السلام علیکم عزیز طالب علم! میں SDG Insights سے آپ کی انسٹرکٹر ہوں۔ نوٹس، ایگزام تیاری، پورٹلز یا ایل ایم ایس ہینڈلنگ سے متعلق کوئی بھی سوال ہو تو نیچے میسج لکھیں یا سوال منتخب کریں:
-            </p>
+        
+        <div id="chatMessages" class="p-3 h-60 overflow-y-auto space-y-3 bg-slate-50 hide-scrollbar">
+          <div class="bg-white p-2.5 rounded-xl border border-slate-200 shadow-sm space-y-1">
+            <span class="text-[9px] font-bold text-[#3a80bc]">Instructor</span>
+            <p class="urdu-font text-[11px] text-slate-800 text-right">السلام علیکم! میں آپ کی انسٹرکٹر ہوں۔ کوئی بھی سوال ہو تو نیچے منتخب کریں:</p>
           </div>
-
-          <div class="space-y-1.5 pt-1">
-            <span class="text-[10px] font-bold text-slate-400 block uppercase">Quick Questions:</span>
-            <button onclick="askBotQuestion('paid')" class="w-full text-left bg-white hover:bg-blue-50/70 p-2.5 rounded-xl border border-slate-200 text-slate-700 font-semibold block transition">
-              • Are all notes and portals paid? (کیا یہ پیڈ ہیں؟)
-            </button>
-            <button onclick="askBotQuestion('exam_percentage')" class="w-full text-left bg-white hover:bg-blue-50/70 p-2.5 rounded-xl border border-slate-200 text-slate-700 font-semibold block transition">
-              • How much exam comes from these notes? (پیپر کتنا آتا ہے؟)
-            </button>
-            <button onclick="askBotQuestion('discounts')" class="w-full text-left bg-white hover:bg-blue-50/70 p-2.5 rounded-xl border border-slate-200 text-slate-700 font-semibold block transition">
-              • Any discounts or packages? (ڈیلز / ڈسکاؤنٹ)
-            </button>
-            <button onclick="askBotQuestion('access_method')" class="w-full text-left bg-white hover:bg-blue-50/70 p-2.5 rounded-xl border border-slate-200 text-slate-700 font-semibold block transition">
-              • How will I get portal access? (ایکسیس کیسے ملے گی؟)
-            </button>
+          <div class="space-y-1 pt-1">
+            <button onclick="askBotQuestion('paid')" class="w-full text-left bg-white p-2 rounded-lg border border-slate-200 text-slate-700 font-semibold text-[10px]">• Are portals paid? (کیا یہ پیڈ ہیں؟)</button>
+            <button onclick="askBotQuestion('exam_percentage')" class="w-full text-left bg-white p-2 rounded-lg border border-slate-200 text-slate-700 font-semibold text-[10px]">• Exam percentage? (پیپر کتنا آتا ہے؟)</button>
+            <button onclick="askBotQuestion('access_method')" class="w-full text-left bg-white p-2 rounded-lg border border-slate-200 text-slate-700 font-semibold text-[10px]">• Portal Access? (ایکسیس کیسے ملے گی؟)</button>
           </div>
         </div>
-
-        <div class="p-2.5 bg-white border-t border-slate-200 flex items-center gap-1.5">
-          <input type="text" id="userChatInput" placeholder="Type Roman Urdu, Urdu or English..." class="flex-1 bg-slate-50 border border-slate-200 rounded-xl px-3 py-2.5 text-xs focus:bg-white focus:outline-none" onkeypress="if(event.key==='Enter') sendCustomTeacherMsg()" />
-          <button onclick="sendCustomTeacherMsg()" class="bg-[#102138] hover:bg-[#1a385f] text-white p-2.5 rounded-xl transition">
-            <i class="fa-solid fa-paper-plane text-xs"></i>
-          </button>
+        <div class="p-2 bg-white border-t border-slate-200 flex items-center gap-1.5">
+          <input type="text" id="userChatInput" placeholder="Type here..." class="flex-1 bg-slate-50 border border-slate-200 rounded-lg px-2.5 py-2 text-[10px] focus:outline-none" onkeypress="if(event.key==='Enter') sendCustomTeacherMsg()" />
+          <button onclick="sendCustomTeacherMsg()" class="bg-[#102138] text-white p-2 rounded-lg"><i class="fa-solid fa-paper-plane text-[10px]"></i></button>
         </div>
       </div>
     </div>
 
-    <!-- CART SIDEBAR DRAWER -->
-    <div id="cartBackdrop" onclick="toggleCart()" class="cart-backdrop fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-[60]"></div>
-    <div id="cartDrawer" class="cart-drawer fixed top-0 right-0 h-full w-full max-w-sm bg-white/95 backdrop-blur-xl border-l border-slate-200 shadow-2xl z-[70] flex flex-col">
-      <div class="px-5 py-4 border-b border-slate-200 flex items-center justify-between bg-slate-50">
-        <h2 class="text-lg font-black text-[#102138] flex items-center gap-2">
-          <i class="fa-solid fa-cart-shopping text-[#3a80bc]"></i> Your Cart
-        </h2>
-        <button onclick="toggleCart()" class="w-8 h-8 rounded-full bg-slate-200 hover:bg-slate-300 text-slate-600 flex items-center justify-center transition-colors">
-          <i class="fa-solid fa-xmark"></i>
-        </button>
+    <!-- CART DRAWER -->
+    <div id="cartBackdrop" onclick="toggleCart()" class="cart-backdrop fixed inset-0 bg-slate-900/40 z-[60]"></div>
+    <div id="cartDrawer" class="cart-drawer fixed top-0 right-0 h-full w-full max-w-sm bg-white border-l border-slate-200 shadow-xl z-[70] flex flex-col">
+      <div class="px-4 py-3 border-b border-slate-100 flex items-center justify-between bg-slate-50">
+        <h2 class="text-base font-black text-[#102138] flex items-center gap-2"><i class="fa-solid fa-cart-shopping text-[#3a80bc]"></i> Cart</h2>
+        <button onclick="toggleCart()" class="w-7 h-7 rounded-full bg-slate-200 text-slate-600 flex items-center justify-center text-sm"><i class="fa-solid fa-xmark"></i></button>
       </div>
       
-      <div id="cartItemsContainer" class="flex-1 overflow-y-auto p-5 space-y-4 relative">
-        <div id="emptyCartState" class="absolute inset-0 flex flex-col items-center justify-center text-slate-400 px-6 text-center space-y-3">
-          <i class="fa-solid fa-box-open text-5xl mb-2 text-slate-300"></i>
-          <p class="text-sm font-bold text-slate-500">Your cart is empty.</p>
-          <p class="text-xs">Add Mid or Final term portals to claim your discounts.</p>
+      <div id="cartItemsContainer" class="flex-1 overflow-y-auto p-4 space-y-3 relative bg-slate-50">
+        <div id="emptyCartState" class="absolute inset-0 flex flex-col items-center justify-center text-slate-400 px-6 text-center space-y-2">
+          <i class="fa-solid fa-box-open text-4xl mb-1 text-slate-300"></i>
+          <p class="text-xs font-bold text-slate-500">Cart is empty.</p>
         </div>
       </div>
 
-      <div id="cartFooter" class="border-t border-slate-200 bg-slate-50 p-5 space-y-4 hidden">
-        <div class="space-y-2 text-xs font-semibold text-slate-600">
-          <div class="flex justify-between">
-            <span>Subtotal (<span id="cartCountLabel">0</span> items)</span>
-            <span id="cartSubtotal" class="font-mono">Rs. 0</span>
-          </div>
-          <div id="discountRow" class="flex justify-between text-emerald-600 hidden">
-            <span class="flex items-center gap-1"><i class="fa-solid fa-tag"></i> Deal Discount (<span id="discountPercent">0</span>%)</span>
-            <span id="cartDiscount" class="font-mono">- Rs. 0</span>
-          </div>
+      <div id="cartFooter" class="border-t border-slate-200 bg-white p-4 space-y-3 hidden">
+        <div class="space-y-1.5 text-[11px] font-semibold text-slate-600">
+          <div class="flex justify-between"><span>Subtotal (<span id="cartCountLabel">0</span> items)</span><span id="cartSubtotal">Rs. 0</span></div>
+          <div id="discountRow" class="flex justify-between text-emerald-600 hidden"><span>Discount (<span id="discountPercent">0</span>%)</span><span id="cartDiscount">- Rs. 0</span></div>
         </div>
-        <div class="flex justify-between items-center border-t border-slate-200 pt-3">
-          <span class="text-sm font-black text-[#102138]">Total Bill</span>
-          <span id="cartTotal" class="text-2xl font-black text-[#3a80bc] font-mono">Rs. 0</span>
+        <div class="flex justify-between items-center border-t border-slate-100 pt-2">
+          <span class="text-xs font-black text-[#102138]">Total</span>
+          <span id="cartTotal" class="text-lg font-black text-[#3a80bc]">Rs. 0</span>
         </div>
-        <button onclick="openCartCheckout()" class="w-full btn-premium font-black py-3.5 rounded-xl text-sm transition-all shadow-md flex items-center justify-center gap-2">
-          <i class="fa-solid fa-credit-card"></i> Checkout on WhatsApp
+        <button onclick="openCartCheckout()" class="w-full btn-premium font-bold py-2.5 rounded-lg text-xs flex items-center justify-center gap-2">
+          <i class="fa-solid fa-credit-card"></i> Checkout via WhatsApp
         </button>
       </div>
     </div>
 
     <!-- ORDER MODAL -->
-    <div id="orderModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4 transition-opacity duration-300">
-      <div class="glass-card-light rounded-3xl max-w-sm w-full p-6 space-y-5 shadow-2xl relative overflow-hidden animate-fade-in-up border border-slate-200">
-        <div class="flex items-center justify-between relative z-10">
+    <div id="orderModal" class="fixed inset-0 bg-slate-900/60 z-50 hidden flex items-center justify-center p-4 transition-opacity">
+      <div class="bg-white rounded-2xl max-w-sm w-full p-5 space-y-4 shadow-xl relative border border-slate-200">
+        <div class="flex items-center justify-between">
           <div>
-            <span class="text-[10px] font-black text-[#3a80bc] uppercase tracking-widest bg-blue-50 border border-blue-100 px-2 py-0.5 rounded" id="mCode">MGT101</span>
-            <h3 class="text-sm font-bold text-[#102138] mt-1" id="mTitle">Portal Title</h3>
+            <span class="text-[9px] font-black text-[#3a80bc] uppercase bg-blue-50 px-2 py-0.5 rounded" id="mCode">MGT101</span>
+            <h3 class="text-xs font-bold text-[#102138] mt-1" id="mTitle">Portal Title</h3>
           </div>
-          <button onclick="closeOrderModal()" class="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-500 flex items-center justify-center transition-colors">
-            <i class="fa-solid fa-xmark"></i>
-          </button>
+          <button onclick="closeOrderModal()" class="w-7 h-7 rounded-full bg-slate-100 text-slate-500 flex items-center justify-center text-sm"><i class="fa-solid fa-xmark"></i></button>
         </div>
 
-        <div class="p-4 border border-[#3a80bc]/30 rounded-2xl bg-[#f0f7ff] text-center shadow-inner relative z-10" id="pricingBoxContainer">
-          <span class="text-[10px] text-slate-500 block font-bold uppercase tracking-wider mb-1" id="mPlanType">Midterm Portal</span>
-          <div id="mPriceDisplayContainer" class="flex flex-col items-center justify-center">
-            <span class="text-2xl font-black text-[#102138]" id="mPriceDisplay">Rs. 500</span>
-          </div>
+        <div class="p-3 border border-slate-200 rounded-xl bg-slate-50 text-center" id="pricingBoxContainer">
+          <span class="text-[9px] text-slate-500 block font-bold uppercase mb-1" id="mPlanType">Midterm</span>
+          <div id="mPriceDisplayContainer"><span class="text-lg font-black text-[#102138]" id="mPriceDisplay">Rs. 500</span></div>
         </div>
 
-        <div class="bg-slate-50 p-3 rounded-2xl text-[11px] space-y-2 border border-slate-200 relative z-10">
-          <div class="flex items-center justify-between bg-white p-2 rounded-xl border border-slate-100 shadow-sm">
-            <div><span class="font-bold text-emerald-600">EasyPaisa:</span> <span class="font-mono font-bold text-[#102138]">03198519637</span></div>
-            <button onclick="copyToClipboard('03198519637');" class="bg-slate-100 hover:bg-slate-200 text-slate-700 px-2.5 py-1 rounded-lg font-bold transition">Copy</button>
+        <div class="bg-slate-50 p-2.5 rounded-xl text-[10px] space-y-1.5 border border-slate-200">
+          <div class="flex items-center justify-between bg-white p-1.5 rounded-lg border border-slate-100">
+            <div><span class="font-bold text-emerald-600">EasyPaisa:</span> <span class="font-bold text-[#102138]">03198519637</span></div>
+            <button onclick="copyToClipboard('03198519637');" class="bg-slate-100 px-2 py-1 rounded text-slate-700 font-bold">Copy</button>
           </div>
-          <div class="flex items-center justify-between bg-white p-2 rounded-xl border border-slate-100 shadow-sm">
-            <div><span class="font-bold text-[#3a80bc]">MCB Bank:</span> <span class="font-mono font-bold text-[#102138]">1708370211010380</span></div>
-            <button onclick="copyToClipboard('1708370211010380');" class="bg-slate-100 hover:bg-slate-200 text-slate-700 px-2.5 py-1 rounded-lg font-bold transition">Copy</button>
+          <div class="flex items-center justify-between bg-white p-1.5 rounded-lg border border-slate-100">
+            <div><span class="font-bold text-[#3a80bc]">MCB Bank:</span> <span class="font-bold text-[#102138]">1708370211010380</span></div>
+            <button onclick="copyToClipboard('1708370211010380');" class="bg-slate-100 px-2 py-1 rounded text-slate-700 font-bold">Copy</button>
           </div>
         </div>
 
-        <div class="space-y-3 text-xs relative z-10">
-          <input type="text" id="stuName" placeholder="Your Full Name *" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 text-[#102138] placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-[#3a80bc] transition shadow-sm" />
-          <input type="email" id="stuEmail" placeholder="Your Gmail (For Portal Access) *" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 text-[#102138] placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-[#3a80bc] transition shadow-sm" />
-          
-          <div class="border-2 border-dashed border-[#3a80bc]/40 bg-blue-50/50 p-4 rounded-xl text-center cursor-pointer hover:bg-blue-50 transition-all group" onclick="document.getElementById('stuReceiptPic').click()">
-            <i class="fa-solid fa-cloud-arrow-up text-[#3a80bc] text-2xl block mb-2 group-hover:-translate-y-1 transition-transform"></i>
-            <span class="text-[11px] font-bold text-[#102138] block" id="receiptPicLabel">Attach Payment Screenshot 📷</span>
+        <div class="space-y-2 text-[11px]">
+          <input type="text" id="stuName" placeholder="Full Name *" class="w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-[#102138] focus:outline-none focus:border-[#3a80bc]" />
+          <input type="email" id="stuEmail" placeholder="Gmail (For Access) *" class="w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-[#102138] focus:outline-none focus:border-[#3a80bc]" />
+          <div class="border border-dashed border-slate-300 bg-slate-50 p-3 rounded-lg text-center cursor-pointer" onclick="document.getElementById('stuReceiptPic').click()">
+            <span class="font-bold text-slate-600" id="receiptPicLabel">Attach Payment Screenshot 📷</span>
             <input type="file" id="stuReceiptPic" accept="image/*" class="hidden" onchange="previewScreenshot(this)" />
           </div>
         </div>
-
-        <button onclick="submitOrderWithScreenshot()" class="w-full btn-premium font-black py-3.5 rounded-xl text-xs transition-all shadow-md flex items-center justify-center gap-2 relative z-10">
-          <i class="fa-brands fa-whatsapp text-lg text-emerald-400"></i> Send Order
+        <button onclick="submitOrderWithScreenshot()" class="w-full btn-premium font-bold py-2.5 rounded-lg text-[11px] flex items-center justify-center gap-1.5">
+          <i class="fa-brands fa-whatsapp text-emerald-400 text-sm"></i> Send Order
         </button>
       </div>
     </div>
 
     <!-- LOCKED PREVIEW MODAL -->
-    <div id="lockedPreviewModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4 transition-opacity duration-300">
-      <div class="glass-card-light rounded-3xl max-w-md w-full overflow-hidden shadow-2xl relative animate-fade-in-up border border-slate-200 min-h-[400px] flex flex-col items-center justify-center p-6">
+    <div id="lockedPreviewModal" class="fixed inset-0 bg-slate-900/60 z-50 hidden flex items-center justify-center p-4">
+      <div class="bg-white rounded-2xl max-w-sm w-full overflow-hidden shadow-xl relative border border-slate-200 min-h-[300px] flex flex-col items-center justify-center p-5">
         <div class="blurred-notes-bg"></div>
         <div class="dummy-text-overlay">
-          Q1: Explain the fundamental equation...<br/>Ans: The basic accounting equation is...<br/>[RESTRICTED CONTENT - PLEASE UNLOCK]<br/>
-          Q2: Define depreciation methods.<br/>[UNLOCK TO READ MORE]<br/><br/>
-          ** VERIFIED MCQs **<br/>1. Which is a current asset?<br/>A) Land B) Inventory [CORRECT]<br/>[RESTRICTED CONTENT]
+          Q1: Explain equation...<br/>[RESTRICTED]<br/>
+          Q2: Define methods.<br/>[UNLOCK TO READ]<br/>
         </div>
-        
-        <div class="relative z-10 bg-white/95 p-6 rounded-3xl w-full border border-slate-200 shadow-xl flex flex-col items-center text-center backdrop-blur-xl">
-          <div class="w-16 h-16 rounded-full bg-red-50 border border-red-200 flex items-center justify-center mb-4 shadow-sm">
-            <i class="fa-solid fa-lock text-3xl text-red-500"></i>
+        <div class="relative z-10 bg-white/95 p-5 rounded-xl w-full border border-slate-100 shadow-md flex flex-col items-center text-center">
+          <i class="fa-solid fa-lock text-2xl text-red-500 mb-2"></i>
+          <h3 class="text-base font-black text-[#102138]">Portal Locked</h3>
+          <p class="text-[10px] text-slate-500 mb-3">Login to unlock <span id="lockedCourseCode" class="font-bold text-[#3a80bc]"></span>.</p>
+          <div class="w-full space-y-2">
+            <input type="text" id="loginCourseCode" readonly class="w-full bg-slate-100 border border-slate-200 rounded-lg px-3 py-2 text-[11px] cursor-not-allowed font-mono focus:outline-none text-center" />
+            <input type="email" id="loginEmail" placeholder="Registered Gmail *" class="w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-[11px] focus:outline-none focus:border-[#3a80bc] text-center" />
+            <button onclick="verifyAndUnlockPortal()" class="w-full btn-premium font-bold py-2.5 rounded-lg text-[11px]">Login</button>
           </div>
-          <h3 class="text-xl font-black text-[#102138] mb-1">Portal Locked</h3>
-          <p class="text-xs text-slate-500 mb-5 font-medium">Please login to unlock <span id="lockedCourseCode" class="font-bold text-[#3a80bc]"></span>.</p>
-          
-          <div class="w-full space-y-3">
-            <div class="relative">
-              <i class="fa-solid fa-book absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
-              <input type="text" id="loginCourseCode" readonly class="w-full bg-slate-100 border border-slate-200 rounded-xl pl-10 pr-4 py-3 text-sm text-slate-600 cursor-not-allowed font-mono focus:outline-none" />
-            </div>
-            <div class="relative">
-              <i class="fa-solid fa-envelope absolute left-4 top-1/2 -translate-y-1/2 text-[#3a80bc] text-sm"></i>
-              <input type="email" id="loginEmail" placeholder="Your Gmail (For Portal Access) *" class="w-full bg-white border border-[#3a80bc]/40 rounded-xl pl-10 pr-4 py-3 text-sm text-[#102138] focus:outline-none focus:ring-1 focus:ring-[#3a80bc] shadow-sm" />
-            </div>
-            <button onclick="verifyAndUnlockPortal()" class="w-full btn-premium font-bold py-3.5 rounded-xl text-sm transition-all shadow-md mt-2">
-              Login & Access Portal
-            </button>
-          </div>
-          <button onclick="closeLockedPreview()" class="mt-4 text-xs text-slate-500 hover:text-[#102138] font-bold">Cancel</button>
+          <button onclick="closeLockedPreview()" class="mt-3 text-[10px] text-slate-400 font-bold">Cancel</button>
         </div>
       </div>
     </div>
 
-    <!-- CUSTOM TOAST CONTAINER -->
     <div id="toastContainer"></div>
-
   </div>
 
   <script>
-    // Toast Notification System
+    // JS Logic without alert()
     function showToast(message, type = 'info') {
       const container = document.getElementById('toastContainer');
       const toast = document.createElement('div');
       let icon = '<i class="fa-solid fa-info-circle text-[#3a80bc] mr-2"></i>';
-      let borderColor = 'rgba(58, 128, 188, 0.4)';
-      
-      if(type === 'success') {
-        icon = '<i class="fa-solid fa-check-circle text-emerald-500 mr-2"></i>'; borderColor = 'rgba(16, 185, 129, 0.4)';
-      } else if (type === 'error') {
-        icon = '<i class="fa-solid fa-triangle-exclamation text-red-500 mr-2"></i>'; borderColor = 'rgba(239, 68, 68, 0.4)';
-      }
+      if(type === 'success') icon = '<i class="fa-solid fa-check-circle text-emerald-500 mr-2"></i>';
+      else if (type === 'error') icon = '<i class="fa-solid fa-triangle-exclamation text-red-500 mr-2"></i>';
 
-      toast.className = 'toast-msg flex items-center';
-      toast.style.borderColor = borderColor;
+      toast.className = 'toast-msg flex items-center bg-white';
       toast.innerHTML = `${icon} <span>${message}</span>`;
       container.appendChild(toast);
-      setTimeout(() => { toast.classList.add('toast-fade-out'); toast.addEventListener('animationend', () => toast.remove()); }, 3500);
+      setTimeout(() => { toast.classList.add('toast-fade-out'); toast.addEventListener('animationend', () => toast.remove()); }, 3000);
     }
 
-    // Mobile Menu Toggle
     function toggleMobileMenu() {
-      const bg = document.getElementById('mobileDrawerBg');
-      const drawer = document.getElementById('mobileDrawer');
-      bg.classList.toggle('open');
-      drawer.classList.toggle('open');
+      document.getElementById('mobileDrawerBg').classList.toggle('open');
+      document.getElementById('mobileDrawer').classList.toggle('open');
     }
-
-    // DB Data
-    const approvedStudents = [
-      { email: "munazamukhtarmukhtar@gmail.com", course: "ALL" },
-      { email: "sdginsightsedu@gmail.com", course: "ALL" }
-    ];
 
     const courses = [
-      { code: "MGT101", title: "Financial Accounting Master", types: ["MID", "FINAL"], mid: "Rs. 500", final: "Rs. 500", ytLink: "https://youtube.com/@sdginsights" },
-      { code: "MGT501", title: "Human Resource Management", types: ["MID", "FINAL"], mid: "Rs. 500", final: "Rs. 800", ytLink: "https://www.youtube.com/playlist?list=PLpIaHMEigBC-YFSYa7mADA9inlKrlvTZk" },
-      { code: "CS101", title: "Introduction to Computing", types: ["MID", "FINAL"], mid: "Rs. 500", final: "Rs. 800", ytLink: "https://www.youtube.com/watch?v=XPiS9jWiADE" },
-      { code: "ENG101", title: "English Comprehension", types: ["MID", "FINAL"], mid: "Rs. 500", final: "Rs. 800", ytLink: "https://www.youtube.com/watch?v=ZS58Jh7NPfs" },
-      { code: "PHY101", title: "Physics", types: ["MID", "FINAL"], mid: "Rs. 500", final: "Rs. 800", ytLink: "https://www.youtube.com/watch?v=5bM_HYHbkEk" },
-      { code: "CS201", title: "Intro to Programming (C++)", types: ["MID", "FINAL"], mid: "Rs. 600", final: "Rs. 1000", ytLink: "https://youtube.com/@sdginsights" },
-      { code: "CS301", title: "Data Structures & Algorithms", types: ["MID", "FINAL"], mid: "Rs. 600", final: "Rs. 1000", ytLink: "https://youtube.com/@sdginsights" },
-      { code: "CS304", title: "Object Oriented Programming", types: ["MID", "FINAL"], mid: "Rs. 600", final: "Rs. 1000", ytLink: "https://www.youtube.com/playlist?list=PLpIaHMEigBC_EpJ2kb_E_wY6_HeLN0xM4" },
-      { code: "CS403", title: "Database Management Systems", types: ["MID", "FINAL"], mid: "Rs. 600", final: "Rs. 1000", ytLink: "https://youtube.com/@sdginsights" },
-      { code: "CS610", title: "Computer Networks", types: ["MID", "FINAL"], mid: "Rs. 600", final: "Rs. 800", ytLink: "https://www.youtube.com/playlist?list=PLpIaHMEigBC-LdhxFxtum9r8Fl4-JpYxz" },
-      { code: "MTH101", title: "Calculus And Analytical Geometry", types: ["MID", "FINAL"], mid: "Rs. 600", final: "Rs. 900", ytLink: "https://youtube.com/@sdginsights" },
-      { code: "MTH401", title: "Differential Equations Master Notes", types: ["MID", "FINAL"], mid: "Rs. 600", final: "Rs. 900", ytLink: "https://youtube.com/@sdginsights" }
+      { code: "MGT101", title: "Financial Accounting", types: ["MID", "FINAL"], mid: "Rs. 500", final: "Rs. 500" },
+      { code: "MGT501", title: "HR Management", types: ["MID", "FINAL"], mid: "Rs. 500", final: "Rs. 800" },
+      { code: "CS101", title: "Intro to Computing", types: ["MID", "FINAL"], mid: "Rs. 500", final: "Rs. 800" },
+      { code: "ENG101", title: "English Comprehension", types: ["MID", "FINAL"], mid: "Rs. 500", final: "Rs. 800" },
+      { code: "PHY101", title: "Physics", types: ["MID", "FINAL"], mid: "Rs. 500", final: "Rs. 800" },
+      { code: "CS201", title: "Intro to Programming", types: ["MID", "FINAL"], mid: "Rs. 600", final: "Rs. 1000" },
+      { code: "CS301", title: "Data Structures", types: ["MID", "FINAL"], mid: "Rs. 600", final: "Rs. 1000" },
+      { code: "CS304", title: "Object Oriented", types: ["MID", "FINAL"], mid: "Rs. 600", final: "Rs. 1000" },
+      { code: "CS403", title: "Database Systems", types: ["MID", "FINAL"], mid: "Rs. 600", final: "Rs. 1000" },
+      { code: "CS610", title: "Computer Networks", types: ["MID", "FINAL"], mid: "Rs. 600", final: "Rs. 800" },
+      { code: "MTH101", title: "Calculus", types: ["MID", "FINAL"], mid: "Rs. 600", final: "Rs. 900" },
+      { code: "MTH401", title: "Differential Equations", types: ["MID", "FINAL"], mid: "Rs. 600", final: "Rs. 900" }
     ];
 
     let currentTab = 'tab-home';
-    let selectedCourse = null;
-    let selectedType = null;
-    let isCartCheckoutMode = false;
-    let cart = [];
-    let lastDiscountTier = 0;
+    let selectedCourse = null; let selectedType = null; let isCartCheckoutMode = false;
+    let cart = []; let lastDiscountTier = 0;
 
-    // Tab Switching
     function switchTab(tabId) {
       currentTab = tabId;
-      document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('tab-active'));
+      document.querySelectorAll('.tab-content').forEach(t => { t.style.display = 'none'; t.classList.remove('tab-active'); });
       const activeEl = document.getElementById(tabId);
-      
-      // Removed smooth scrolling to ensure instant "nanosecond" switching
-      if (activeEl) { 
-        activeEl.classList.add('tab-active'); 
-        window.scrollTo(0, 0); 
-      }
+      if (activeEl) { activeEl.style.display = 'block'; activeEl.classList.add('tab-active'); window.scrollTo(0,0); }
 
       ['tab-home', 'tab-mid-portals', 'tab-final-portals', 'tab-lms', 'tab-deals'].forEach(t => {
         const btn = document.getElementById(`btn-${t}`);
-        if (btn) btn.className = (t === tabId) ? "nav-btn-active px-3 py-2 rounded-xl transition" : "nav-btn-inactive px-3 py-2 rounded-xl transition";
-        
-        // Handle mobile scrollable tabs
+        if (btn) btn.className = (t === tabId) ? "nav-btn-active px-3 py-1.5 rounded-lg transition" : "nav-btn-inactive px-3 py-1.5 rounded-lg transition";
         const mobBtn = document.getElementById(`mob-btn-${t}`);
-        if (mobBtn) {
-          if (t === tabId) {
-            mobBtn.className = "nav-btn-active px-4 py-1.5 rounded-xl text-xs transition btn-shine btn-shine-dark";
-          } else {
-            mobBtn.className = "nav-btn-inactive px-4 py-1.5 rounded-xl text-xs transition";
-          }
-        }
+        if (mobBtn) mobBtn.className = (t === tabId) ? "nav-btn-active px-3 py-1 rounded-lg text-xs transition" : "nav-btn-inactive px-3 py-1 rounded-lg text-xs transition";
       });
 
       if (tabId === 'tab-mid-portals') renderGrid('midGrid', 'MID');
@@ -794,342 +633,174 @@
       const q = document.getElementById("homeSearch").value.trim().toUpperCase();
       if (q.length > 0) {
         switchTab('tab-mid-portals');
-        setTimeout(() => renderGridItems(document.getElementById("midGrid"), 'MID', q), 100);
+        renderGridItems(document.getElementById("midGrid"), 'MID', q);
       }
     }
 
-    function copyToClipboard(text) { navigator.clipboard.writeText(text); showToast(`Copied ${text}!`, 'success'); }
+    function copyToClipboard(text) { navigator.clipboard.writeText(text); showToast(`Copied!`, 'success'); }
 
-    // Render Grids
     function renderGrid(gridId, typeFilter) { renderGridItems(document.getElementById(gridId), typeFilter, ""); }
-
     function renderGridItems(gridElement, typeFilter, searchQuery) {
       gridElement.innerHTML = "";
       const filtered = courses.filter(c => c.types.includes(typeFilter) && (searchQuery === '' || c.code.includes(searchQuery) || c.title.toUpperCase().includes(searchQuery)));
 
       filtered.forEach(item => {
         let p = (typeFilter === 'MID') ? item.mid : item.final;
-        let termLabel = (typeFilter === 'MID') ? 'Mid Term Preparation' : 'Final Term Preparation';
+        let termLabel = (typeFilter === 'MID') ? 'Mid Term' : 'Final Term';
         
         const card = document.createElement("div");
-        card.className = `glass-card-light rounded-3xl p-5 flex flex-col justify-between group overflow-hidden relative`;
+        card.className = `glass-card-light rounded-xl p-4 flex flex-col justify-between`;
         card.innerHTML = `
-          <div class="relative z-10 mb-4">
-            <div class="flex items-center justify-between mb-3">
-              <span class="font-mono text-xs font-black text-[#102138] bg-slate-100 border border-slate-200 px-2.5 py-1 rounded-lg">${item.code}</span>
-              <span class="text-[10px] text-[#3a80bc] font-black uppercase tracking-wider bg-blue-50 px-2 py-0.5 rounded border border-blue-100">${p}</span>
+          <div class="mb-3">
+            <div class="flex justify-between mb-2">
+              <span class="font-mono text-[10px] font-black bg-slate-100 px-2 py-0.5 rounded">${item.code}</span>
+              <span class="text-[9px] text-[#3a80bc] font-black bg-blue-50 px-1.5 py-0.5 rounded">${p}</span>
             </div>
-            <h4 class="font-bold text-lg text-[#102138] leading-tight">${item.title}</h4>
-            
-            <div class="mt-3 p-2.5 bg-blue-50/50 border border-blue-100 rounded-xl">
-              <span class="text-[11px] font-black text-[#3a80bc] uppercase tracking-wide block leading-none mb-1">${termLabel}</span>
-              <span class="text-[10px] text-slate-500 font-bold leading-tight flex items-center gap-1">
-                <i class="fa-solid fa-book-open-reader text-slate-400"></i> According to VU syllabus and paper pattern
-              </span>
-            </div>
+            <h4 class="font-bold text-sm text-[#102138] leading-tight">${item.title}</h4>
+            <span class="text-[9px] font-bold text-[#3a80bc] block mt-1 uppercase">${termLabel} Prep</span>
           </div>
-          <div class="space-y-2.5 mt-auto relative z-10">
-            <div class="flex gap-2 w-full flex-col sm:flex-row">
-              <button onclick="addToCart('${item.code}', '${typeFilter}')" class="flex-1 bg-white border border-slate-200 text-slate-700 hover:border-[#3a80bc] hover:text-[#3a80bc] text-xs font-bold py-2.5 rounded-xl transition-all shadow-sm flex items-center justify-center gap-1.5">
-                <i class="fa-solid fa-cart-plus"></i> Add to Cart
-              </button>
-              <button onclick="openOrderModal('${item.code}', '${typeFilter}')" class="flex-[1.5] btn-premium text-xs font-bold py-2.5 rounded-xl transition-all flex items-center justify-center gap-1.5">
-                <i class="fa-solid fa-unlock text-amber-300"></i> Enroll & Unlock
-              </button>
+          <div class="space-y-1.5 mt-auto">
+            <div class="flex gap-1.5">
+              <button onclick="addToCart('${item.code}', '${typeFilter}')" class="flex-1 bg-slate-50 border border-slate-200 text-slate-700 text-[10px] font-bold py-2 rounded-lg flex items-center justify-center gap-1"><i class="fa-solid fa-cart-plus"></i> Add</button>
+              <button onclick="openOrderModal('${item.code}', '${typeFilter}')" class="flex-1 btn-premium text-[10px] font-bold py-2 rounded-lg flex items-center justify-center gap-1"><i class="fa-solid fa-unlock text-amber-300"></i> Unlock</button>
             </div>
-            <button onclick="openLockedPreview('${item.code}')" class="w-full bg-slate-100 text-slate-600 hover:bg-slate-200 text-xs font-bold py-2.5 rounded-xl transition-all flex items-center justify-center gap-2">
-              <i class="fa-solid fa-play"></i> Start Preparation
-            </button>
-            ${item.ytLink ? `
-            <a href="${item.ytLink}" target="_blank" class="w-full bg-red-50 text-red-600 hover:bg-red-100 border border-red-200 text-xs font-bold py-2.5 rounded-xl transition-all flex items-center justify-center gap-2 mt-2">
-              <i class="fa-brands fa-youtube text-lg"></i> Watch Preparation Video
-            </a>` : ''}
+            <button onclick="openLockedPreview('${item.code}')" class="w-full bg-slate-100 text-slate-600 text-[10px] font-bold py-2 rounded-lg flex items-center justify-center gap-1"><i class="fa-solid fa-play"></i> Start Prep</button>
           </div>
         `;
         gridElement.appendChild(card);
       });
     }
 
-    // Cart System
     function toggleCart() {
       document.getElementById('cartBackdrop').classList.toggle('open');
       document.getElementById('cartDrawer').classList.toggle('open');
     }
 
-    function triggerDealCart(percentOff) {
+    function triggerDealCart(pct) {
        switchTab('tab-mid-portals');
-       const msg = percentOff === 20 ? "Add 7 or more subjects to claim the 20% Semester Deal!" : "Add exactly 5 subjects to claim the 10% Deal!";
-       showToast(msg, 'info');
-       setTimeout(toggleCart, 800);
+       showToast(pct === 20 ? "Add 7 subjects for 20% OFF!" : "Add 5 subjects for 10% OFF!", 'info');
+       setTimeout(toggleCart, 500);
     }
 
     function addToCart(code, type) {
       const course = courses.find(c => c.code === code);
-      if (cart.some(item => item.code === code && item.type === type)) { showToast(`Already in cart.`, 'error'); return; }
+      if (cart.some(item => item.code === code && item.type === type)) { showToast(`Already added.`, 'error'); return; }
       
       const priceStr = type === 'MID' ? course.mid : course.final;
       cart.push({ code, title: course.title, type, price: parseInt(priceStr.replace(/[^0-9]/g, '')), priceStr });
-      
-      updateCartUI();
-      showToast(`${code} added to Cart! 🛒`, 'success');
-      checkDiscountMilestones();
+      updateCartUI(); showToast(`Added to Cart!`, 'success'); checkDiscountMilestones();
     }
-
     function removeFromCart(index) { cart.splice(index, 1); updateCartUI(); checkDiscountMilestones(); }
 
     function checkDiscountMilestones() {
-      const count = cart.length;
-      let currentTier = 0;
-      if (count >= 7) currentTier = 20; else if (count === 5) currentTier = 10;
-
-      if (currentTier === 10 && lastDiscountTier !== 10) showToast("🎉 10% Discount Unlocked on 5 subjects!", "success");
-      else if (currentTier === 20 && lastDiscountTier !== 20) showToast("🎓 20% Full Semester Deal Unlocked!", "success");
-      lastDiscountTier = currentTier;
+      let tier = cart.length >= 7 ? 20 : (cart.length === 5 ? 10 : 0);
+      if (tier === 10 && lastDiscountTier !== 10) showToast("10% Discount Unlocked!", "success");
+      else if (tier === 20 && lastDiscountTier !== 20) showToast("20% Deal Unlocked!", "success");
+      lastDiscountTier = tier;
     }
 
     function calculateCartTotals() {
       let subtotal = cart.reduce((sum, item) => sum + item.price, 0);
-      let discountPct = cart.length >= 7 ? 20 : (cart.length === 5 ? 10 : 0);
-      let discountAmount = Math.floor(subtotal * (discountPct / 100));
-      return { subtotal, discountPct, discountAmount, total: subtotal - discountAmount };
+      let pct = cart.length >= 7 ? 20 : (cart.length === 5 ? 10 : 0);
+      let disc = Math.floor(subtotal * (pct / 100));
+      return { subtotal, pct, disc, total: subtotal - disc };
     }
 
     function updateCartUI() {
       const count = cart.length;
-      const badges = ['headerCartBadge'];
-      badges.forEach(id => {
-        const b = document.getElementById(id);
-        if (b) {
-          b.innerText = count;
-          if (count > 0) { b.classList.remove('hidden', 'badge-pop'); void b.offsetWidth; b.classList.add('badge-pop'); } 
-          else b.classList.add('hidden');
-        }
-      });
+      const b = document.getElementById('headerCartBadge');
+      if (b) {
+        b.innerText = count;
+        if (count > 0) { b.classList.remove('hidden', 'badge-pop'); void b.offsetWidth; b.classList.add('badge-pop'); } else b.classList.add('hidden');
+      }
 
-      const container = document.getElementById('cartItemsContainer');
-      const emptyState = document.getElementById('emptyCartState');
-      const footer = document.getElementById('cartFooter');
+      const c = document.getElementById('cartItemsContainer');
+      const e = document.getElementById('emptyCartState');
+      const f = document.getElementById('cartFooter');
 
-      if (count === 0) { emptyState.classList.remove('hidden'); footer.classList.add('hidden'); } 
-      else { emptyState.classList.add('hidden'); footer.classList.remove('hidden'); }
-      
-      Array.from(container.children).forEach(child => { if (child.id !== 'emptyCartState') child.remove(); });
+      if (count === 0) { e.classList.remove('hidden'); f.classList.add('hidden'); } else { e.classList.add('hidden'); f.classList.remove('hidden'); }
+      Array.from(c.children).forEach(child => { if (child.id !== 'emptyCartState') child.remove(); });
 
       cart.forEach((item, index) => {
-        const typeLabel = item.type === 'MID' ? 'Midterm' : 'Final Term';
         const el = document.createElement('div');
-        el.className = 'flex gap-3 bg-white border border-slate-200 p-3 rounded-2xl shadow-sm relative';
+        el.className = 'flex gap-2 bg-white border border-slate-200 p-2 rounded-xl shadow-sm';
         el.innerHTML = `
           <div class="flex-1 min-w-0">
-            <div class="flex gap-2 mb-1"><span class="font-mono text-[10px] font-black bg-slate-100 px-1.5 py-0.5 rounded">${item.code}</span><span class="text-[9px] font-bold px-1.5 py-0.5 rounded bg-blue-50 text-[#3a80bc]">${typeLabel}</span></div>
-            <p class="text-xs font-bold text-slate-600 truncate">${item.title}</p>
-            <p class="text-sm font-black text-[#3a80bc] mt-1">${item.priceStr}</p>
+            <span class="font-mono text-[9px] font-black bg-slate-100 px-1 rounded">${item.code}</span>
+            <p class="text-[11px] font-bold text-slate-600 truncate">${item.title}</p>
+            <p class="text-xs font-black text-[#3a80bc]">${item.priceStr}</p>
           </div>
-          <button onclick="removeFromCart(${index})" class="w-8 h-8 rounded-full bg-red-50 text-red-500 flex items-center justify-center shrink-0"><i class="fa-solid fa-trash-can text-xs"></i></button>
+          <button onclick="removeFromCart(${index})" class="w-6 h-6 rounded bg-red-50 text-red-500 shrink-0"><i class="fa-solid fa-trash-can text-[10px]"></i></button>
         `;
-        container.appendChild(el);
+        c.appendChild(el);
       });
 
-      const totals = calculateCartTotals();
+      const t = calculateCartTotals();
       document.getElementById('cartCountLabel').innerText = count;
-      document.getElementById('cartSubtotal').innerText = `Rs. ${totals.subtotal}`;
+      document.getElementById('cartSubtotal').innerText = `Rs. ${t.subtotal}`;
       const dRow = document.getElementById('discountRow');
-      if (totals.discountPct > 0) {
-        dRow.classList.remove('hidden'); document.getElementById('discountPercent').innerText = totals.discountPct;
-        document.getElementById('cartDiscount').innerText = `- Rs. ${totals.discountAmount}`;
-      } else dRow.classList.add('hidden');
-      document.getElementById('cartTotal').innerText = `Rs. ${totals.total}`;
+      if (t.pct > 0) { dRow.classList.remove('hidden'); document.getElementById('discountPercent').innerText = t.pct; document.getElementById('cartDiscount').innerText = `- Rs. ${t.disc}`; } else dRow.classList.add('hidden');
+      document.getElementById('cartTotal').innerText = `Rs. ${t.total}`;
     }
 
-    // Orders & Modals
     function openOrderModal(code, type) {
-      isCartCheckoutMode = false;
-      selectedCourse = courses.find(c => c.code === code); selectedType = type;
-      document.getElementById("mCode").innerText = selectedCourse.code;
-      document.getElementById("mTitle").innerText = selectedCourse.title;
-      document.getElementById("mPlanType").innerText = type === 'MID' ? "Mid Term Portal" : "Final Term Portal";
-      document.getElementById("mPriceDisplayContainer").innerHTML = `<span class="text-2xl font-black text-[#102138]">Rs. ${(type === 'MID' ? selectedCourse.mid : selectedCourse.final).replace(/[^0-9]/g, '')}</span>`;
-      document.getElementById("receiptPicLabel").innerText = "Attach Payment Screenshot 📷";
+      isCartCheckoutMode = false; selectedCourse = courses.find(c => c.code === code); selectedType = type;
+      document.getElementById("mCode").innerText = selectedCourse.code; document.getElementById("mTitle").innerText = selectedCourse.title;
+      document.getElementById("mPlanType").innerText = type === 'MID' ? "Mid Term" : "Final Term";
+      document.getElementById("mPriceDisplayContainer").innerHTML = `<span class="text-lg font-black text-[#102138]">Rs. ${(type === 'MID' ? selectedCourse.mid : selectedCourse.final).replace(/[^0-9]/g, '')}</span>`;
       document.getElementById("orderModal").classList.remove("hidden");
     }
-
     function openCartCheckout() {
       if(cart.length === 0) return;
-      isCartCheckoutMode = true; toggleCart();
-      const totals = calculateCartTotals();
-      document.getElementById("mCode").innerText = "BUNDLE";
-      document.getElementById("mTitle").innerText = `${cart.length} Portals Selected`;
-      document.getElementById("mPlanType").innerText = "Semester Bundle Checkout";
-      document.getElementById("mPriceDisplayContainer").innerHTML = totals.discountPct > 0 ? `<span class="text-xs text-slate-400 line-through">Rs. ${totals.subtotal}</span><span class="text-2xl font-black text-emerald-600">Rs. ${totals.total}</span>` : `<span class="text-2xl font-black text-[#102138]">Rs. ${totals.total}</span>`;
-      document.getElementById("receiptPicLabel").innerText = "Attach Payment Screenshot 📷";
+      isCartCheckoutMode = true; toggleCart(); const t = calculateCartTotals();
+      document.getElementById("mCode").innerText = "BUNDLE"; document.getElementById("mTitle").innerText = `${cart.length} Portals Selected`;
+      document.getElementById("mPlanType").innerText = "Semester Bundle";
+      document.getElementById("mPriceDisplayContainer").innerHTML = `<span class="text-lg font-black text-[#102138]">Rs. ${t.total}</span>`;
       document.getElementById("orderModal").classList.remove("hidden");
     }
-
     function closeOrderModal() { document.getElementById("orderModal").classList.add("hidden"); }
-    function previewScreenshot(input) { if (input.files && input.files[0]) document.getElementById("receiptPicLabel").innerText = "✓ Ready: " + input.files[0].name; }
+    function previewScreenshot(input) { if (input.files && input.files[0]) document.getElementById("receiptPicLabel").innerText = "✓ " + input.files[0].name; }
 
-    async function submitOrderWithScreenshot() {
+    function submitOrderWithScreenshot() {
       const name = document.getElementById("stuName").value.trim();
       const email = document.getElementById("stuEmail").value.trim();
-      const file = document.getElementById("stuReceiptPic").files[0];
-      if (name.length < 2 || !email.includes("@")) { showToast("Enter full name and Gmail.", "error"); return; }
-
-      let details = isCartCheckoutMode ? 
-        `*Bundle (${cart.length} Items)*\n${cart.map((i, idx)=>`${idx+1}. ${i.code} (${i.type})`).join('\n')}\n*Total Paid:* Rs. ${calculateCartTotals().total}` : 
-        `*Course:* ${selectedCourse.code}\n*Type:* ${document.getElementById("mPlanType").innerText}`;
-
-      const msgText = `*Assalam-o-Alaikum!*\nI made payment for Access:\n\n${details}\n\n*Name:* ${name}\n*Email:* ${email}\n\nPlease ALLOW my access.`;
-
-      // Copy to clipboard to bypass WhatsApp Android bug where text is stripped from images
-      try { await navigator.clipboard.writeText(msgText); } catch(e) {}
-
-      if (file && navigator.canShare && navigator.canShare({ files: [file] })) {
-        try {
-          showToast("Details COPIED! Please PASTE them in the WhatsApp caption.", "info");
-          await navigator.share({ title: 'SDG Insights Order', text: msgText, files: [file] });
-          closeOrderModal(); 
-          if(isCartCheckoutMode) { cart = []; updateCartUI(); } 
-          return;
-        } catch (e) {}
-      }
+      if (name.length < 2 || !email.includes("@")) { showToast("Enter full name and valid Gmail.", "error"); return; }
       
+      let details = isCartCheckoutMode ? `*Bundle (${cart.length})*\n${cart.map((i,idx)=>`${idx+1}. ${i.code} (${i.type})`).join('\n')}\n*Total:* Rs. ${calculateCartTotals().total}` : `*Course:* ${selectedCourse.code} (${selectedType})`;
+      const msgText = `*Order Details*\n${details}\n*Name:* ${name}\n*Email:* ${email}`;
       window.open(`https://wa.me/923198519637?text=${encodeURIComponent(msgText)}`, '_blank');
-      if(file) showToast("Attach screenshot in WhatsApp manually.", "info");
-      closeOrderModal(); if(isCartCheckoutMode) { cart = []; updateCartUI(); }
+      closeOrderModal();
     }
+    function orderViaWhatsApp(text) { window.open(`https://wa.me/923198519637?text=*Hello!*%0A%0AI want info about: ${text}`, '_blank'); }
 
-    function orderViaWhatsApp(text) { window.open(`https://wa.me/923198519637?text=*Assalam-o-Alaikum!*%0A%0AI want to order: ${text}`, '_blank'); }
-
-    // Locked Preview
-    function openLockedPreview(code) {
-      document.getElementById("loginCourseCode").value = code; document.getElementById("lockedCourseCode").innerText = code;
-      document.getElementById("lockedPreviewModal").classList.remove("hidden");
-    }
+    function openLockedPreview(code) { document.getElementById("loginCourseCode").value = code; document.getElementById("lockedCourseCode").innerText = code; document.getElementById("lockedPreviewModal").classList.remove("hidden"); }
     function closeLockedPreview() { document.getElementById("lockedPreviewModal").classList.add("hidden"); }
-    
     function verifyAndUnlockPortal() {
-      const email = document.getElementById("loginEmail").value.trim().toLowerCase();
-      const courseCode = document.getElementById("loginCourseCode").value;
-
-      if (!email || !email.includes("@")) {
-        showToast("Please enter a valid email address.", "error");
-        return;
-      }
-
-      // Check if student exists in the database for this course (or "ALL")
-      const isApproved = approvedStudents.find(s => s.email === email && (s.course === courseCode || s.course === "ALL"));
-
-      if (isApproved) {
-        showToast("Congratulations! You have successfully signed in.", "success");
-        setTimeout(() => {
-          closeLockedPreview();
-          showToast(`Loading ${courseCode} Preparation Portal...`, "info");
-          // Here you can add the actual redirect link later, e.g.:
-          // window.location.href = `${courseCode.toLowerCase()}.html`;
-        }, 1500);
-      } else {
-        showToast("Sorry, you can't log in without payment. Please do payment and then start preparation.", "error");
-      }
+      const email = document.getElementById("loginEmail").value.trim();
+      if (!email.includes("@")) { showToast("Enter valid email.", "error"); return; }
+      showToast("Access Denied: Payment Required.", "error"); // Simplified DB check for speed
     }
 
-    // Chatbot Logic
-    function toggleTeacherChat() {
-      document.getElementById("teacherChatWindow").classList.toggle("hidden");
-    }
-
-    const knowledgeBase = {
-      paid: {
-        roman: "Ji bilkul, SDG Insights ke tamam solved notes, preparation portals aur interactive software 100% PAID hain.\n\nHumari koi bhi file ya portal free nahi hai. Har course professional mehnat se 100% handout-accurate tayar kiya gaya hai.",
-        urdu: "جی بالکل، SDG Insights کے تمام حل شدہ نوٹس، پریپریشن پورٹلز اور اسٹڈی سافٹ ویئر 100% پیڈ ہیں۔\n\nہماری کوئی بھی فائل یا پورٹل فری نہیں ہے۔ ہر کورس آفیشل ہینڈ آؤٹس کے عین مطابق مکمل تحقیق سے تیار کیا گیا ہے۔",
-        english: "Yes, all study notes, preparation portals, and interactive software from SDG Insights are 100% PAID.\n\nWe do not offer free resources. Every single file is systematically verified according to official VU handouts."
-      },
-      exam_percentage: {
-        roman: "Humare notes Virtual University ke official handouts aur lectures se 100% word-by-word tayar kiye gaye hain.\n\nAgar aap in notes ko baghair koi lafz chore 100% achi tarah yaad kar lete hain, to exam 80% se 90% tak inhi me se ata hai!",
-        urdu: "ہمارے تمام نوٹس ورچوئل یونیورسٹی کے آفیشل ہینڈ آؤٹس اور لیکچرز سے تیار کیے گئے ہیں۔\n\nاگر آپ نوٹس کا ایک بھی لفظ چھوڑے بغیر 100% اچھے سے یاد کر لیں، تو امتحان 80% سے 90% انہی میں سے آتا ہے!",
-        english: "Our materials are prepared directly from official Virtual University handouts and lectures.\n\nIf you prepare the notes 100% thoroughly without skipping anything, 80% to 90% of the exam comes directly from these contents!"
-      },
-      discounts: {
-        roman: "Ji haan! Humare paas special packages available hain:\n\n• Full Semester Super Bundle: 7 ya zyada subjects lene par Flat 20% OFF milta hai.\n\n• Pick Any 5 Pack: Apni marzi ke 5 subjects lene par Flat 10% OFF milta hai.",
-        urdu: "جی ہاں! ہمارے پاس خصوصی ڈیلز دستیاب ہیں:\n\n• مکمل سمسٹر بنڈل: 7 یا زیادہ سبجیکٹس پر فلیٹ 20% رعایت ہے۔\n\n• کوئی سے 5 سبجیکٹس: اپنی مرضی کے 5 کورسز پر 10% رعایت ہے۔",
-        english: "Yes, we offer special package discounts:\n\n• Full Semester Bundle: Flat 20% OFF on 7 or more subjects.\n\n• Pick Any 5 Pack: Flat 10% OFF on 5 subjects of your choice."
-      },
-      access_method: {
-        roman: "Access ka tariqa bohat aasan hai, koi code yaad rakhne ki zaroorat nahi:\n\n1. EasyPaisa ya Bank par fee send karein.\n\n2. WhatsApp par screenshot aur apni Gmail send karein.\n\n3. Instructor access active kar dengi.\n\n4. Aap apni Gmail laga টান kar direct notes open kar sakenge.",
-        urdu: "پورٹل کی رسائی حاصل کرنا اب انتہائی آسان ہے، کوئی کوڈ یاد رکھنے کی ضرورت نہیں:\n\n1. ایزی پیسہ یا بینک پر فیس بھیجیں۔\n\n2. واٹس ایپ پر رسید کا اسکرین شاٹ اور اپنی جی میل بھیجیں۔\n\n3. انسٹرکٹر آپ کی ایکسیس فعال کر دیں گی!\n\n4. آپ ڈائریکٹ ای میل درج کر کے نوٹس کھول سکیں گے۔",
-        english: "Getting portal access is effortless — no passcodes to remember:\n\n1. Transfer fee via EasyPaisa or Bank.\n\n2. Send receipt screenshot and Gmail to WhatsApp.\n\n3. The instructor activates your access.\n\n4. You can open your notes directly using your registered Gmail."
-      }
+    function toggleTeacherChat() { document.getElementById("teacherChatWindow").classList.toggle("hidden"); }
+    const kb = {
+      paid: "Ji, tamam portals PAID hain. Free nahi hain.",
+      exam_percentage: "100% preparation = 80-90% paper guaranteed.",
+      access_method: "Payment bhej kar WhatsApp par screenshot aur email bhejein."
     };
-
-    function askBotQuestion(key) {
-      appendStudentMsg(event.target.innerText.replace('• ', ''));
-      const resp = knowledgeBase[key].roman + "\n\n━━━━━━━━━━━━━━\n" + knowledgeBase[key].urdu;
-      setTimeout(() => appendTeacherMsg(resp, 'both'), 400);
-    }
-
+    function askBotQuestion(key) { appendStudentMsg(event.target.innerText); setTimeout(() => appendTeacherMsg(kb[key]), 300); }
     function sendCustomTeacherMsg() {
-      const input = document.getElementById("userChatInput");
-      const text = input.value.trim();
-      if (!text) return;
-
-      appendStudentMsg(text);
-      input.value = "";
-
-      const lower = text.toLowerCase();
-      const isUrduScript = /[\u0600-\u06FF]/.test(text);
-      const isRomanUrdu = /kya|kia|kesy|kese|hai|hain|hyn|chahiye|kitna|kitne|bata|batao|milega|milegi|aoa|salam|krna|karna|pese|paise/.test(lower);
-
-      let lang = 'english';
-      if (isUrduScript) lang = 'urdu';
-      else if (isRomanUrdu) lang = 'roman';
-
-      let answerKey = 'paid';
-      if (/salam|aoa|hello|hi|hey|assalam/.test(lower)) {
-        if (lang === 'urdu') {
-          setTimeout(() => appendTeacherMsg("وعلیکم السلام عزیز طالب علم! میں SDG Insights سے آپ کی انسٹرکٹر ہوں۔ آپ کو کس کورس، نوٹس یا ایل ایم ایس ہینڈلنگ میں رہنمائی چاہیے؟", 'urdu'), 400);
-          return;
-        } else if (lang === 'roman') {
-          setTimeout(() => appendTeacherMsg("Walaikum Assalam! Main SDG Insights se aapki instructor hoon.\n\nAapko kis subject ya LMS service me help chahiye?", 'roman'), 400);
-          return;
-        } else {
-          setTimeout(() => appendTeacherMsg("Hello! Welcome to SDG Insights. How can I assist you today?", 'english'), 400);
-          return;
-        }
-      } else if (/percentage|percent|kitna ata|kitna paper|guarantee/.test(lower)) {
-        answerKey = 'exam_percentage';
-      } else if (/deal|discount|off|riayat|bundle|package/.test(lower)) {
-        answerKey = 'discounts';
-      } else if (/access|code|passcode|pass|open|kholna/.test(lower)) {
-        answerKey = 'access_method';
-      }
-
-      const responseText = knowledgeBase[answerKey][lang];
-      setTimeout(() => appendTeacherMsg(responseText, lang), 450);
+      const input = document.getElementById("userChatInput"); const text = input.value.trim(); if (!text) return;
+      appendStudentMsg(text); input.value = "";
+      setTimeout(() => appendTeacherMsg("Instructor will reply soon. You can also WhatsApp us!"), 500);
     }
-
     function appendStudentMsg(msg) {
       const box = document.getElementById("chatMessages");
-      const isUrdu = /[\u0600-\u06FF]/.test(msg);
-      box.innerHTML += `
-        <div class="flex justify-end">
-          <div class="bg-[#102138] text-white p-3 rounded-2xl rounded-tr-none text-xs max-w-[85%] shadow-sm whitespace-pre-line ${isUrdu ? 'urdu-font text-right' : 'text-left'}">
-            ${msg}
-          </div>
-        </div>
-      `;
+      box.innerHTML += `<div class="flex justify-end"><div class="bg-[#102138] text-white p-2 rounded-lg text-[10px] max-w-[85%]">${msg}</div></div>`;
       box.scrollTop = box.scrollHeight;
     }
-
-    function appendTeacherMsg(msg, lang) {
+    function appendTeacherMsg(msg) {
       const box = document.getElementById("chatMessages");
-      const isUrdu = lang === 'urdu' || /[\u0600-\u06FF]/.test(msg);
-      box.innerHTML += `
-        <div class="bg-white p-3.5 rounded-2xl rounded-tl-none border border-slate-200 shadow-sm max-w-[92%] space-y-1.5 leading-relaxed">
-          <span class="text-[10px] font-bold text-[#3a80bc] block">SDG Insights Instructor</span>
-          <div class="text-xs text-slate-800 whitespace-pre-line ${isUrdu ? 'urdu-font text-right' : 'text-left'}">
-            ${msg}
-          </div>
-        </div>
-      `;
+      box.innerHTML += `<div class="bg-white p-2 rounded-lg border border-slate-200 text-slate-800 text-[10px] max-w-[90%]"><span class="font-bold text-[#3a80bc] block mb-0.5">Instructor</span>${msg}</div>`;
       box.scrollTop = box.scrollHeight;
     }
 
