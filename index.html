@@ -2,52 +2,49 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   
-  <title>SDG Insights — Virtual University Mid & final term prep portal + Notes & LMS Handling</title>
-  <meta name="description" content="Official SDG Insights study portal for Virtual University of Pakistan. 100% handout-accurate solved midterm & final term notes, MGT101, CS610, MTH401, highlighted handouts (Rs. 300), and professional LMS handling services." />
-  <meta name="keywords" content="SDG Insights, VU Notes, Virtual University Handouts, MGT101 Midterm, MTH401 Final Term, CS610 Solved Papers, CS301 Handouts, VU LMS Handling, Munaza Mukhtar, VU Exam Preparation Portals, VU Past Papers Solved" />
-  <meta name="author" content="SDG Insights" />
-  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-  <link rel="canonical" href="https://sdginsights.github.io" />
-
-  <!-- OPEN GRAPH -->
-  <meta property="og:locale" content="en_US" />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="SDG Insights — Success, Dignity & Glory in Your VU Studies" />
-  <meta property="og:description" content="100% Handout-Accurate Solved Notes, Exam Preparation Portals, and Complete VU LMS Handling Packages." />
-  <meta property="og:url" content="https://sdginsights.github.io" />
-  <meta property="og:site_name" content="SDG Insights" />
-  <meta property="og:image" content="https://sdginsights.github.io/logo.png" />
-
-  <!-- SCHEMA JSON-LD -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "EducationalOrganization",
-        "@id": "https://sdginsights.github.io/#organization",
-        "name": "SDG Insights",
-        "url": "https://sdginsights.github.io",
-        "logo": "https://sdginsights.github.io/logo.png",
-        "description": "Virtual University of Pakistan Exam Preparation Portals, Handouts, and LMS Handling Services.",
-        "telephone": "+923198519637",
-        "sameAs": [
-          "https://youtube.com/@sdginsights",
-          "https://whatsapp.com/channel/0029VbB78Xa3WHTReQ1hTF1Q"
-        ]
-      }
-    ]
-  }
-  </script>
-
+  <title>SDG Insights — Final & Mid Term Preparation Portals</title>
+  <meta name="description" content="Official SDG Insights study portal for Virtual University of Pakistan. 100% from the handout of VU. Final & Mid Term Preparation Portals, and Professional LMS Handling Service." />
+  
   <!-- TAILWIND CSS & FONTS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Noto+Nastaliq+Urdu:wght@400;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Noto+Nastaliq+Urdu:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            urdu: ['"Noto Nastaliq Urdu"', 'serif'],
+          },
+          animation: {
+            'fade-in-up': 'fadeInUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+            'float': 'float 6s ease-in-out infinite',
+            'pulse-glow': 'pulseGlow 2s infinite',
+          },
+          keyframes: {
+            fadeInUp: {
+              '0%': { opacity: '0', transform: 'translateY(20px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-10px)' },
+            },
+            pulseGlow: {
+              '0%, 100%': { boxShadow: '0 0 0 0 rgba(58, 128, 188, 0.4)' },
+              '50%': { boxShadow: '0 0 0 10px rgba(58, 128, 188, 0)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
 
   <style>
     body {
@@ -56,9 +53,9 @@
       color: #0f172a;
       overflow-x: hidden;
       min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
     }
     .urdu-font { font-family: 'Noto Nastaliq Urdu', serif; line-height: 2.3; }
-    .handwriting { font-family: 'Caveat', cursive; }
 
     /* RADIANT DAYLIGHT AURORA BACKGROUND */
     .radiant-aurora {
@@ -73,36 +70,21 @@
       background: radial-gradient(circle at 50% 10%, #e0f2fe 0%, #f8fafc 100%);
     }
 
-    .light-orb-1 {
+    .light-orb-1, .light-orb-2, .light-orb-3 {
       position: absolute;
-      width: 600px;
-      height: 600px;
       border-radius: 50%;
-      top: -100px;
-      left: -100px;
       filter: blur(90px);
+    }
+    .light-orb-1 {
+      width: 600px; height: 600px; top: -100px; left: -100px;
       animation: shiftLight1 12s ease-in-out infinite alternate;
     }
-
     .light-orb-2 {
-      position: absolute;
-      width: 650px;
-      height: 650px;
-      border-radius: 50%;
-      top: 25%;
-      right: -100px;
-      filter: blur(100px);
+      width: 650px; height: 650px; top: 25%; right: -100px; filter: blur(100px);
       animation: shiftLight2 14s ease-in-out infinite alternate;
     }
-
     .light-orb-3 {
-      position: absolute;
-      width: 500px;
-      height: 500px;
-      border-radius: 50%;
-      bottom: -100px;
-      left: 20%;
-      filter: blur(90px);
+      width: 500px; height: 500px; bottom: -100px; left: 20%;
       animation: shiftLight3 15s ease-in-out infinite alternate;
     }
 
@@ -111,88 +93,124 @@
       50% { background: radial-gradient(circle, rgba(96, 165, 250, 0.42) 0%, rgba(96, 165, 250, 0) 70%); transform: translate(100px, 60px) scale(1.15); }
       100% { background: radial-gradient(circle, rgba(56, 189, 248, 0.35) 0%, rgba(56, 189, 248, 0) 70%); transform: translate(50px, 120px) scale(0.95); }
     }
-
     @keyframes shiftLight2 {
       0% { background: radial-gradient(circle, rgba(147, 197, 253, 0.45) 0%, rgba(147, 197, 253, 0) 70%); transform: translate(0, 0) scale(1); }
       50% { background: radial-gradient(circle, rgba(168, 85, 247, 0.28) 0%, rgba(168, 85, 247, 0) 70%); transform: translate(-120px, 80px) scale(1.2); }
       100% { background: radial-gradient(circle, rgba(58, 128, 188, 0.4) 0%, rgba(58, 128, 188, 0) 70%); transform: translate(-60px, -50px) scale(1); }
     }
-
     @keyframes shiftLight3 {
       0% { background: radial-gradient(circle, rgba(192, 132, 252, 0.25) 0%, rgba(192, 132, 252, 0) 70%); transform: translate(0, 0) scale(1); }
       50% { background: radial-gradient(circle, rgba(56, 189, 248, 0.38) 0%, rgba(56, 189, 248, 0) 70%); transform: translate(-60px, -80px) scale(1.15); }
       100% { background: radial-gradient(circle, rgba(96, 165, 250, 0.35) 0%, rgba(96, 165, 250, 0) 70%); transform: translate(80px, -30px) scale(1); }
     }
 
+    /* GLASSMORPHISM CARDS */
     .glass-card-light {
       background: rgba(255, 255, 255, 0.88);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
       border: 1px solid rgba(255, 255, 255, 0.9);
       box-shadow: 0 12px 32px -8px rgba(58, 128, 188, 0.12), 0 0 0 1px rgba(255, 255, 255, 0.8) inset;
-      transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     }
     .glass-card-light:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 20px 40px -10px rgba(58, 128, 188, 0.22), 0 0 25px rgba(96, 165, 250, 0.25);
-      border-color: rgba(58, 128, 188, 0.6);
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px -10px rgba(58, 128, 188, 0.25), 0 0 25px rgba(96, 165, 250, 0.3);
+      border-color: rgba(58, 128, 188, 0.5);
     }
 
-    .tab-content { display: none; }
-    .tab-active { display: block; animation: fadeInView 0.28s cubic-bezier(0.16, 1, 0.3, 1); }
-    @keyframes fadeInView {
-      from { opacity: 0; transform: translateY(6px); }
-      to { opacity: 1; transform: translateY(0); }
+    /* PREMIUM BUTTONS */
+    .btn-premium {
+      background: linear-gradient(135deg, #102138 0%, #2a5a8a 100%);
+      color: #ffffff;
+      box-shadow: 0 4px 15px rgba(16, 33, 56, 0.3);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
     }
+    .btn-premium::after {
+      content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: all 0.5s ease;
+    }
+    .btn-premium:hover::after { left: 100%; }
+    .btn-premium:hover {
+      box-shadow: 0 8px 25px rgba(58, 128, 188, 0.4);
+      transform: translateY(-2px);
+    }
+
+    .btn-accent {
+      background: linear-gradient(135deg, #3a80bc 0%, #60a5fa 100%);
+      color: #ffffff;
+      box-shadow: 0 4px 15px rgba(58, 128, 188, 0.3);
+      transition: all 0.3s ease;
+    }
+    .btn-accent:hover {
+      box-shadow: 0 8px 25px rgba(58, 128, 188, 0.5);
+      transform: translateY(-2px);
+    }
+
+    /* TABS */
+    .tab-content { display: none; }
+    .tab-active { display: block; animation: fadeInUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
 
     .nav-btn-active {
-      background: linear-gradient(135deg, #102138 0%, #3a80bc 100%);
+      background: #102138;
       color: #ffffff;
       font-weight: 700;
-      box-shadow: 0 4px 14px rgba(58, 128, 188, 0.3);
+      box-shadow: 0 4px 14px rgba(16, 33, 56, 0.2);
     }
     .nav-btn-inactive {
       background-color: transparent;
       color: #475569;
       font-weight: 600;
     }
-    .nav-btn-inactive:hover {
-      background-color: #f1f5f9;
-      color: #102138;
+    .nav-btn-inactive:hover { background-color: #f1f5f9; color: #102138; }
+
+    /* MOBILE DRAWER MENU */
+    .mobile-drawer-bg {
+      opacity: 0; pointer-events: none; transition: opacity 0.3s ease;
+    }
+    .mobile-drawer-bg.open { opacity: 1; pointer-events: auto; }
+    
+    .mobile-drawer {
+      transform: translateX(-100%); transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .mobile-drawer.open { transform: translateX(0); }
+
+    /* BLURRED NOTES TEASER */
+    .blurred-notes-bg {
+      position: absolute; inset: 0;
+      background-image: repeating-linear-gradient(0deg, transparent, transparent 19px, rgba(0, 0, 0, 0.05) 19px, rgba(0, 0, 0, 0.05) 20px);
+      background-size: 100% 20px; opacity: 0.8; filter: blur(2px); pointer-events: none; z-index: 0;
+    }
+    .dummy-text-overlay {
+      position: absolute; inset: 0; padding: 20px; color: rgba(15, 23, 42, 0.3); font-family: monospace; font-size: 14px;
+      line-height: 2; filter: blur(4px); user-select: none; overflow: hidden; z-index: 0;
     }
 
-    #giftNoticeBox {
-      transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
-      transform: translateY(120px) scale(0.9);
-      opacity: 0;
-      pointer-events: none;
+    /* TOAST & CART */
+    #toastContainer { position: fixed; top: 20px; left: 50%; transform: translateX(-50%); z-index: 9999; pointer-events: none; display: flex; flex-direction: column; gap: 10px; }
+    .toast-msg {
+      background: rgba(255, 255, 255, 0.95); border: 1px solid rgba(58, 128, 188, 0.4); backdrop-filter: blur(10px); color: #0f172a;
+      padding: 12px 24px; border-radius: 999px; font-size: 13px; font-weight: 600; box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      animation: toastEnter 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards; pointer-events: auto;
     }
-    #giftNoticeBox.box-visible {
-      transform: translateY(0) scale(1);
-      opacity: 1;
-      pointer-events: auto;
-    }
+    @keyframes toastEnter { from { opacity: 0; transform: translateY(-20px) scale(0.9); } to { opacity: 1; transform: translateY(0) scale(1); } }
+    .toast-fade-out { animation: toastExit 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+    @keyframes toastExit { from { opacity: 1; transform: translateY(0) scale(1); } to { opacity: 0; transform: translateY(-20px) scale(0.9); } }
 
-    @keyframes bounceGift {
-      0%, 100% { transform: translateY(0) rotate(0deg); }
-      50% { transform: translateY(-6px) rotate(4deg); }
-    }
-    .gift-icon-bounce {
-      animation: bounceGift 2.2s ease-in-out infinite;
-    }
-
-    @keyframes timerProgress {
-      0% { width: 0%; }
-      100% { width: 100%; }
-    }
-    .timer-bar-animate {
-      animation: timerProgress 5s linear infinite;
-    }
+    .cart-backdrop { transition: opacity 0.3s ease; opacity: 0; pointer-events: none; }
+    .cart-backdrop.open { opacity: 1; pointer-events: auto; }
+    .cart-drawer { transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); transform: translateX(100%); }
+    .cart-drawer.open { transform: translateX(0); }
+    
+    @keyframes pop { 0% { transform: scale(1); } 50% { transform: scale(1.4); } 100% { transform: scale(1); } }
+    .badge-pop { animation: pop 0.3s ease-in-out; }
   </style>
 </head>
 <body class="antialiased relative flex flex-col">
 
-  <!-- RADIANT DAYLIGHT AURORA BACKGROUND -->
   <div class="radiant-aurora">
     <div class="light-orb-1"></div>
     <div class="light-orb-2"></div>
@@ -201,44 +219,41 @@
 
   <div class="relative z-10 flex-1 flex flex-col min-h-screen">
 
-    <!-- TOP ANNOUNCEMENT TICKER WITH DIRECT SOCIALS -->
-    <div class="bg-[#102138] text-white text-xs py-2 px-4 border-b border-slate-800 shadow-xs">
-      <div class="max-w-6xl mx-auto flex items-center justify-between">
-        <div class="flex items-center space-x-2">
-          <span class="bg-[#3a80bc] text-white text-[10px] font-black px-2.5 py-0.5 rounded-full uppercase">Official</span>
-          <span class="text-slate-200">SDG Insights — Success, Dignity & Glory in Your VU Studies</span>
+    <!-- TOP ANNOUNCEMENT & QUICK LINKS -->
+    <div class="bg-[#102138] text-white py-1.5 px-4 border-b border-slate-800 hidden sm:block">
+      <div class="max-w-7xl mx-auto flex items-center justify-between text-[11px] font-bold">
+        <div class="flex items-center gap-2">
+          <span class="bg-emerald-500 text-white px-2 py-0.5 rounded-full uppercase tracking-wider text-[9px]">Official</span>
+          <span class="text-slate-300">Success, Dignity & Glory in Your VU Studies</span>
         </div>
-        <div class="hidden sm:flex items-center space-x-4 text-slate-300 font-bold text-[11px]">
-          <a href="https://youtube.com/@sdginsights?si=yFODeRKu4Q1S_ORa" target="_blank" class="hover:text-red-400 transition flex items-center gap-1">
-            <i class="fa-brands fa-youtube text-red-500"></i> YouTube
+        <div class="flex items-center gap-4">
+          <a href="https://vulms.vu.edu.pk/" target="_blank" class="hover:text-blue-300 transition flex items-center gap-1.5 border-r border-slate-700 pr-4">
+            <i class="fa-solid fa-graduation-cap"></i> VU LMS Login
           </a>
-          <span>•</span>
-          <a href="https://wa.me/c/923198519637" target="_blank" class="hover:text-emerald-400 transition flex items-center gap-1">
-            <i class="fa-solid fa-store text-emerald-400"></i> Catalog
-          </a>
-          <span>•</span>
-          <a href="https://whatsapp.com/channel/0029VbB78Xa3WHTReQ1hTF1Q" target="_blank" class="hover:text-blue-400 transition flex items-center gap-1">
-            <i class="fa-solid fa-bullhorn text-[#3a80bc]"></i> Community
-          </a>
+          <button onclick="orderViaWhatsApp('Book Your Assignment')" class="hover:text-amber-300 text-amber-400 transition flex items-center gap-1.5">
+            <i class="fa-solid fa-pen-nib"></i> Book Your Assignment
+          </button>
         </div>
       </div>
     </div>
 
-    <!-- MAIN NAVBAR WITH EMBEDDED VECTOR LOGO -->
-    <header class="bg-white/90 backdrop-blur-md border-b border-slate-200/80 sticky top-0 z-40 shadow-xs">
-      <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
+    <!-- HEADER -->
+    <header class="bg-white/90 backdrop-blur-xl border-b border-slate-200/80 sticky top-0 z-40 shadow-sm">
+      <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
         
+        <!-- Hamburger Menu (Mobile Only) -->
+        <button onclick="toggleMobileMenu()" class="lg:hidden w-10 h-10 flex items-center justify-center rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition">
+          <i class="fa-solid fa-bars text-lg"></i>
+        </button>
+
+        <!-- Logo -->
         <div onclick="switchTab('tab-home')" class="flex items-center space-x-3 cursor-pointer shrink-0">
-          <div class="w-12 h-12 rounded-full overflow-hidden shadow-sm flex items-center justify-center bg-[#11253e] shrink-0 border-2 border-[#3a80bc]">
-            <svg viewBox="0 0 200 200" class="w-full h-full drop-shadow-xs">
-              <defs>
-                <path id="textArc" d="M 24,100 A 76,76 0 1,1 176,100" fill="none" />
-              </defs>
+          <div class="w-10 h-10 md:w-12 md:h-12 rounded-full overflow-hidden shadow-sm flex items-center justify-center bg-[#11253e] shrink-0 border-2 border-[#3a80bc] hover:rotate-12 transition-transform duration-500">
+            <svg viewBox="0 0 200 200" class="w-full h-full drop-shadow-md">
+              <defs><path id="textArc" d="M 24,100 A 76,76 0 1,1 176,100" fill="none" /></defs>
               <circle cx="100" cy="100" r="98" fill="#11253e" />
               <text font-family="'Plus Jakarta Sans', sans-serif" font-size="12.5" font-weight="900" fill="#ffffff" letter-spacing="2.2">
-                <textPath href="#textArc" startOffset="50%" text-anchor="middle">
-                  SUCCESS DIGNITY AND GLORY
-                </textPath>
+                <textPath href="#textArc" startOffset="50%" text-anchor="middle">SUCCESS DIGNITY AND GLORY</textPath>
               </text>
               <circle cx="32" cy="122" r="5" fill="#ffffff" />
               <circle cx="168" cy="122" r="5" fill="#ffffff" />
@@ -248,854 +263,669 @@
               <text x="100" y="126" font-family="'Plus Jakarta Sans', sans-serif" font-size="18" font-weight="800" fill="#ffffff" text-anchor="middle" letter-spacing="1.5">INSIGHTS</text>
             </svg>
           </div>
-          <div>
-            <span class="text-lg font-black text-[#102138] tracking-tight block leading-tight">SDG Insights</span>
-            <span class="text-[11px] text-slate-500 font-bold">VU Preparation & LMS Portal</span>
+          <div class="hidden sm:block">
+            <span class="text-lg md:text-xl font-black text-[#102138] tracking-tight block leading-tight">SDG Insights</span>
+            <span class="text-[10px] text-[#3a80bc] font-bold uppercase tracking-wider">VU Official Portal</span>
           </div>
         </div>
 
-        <nav class="hidden md:flex items-center bg-slate-100 p-1 rounded-2xl border border-slate-200 text-xs">
-          <button onclick="switchTab('tab-home')" id="btn-tab-home" class="nav-btn-active px-3.5 py-2 rounded-xl transition">Home</button>
-          <button onclick="switchTab('tab-notes')" id="btn-tab-notes" class="nav-btn-inactive px-3.5 py-2 rounded-xl transition">Preparation Portals</button>
-          <button onclick="switchTab('tab-lms')" id="btn-tab-lms" class="nav-btn-inactive px-3.5 py-2 rounded-xl transition">LMS Handling</button>
-          <button onclick="switchTab('tab-deals')" id="btn-tab-deals" class="nav-btn-inactive px-3.5 py-2 rounded-xl transition">Deals (20% OFF)</button>
-          <button onclick="switchTab('tab-portal')" id="btn-tab-portal" class="nav-btn-inactive px-3.5 py-2 rounded-xl transition flex items-center gap-1.5 text-[#3a80bc]">
-            <i class="fa-solid fa-lock"></i> Start Exam Preparation
-          </button>
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:flex items-center bg-slate-50 p-1 rounded-2xl border border-slate-200 text-xs font-semibold shadow-inner">
+          <button onclick="switchTab('tab-home')" id="btn-tab-home" class="nav-btn-active px-3 py-2 rounded-xl transition">Home</button>
+          <button onclick="switchTab('tab-mid-portals')" id="btn-tab-mid-portals" class="nav-btn-inactive px-3 py-2 rounded-xl transition">Mid Term Preparation Portals</button>
+          <button onclick="switchTab('tab-final-portals')" id="btn-tab-final-portals" class="nav-btn-inactive px-3 py-2 rounded-xl transition">Final Term Preparation Portals</button>
+          <button onclick="switchTab('tab-lms')" id="btn-tab-lms" class="nav-btn-inactive px-3 py-2 rounded-xl transition">LMS Handling Service</button>
+          <button onclick="switchTab('tab-deals')" id="btn-tab-deals" class="nav-btn-inactive px-3 py-2 rounded-xl transition">Discounted Deals</button>
         </nav>
 
-        <div class="flex items-center space-x-2">
-          <a href="https://wa.me/923198519637" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white text-xs px-3.5 py-2.5 rounded-xl font-bold transition flex items-center gap-1.5 shadow-xs">
-            <i class="fa-brands fa-whatsapp text-sm"></i>
-            <span>0319-8519637</span>
-          </a>
+        <!-- Right Icons (Cart) -->
+        <div class="flex items-center gap-3">
+          <button onclick="toggleCart()" class="relative w-10 h-10 md:w-11 md:h-11 bg-white border border-slate-200 rounded-full text-slate-600 hover:bg-blue-50 hover:text-[#3a80bc] hover:border-[#3a80bc] transition duration-300 shadow-sm flex items-center justify-center group">
+            <i class="fa-solid fa-cart-shopping text-lg group-hover:scale-110 transition-transform"></i>
+            <span id="headerCartBadge" class="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] w-5 h-5 rounded-full flex items-center justify-center font-bold hidden border-2 border-white shadow-sm">0</span>
+          </button>
         </div>
-      </div>
-
-      <!-- MOBILE TABS -->
-      <div class="flex md:hidden items-center justify-around border-t border-slate-100 bg-slate-50 px-2 py-2 text-[11px] font-bold overflow-x-auto">
-        <button onclick="switchTab('tab-home')" class="px-2.5 py-1 text-[#102138]">Home</button>
-        <button onclick="switchTab('tab-notes')" class="px-2.5 py-1 text-slate-600">Portals</button>
-        <button onclick="switchTab('tab-lms')" class="px-2.5 py-1 text-slate-600">LMS</button>
-        <button onclick="switchTab('tab-deals')" class="px-2.5 py-1 text-slate-600">Deals</button>
-        <button onclick="switchTab('tab-portal')" class="px-2.5 py-1 text-[#3a80bc]">Start Prep</button>
       </div>
     </header>
 
-    <!-- ======================================================== -->
-    <!-- TAB 1: HOME -->
-    <!-- ======================================================== -->
-    <section id="tab-home" class="tab-content tab-active flex-1">
-      
-      <div class="py-12 px-4 text-center">
-        <div class="max-w-4xl mx-auto space-y-4">
-          
-          <div class="inline-flex items-center gap-2 bg-blue-50 border border-blue-200/80 text-[#102138] px-4 py-1.5 rounded-full text-xs font-bold shadow-2xs">
-            <i class="fa-solid fa-shield-halved text-[#3a80bc]"></i>
-            <span>Success, Dignity & Glory in Your VU Studies</span>
-          </div>
-
-          <h1 class="text-3xl md:text-5xl lg:text-6xl font-black text-[#102138] tracking-tight leading-tight">
-            Virtual University Handouts, Solved Notes <br/>
-            <span class="text-[#3a80bc]">& Professional LMS Handling</span>
-          </h1>
-
-          <p class="text-slate-600 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
-            100% handout-accurate solved exam notes, interactive study software portals, and full semester coursework support.
-          </p>
-
-          <!-- 3 OFFICIAL SOCIAL COMMUNITY ACTION TILES -->
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-2xl mx-auto pt-3 text-xs font-bold">
-            <a href="https://youtube.com/@sdginsights?si=yFODeRKu4Q1S_ORa" target="_blank" class="bg-red-50 hover:bg-red-100 border border-red-200/80 text-red-700 p-3 rounded-2xl transition shadow-xs flex items-center justify-center gap-2 group">
-              <i class="fa-brands fa-youtube text-lg text-red-600 group-hover:scale-110 transition"></i>
-              <span>Subscribe YouTube Channel</span>
-            </a>
-
-            <a href="https://wa.me/c/923198519637" target="_blank" class="bg-emerald-50 hover:bg-emerald-100 border border-emerald-200/80 text-emerald-800 p-3 rounded-2xl transition shadow-xs flex items-center justify-center gap-2 group">
-              <i class="fa-solid fa-store text-lg text-emerald-600 group-hover:scale-110 transition"></i>
-              <span>View WhatsApp Catalog</span>
-            </a>
-
-            <a href="https://whatsapp.com/channel/0029VbB78Xa3WHTReQ1hTF1Q" target="_blank" class="bg-blue-50 hover:bg-blue-100 border border-blue-200/80 text-[#102138] p-3 rounded-2xl transition shadow-xs flex items-center justify-center gap-2 group">
-              <i class="fa-solid fa-bullhorn text-lg text-[#3a80bc] group-hover:scale-110 transition"></i>
-              <span>Join WhatsApp Channel</span>
-            </a>
-          </div>
-
-          <!-- SEARCH -->
-          <div class="max-w-md mx-auto pt-2">
-            <div class="relative">
-              <i class="fa-solid fa-magnifying-glass absolute left-4 top-3.5 text-slate-400"></i>
-              <input type="text" id="homeSearch" onkeyup="searchFromHome()" placeholder="Search subject code (e.g. MGT101, CS610, MTH401)..." class="w-full bg-white border border-slate-300 rounded-2xl pl-11 pr-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#3a80bc] shadow-xs text-slate-800" />
-            </div>
-          </div>
-
-        </div>
+    <!-- MOBILE DRAWER MENU (THE LIST) -->
+    <div id="mobileDrawerBg" onclick="toggleMobileMenu()" class="mobile-drawer-bg fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-[90]"></div>
+    <div id="mobileDrawer" class="mobile-drawer fixed top-0 left-0 h-full w-[280px] bg-white/95 backdrop-blur-xl border-r border-slate-200 shadow-2xl z-[100] flex flex-col">
+      <div class="p-5 border-b border-slate-200 flex items-center justify-between bg-slate-50">
+        <span class="font-black text-[#102138] text-lg">Menu</span>
+        <button onclick="toggleMobileMenu()" class="w-8 h-8 rounded-full bg-slate-200 text-slate-600 flex items-center justify-center">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
       </div>
+      <div class="flex-1 overflow-y-auto p-4 space-y-2">
+        <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest pl-2 mb-2 mt-2">Navigation</p>
+        <button onclick="switchTab('tab-home'); toggleMobileMenu();" class="w-full text-left flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-blue-50 text-slate-700 hover:text-[#3a80bc] font-bold transition">
+          <i class="fa-solid fa-house w-5 text-center"></i> Home
+        </button>
+        <button onclick="switchTab('tab-mid-portals'); toggleMobileMenu();" class="w-full text-left flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-blue-50 text-slate-700 hover:text-[#3a80bc] font-bold transition">
+          <i class="fa-solid fa-bullseye w-5 text-center"></i> Mid Term Preparation Portals
+        </button>
+        <button onclick="switchTab('tab-final-portals'); toggleMobileMenu();" class="w-full text-left flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-blue-50 text-slate-700 hover:text-[#3a80bc] font-bold transition">
+          <i class="fa-solid fa-trophy w-5 text-center"></i> Final Term Preparation Portals
+        </button>
+        <button onclick="switchTab('tab-lms'); toggleMobileMenu();" class="w-full text-left flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-blue-50 text-slate-700 hover:text-[#3a80bc] font-bold transition">
+          <i class="fa-solid fa-headset w-5 text-center"></i> LMS Handling Service
+        </button>
+        <button onclick="switchTab('tab-deals'); toggleMobileMenu();" class="w-full text-left flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-blue-50 text-slate-700 hover:text-[#3a80bc] font-bold transition">
+          <i class="fa-solid fa-tags w-5 text-center"></i> Discounted Deals
+        </button>
 
-      <!-- FEATURED MGT101 MASTER PORTAL CARD -->
-      <div class="max-w-5xl mx-auto px-4 pb-6">
-        <div class="glass-card-light rounded-3xl p-6 border-2 border-[#3a80bc] shadow-md flex flex-col md:flex-row items-center justify-between gap-4">
-          <div class="flex items-center space-x-4">
-            <div class="w-14 h-14 rounded-2xl bg-[#102138] text-[#3a80bc] flex items-center justify-center text-2xl font-black shrink-0 shadow-sm">
-              <i class="fa-solid fa-file-invoice-dollar"></i>
-            </div>
-            <div>
-              <span class="bg-emerald-100 text-emerald-800 text-[10px] font-black px-2.5 py-0.5 rounded-full uppercase">Featured Active Portal</span>
-              <h3 class="text-xl font-black text-[#102138] mt-1">MGT101: Financial Accounting Master Portal</h3>
-              <p class="text-xs text-slate-500">Complete Midterm & Final Term Preparation Portal with Urdu translations, numericals, and verified MCQs.</p>
-            </div>
-          </div>
-          <a href="mgt101.html" class="bg-[#102138] hover:bg-[#1a385f] text-white font-bold text-xs px-6 py-3 rounded-2xl transition shadow-xs shrink-0 flex items-center gap-2">
-            <span>Open MGT101 Portal</span>
-            <i class="fa-solid fa-arrow-right text-[#3a80bc]"></i>
-          </a>
-        </div>
-      </div>
-
-      <!-- 3 ENTRY DOORS -->
-      <div class="max-w-5xl mx-auto px-4 pb-12">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-          <div onclick="switchTab('tab-notes')" class="glass-card-light rounded-3xl p-6 cursor-pointer flex flex-col justify-between group">
-            <div class="space-y-3">
-              <div class="w-12 h-12 rounded-2xl bg-blue-50 text-[#3a80bc] flex items-center justify-center text-xl group-hover:bg-[#102138] group-hover:text-white transition">
-                <i class="fa-solid fa-laptop-code"></i>
-              </div>
-              <h3 class="text-lg font-bold text-[#102138]">Preparation Portals</h3>
-              <p class="text-xs text-slate-500 leading-relaxed">Final & Mid Term preparation portals, handout solutions, and verified MCQs.</p>
-            </div>
-            <span class="text-xs font-bold text-[#3a80bc] pt-4 mt-2 block border-t border-slate-100">Open Portals Library →</span>
-          </div>
-
-          <div onclick="switchTab('tab-lms')" class="glass-card-light rounded-3xl p-6 cursor-pointer flex flex-col justify-between group">
-            <div class="space-y-3">
-              <div class="w-12 h-12 rounded-2xl bg-indigo-50 text-indigo-700 flex items-center justify-center text-xl group-hover:bg-[#102138] group-hover:text-white transition">
-                <i class="fa-solid fa-headset"></i>
-              </div>
-              <h3 class="text-lg font-bold text-[#102138]">LMS Handling Packages</h3>
-              <p class="text-xs text-slate-500 leading-relaxed">Complete coursework handling: assignments, quizzes, and GDBs with high score targets.</p>
-            </div>
-            <span class="text-xs font-bold text-indigo-700 pt-4 mt-2 block border-t border-slate-100">View LMS Packages →</span>
-          </div>
-
-          <div onclick="switchTab('tab-deals')" class="glass-card-light rounded-3xl p-6 cursor-pointer flex flex-col justify-between group">
-            <div class="space-y-3">
-              <div class="w-12 h-12 rounded-2xl bg-amber-50 text-amber-700 flex items-center justify-center text-xl group-hover:bg-[#102138] group-hover:text-amber-300 transition">
-                <i class="fa-solid fa-gift"></i>
-              </div>
-              <h3 class="text-lg font-bold text-[#102138]">Package Deals</h3>
-              <p class="text-xs text-slate-500 leading-relaxed">Flat 20% discount on full semester packages or 10% on any 5 subjects.</p>
-            </div>
-            <span class="text-xs font-bold text-amber-700 pt-4 mt-2 block border-t border-slate-100">View Discount Deals →</span>
-          </div>
-        </div>
-      </div>
-
-    </section>
-
-    <!-- ======================================================== -->
-    <!-- TAB 2: FINAL & MID TERM PREPARATION PORTALS -->
-    <!-- ======================================================== -->
-    <section id="tab-notes" class="tab-content flex-1 py-8 px-4">
-      <div class="max-w-5xl mx-auto space-y-6">
+        <div class="my-4 border-t border-slate-200"></div>
+        <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest pl-2 mb-2">Quick Links</p>
         
-        <div class="flex items-center justify-between border-b border-slate-200 pb-3">
-          <div>
-            <h2 class="text-xl font-bold text-[#102138]">Preparation Portals & Notes</h2>
-            <p class="text-xs text-slate-500">Filtered by examination terms. All portals are strictly paid.</p>
-          </div>
-          <span class="text-xs font-bold text-[#3a80bc] bg-blue-50 px-3 py-1 rounded-xl" id="notesCount">Loading...</span>
-        </div>
-
-        <div class="glass-card-light p-4 rounded-3xl space-y-3 shadow-xs">
-          <input type="text" id="notesSearchInput" onkeyup="filterNotesGrid()" placeholder="Search code: MGT101, CS610, MTH401, CS301..." class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-xs focus:bg-white focus:outline-none" />
-          
-          <div class="flex items-center gap-2 flex-wrap text-xs font-bold">
-            <button onclick="setNotesFilter('MID')" id="flt-MID" class="bg-[#102138] text-white px-3.5 py-2 rounded-xl transition">🎯 Midterm Portals</button>
-            <button onclick="setNotesFilter('FINAL')" id="flt-FINAL" class="bg-slate-100 text-slate-700 hover:bg-slate-200 px-3.5 py-2 rounded-xl transition">🏆 Final Term Portals</button>
-            <button onclick="setNotesFilter('HIGHLIGHTED')" id="flt-HIGHLIGHTED" class="bg-blue-50 text-[#3a80bc] hover:bg-blue-100 px-3.5 py-2 rounded-xl border border-blue-200 transition">📑 Highlighted Handouts (Rs. 300)</button>
-            <button onclick="setNotesFilter('NOTES')" id="flt-NOTES" class="bg-slate-100 text-slate-700 hover:bg-slate-200 px-3.5 py-2 rounded-xl transition">📝 Master Notes</button>
-          </div>
-        </div>
-
-        <div id="notesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          <!-- Injected by JS -->
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ======================================================== -->
-    <!-- TAB 3: LMS HANDLING -->
-    <!-- ======================================================== -->
-    <section id="tab-lms" class="tab-content flex-1 py-10 px-4">
-      <div class="max-w-4xl mx-auto space-y-8">
-        
-        <div class="text-center space-y-2">
-          <span class="bg-blue-50 text-[#3a80bc] text-xs font-bold px-3 py-1 rounded-full uppercase border border-blue-100">Services</span>
-          <h2 class="text-2xl md:text-3xl font-black text-[#102138]">LMS Handling & Exam Preparation Packages</h2>
-          <p class="text-xs text-slate-500 max-w-md mx-auto">Complete semester coursework handling and exam preparation with dedicated 24/7 academic support.</p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div class="glass-card-light rounded-3xl p-6 flex flex-col justify-between space-y-4">
-            <div class="space-y-3">
-              <span class="text-[10px] font-bold text-slate-500 uppercase">Standard Service</span>
-              <h3 class="text-lg font-bold text-[#102138]">Complete LMS Handling</h3>
-              <p class="text-xs text-slate-500 leading-relaxed">Full semester handling of all your online graded activities with target marks.</p>
-              <ul class="text-xs space-y-2 text-slate-700 pt-2 font-medium">
-                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Assignments (100% Plagiarism Free)</li>
-                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Quizzes (High Score Target)</li>
-                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Graded Discussion Boards (GDBs)</li>
-                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Timely LMS Submissions & Proofs</li>
-              </ul>
-            </div>
-            <button onclick="orderViaWhatsApp('Complete LMS Handling Package')" class="w-full bg-[#102138] hover:bg-[#1a385f] text-white font-bold text-xs py-2.5 rounded-xl transition">
-              Book on WhatsApp
-            </button>
-          </div>
-
-          <div class="glass-card-light border-2 border-[#3a80bc] rounded-3xl p-6 flex flex-col justify-between space-y-4 shadow-sm">
-            <div class="space-y-3">
-              <span class="bg-[#3a80bc] text-white text-[10px] font-black px-2.5 py-0.5 rounded-full uppercase">VIP All-In-One</span>
-              <h3 class="text-lg font-bold text-[#102138]">LMS Handling + Exam Prep + Full Support</h3>
-              <p class="text-xs text-slate-500 leading-relaxed">Complete semester care including coursework, exam portals, and mentor access.</p>
-              <ul class="text-xs space-y-2 text-slate-700 pt-2 font-medium">
-                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-[#3a80bc]"></i> Complete LMS Handling (Assignments, Quizzes, GDBs)</li>
-                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-[#3a80bc]"></i> Midterm Preparation Portals & Notes</li>
-                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-[#3a80bc]"></i> Final Term Preparation Portals & Verified MCQs</li>
-                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-[#3a80bc]"></i> Highlighted Handouts Included</li>
-                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-[#3a80bc]"></i> Dedicated 24/7 WhatsApp Support</li>
-              </ul>
-            </div>
-            <button onclick="orderViaWhatsApp('VIP All-in-One: LMS Handling + Exam Prep + Full Support')" class="w-full bg-[#3a80bc] hover:bg-[#2f6fa7] text-white font-bold text-xs py-2.5 rounded-xl transition shadow-xs">
-              Book VIP Package
-            </button>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ======================================================== -->
-    <!-- TAB 4: DEALS -->
-    <!-- ======================================================== -->
-    <section id="tab-deals" class="tab-content flex-1 py-10 px-4">
-      <div class="max-w-3xl mx-auto space-y-6">
-        <div class="text-center space-y-1">
-          <h2 class="text-2xl font-black text-[#102138]">Semester Package Deals</h2>
-          <p class="text-xs text-slate-500">Order bundled preparation portals and save fees.</p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-          <div class="glass-card-light border-2 border-[#3a80bc] rounded-3xl p-6 space-y-3">
-            <span class="bg-[#102138] text-white text-[10px] font-bold px-2 py-0.5 rounded-md uppercase">20% OFF</span>
-            <h3 class="text-base font-bold text-[#102138]">Full Semester Bundle</h3>
-            <p class="text-xs text-slate-500 leading-relaxed">All preparation portals and notes for your complete semester (5 to 6 courses).</p>
-            <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
-              <span class="text-xs font-bold text-[#102138]">Rs. 3000 ➔ <strong>Rs. 2400</strong></span>
-              <button onclick="orderViaWhatsApp('Full Semester Super Bundle (20% OFF) - Rs. 2400')" class="bg-[#102138] text-white text-xs font-bold px-3.5 py-1.5 rounded-lg">Claim 20% Deal</button>
-            </div>
-          </div>
-
-          <div class="glass-card-light rounded-3xl p-6 space-y-3">
-            <span class="bg-[#3a80bc] text-white text-[10px] font-bold px-2 py-0.5 rounded-md uppercase">10% OFF</span>
-            <h3 class="text-base font-bold text-[#102138]">Pick Any 5 Courses</h3>
-            <p class="text-xs text-slate-500 leading-relaxed">Choose any 5 preparation portals across your degree.</p>
-            <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
-              <span class="text-xs font-bold text-[#102138]">Rs. 2500 ➔ <strong>Rs. 2250</strong></span>
-              <button onclick="orderViaWhatsApp('Pick Any 5 Subjects Pack (10% OFF) - Rs. 2250')" class="bg-[#3a80bc] text-white text-xs font-bold px-3.5 py-1.5 rounded-lg">Claim 10% Deal</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ======================================================== -->
-    <!-- TAB 5: START EXAM PREPARATION -->
-    <!-- ======================================================== -->
-    <section id="tab-portal" class="tab-content flex-1 py-10 px-4">
-      <div class="max-w-md mx-auto space-y-4">
-        
-        <div id="loginBox" class="glass-card-light rounded-3xl p-6 shadow-md space-y-4">
-          <div class="text-center space-y-1">
-            <div class="w-10 h-10 rounded-2xl bg-[#102138] text-[#3a80bc] flex items-center justify-center text-lg mx-auto shadow-xs">
-              <i class="fa-solid fa-play"></i>
-            </div>
-            <h3 class="text-base font-bold text-[#102138]">Start Exam Preparation</h3>
-            <p class="text-xs text-slate-500">Enter your approved Gmail to access your portal.</p>
-          </div>
-
-          <div class="bg-amber-50 border border-amber-200 p-3 rounded-2xl text-[11px] text-amber-900 leading-snug">
-            <strong>⚠️ 1-Month Access Policy:</strong> Access opens once approved by instructor in database. Portals remain active for exactly <strong>1 Month (30 Days)</strong> from approval date.
-          </div>
-
-          <div class="space-y-3 text-xs">
-            <input type="email" id="logEmail" placeholder="Approved Gmail Address *" class="w-full border border-slate-300 rounded-xl px-3 py-2.5 focus:outline-none" />
-            <input type="text" id="logSubject" value="MGT101" placeholder="Course Code (e.g. MGT101, MTH401) *" class="w-full border border-slate-300 rounded-xl px-3 py-2.5 uppercase focus:outline-none" />
-            
-            <button onclick="verifyAndOpenReader()" class="w-full bg-[#102138] hover:bg-[#1a385f] text-white font-bold py-2.5 rounded-xl transition shadow-xs">
-              Open My Preparation Portal
-            </button>
-          </div>
-        </div>
-
-        <div id="readerBox" class="hidden glass-card-light rounded-3xl p-6 shadow-sm space-y-4">
-          <div class="flex items-center justify-between border-b border-slate-100 pb-3">
-            <div>
-              <span class="text-[10px] font-bold text-emerald-600 uppercase block">✓ Active 1-Month Portal</span>
-              <h3 class="text-base font-bold text-[#102138]" id="activeCourseTitle">MGT101 Preparation Software</h3>
-            </div>
-            <button onclick="closeReader()" class="text-xs text-slate-400 hover:text-slate-600">Close</button>
-          </div>
-          
-          <div class="text-xs text-slate-600 space-y-3 leading-relaxed">
-            <p><strong>MGT101: Basic Accounting Equation & Rules of Debit/Credit</strong></p>
-            <p>Assets = Liabilities + Owner's Equity. Increase in assets/expenses is debited, increase in liabilities/equity is credited.</p>
-            <a href="mgt101.html" class="inline-block bg-[#102138] text-white px-4 py-2 rounded-xl font-bold mt-2">
-              Launch Full Dedicated MGT101 Portal →
-            </a>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ======================================================== -->
-    <!-- ORDER MODAL: SCREENSHOT RECEIPT & DYNAMIC TYPE IDENTIFICATION -->
-    <!-- ======================================================== -->
-    <div id="orderModal" class="fixed inset-0 bg-slate-950/70 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
-      <div class="bg-white rounded-3xl max-w-sm w-full p-5 space-y-3.5 border border-slate-200 shadow-2xl">
-        <div class="flex items-center justify-between">
-          <div>
-            <span class="text-[10px] font-bold text-[#3a80bc] uppercase" id="mCode">MGT101</span>
-            <h3 class="text-sm font-bold text-[#102138]" id="mTitle">Portal Title</h3>
-          </div>
-          <button onclick="closeOrderModal()" class="text-slate-400 hover:text-slate-600 text-sm">
-            <i class="fa-solid fa-xmark"></i>
-          </button>
-        </div>
-
-        <!-- DYNAMIC PRICING BOX (Updates based on Mid/Final selection) -->
-        <div class="p-3 border rounded-xl bg-blue-50/50 text-center border-blue-200">
-          <span class="text-[10px] text-slate-500 block font-bold uppercase" id="mPlanType">Midterm Portal</span>
-          <span class="text-lg font-black text-[#102138]" id="mPriceDisplay">Rs. 500</span>
-        </div>
-
-        <!-- PAYMENT NUMBERS -->
-        <div class="bg-slate-50 p-2.5 rounded-xl text-[11px] space-y-1 border border-slate-200">
-          <div class="flex items-center justify-between">
-            <div><span class="font-bold text-emerald-700">EasyPaisa:</span> <span class="font-mono font-bold">03198519637</span> (Munazza mukhtar)</div>
-            <button onclick="navigator.clipboard.writeText('03198519637');" class="bg-white px-2 py-0.5 rounded border text-[10px] font-bold">Copy</button>
-          </div>
-          <div class="flex items-center justify-between">
-            <div><span class="font-bold text-blue-700">MCB Bank:</span> <span class="font-mono font-bold">1708370211010380</span> (MUNAZA MUKHTAR)</div>
-            <button onclick="navigator.clipboard.writeText('1708370211010380');" class="bg-white px-2 py-0.5 rounded border text-[10px] font-bold">Copy</button>
-          </div>
-        </div>
-
-        <!-- FORM INPUTS (SCREENSHOT UPLOAD) -->
-        <div class="space-y-2.5 text-xs">
-          <input type="text" id="stuName" placeholder="Your Full Name *" class="w-full border rounded-xl px-3 py-2 text-xs focus:outline-none" />
-          <input type="email" id="stuEmail" placeholder="Gmail Address (for portal access) *" class="w-full border rounded-xl px-3 py-2 text-xs focus:outline-none" />
-          
-          <!-- SCREENSHOT SELECTOR -->
-          <div class="border-2 border-dashed border-blue-200 bg-blue-50/50 p-3 rounded-xl text-center cursor-pointer hover:bg-blue-50 transition" onclick="document.getElementById('stuReceiptPic').click()">
-            <i class="fa-solid fa-image text-[#3a80bc] text-lg block mb-1"></i>
-            <span class="text-[11px] font-bold text-slate-700 block" id="receiptPicLabel">Attach Payment Receipt Screenshot 📷</span>
-            <span class="text-[9px] text-slate-400 block">Required for verification</span>
-            <input type="file" id="stuReceiptPic" accept="image/*" class="hidden" onchange="previewScreenshot(this)" />
-          </div>
-        </div>
-
-        <button onclick="submitOrderWithScreenshot()" class="w-full bg-[#102138] hover:bg-[#1a385f] text-white font-bold py-2.5 rounded-xl text-xs transition shadow-sm flex items-center justify-center gap-1.5">
-          <i class="fa-brands fa-whatsapp text-emerald-400 text-sm"></i>
-          <span>Send Order to WhatsApp</span>
+        <a href="https://vulms.vu.edu.pk/" target="_blank" class="w-full flex items-center gap-3 px-4 py-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold transition">
+          <i class="fa-solid fa-graduation-cap text-[#3a80bc]"></i> VU LMS Official Login
+        </a>
+        <button onclick="orderViaWhatsApp('Book Your Assignment'); toggleMobileMenu();" class="w-full flex items-center gap-3 px-4 py-3 rounded-xl bg-amber-50 border border-amber-200 text-amber-700 hover:bg-amber-100 font-bold transition mt-2">
+          <i class="fa-solid fa-pen-nib"></i> Book Your Assignment
         </button>
       </div>
     </div>
 
-    <!-- 3D ANIMATED GIFT BOX NOTIFICATION POPUP -->
-    <div id="giftNoticeBox" class="fixed bottom-6 left-6 z-40 max-w-sm w-full">
-      <div class="glass-card-light p-4 rounded-3xl shadow-xl space-y-2.5 relative border border-blue-200/80">
-        <div class="flex items-center justify-between">
-          <div class="flex items-center space-x-2.5">
-            <span class="text-2xl gift-icon-bounce">🎁</span>
-            <div>
-              <span class="text-[10px] font-black text-[#3a80bc] uppercase tracking-wider block leading-none">SDG Insights Special</span>
-              <span id="giftNoticeCategory" class="text-xs font-black text-[#102138]">Semester Offer</span>
+    <section id="tab-home" class="tab-content tab-active flex-1">
+      <div class="py-12 md:py-20 px-4 text-center relative z-10">
+        <div class="max-w-4xl mx-auto space-y-6">
+          
+          <div class="inline-flex items-center gap-2 bg-white/60 backdrop-blur-sm border border-blue-200 text-[#102138] px-5 py-2 rounded-full text-xs font-bold shadow-sm animate-float">
+            <i class="fa-solid fa-star text-amber-400"></i>
+            <span class="tracking-wide">Success, Dignity & Glory in Your VU Studies</span>
+          </div>
+
+          <h1 class="text-3xl md:text-5xl lg:text-6xl font-black text-[#102138] tracking-tight leading-tight drop-shadow-sm">
+            Final & Mid Term Preparation Portals, <br/>
+            Notes & <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#3a80bc] to-[#2563eb]">Professional LMS Handling</span>
+          </h1>
+
+          <p class="text-slate-600 text-sm md:text-base max-w-2xl mx-auto leading-relaxed font-semibold">
+            100% from the handout of Virtual University (VU). 100% success guarantee for your best CGPA.
+          </p>
+
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-3 pt-4">
+             <button onclick="switchTab('tab-mid-portals')" class="btn-premium w-full sm:w-auto px-8 py-3.5 rounded-2xl text-sm font-bold flex items-center justify-center gap-2">
+               <i class="fa-solid fa-bullseye"></i> Explore Portals
+             </button>
+             <button onclick="orderViaWhatsApp('Book Your Assignment')" class="bg-white border-2 border-[#102138] text-[#102138] hover:bg-slate-50 w-full sm:w-auto px-8 py-3.5 rounded-2xl text-sm font-bold transition-all flex items-center justify-center gap-2 shadow-sm">
+               <i class="fa-solid fa-pen-nib text-[#3a80bc]"></i> Book Assignment
+             </button>
+          </div>
+
+          <!-- Glassmorphic Search -->
+          <div class="max-w-md mx-auto pt-8">
+            <div class="relative group">
+              <div class="absolute -inset-0.5 bg-gradient-to-r from-[#3a80bc] to-[#102138] rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-500"></div>
+              <div class="relative flex items-center">
+                <i class="fa-solid fa-magnifying-glass absolute left-5 text-slate-400"></i>
+                <input type="text" id="homeSearch" onkeyup="searchFromHome()" placeholder="Search course code..." class="w-full bg-white/90 backdrop-blur-xl border border-slate-300 rounded-2xl pl-12 pr-4 py-4 text-sm text-[#102138] placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#3a80bc] transition-all shadow-md" />
+                <button onclick="searchFromHome()" class="absolute right-2 bg-[#102138] hover:bg-[#3a80bc] text-white px-4 py-2 rounded-xl text-xs font-bold transition-colors shadow-sm">Search</button>
+              </div>
             </div>
           </div>
-          <button onclick="hideGiftBoxManual()" class="w-6 h-6 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-400 hover:text-slate-600 flex items-center justify-center text-xs transition">
-            <i class="fa-solid fa-xmark"></i>
-          </button>
-        </div>
+          
+          <div class="flex items-center justify-center gap-4 pt-6">
+            <a href="https://youtube.com/@sdginsights" target="_blank" class="flex items-center gap-2 text-xs font-bold text-slate-600 hover:text-red-600 transition">
+              <i class="fa-brands fa-youtube text-lg"></i> YouTube Channel
+            </a>
+            <span class="text-slate-300">|</span>
+            <a href="https://whatsapp.com/channel/0029VbB78Xa3WHTReQ1hTF1Q" target="_blank" class="flex items-center gap-2 text-xs font-bold text-slate-600 hover:text-[#3a80bc] transition">
+              <i class="fa-brands fa-whatsapp text-lg"></i> WhatsApp Community
+            </a>
+          </div>
 
-        <p id="giftNoticeText" class="text-xs text-slate-700 font-semibold leading-relaxed">
-          Flat 20% OFF on Full Semester Bundles & 10% OFF on any 5 subjects!
-        </p>
-
-        <div class="w-full bg-slate-100 h-1.5 rounded-full overflow-hidden">
-          <div id="giftProgressBar" class="bg-gradient-to-r from-[#3a80bc] to-[#2563eb] h-full timer-bar-animate"></div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <!-- INSTRUCTOR CHATBOT -->
-    <div class="fixed bottom-6 right-6 z-50">
-      <button onclick="toggleTeacherChat()" id="chatTriggerBtn" class="flex items-center gap-2.5 bg-[#102138] hover:bg-[#1a385f] text-white px-4 py-3 rounded-full shadow-2xl transition-all duration-300 border border-[#3a80bc]/40 hover:scale-105">
-        <div class="w-8 h-8 rounded-full bg-[#3a80bc] flex items-center justify-center text-white text-sm shrink-0">
-          <i class="fa-solid fa-chalkboard-user"></i>
+    <section id="tab-mid-portals" class="tab-content flex-1 py-8 md:py-10 px-4">
+      <div class="max-w-6xl mx-auto space-y-6 relative z-10">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-200 pb-4">
+          <div>
+            <h2 class="text-2xl md:text-3xl font-black text-[#102138] flex items-center gap-3">
+              <i class="fa-solid fa-bullseye text-[#3a80bc]"></i> Mid Term Preparation Portals
+            </h2>
+            <p class="text-sm text-slate-500 mt-1">Select your course and unlock the full interactive Mid Term experience.</p>
+          </div>
         </div>
-        <div class="text-left leading-tight">
-          <span class="text-[10px] text-slate-300 block">Have a Question?</span>
-          <span class="text-xs font-bold text-amber-300">Talk to Instructor</span>
+        <div id="midGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-2">
+          <!-- Injected via JS -->
         </div>
+      </div>
+    </section>
+
+    <section id="tab-final-portals" class="tab-content flex-1 py-8 md:py-10 px-4">
+      <div class="max-w-6xl mx-auto space-y-6 relative z-10">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-200 pb-4">
+          <div>
+            <h2 class="text-2xl md:text-3xl font-black text-[#102138] flex items-center gap-3">
+              <i class="fa-solid fa-trophy text-[#3a80bc]"></i> Final Term Preparation Portals
+            </h2>
+            <p class="text-sm text-slate-500 mt-1">Select your course and unlock the full interactive Final Term experience.</p>
+          </div>
+        </div>
+        <div id="finalGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-2">
+          <!-- Injected via JS -->
+        </div>
+      </div>
+    </section>
+
+    <section id="tab-lms" class="tab-content flex-1 py-10 px-4">
+      <div class="max-w-5xl mx-auto space-y-10 relative z-10">
+        <div class="text-center space-y-3">
+          <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-indigo-50 border border-indigo-200 text-indigo-600 mb-2 shadow-sm animate-float">
+            <i class="fa-solid fa-headset text-2xl"></i>
+          </div>
+          <h2 class="text-3xl md:text-4xl font-black text-[#102138]">Professional LMS Handling Service</h2>
+          <p class="text-sm text-slate-600 max-w-xl mx-auto font-medium">Complete semester coursework handling and exam preparation with dedicated 24/7 VIP academic support.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="glass-card-light rounded-3xl p-8 flex flex-col justify-between space-y-6">
+            <div class="space-y-4">
+              <span class="inline-block bg-slate-100 text-slate-600 text-[10px] font-bold px-3 py-1 rounded-full uppercase border border-slate-300">Standard Plan</span>
+              <h3 class="text-2xl font-black text-[#102138]">Complete LMS Handling</h3>
+              <p class="text-sm text-slate-600 leading-relaxed">Full semester handling of all your online graded activities with target marks.</p>
+              <ul class="text-sm space-y-3 text-slate-700 pt-4 font-semibold">
+                <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-emerald-500"></i> Assignments (100% Plagiarism Free)</li>
+                <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-emerald-500"></i> Quizzes (High Score Target)</li>
+                <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-emerald-500"></i> Graded Discussion Boards (GDBs)</li>
+              </ul>
+            </div>
+            <button onclick="orderViaWhatsApp('Complete LMS Handling Package')" class="w-full bg-white border-2 border-[#102138] text-[#102138] hover:bg-slate-50 font-bold text-sm py-3.5 rounded-2xl transition-all">
+              Inquire Pricing on WhatsApp
+            </button>
+          </div>
+
+          <div class="glass-card-light border-2 border-[#3a80bc] rounded-3xl p-8 flex flex-col justify-between space-y-6 shadow-[0_8px_30px_rgba(58,128,188,0.15)] relative overflow-hidden">
+            <div class="absolute -top-10 -right-10 w-48 h-48 bg-blue-50 rounded-full blur-3xl"></div>
+            <div class="space-y-4 relative z-10">
+              <span class="inline-block bg-[#102138] text-white text-[10px] font-black px-3 py-1 rounded-full uppercase shadow-md">VIP All-In-One</span>
+              <h3 class="text-2xl font-black text-[#102138]">LMS + Exam Prep + Support</h3>
+              <p class="text-sm text-slate-600 leading-relaxed">The ultimate package. Complete semester care including coursework, exam portals, and mentor access.</p>
+              <ul class="text-sm space-y-3 text-slate-700 pt-4 font-semibold">
+                <li class="flex items-center gap-3"><i class="fa-solid fa-star text-[#3a80bc]"></i> Complete LMS Handling Included</li>
+                <li class="flex items-center gap-3"><i class="fa-solid fa-star text-[#3a80bc]"></i> Midterm Prep Portals & Notes</li>
+                <li class="flex items-center gap-3"><i class="fa-solid fa-star text-[#3a80bc]"></i> Final Term Prep Portals Included</li>
+              </ul>
+            </div>
+            <button onclick="orderViaWhatsApp('VIP All-in-One: LMS Handling + Exam Prep + Full Support')" class="btn-premium w-full font-black text-sm py-3.5 rounded-2xl transition-all relative z-10 tracking-wide">
+              Book VIP Package
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="tab-deals" class="tab-content flex-1 py-10 px-4">
+      <div class="max-w-4xl mx-auto space-y-10 relative z-10">
+        <div class="text-center space-y-2">
+          <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-amber-50 border border-amber-200 text-amber-500 mb-2 shadow-sm animate-float">
+            <i class="fa-solid fa-tags text-2xl"></i>
+          </div>
+          <h2 class="text-3xl md:text-4xl font-black text-[#102138]">Discounted Deals</h2>
+          <p class="text-sm text-slate-600 font-medium">Order bundled preparation portals and save your fees instantly.</p>
+        </div>
+
+        <div class="bg-blue-50/80 border border-blue-200 p-4 rounded-2xl text-xs text-blue-800 flex items-start gap-3 shadow-sm max-w-2xl mx-auto">
+          <i class="fa-solid fa-circle-info mt-0.5 text-blue-500"></i>
+          <p class="leading-relaxed">
+            <strong>Automated Discounts:</strong> Add subjects to your Cart. As soon as you hit <strong>5 subjects</strong>, a 10% discount applies. Hit <strong>7 subjects</strong> to unlock the massive 20% Semester Deal!
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="glass-card-light rounded-3xl p-8 space-y-4 border-2 border-[#102138] relative overflow-hidden shadow-lg">
+            <span class="inline-block bg-[#102138] text-white text-[10px] font-bold px-3 py-1 rounded-md uppercase">20% OFF Deal</span>
+            <h3 class="text-xl font-bold text-[#102138]">Full Semester Super Bundle</h3>
+            <p class="text-sm text-slate-600 leading-relaxed font-medium">Select 7 or more preparation portals across your degree program.</p>
+            <div class="pt-6 mt-4 border-t border-slate-200 flex items-center justify-between">
+              <div class="flex flex-col">
+                <span class="text-[10px] text-slate-400 uppercase font-bold tracking-wider">Fixed Price Example</span>
+                <span class="text-lg font-black text-emerald-600">Rs. 6000</span>
+              </div>
+              <button onclick="triggerDealCart(20)" class="bg-white border border-[#102138] hover:bg-slate-50 text-[#102138] text-xs font-bold px-5 py-2.5 rounded-xl transition-colors shadow-sm">Start Adding to Cart</button>
+            </div>
+          </div>
+
+          <div class="glass-card-light border border-slate-200 rounded-3xl p-8 space-y-4 relative overflow-hidden shadow-sm">
+            <span class="inline-block bg-amber-100 text-amber-800 border border-amber-200 text-[10px] font-bold px-3 py-1 rounded-md uppercase">10% OFF Deal</span>
+            <h3 class="text-xl font-bold text-[#102138]">Pick Any 5 Subjects Pack</h3>
+            <p class="text-sm text-slate-600 leading-relaxed font-medium">Customize your bundle. Choose exactly 5 preparation portals.</p>
+            <div class="pt-6 mt-4 border-t border-slate-200 flex items-center justify-between">
+              <div class="flex flex-col">
+                <span class="text-[10px] text-slate-400 uppercase font-bold tracking-wider">Discount Trigger</span>
+                <span class="text-sm font-black text-[#102138]">-10% on Cart Total</span>
+              </div>
+              <button onclick="triggerDealCart(10)" class="btn-accent text-white text-xs font-bold px-5 py-2.5 rounded-xl">Start Adding to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FLOATING ICONS -->
+    <div class="fixed bottom-6 left-4 md:left-6 z-40 flex flex-col gap-3">
+      <!-- WhatsApp Icon -->
+      <a href="https://wa.me/923198519637" target="_blank" class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-emerald-500 text-white shadow-lg flex items-center justify-center hover:scale-110 transition-transform hover:bg-emerald-600 relative group">
+        <i class="fa-brands fa-whatsapp text-2xl md:text-3xl"></i>
+        <div class="absolute -inset-2 bg-emerald-400 rounded-full blur opacity-30 group-hover:opacity-60 transition"></div>
+      </a>
+      
+      <!-- Cart Icon -->
+      <button onclick="toggleCart()" class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-white border border-slate-200 text-[#102138] shadow-lg flex items-center justify-center hover:scale-110 transition-transform relative group">
+        <i class="fa-solid fa-cart-shopping text-xl md:text-2xl text-[#3a80bc]"></i>
+        <span id="floatingCartBadge" class="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] md:text-xs w-5 h-5 md:w-6 md:h-6 rounded-full flex items-center justify-center font-bold hidden border-2 border-white">0</span>
       </button>
+    </div>
 
-      <div id="teacherChatWindow" class="hidden absolute bottom-16 right-0 w-[320px] sm:w-[380px] bg-white rounded-3xl shadow-2xl border border-slate-200 overflow-hidden flex flex-col animate-fade-in text-xs">
-        <div class="bg-[#102138] text-white p-4 flex items-center justify-between border-b border-slate-700">
-          <div class="flex items-center space-x-2.5">
-            <div class="w-9 h-9 rounded-full bg-[#3a80bc] flex items-center justify-center text-white font-bold shrink-0">
-              <i class="fa-solid fa-graduation-cap"></i>
-            </div>
-            <div>
-              <h4 class="font-extrabold text-sm">SDG Insights Instructor Desk</h4>
-              <span class="text-[10px] text-emerald-400 flex items-center gap-1">
-                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span> Instructor Online
-              </span>
-            </div>
+    <!-- CART SIDEBAR DRAWER -->
+    <div id="cartBackdrop" onclick="toggleCart()" class="cart-backdrop fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-[60]"></div>
+    <div id="cartDrawer" class="cart-drawer fixed top-0 right-0 h-full w-full max-w-sm bg-white/95 backdrop-blur-xl border-l border-slate-200 shadow-2xl z-[70] flex flex-col">
+      <div class="px-5 py-4 border-b border-slate-200 flex items-center justify-between bg-slate-50">
+        <h2 class="text-lg font-black text-[#102138] flex items-center gap-2">
+          <i class="fa-solid fa-cart-shopping text-[#3a80bc]"></i> Your Cart
+        </h2>
+        <button onclick="toggleCart()" class="w-8 h-8 rounded-full bg-slate-200 hover:bg-slate-300 text-slate-600 flex items-center justify-center transition-colors">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      
+      <div id="cartItemsContainer" class="flex-1 overflow-y-auto p-5 space-y-4 relative">
+        <div id="emptyCartState" class="absolute inset-0 flex flex-col items-center justify-center text-slate-400 px-6 text-center space-y-3">
+          <i class="fa-solid fa-box-open text-5xl mb-2 text-slate-300"></i>
+          <p class="text-sm font-bold text-slate-500">Your cart is empty.</p>
+          <p class="text-xs">Add Mid or Final term portals to claim your discounts.</p>
+        </div>
+      </div>
+
+      <div id="cartFooter" class="border-t border-slate-200 bg-slate-50 p-5 space-y-4 hidden">
+        <div class="space-y-2 text-xs font-semibold text-slate-600">
+          <div class="flex justify-between">
+            <span>Subtotal (<span id="cartCountLabel">0</span> items)</span>
+            <span id="cartSubtotal" class="font-mono">Rs. 0</span>
           </div>
-          <button onclick="toggleTeacherChat()" class="text-slate-400 hover:text-white text-base">
+          <div id="discountRow" class="flex justify-between text-emerald-600 hidden">
+            <span class="flex items-center gap-1"><i class="fa-solid fa-tag"></i> Deal Discount (<span id="discountPercent">0</span>%)</span>
+            <span id="cartDiscount" class="font-mono">- Rs. 0</span>
+          </div>
+        </div>
+        <div class="flex justify-between items-center border-t border-slate-200 pt-3">
+          <span class="text-sm font-black text-[#102138]">Total Bill</span>
+          <span id="cartTotal" class="text-2xl font-black text-[#3a80bc] font-mono">Rs. 0</span>
+        </div>
+        <button onclick="openCartCheckout()" class="w-full btn-premium font-black py-3.5 rounded-xl text-sm transition-all shadow-md flex items-center justify-center gap-2">
+          <i class="fa-solid fa-credit-card"></i> Checkout on WhatsApp
+        </button>
+      </div>
+    </div>
+
+    <!-- ORDER MODAL -->
+    <div id="orderModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4 transition-opacity duration-300">
+      <div class="glass-card-light rounded-3xl max-w-sm w-full p-6 space-y-5 shadow-2xl relative overflow-hidden animate-fade-in-up border border-slate-200">
+        <div class="flex items-center justify-between relative z-10">
+          <div>
+            <span class="text-[10px] font-black text-[#3a80bc] uppercase tracking-widest bg-blue-50 border border-blue-100 px-2 py-0.5 rounded" id="mCode">MGT101</span>
+            <h3 class="text-sm font-bold text-[#102138] mt-1" id="mTitle">Portal Title</h3>
+          </div>
+          <button onclick="closeOrderModal()" class="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-500 flex items-center justify-center transition-colors">
             <i class="fa-solid fa-xmark"></i>
           </button>
         </div>
 
-        <div id="chatMessages" class="p-4 h-80 overflow-y-auto chat-scroll space-y-4 bg-slate-50">
-          <div class="bg-white p-3.5 rounded-2xl rounded-tl-none border border-slate-200 shadow-2xs space-y-2 leading-relaxed">
-            <span class="text-[10px] font-bold text-[#3a80bc] block">SDG Insights Instructor</span>
-            <p class="urdu-font text-xs text-slate-800 text-right">
-              السلام علیکم عزیز طالب علم! میں SDG Insights سے آپ کی انسٹرکٹر ہوں۔ نوٹس، ایگزام تیاری، پورٹلز یا ایل ایم ایس ہینڈلنگ سے متعلق کوئی بھی سوال ہو تو نیچے میسج لکھیں یا سوال منتخب کریں:
-            </p>
-          </div>
-
-          <div class="space-y-1.5 pt-1">
-            <span class="text-[10px] font-bold text-slate-400 block uppercase">Quick Questions:</span>
-            <button onclick="askBotQuestion('paid')" class="w-full text-left bg-white hover:bg-blue-50/70 p-2.5 rounded-xl border border-slate-200 text-slate-700 font-semibold block transition">
-              • Are all notes and portals paid? (کیا یہ پیڈ ہیں؟)
-            </button>
-            <button onclick="askBotQuestion('exam_percentage')" class="w-full text-left bg-white hover:bg-blue-50/70 p-2.5 rounded-xl border border-slate-200 text-slate-700 font-semibold block transition">
-              • How much exam comes from these notes? (پیپر کتنا آتا ہے؟)
-            </button>
-            <button onclick="askBotQuestion('discounts')" class="w-full text-left bg-white hover:bg-blue-50/70 p-2.5 rounded-xl border border-slate-200 text-slate-700 font-semibold block transition">
-              • Any discounts or semester packages available? (ڈیلز / ڈسکاؤنٹ)
-            </button>
-            <button onclick="askBotQuestion('access_method')" class="w-full text-left bg-white hover:bg-blue-50/70 p-2.5 rounded-xl border border-slate-200 text-slate-700 font-semibold block transition">
-              • How will I get portal access? (ایکسیس کیسے ملے گی؟)
-            </button>
+        <div class="p-4 border border-[#3a80bc]/30 rounded-2xl bg-[#f0f7ff] text-center shadow-inner relative z-10" id="pricingBoxContainer">
+          <span class="text-[10px] text-slate-500 block font-bold uppercase tracking-wider mb-1" id="mPlanType">Midterm Portal</span>
+          <div id="mPriceDisplayContainer" class="flex flex-col items-center justify-center">
+            <span class="text-2xl font-black text-[#102138]" id="mPriceDisplay">Rs. 500</span>
           </div>
         </div>
 
-        <div class="p-2.5 bg-white border-t border-slate-200 flex items-center gap-1.5">
-          <input type="text" id="userChatInput" placeholder="Type in Roman Urdu, Urdu or English..." class="flex-1 bg-slate-50 border border-slate-200 rounded-xl px-3 py-2.5 text-xs focus:bg-white focus:outline-none" onkeypress="if(event.key==='Enter') sendCustomTeacherMsg()" />
-          <button onclick="sendCustomTeacherMsg()" class="bg-[#102138] hover:bg-[#1a385f] text-white p-2.5 rounded-xl transition">
-            <i class="fa-solid fa-paper-plane text-xs"></i>
-          </button>
+        <div class="bg-slate-50 p-3 rounded-2xl text-[11px] space-y-2 border border-slate-200 relative z-10">
+          <div class="flex items-center justify-between bg-white p-2 rounded-xl border border-slate-100 shadow-sm">
+            <div><span class="font-bold text-emerald-600">EasyPaisa:</span> <span class="font-mono font-bold text-[#102138]">03198519637</span></div>
+            <button onclick="copyToClipboard('03198519637');" class="bg-slate-100 hover:bg-slate-200 text-slate-700 px-2.5 py-1 rounded-lg font-bold transition">Copy</button>
+          </div>
+          <div class="flex items-center justify-between bg-white p-2 rounded-xl border border-slate-100 shadow-sm">
+            <div><span class="font-bold text-[#3a80bc]">MCB Bank:</span> <span class="font-mono font-bold text-[#102138]">1708370211010380</span></div>
+            <button onclick="copyToClipboard('1708370211010380');" class="bg-slate-100 hover:bg-slate-200 text-slate-700 px-2.5 py-1 rounded-lg font-bold transition">Copy</button>
+          </div>
+        </div>
+
+        <div class="space-y-3 text-xs relative z-10">
+          <input type="text" id="stuName" placeholder="Your Full Name *" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 text-[#102138] placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-[#3a80bc] transition shadow-sm" />
+          <input type="email" id="stuEmail" placeholder="Allotted Email (for access) *" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 text-[#102138] placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-[#3a80bc] transition shadow-sm" />
+          
+          <div class="border-2 border-dashed border-[#3a80bc]/40 bg-blue-50/50 p-4 rounded-xl text-center cursor-pointer hover:bg-blue-50 transition-all group" onclick="document.getElementById('stuReceiptPic').click()">
+            <i class="fa-solid fa-cloud-arrow-up text-[#3a80bc] text-2xl block mb-2 group-hover:-translate-y-1 transition-transform"></i>
+            <span class="text-[11px] font-bold text-[#102138] block" id="receiptPicLabel">Attach Payment Screenshot 📷</span>
+            <input type="file" id="stuReceiptPic" accept="image/*" class="hidden" onchange="previewScreenshot(this)" />
+          </div>
+        </div>
+
+        <button onclick="submitOrderWithScreenshot()" class="w-full btn-premium font-black py-3.5 rounded-xl text-xs transition-all shadow-md flex items-center justify-center gap-2 relative z-10">
+          <i class="fa-brands fa-whatsapp text-lg text-emerald-400"></i> Send Order
+        </button>
+      </div>
+    </div>
+
+    <!-- LOCKED PREVIEW MODAL -->
+    <div id="lockedPreviewModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4 transition-opacity duration-300">
+      <div class="glass-card-light rounded-3xl max-w-md w-full overflow-hidden shadow-2xl relative animate-fade-in-up border border-slate-200 min-h-[400px] flex flex-col items-center justify-center p-6">
+        <div class="blurred-notes-bg"></div>
+        <div class="dummy-text-overlay">
+          Q1: Explain the fundamental equation...<br/>Ans: The basic accounting equation is...<br/>[RESTRICTED CONTENT - PLEASE UNLOCK]<br/>
+          Q2: Define depreciation methods.<br/>[UNLOCK TO READ MORE]<br/><br/>
+          ** VERIFIED MCQs **<br/>1. Which is a current asset?<br/>A) Land B) Inventory [CORRECT]<br/>[RESTRICTED CONTENT]
+        </div>
+        
+        <div class="relative z-10 bg-white/95 p-6 rounded-3xl w-full border border-slate-200 shadow-xl flex flex-col items-center text-center backdrop-blur-xl">
+          <div class="w-16 h-16 rounded-full bg-red-50 border border-red-200 flex items-center justify-center mb-4 shadow-sm">
+            <i class="fa-solid fa-lock text-3xl text-red-500"></i>
+          </div>
+          <h3 class="text-xl font-black text-[#102138] mb-1">Portal Locked</h3>
+          <p class="text-xs text-slate-500 mb-5 font-medium">Please login to unlock <span id="lockedCourseCode" class="font-bold text-[#3a80bc]"></span>.</p>
+          
+          <div class="w-full space-y-3">
+            <div class="relative">
+              <i class="fa-solid fa-book absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
+              <input type="text" id="loginCourseCode" readonly class="w-full bg-slate-100 border border-slate-200 rounded-xl pl-10 pr-4 py-3 text-sm text-slate-600 cursor-not-allowed font-mono focus:outline-none" />
+            </div>
+            <div class="relative">
+              <i class="fa-solid fa-envelope absolute left-4 top-1/2 -translate-y-1/2 text-[#3a80bc] text-sm"></i>
+              <input type="email" id="loginEmail" placeholder="Allotted Email ID *" class="w-full bg-white border border-[#3a80bc]/40 rounded-xl pl-10 pr-4 py-3 text-sm text-[#102138] focus:outline-none focus:ring-1 focus:ring-[#3a80bc] shadow-sm" />
+            </div>
+            <button onclick="verifyAndUnlockPortal()" class="w-full btn-premium font-bold py-3.5 rounded-xl text-sm transition-all shadow-md mt-2">
+              Login & Access Portal
+            </button>
+          </div>
+          <button onclick="closeLockedPreview()" class="mt-4 text-xs text-slate-500 hover:text-[#102138] font-bold">Cancel</button>
         </div>
       </div>
     </div>
+
+    <!-- CUSTOM TOAST CONTAINER -->
+    <div id="toastContainer"></div>
 
     <!-- FOOTER -->
-    <footer class="bg-white/95 backdrop-blur-md border-t border-slate-200 py-6 text-xs text-slate-400 mt-auto text-center">
+    <footer class="bg-white/80 backdrop-blur-md border-t border-slate-200 py-6 text-xs text-slate-500 mt-auto text-center relative z-10">
       <div class="max-w-6xl mx-auto px-4 space-y-1">
-        <p class="font-bold text-slate-700">SDG Insights — Success, Dignity & Glory in Your VU Studies</p>
+        <p class="font-bold text-[#102138]">SDG Insights — Success, Dignity & Glory in Your VU Studies</p>
         <p>Official Contact: 0319-8519637 • Email: sdginsightsedu@gmail.com</p>
       </div>
     </footer>
-
   </div>
 
-  <!-- JAVASCRIPT -->
   <script>
-    const giftNotices = [
-      { cat: "Semester Offer", text: "Flat 20% OFF on Full Semester Bundles & 10% OFF on any 5 subjects!" },
-      { cat: "Important Policy", text: "All exam preparation portals and master notes are 100% PAID — nothing is free." },
-      { cat: "VIP Coursework", text: "Complete LMS Handling (Assignments, Quizzes, GDBs) with 24/7 academic support." },
-      { cat: "Interactive Software", text: "Practice & prepare online with zero file downloads directly on your screen!" }
-    ];
-    let giftIndex = 0;
-    const giftBoxEl = document.getElementById("giftNoticeBox");
-    const giftTextEl = document.getElementById("giftNoticeText");
-    const giftCatEl = document.getElementById("giftNoticeCategory");
+    // Toast Notification System
+    function showToast(message, type = 'info') {
+      const container = document.getElementById('toastContainer');
+      const toast = document.createElement('div');
+      let icon = '<i class="fa-solid fa-info-circle text-[#3a80bc] mr-2"></i>';
+      let borderColor = 'rgba(58, 128, 188, 0.4)';
+      
+      if(type === 'success') {
+        icon = '<i class="fa-solid fa-check-circle text-emerald-500 mr-2"></i>'; borderColor = 'rgba(16, 185, 129, 0.4)';
+      } else if (type === 'error') {
+        icon = '<i class="fa-solid fa-triangle-exclamation text-red-500 mr-2"></i>'; borderColor = 'rgba(239, 68, 68, 0.4)';
+      }
 
-    function showNextGiftNotice() {
-      giftCatEl.innerText = giftNotices[giftIndex].cat;
-      giftTextEl.innerText = giftNotices[giftIndex].text;
-      giftBoxEl.classList.add("box-visible");
-
-      const bar = document.getElementById("giftProgressBar");
-      bar.classList.remove("timer-bar-animate");
-      void bar.offsetWidth;
-      bar.classList.add("timer-bar-animate");
-
-      setTimeout(() => {
-        giftBoxEl.classList.remove("box-visible");
-        giftIndex = (giftIndex + 1) % giftNotices.length;
-        setTimeout(showNextGiftNotice, 4000);
-      }, 5000);
-    }
-    setTimeout(showNextGiftNotice, 2000);
-
-    function hideGiftBoxManual() {
-      giftBoxEl.classList.remove("box-visible");
+      toast.className = 'toast-msg flex items-center';
+      toast.style.borderColor = borderColor;
+      toast.innerHTML = `${icon} <span>${message}</span>`;
+      container.appendChild(toast);
+      setTimeout(() => { toast.classList.add('toast-fade-out'); toast.addEventListener('animationend', () => toast.remove()); }, 3500);
     }
 
+    // Mobile Menu Toggle
+    function toggleMobileMenu() {
+      const bg = document.getElementById('mobileDrawerBg');
+      const drawer = document.getElementById('mobileDrawer');
+      bg.classList.toggle('open');
+      drawer.classList.toggle('open');
+    }
+
+    // DB Data
     const approvedStudents = [
-      { email: "munazamukhtarmukhtar@gmail.com", course: "ALL", expiry: "2099-12-31" },
-      { email: "munazammukhtarmukhtar@gmail.com", course: "ALL", expiry: "2099-12-31" },
-      { email: "sdginsightsedu@gmail.com", course: "ALL", expiry: "2099-12-31" },
-      { email: "aonefoodsandcafe@gmail.com", course: "ALL", expiry: "2099-12-31" }
+      { email: "munazamukhtarmukhtar@gmail.com", course: "ALL" },
+      { email: "sdginsightsedu@gmail.com", course: "ALL" }
     ];
 
     const courses = [
-      { code: "MGT101", title: "Financial Accounting Master Portal", types: ["MID", "FINAL", "HIGHLIGHTED", "NOTES"], mid: "Rs. 500", final: "Rs. 500", hl: "Rs. 300", link: "mgt101.html" },
-      { code: "CS101", title: "Introduction to Computing", types: ["MID", "FINAL", "HIGHLIGHTED", "NOTES"], mid: "Rs. 500", final: "Rs. 800", hl: "Rs. 300" },
-      { code: "CS201", title: "Introduction to Programming (C++)", types: ["MID", "FINAL", "HIGHLIGHTED", "NOTES"], mid: "Rs. 600", final: "Rs. 1000", hl: "Rs. 300" },
-      { code: "CS301", title: "Data Structures & Algorithms", types: ["MID", "FINAL", "HIGHLIGHTED", "NOTES"], mid: "Rs. 600", final: "Rs. 1000", hl: "Rs. 300" },
-      { code: "CS304", title: "Object Oriented Programming", types: ["MID", "FINAL", "HIGHLIGHTED", "NOTES"], mid: "Rs. 600", final: "Rs. 1000", hl: "Rs. 300" },
-      { code: "CS401", title: "Computer Architecture & Assembly", types: ["MID", "FINAL", "HIGHLIGHTED", "NOTES"], mid: "Rs. 600", final: "Rs. 1000", hl: "Rs. 300" },
-      { code: "CS402", title: "Theory of Automata", types: ["MID", "FINAL", "HIGHLIGHTED", "NOTES"], mid: "Rs. 600", final: "Rs. 800", hl: "Rs. 300" },
-      { code: "CS403", title: "Database Management Systems", types: ["MID", "FINAL", "HIGHLIGHTED", "NOTES"], mid: "Rs. 600", final: "Rs. 1000", hl: "Rs. 300" },
-      { code: "CS610", title: "Computer Networks", types: ["MID", "FINAL", "HIGHLIGHTED", "NOTES"], mid: "Rs. 600", final: "Rs. 800", hl: "Rs. 300" },
-      { code: "CS601", title: "Data Communication", types: ["MID", "FINAL", "HIGHLIGHTED", "NOTES"], mid: "Rs. 600", final: "Rs. 800", hl: "Rs. 300" },
-      { code: "MTH101", title: "Calculus And Analytical Geometry", types: ["MID", "FINAL", "HIGHLIGHTED", "NOTES"], mid: "Rs. 600", final: "Rs. 900", hl: "Rs. 300" },
-      { code: "MTH202", title: "Discrete Mathematics", types: ["MID", "FINAL", "HIGHLIGHTED", "NOTES"], mid: "Rs. 600", final: "Rs. 900", hl: "Rs. 300" },
-      { code: "MTH301", title: "Calculus II (Multivariable)", types: ["MID", "FINAL", "HIGHLIGHTED", "NOTES"], mid: "Rs. 600", final: "Rs. 900", hl: "Rs. 300" },
-      { code: "MTH401", title: "Differential Equations Master Notes", types: ["MID", "FINAL", "HIGHLIGHTED", "NOTES"], mid: "Rs. 600", final: "Rs. 900", hl: "Rs. 300" }
+      { code: "MGT101", title: "Financial Accounting Master", types: ["MID", "FINAL"], mid: "Rs. 500", final: "Rs. 500" },
+      { code: "CS101", title: "Introduction to Computing", types: ["MID", "FINAL"], mid: "Rs. 500", final: "Rs. 800" },
+      { code: "CS201", title: "Intro to Programming (C++)", types: ["MID", "FINAL"], mid: "Rs. 600", final: "Rs. 1000" },
+      { code: "CS301", title: "Data Structures & Algorithms", types: ["MID", "FINAL"], mid: "Rs. 600", final: "Rs. 1000" },
+      { code: "CS403", title: "Database Management Systems", types: ["MID", "FINAL"], mid: "Rs. 600", final: "Rs. 1000" },
+      { code: "MTH101", title: "Calculus And Analytical Geometry", types: ["MID", "FINAL"], mid: "Rs. 600", final: "Rs. 900" },
+      { code: "MTH401", title: "Differential Equations Master Notes", types: ["MID", "FINAL"], mid: "Rs. 600", final: "Rs. 900" }
     ];
 
     let currentTab = 'tab-home';
-    let currentFilter = 'MID';
     let selectedCourse = null;
+    let selectedType = null;
+    let isCartCheckoutMode = false;
+    let cart = [];
+    let lastDiscountTier = 0;
 
+    // Tab Switching
     function switchTab(tabId) {
+      currentTab = tabId;
       document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('tab-active'));
       const activeEl = document.getElementById(tabId);
-      if (activeEl) {
-        activeEl.classList.add('tab-active');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }
+      if (activeEl) { activeEl.classList.add('tab-active'); window.scrollTo({ top: 0, behavior: 'smooth' }); }
 
-      ['tab-home', 'tab-notes', 'tab-lms', 'tab-deals', 'tab-portal'].forEach(t => {
+      ['tab-home', 'tab-mid-portals', 'tab-final-portals', 'tab-lms', 'tab-deals'].forEach(t => {
         const btn = document.getElementById(`btn-${t}`);
-        if (btn) {
-          if (t === tabId) {
-            btn.className = "nav-btn-active px-3.5 py-2 rounded-xl transition";
-          } else {
-            btn.className = "nav-btn-inactive px-3.5 py-2 rounded-xl transition";
-          }
-        }
+        if (btn) btn.className = (t === tabId) ? "nav-btn-active px-3 py-2 rounded-xl transition" : "nav-btn-inactive px-3 py-2 rounded-xl transition";
       });
 
-      if (tabId === 'tab-notes') {
-        renderNotes();
-      }
+      if (tabId === 'tab-mid-portals') renderGrid('midGrid', 'MID');
+      if (tabId === 'tab-final-portals') renderGrid('finalGrid', 'FINAL');
     }
 
     function searchFromHome() {
-      const q = document.getElementById("homeSearch").value.trim();
+      const q = document.getElementById("homeSearch").value.trim().toUpperCase();
       if (q.length > 0) {
-        switchTab('tab-notes');
-        document.getElementById("notesSearchInput").value = q;
-        filterNotesGrid();
+        switchTab('tab-mid-portals');
+        setTimeout(() => renderGridItems(document.getElementById("midGrid"), 'MID', q), 100);
       }
     }
 
-    function renderNotes() {
-      const grid = document.getElementById("notesGrid");
-      grid.innerHTML = "";
+    function copyToClipboard(text) { navigator.clipboard.writeText(text); showToast(`Copied ${text}!`, 'success'); }
 
-      const q = (document.getElementById("notesSearchInput") ? document.getElementById("notesSearchInput").value : "").toLowerCase().trim();
-      const filtered = courses.filter(c => {
-        const matchType = c.types.includes(currentFilter);
-        const matchQ = q === '' || c.code.toLowerCase().includes(q) || c.title.toLowerCase().includes(q);
-        return matchType && matchQ;
-      });
+    // Render Grids
+    function renderGrid(gridId, typeFilter) { renderGridItems(document.getElementById(gridId), typeFilter, ""); }
 
-      document.getElementById("notesCount").innerText = `${filtered.length} Portals Available`;
+    function renderGridItems(gridElement, typeFilter, searchQuery) {
+      gridElement.innerHTML = "";
+      const filtered = courses.filter(c => c.types.includes(typeFilter) && (searchQuery === '' || c.code.includes(searchQuery) || c.title.toUpperCase().includes(searchQuery)));
 
       filtered.forEach(item => {
-        let p = item.mid;
-        if (currentFilter === 'FINAL') p = item.final;
-        if (currentFilter === 'HIGHLIGHTED') p = item.hl;
-
-        const isMgt = item.code === "MGT101";
-
+        let p = (typeFilter === 'MID') ? item.mid : item.final;
         const card = document.createElement("div");
-        card.className = `glass-card-light rounded-3xl p-4 flex flex-col justify-between ${isMgt ? 'border-2 border-[#3a80bc]' : ''}`;
+        card.className = `glass-card-light rounded-3xl p-5 flex flex-col justify-between group overflow-hidden relative`;
         card.innerHTML = `
-          <div>
-            <div class="flex items-center justify-between mb-2">
-              <span class="font-mono text-xs font-bold text-[#102138] bg-slate-100 px-2 py-0.5 rounded">${item.code}</span>
-              <span class="text-[10px] text-[#3a80bc] font-bold">1 Month: ${p}</span>
+          <div class="relative z-10 mb-4">
+            <div class="flex items-center justify-between mb-3">
+              <span class="font-mono text-xs font-black text-[#102138] bg-slate-100 border border-slate-200 px-2.5 py-1 rounded-lg">${item.code}</span>
+              <span class="text-[10px] text-[#3a80bc] font-black uppercase tracking-wider bg-blue-50 px-2 py-0.5 rounded border border-blue-100">${p}</span>
             </div>
-            <h4 class="font-bold text-xs text-slate-900 leading-snug mb-3">${item.title}</h4>
+            <h4 class="font-bold text-lg text-[#102138] leading-tight">${item.title}</h4>
           </div>
-          
-          <div class="space-y-2 mt-auto">
-            ${item.link ? `
-              <a href="${item.link}" class="w-full bg-[#3a80bc] hover:bg-[#2563eb] text-white text-[11px] font-bold py-2 rounded-xl transition shadow-xs flex items-center justify-center gap-1.5">
-                <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
-                <span>Open ${item.code} Portal</span>
-              </a>
-            ` : ''}
-            <button onclick="openOrderModal('${item.code}')" class="w-full bg-[#102138] hover:bg-[#1a385f] text-white text-[11px] font-bold py-2 rounded-xl transition shadow-xs">
-              Enroll & Unlock
+          <div class="space-y-2.5 mt-auto relative z-10">
+            <div class="flex gap-2 w-full flex-col sm:flex-row">
+              <button onclick="addToCart('${item.code}', '${typeFilter}')" class="flex-1 bg-white border border-slate-200 text-slate-700 hover:border-[#3a80bc] hover:text-[#3a80bc] text-xs font-bold py-2.5 rounded-xl transition-all shadow-sm flex items-center justify-center gap-1.5">
+                <i class="fa-solid fa-cart-plus"></i> Add to Cart
+              </button>
+              <button onclick="openOrderModal('${item.code}', '${typeFilter}')" class="flex-[1.5] btn-premium text-xs font-bold py-2.5 rounded-xl transition-all flex items-center justify-center gap-1.5">
+                <i class="fa-solid fa-unlock text-amber-300"></i> Enroll & Unlock
+              </button>
+            </div>
+            <button onclick="openLockedPreview('${item.code}')" class="w-full bg-slate-100 text-slate-600 hover:bg-slate-200 text-xs font-bold py-2.5 rounded-xl transition-all flex items-center justify-center gap-2">
+              <i class="fa-solid fa-play"></i> Start Preparation
             </button>
           </div>
         `;
-        grid.appendChild(card);
+        gridElement.appendChild(card);
       });
     }
 
-    function filterNotesGrid() { renderNotes(); }
+    // Cart System
+    function toggleCart() {
+      document.getElementById('cartBackdrop').classList.toggle('open');
+      document.getElementById('cartDrawer').classList.toggle('open');
+    }
 
-    function setNotesFilter(flt) {
-      currentFilter = flt;
-      ['MID', 'FINAL', 'HIGHLIGHTED', 'NOTES'].forEach(f => {
-        const btn = document.getElementById(`flt-${f}`);
-        if (btn) {
-          if (f === flt) {
-            btn.className = "bg-[#102138] text-white px-3.5 py-2 rounded-xl transition";
-          } else {
-            btn.className = "bg-slate-100 text-slate-700 hover:bg-slate-200 px-3.5 py-2 rounded-xl transition";
-          }
+    function triggerDealCart(percentOff) {
+       switchTab('tab-mid-portals');
+       const msg = percentOff === 20 ? "Add 7 or more subjects to claim the 20% Semester Deal!" : "Add exactly 5 subjects to claim the 10% Deal!";
+       showToast(msg, 'info');
+       setTimeout(toggleCart, 800);
+    }
+
+    function addToCart(code, type) {
+      const course = courses.find(c => c.code === code);
+      if (cart.some(item => item.code === code && item.type === type)) { showToast(`Already in cart.`, 'error'); return; }
+      
+      const priceStr = type === 'MID' ? course.mid : course.final;
+      cart.push({ code, title: course.title, type, price: parseInt(priceStr.replace(/[^0-9]/g, '')), priceStr });
+      
+      updateCartUI();
+      showToast(`${code} added to Cart! 🛒`, 'success');
+      checkDiscountMilestones();
+    }
+
+    function removeFromCart(index) { cart.splice(index, 1); updateCartUI(); checkDiscountMilestones(); }
+
+    function checkDiscountMilestones() {
+      const count = cart.length;
+      let currentTier = 0;
+      if (count >= 7) currentTier = 20; else if (count === 5) currentTier = 10;
+
+      if (currentTier === 10 && lastDiscountTier !== 10) showToast("🎉 10% Discount Unlocked on 5 subjects!", "success");
+      else if (currentTier === 20 && lastDiscountTier !== 20) showToast("🎓 20% Full Semester Deal Unlocked!", "success");
+      lastDiscountTier = currentTier;
+    }
+
+    function calculateCartTotals() {
+      let subtotal = cart.reduce((sum, item) => sum + item.price, 0);
+      let discountPct = cart.length >= 7 ? 20 : (cart.length === 5 ? 10 : 0);
+      let discountAmount = Math.floor(subtotal * (discountPct / 100));
+      return { subtotal, discountPct, discountAmount, total: subtotal - discountAmount };
+    }
+
+    function updateCartUI() {
+      const count = cart.length;
+      const badges = ['headerCartBadge', 'floatingCartBadge'];
+      badges.forEach(id => {
+        const b = document.getElementById(id);
+        if (b) {
+          b.innerText = count;
+          if (count > 0) { b.classList.remove('hidden', 'badge-pop'); void b.offsetWidth; b.classList.add('badge-pop'); } 
+          else b.classList.add('hidden');
         }
       });
-      renderNotes();
+
+      const container = document.getElementById('cartItemsContainer');
+      const emptyState = document.getElementById('emptyCartState');
+      const footer = document.getElementById('cartFooter');
+
+      if (count === 0) { emptyState.classList.remove('hidden'); footer.classList.add('hidden'); } 
+      else { emptyState.classList.add('hidden'); footer.classList.remove('hidden'); }
+      
+      Array.from(container.children).forEach(child => { if (child.id !== 'emptyCartState') child.remove(); });
+
+      cart.forEach((item, index) => {
+        const typeLabel = item.type === 'MID' ? 'Midterm' : 'Final Term';
+        const el = document.createElement('div');
+        el.className = 'flex gap-3 bg-white border border-slate-200 p-3 rounded-2xl shadow-sm relative';
+        el.innerHTML = `
+          <div class="flex-1 min-w-0">
+            <div class="flex gap-2 mb-1"><span class="font-mono text-[10px] font-black bg-slate-100 px-1.5 py-0.5 rounded">${item.code}</span><span class="text-[9px] font-bold px-1.5 py-0.5 rounded bg-blue-50 text-[#3a80bc]">${typeLabel}</span></div>
+            <p class="text-xs font-bold text-slate-600 truncate">${item.title}</p>
+            <p class="text-sm font-black text-[#3a80bc] mt-1">${item.priceStr}</p>
+          </div>
+          <button onclick="removeFromCart(${index})" class="w-8 h-8 rounded-full bg-red-50 text-red-500 flex items-center justify-center shrink-0"><i class="fa-solid fa-trash-can text-xs"></i></button>
+        `;
+        container.appendChild(el);
+      });
+
+      const totals = calculateCartTotals();
+      document.getElementById('cartCountLabel').innerText = count;
+      document.getElementById('cartSubtotal').innerText = `Rs. ${totals.subtotal}`;
+      const dRow = document.getElementById('discountRow');
+      if (totals.discountPct > 0) {
+        dRow.classList.remove('hidden'); document.getElementById('discountPercent').innerText = totals.discountPct;
+        document.getElementById('cartDiscount').innerText = `- Rs. ${totals.discountAmount}`;
+      } else dRow.classList.add('hidden');
+      document.getElementById('cartTotal').innerText = `Rs. ${totals.total}`;
     }
 
-    function openOrderModal(code) {
-      selectedCourse = courses.find(c => c.code === code);
-      if (!selectedCourse) return;
-      
-      // Determine what exactly the user is buying based on their active filter
-      let planName = "";
-      let price = "";
-      
-      if (currentFilter === 'MID') {
-        planName = "Midterm (1 Month Access)";
-        price = selectedCourse.mid;
-      } else if (currentFilter === 'FINAL') {
-        planName = "Final Term (1 Month Access)";
-        price = selectedCourse.final;
-      } else if (currentFilter === 'HIGHLIGHTED') {
-        planName = "Highlighted Handouts";
-        price = selectedCourse.hl || "Rs. 300";
-      } else {
-        planName = "Master Notes";
-        price = selectedCourse.final;
-      }
-
+    // Orders & Modals
+    function openOrderModal(code, type) {
+      isCartCheckoutMode = false;
+      selectedCourse = courses.find(c => c.code === code); selectedType = type;
       document.getElementById("mCode").innerText = selectedCourse.code;
       document.getElementById("mTitle").innerText = selectedCourse.title;
-      document.getElementById("mPlanType").innerText = planName;
-      document.getElementById("mPriceDisplay").innerText = price;
-      
-      document.getElementById("receiptPicLabel").innerText = "Attach Payment Receipt Screenshot 📷";
-      document.getElementById("stuReceiptPic").value = "";
+      document.getElementById("mPlanType").innerText = type === 'MID' ? "Mid Term Portal" : "Final Term Portal";
+      document.getElementById("mPriceDisplayContainer").innerHTML = `<span class="text-2xl font-black text-[#102138]">Rs. ${(type === 'MID' ? selectedCourse.mid : selectedCourse.final).replace(/[^0-9]/g, '')}</span>`;
+      document.getElementById("receiptPicLabel").innerText = "Attach Payment Screenshot 📷";
       document.getElementById("orderModal").classList.remove("hidden");
     }
 
-    function closeOrderModal() {
-      document.getElementById("orderModal").classList.add("hidden");
+    function openCartCheckout() {
+      if(cart.length === 0) return;
+      isCartCheckoutMode = true; toggleCart();
+      const totals = calculateCartTotals();
+      document.getElementById("mCode").innerText = "BUNDLE";
+      document.getElementById("mTitle").innerText = `${cart.length} Portals Selected`;
+      document.getElementById("mPlanType").innerText = "Semester Bundle Checkout";
+      document.getElementById("mPriceDisplayContainer").innerHTML = totals.discountPct > 0 ? `<span class="text-xs text-slate-400 line-through">Rs. ${totals.subtotal}</span><span class="text-2xl font-black text-emerald-600">Rs. ${totals.total}</span>` : `<span class="text-2xl font-black text-[#102138]">Rs. ${totals.total}</span>`;
+      document.getElementById("receiptPicLabel").innerText = "Attach Payment Screenshot 📷";
+      document.getElementById("orderModal").classList.remove("hidden");
     }
 
-    function previewScreenshot(input) {
-      if (input.files && input.files[0]) {
-        document.getElementById("receiptPicLabel").innerText = "✓ Screenshot Ready: " + input.files[0].name;
-      }
-    }
+    function closeOrderModal() { document.getElementById("orderModal").classList.add("hidden"); }
+    function previewScreenshot(input) { if (input.files && input.files[0]) document.getElementById("receiptPicLabel").innerText = "✓ Ready: " + input.files[0].name; }
 
-    // SUBMIT ORDER: DYNAMIC PLAN + DIRECT IMAGE SHARE IF SUPPORTED
     async function submitOrderWithScreenshot() {
       const name = document.getElementById("stuName").value.trim();
       const email = document.getElementById("stuEmail").value.trim();
-      const picInput = document.getElementById("stuReceiptPic");
-      const planName = document.getElementById("mPlanType").innerText;
+      const file = document.getElementById("stuReceiptPic").files[0];
+      if (name.length < 2 || !email.includes("@")) { showToast("Enter full name and Gmail.", "error"); return; }
 
-      if (name.length < 2 || !email.includes("@")) {
-        alert("Please enter full name and valid Gmail address.");
-        return;
-      }
+      let details = isCartCheckoutMode ? 
+        `*Bundle (${cart.length} Items)*\n${cart.map((i, idx)=>`${idx+1}. ${i.code} (${i.type})`).join('\n')}\n*Total Paid:* Rs. ${calculateCartTotals().total}` : 
+        `*Course:* ${selectedCourse.code}\n*Type:* ${document.getElementById("mPlanType").innerText}`;
 
-      // Generate the clean message (Removed the specific "I have attached..." string as requested)
-      const msgText = `*Assalam-o-Alaikum SDG Insights!*\n\nI have made payment for Portal Access:\n*Course:* ${selectedCourse.code} - ${selectedCourse.title}\n*Type:* ${planName}\n*Name:* ${name}\n*Gmail:* ${email}\n\nPlease ALLOW my access in Google Sheet. Thank you!`;
-      
-      const file = picInput.files && picInput.files[0];
+      const msgText = `*Assalam-o-Alaikum!*\nI made payment for Access:\n\n${details}\n\n*Name:* ${name}\n*Email:* ${email}\n\nPlease ALLOW my access.`;
 
-      // DIRECT FILE SHARE CAPABILITY (Works amazingly on mobile devices)
-      // The user taps this, their native share sheet opens, they select WhatsApp, and the image + text is loaded instantly!
       if (file && navigator.canShare && navigator.canShare({ files: [file] })) {
         try {
-          await navigator.share({
-            files: [file],
-            title: 'SDG Insights Payment Receipt',
-            text: msgText
-          });
-          closeOrderModal();
-          return; // Stop execution if direct share was successful
-        } catch (error) {
-          console.log('User cancelled direct share or it failed. Falling back to text link.');
-        }
+          await navigator.share({ files: [file], text: msgText });
+          closeOrderModal(); showToast("Opening WhatsApp...", "success");
+          if(isCartCheckoutMode) { cart = []; updateCartUI(); } return;
+        } catch (e) {}
       }
-
-      // FALLBACK: For Desktop browsers or devices that don't support file sharing through Web API
-      // Here we encode the message text and send it via the standard WhatsApp intent. 
-      // The user will have to manually attach the image once inside WhatsApp.
-      const encodedMsg = encodeURIComponent(msgText);
-      window.open(`https://wa.me/923198519637?text=${encodedMsg}`, '_blank');
-      closeOrderModal();
+      
+      window.open(`https://wa.me/923198519637?text=${encodeURIComponent(msgText)}`, '_blank');
+      if(file) showToast("Attach screenshot in WhatsApp manually.", "info");
+      closeOrderModal(); if(isCartCheckoutMode) { cart = []; updateCartUI(); }
     }
 
-    function orderViaWhatsApp(dealText) {
-      const msg = `*Assalam-o-Alaikum SDG Insights!*%0A%0AI want to order:%0A*Service:* ${dealText}%0A%0APlease share details and pricing. Thank you!`;
-      window.open(`https://wa.me/923198519637?text=${msg}`, '_blank');
+    function orderViaWhatsApp(text) { window.open(`https://wa.me/923198519637?text=*Assalam-o-Alaikum!*%0A%0AI want to order: ${text}`, '_blank'); }
+
+    // Locked Preview
+    function openLockedPreview(code) {
+      document.getElementById("loginCourseCode").value = code; document.getElementById("lockedCourseCode").innerText = code;
+      document.getElementById("lockedPreviewModal").classList.remove("hidden");
     }
+    function closeLockedPreview() { document.getElementById("lockedPreviewModal").classList.add("hidden"); }
+    function verifyAndUnlockPortal() { showToast("This is a demo preview mode.", "info"); setTimeout(closeLockedPreview, 1500); }
 
-    function verifyAndOpenReader() {
-      const email = document.getElementById("logEmail").value.trim().toLowerCase();
-      const sub = document.getElementById("logSubject").value.trim().toUpperCase() || "MGT101";
-
-      if (!email.includes("@")) {
-        alert("Please enter a valid Gmail address.");
-        return;
-      }
-
-      const match = approvedStudents.find(s => s.email === email && (s.course === sub || s.course === "ALL"));
-
-      if (!match) {
-        alert("❌ Access Pending!\n\nThis Gmail address has not been approved yet. Once you send payment proof on WhatsApp (0319-8519637), the instructor will click ALLOW in Google Sheet.");
-        return;
-      }
-
-      if (sub === "MGT101") {
-        window.location.href = `mgt101.html?student=${email}`;
-        return;
-      }
-
-      document.getElementById("loginBox").classList.add("hidden");
-      document.getElementById("readerBox").classList.remove("hidden");
-      document.getElementById("activeCourseTitle").innerText = `${sub} (Active 1-Month Access)`;
-    }
-
-    function closeReader() {
-      document.getElementById("readerBox").classList.add("hidden");
-      document.getElementById("loginBox").classList.remove("hidden");
-    }
-
-    function toggleTeacherChat() {
-      document.getElementById("teacherChatWindow").classList.toggle("hidden");
-    }
-
-    const knowledgeBase = {
-      paid: {
-        roman: "Ji bilkul, SDG Insights ke tamam solved notes, preparation portals aur interactive software 100% PAID hain.\n\nHumari koi bhi file ya portal free nahi hai. Har course professional mehnat se 100% handout-accurate tayar kiya gaya hai.",
-        urdu: "جی بالکل، SDG Insights کے تمام حل شدہ نوٹس، پریپریشن پورٹلز اور اسٹڈی سافٹ ویئر 100% پیڈ ہیں۔\n\nہماری کوئی بھی فائل یا پورٹل فری نہیں ہے۔ ہر کورس آفیشل ہینڈ آؤٹس کے عین مطابق مکمل تحقیق سے تیار کیا گیا ہے۔",
-        english: "Yes, all study notes, preparation portals, and interactive software from SDG Insights are 100% PAID.\n\nWe do not offer free resources. Every single file is systematically verified according to official VU handouts."
-      },
-      exam_percentage: {
-        roman: "Humare notes Virtual University ke official handouts aur lectures se 100% word-by-word tayar kiye gaye hain.\n\nAgar aap in notes ko baghair koi lafz chore 100% achi tarah yaad kar lete hain, to exam 80% se 90% tak inhi me se ata hai!\n\nSaath hi aapko advice di jati hai ke humari YouTube videos dekh kar apne concepts bhi lazmi clear karein.",
-        urdu: "ہمارے تمام نوٹس ورچوئل یونیورسٹی کے آفیشل ہینڈ آؤٹس اور لیکچرز سے تیار کیے گئے ہیں۔\n\nاگر آپ نوٹس کا ایک بھی لفظ چھوڑے بغیر 100% اچھے سے یاد کر لیں، تو امتحان 80% سے 90% انہی میں سے آتا ہے!\n\nساتھ ہی آپ کو مشورہ دیا جاتا ہے کہ ہمارے یوٹیوب چینل پر ویڈیوز دیکھ کر اپنے کنسیپٹس بھی لازمی کلیئر کریں۔",
-        english: "Our materials are prepared directly from official Virtual University handouts and lectures.\n\nIf you prepare the notes 100% thoroughly without skipping anything, 80% to 90% of the exam comes directly from these contents!\n\nWe also strongly advise watching our YouTube lectures to solidify your concepts."
-      },
-      discounts: {
-        roman: "Ji haan! Humare paas special packages available hain:\n\n• Full Semester Super Bundle: Pure semester ki tamam files lene par Flat 20% OFF milta hai (Rs. 3000 ki jagah Rs. 2400).\n\n• Pick Any 5 Pack: Apni marzi ke koi se 5 subjects lene par Flat 10% OFF milta hai (Rs. 2500 ki jagah Rs. 2250).",
-        urdu: "جی ہاں! ہمارے پاس خصوصی ڈیلز دستیاب ہیں:\n\n• مکمل سمسٹر بنڈل: تمام سبجیکٹس پر فلیٹ 20% رعایت ہے (3000 کی بجائے صرف 2400 روپے)۔\n\n• کوئی سے 5 سبجیکٹس: اپنی مرضی کے 5 کورسز پر 10% رعایت ہے (2500 کی بجائے صرف 2250 روپے)۔",
-        english: "Yes, we offer special package discounts:\n\n• Full Semester Bundle: Flat 20% OFF on all courses of your semester (Rs. 2400 instead of Rs. 3000).\n\n• Pick Any 5 Pack: Flat 10% OFF on any 5 subjects of your choice (Rs. 2250 instead of Rs. 2500)."
-      },
-      access_method: {
-        roman: "Access ka tariqa bohat aasan hai, koi code yaad rakhne ki zaroorat nahi:\n\n1. EasyPaisa (03198519637) ya MCB Bank par fee send karein.\n\n2. WhatsApp par screenshot aur apni Gmail send karein.\n\n3. Instructor Google Sheet me sirf ALLOW ka button press karengi aur aapki 1 Month ki access foran active ho jayegi!\n\n4. Aap apni Gmail laga kar direct notes open kar sakenge.",
-        urdu: "پورٹل کی رسائی حاصل کرنا اب انتہائی آسان ہے، کوئی کوڈ یاد رکھنے کی ضرورت نہیں:\n\n1. ایزی پیسہ (03198519637) یا MCB Bank پر فیس بھیجیں۔\n\n2. واٹس ایپ پر رسید کا اسکرین شاٹ اور اپنی جی میل بھیجیں۔\n\n3. انسٹرکٹر گوگل شیٹ میں صرف ALLOW لکھیں گی اور آپ کی 1 ماہ کی ایکسیس فعال ہو جائے گی!\n\n4. آپ ڈائریکٹ ای میل درج کر کے نوٹس کھول سکیں گے۔",
-        english: "Getting portal access is effortless — no passcodes to remember:\n\n1. Transfer fee via EasyPaisa (03198519637) or MCB Bank.\n\n2. Send receipt screenshot and Gmail to WhatsApp.\n\n3. The instructor marks ALLOW in Google Sheet, instantly activating your 1-month access.\n\n4. You can open your notes directly using your registered Gmail."
-      }
-    };
-
-    function askBotQuestion(key) {
-      appendStudentMsg(event.target.innerText.replace('• ', ''));
-      const resp = knowledgeBase[key].roman + "\n\n━━━━━━━━━━━━━━\n" + knowledgeBase[key].urdu;
-      setTimeout(() => appendTeacherMsg(resp, 'both'), 400);
-    }
-
-    function sendCustomTeacherMsg() {
-      const input = document.getElementById("userChatInput");
-      const text = input.value.trim();
-      if (!text) return;
-
-      appendStudentMsg(text);
-      input.value = "";
-
-      const lower = text.toLowerCase();
-      const isUrduScript = /[\u0600-\u06FF]/.test(text);
-      const isRomanUrdu = /kya|kia|kesy|kese|hai|hain|hyn|chahiye|kitna|kitne|bata|batao|milega|milegi|aoa|salam|krna|karna|pese|paise/.test(lower);
-
-      let lang = 'english';
-      if (isUrduScript) lang = 'urdu';
-      else if (isRomanUrdu) lang = 'roman';
-
-      let answerKey = 'paid';
-      if (/salam|aoa|hello|hi|hey|assalam/.test(lower)) {
-        if (lang === 'urdu') {
-          setTimeout(() => appendTeacherMsg("وعلیکم السلام عزیز طالب علم! میں SDG Insights سے آپ کی انسٹرکٹر ہوں۔ آپ کو کس کورس، نوٹس یا ایل ایم ایس ہینڈلنگ میں رہنمائی چاہیے؟", 'urdu'), 400);
-          return;
-        } else if (lang === 'roman') {
-          setTimeout(() => appendTeacherMsg("Walaikum Assalam! Main SDG Insights se aapki instructor hoon.\n\nAapko kis subject ya LMS service me help chahiye? Mujhe batayein.", 'roman'), 400);
-          return;
-        } else {
-          setTimeout(() => appendTeacherMsg("Hello! Welcome to SDG Insights. How can I assist you with course portals or LMS handling?", 'english'), 400);
-          return;
-        }
-      } else if (/percentage|percent|kitna ata|kitna paper|guarantee/.test(lower)) {
-        answerKey = 'exam_percentage';
-      } else if (/deal|discount|off|riayat|bundle|package/.test(lower)) {
-        answerKey = 'discounts';
-      } else if (/access|code|passcode|pass|open|kholna/.test(lower)) {
-        answerKey = 'access_method';
-      }
-
-      const responseText = knowledgeBase[answerKey][lang];
-      setTimeout(() => appendTeacherMsg(responseText, lang), 450);
-    }
-
-    function appendStudentMsg(msg) {
-      const box = document.getElementById("chatMessages");
-      const isUrdu = /[\u0600-\u06FF]/.test(msg);
-      box.innerHTML += `
-        <div class="flex justify-end">
-          <div class="bg-[#102138] text-white p-3 rounded-2xl rounded-tr-none text-xs max-w-[85%] shadow-xs whitespace-pre-line ${isUrdu ? 'urdu-font text-right' : 'text-left'}">
-            ${msg}
-          </div>
-        </div>
-      `;
-      box.scrollTop = box.scrollHeight;
-    }
-
-    function appendTeacherMsg(msg, lang) {
-      const box = document.getElementById("chatMessages");
-      const isUrdu = lang === 'urdu' || /[\u0600-\u06FF]/.test(msg);
-      box.innerHTML += `
-        <div class="bg-white p-3.5 rounded-2xl rounded-tl-none border border-slate-200 shadow-2xs max-w-[92%] space-y-1.5 leading-relaxed">
-          <span class="text-[10px] font-bold text-[#3a80bc] block">SDG Insights Instructor</span>
-          <div class="text-xs text-slate-800 whitespace-pre-line ${isUrdu ? 'urdu-font text-right' : 'text-left'}">
-            ${msg}
-          </div>
-        </div>
-      `;
-      box.scrollTop = box.scrollHeight;
-    }
-
-    // Initialize
-    renderNotes();
+    switchTab('tab-home');
   </script>
 </body>
 </html>
