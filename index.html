@@ -52,7 +52,7 @@
   <style>
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
-      background-color: #f0f7ff; /* Light, Radiant Canvas */
+      background-color: #f0f7ff;
       color: #0f172a;
       overflow-x: hidden;
       min-height: 100vh;
@@ -60,7 +60,7 @@
     .urdu-font { font-family: 'Noto Nastaliq Urdu', serif; line-height: 2.3; }
     .handwriting { font-family: 'Caveat', cursive; }
 
-    /* BRIGHT RADIANT AURORA GLOW BACKGROUND */
+    /* RADIANT DAYLIGHT AURORA BACKGROUND */
     .radiant-aurora {
       position: fixed;
       top: 0;
@@ -124,7 +124,6 @@
       100% { background: radial-gradient(circle, rgba(96, 165, 250, 0.35) 0%, rgba(96, 165, 250, 0) 70%); transform: translate(80px, -30px) scale(1); }
     }
 
-    /* PEARLESCENT GLASS CARDS */
     .glass-card-light {
       background: rgba(255, 255, 255, 0.88);
       backdrop-filter: blur(20px);
@@ -162,7 +161,6 @@
       color: #102138;
     }
 
-    /* ANIMATED 3D GIFT BOX NOTIFICATION POPUP */
     #giftNoticeBox {
       transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
       transform: translateY(120px) scale(0.9);
@@ -230,7 +228,6 @@
     <header class="bg-white/90 backdrop-blur-md border-b border-slate-200/80 sticky top-0 z-40 shadow-xs">
       <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
         
-        <!-- EXACT LOGO EMBED -->
         <div onclick="switchTab('tab-home')" class="flex items-center space-x-3 cursor-pointer shrink-0">
           <div class="w-12 h-12 rounded-full overflow-hidden shadow-sm flex items-center justify-center bg-[#11253e] shrink-0 border-2 border-[#3a80bc]">
             <svg viewBox="0 0 200 200" class="w-full h-full drop-shadow-xs">
@@ -257,7 +254,6 @@
           </div>
         </div>
 
-        <!-- MAIN TABS -->
         <nav class="hidden md:flex items-center bg-slate-100 p-1 rounded-2xl border border-slate-200 text-xs">
           <button onclick="switchTab('tab-home')" id="btn-tab-home" class="nav-btn-active px-3.5 py-2 rounded-xl transition">Home</button>
           <button onclick="switchTab('tab-notes')" id="btn-tab-notes" class="nav-btn-inactive px-3.5 py-2 rounded-xl transition">Preparation Portals</button>
@@ -268,7 +264,6 @@
           </button>
         </nav>
 
-        <!-- WHATSAPP CONTACT -->
         <div class="flex items-center space-x-2">
           <a href="https://wa.me/923198519637" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white text-xs px-3.5 py-2.5 rounded-xl font-bold transition flex items-center gap-1.5 shadow-xs">
             <i class="fa-brands fa-whatsapp text-sm"></i>
@@ -288,11 +283,10 @@
     </header>
 
     <!-- ======================================================== -->
-    <!-- TAB 1: HOME (BRIGHT & RADIANT GLASS HERO) -->
+    <!-- TAB 1: HOME -->
     <!-- ======================================================== -->
     <section id="tab-home" class="tab-content tab-active flex-1">
       
-      <!-- HERO -->
       <div class="py-12 px-4 text-center">
         <div class="max-w-4xl mx-auto space-y-4">
           
@@ -312,25 +306,20 @@
 
           <!-- 3 OFFICIAL SOCIAL COMMUNITY ACTION TILES -->
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-2xl mx-auto pt-3 text-xs font-bold">
-            
-            <!-- YOUTUBE SUBSCRIBE -->
             <a href="https://youtube.com/@sdginsights?si=yFODeRKu4Q1S_ORa" target="_blank" class="bg-red-50 hover:bg-red-100 border border-red-200/80 text-red-700 p-3 rounded-2xl transition shadow-xs flex items-center justify-center gap-2 group">
               <i class="fa-brands fa-youtube text-lg text-red-600 group-hover:scale-110 transition"></i>
               <span>Subscribe YouTube Channel</span>
             </a>
 
-            <!-- WHATSAPP CATALOG -->
             <a href="https://wa.me/c/923198519637" target="_blank" class="bg-emerald-50 hover:bg-emerald-100 border border-emerald-200/80 text-emerald-800 p-3 rounded-2xl transition shadow-xs flex items-center justify-center gap-2 group">
               <i class="fa-solid fa-store text-lg text-emerald-600 group-hover:scale-110 transition"></i>
               <span>View WhatsApp Catalog</span>
             </a>
 
-            <!-- WHATSAPP CHANNEL -->
             <a href="https://whatsapp.com/channel/0029VbB78Xa3WHTReQ1hTF1Q" target="_blank" class="bg-blue-50 hover:bg-blue-100 border border-blue-200/80 text-[#102138] p-3 rounded-2xl transition shadow-xs flex items-center justify-center gap-2 group">
               <i class="fa-solid fa-bullhorn text-lg text-[#3a80bc] group-hover:scale-110 transition"></i>
               <span>Join WhatsApp Channel</span>
             </a>
-
           </div>
 
           <!-- SEARCH -->
@@ -405,7 +394,7 @@
     </section>
 
     <!-- ======================================================== -->
-    <!-- TAB 2: FINAL & MID TERM PREPARATION PORTALS (MGT101 FIRST) -->
+    <!-- TAB 2: FINAL & MID TERM PREPARATION PORTALS -->
     <!-- ======================================================== -->
     <section id="tab-notes" class="tab-content flex-1 py-8 px-4">
       <div class="max-w-5xl mx-auto space-y-6">
@@ -418,7 +407,6 @@
           <span class="text-xs font-bold text-[#3a80bc] bg-blue-50 px-3 py-1 rounded-xl" id="notesCount">Loading...</span>
         </div>
 
-        <!-- FILTER BUTTONS -->
         <div class="glass-card-light p-4 rounded-3xl space-y-3 shadow-xs">
           <input type="text" id="notesSearchInput" onkeyup="filterNotesGrid()" placeholder="Search code: MGT101, CS610, MTH401, CS301..." class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-xs focus:bg-white focus:outline-none" />
           
@@ -430,7 +418,6 @@
           </div>
         </div>
 
-        <!-- PORTAL CARDS (MGT101 IS FIRST) -->
         <div id="notesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           <!-- Injected by JS -->
         </div>
@@ -574,7 +561,9 @@
       </div>
     </section>
 
-    <!-- ORDER MODAL -->
+    <!-- ======================================================== -->
+    <!-- ORDER MODAL: SCREENSHOT RECEIPT INSTEAD OF TRX ID -->
+    <!-- ======================================================== -->
     <div id="orderModal" class="fixed inset-0 bg-slate-950/70 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
       <div class="bg-white rounded-3xl max-w-sm w-full p-5 space-y-3.5 border border-slate-200 shadow-2xl">
         <div class="flex items-center justify-between">
@@ -598,29 +587,42 @@
           </div>
         </div>
 
-        <div class="bg-slate-50 p-2.5 rounded-xl text-[11px] space-y-1">
-          <div><strong>EasyPaisa:</strong> 03198519637 (Munazza mukhtar)</div>
-          <div><strong>MCB Bank:</strong> 1708370211010380 (MUNAZA MUKHTAR)</div>
+        <!-- PAYMENT NUMBERS -->
+        <div class="bg-slate-50 p-2.5 rounded-xl text-[11px] space-y-1 border border-slate-200">
+          <div class="flex items-center justify-between">
+            <div><span class="font-bold text-emerald-700">EasyPaisa:</span> <span class="font-mono font-bold">03198519637</span> (Munazza mukhtar)</div>
+            <button onclick="navigator.clipboard.writeText('03198519637'); alert('Copied: 03198519637');" class="bg-white px-2 py-0.5 rounded border text-[10px] font-bold">Copy</button>
+          </div>
+          <div class="flex items-center justify-between">
+            <div><span class="font-bold text-blue-700">MCB Bank:</span> <span class="font-mono font-bold">1708370211010380</span> (MUNAZA MUKHTAR)</div>
+            <button onclick="navigator.clipboard.writeText('1708370211010380'); alert('Copied: 1708370211010380');" class="bg-white px-2 py-0.5 rounded border text-[10px] font-bold">Copy</button>
+          </div>
         </div>
 
-        <div class="space-y-2 text-xs">
-          <input type="text" id="stuName" placeholder="Your Name *" class="w-full border rounded-lg px-3 py-1.5" />
-          <input type="email" id="stuEmail" placeholder="Gmail Address *" class="w-full border rounded-lg px-3 py-1.5" />
-          <input type="text" id="stuTrx" placeholder="Payment Trx ID *" class="w-full border rounded-lg px-3 py-1.5 font-mono" />
+        <!-- FORM INPUTS (SCREENSHOT UPLOAD) -->
+        <div class="space-y-2.5 text-xs">
+          <input type="text" id="stuName" placeholder="Your Full Name *" class="w-full border rounded-xl px-3 py-2 text-xs focus:outline-none" />
+          <input type="email" id="stuEmail" placeholder="Gmail Address (for portal access) *" class="w-full border rounded-xl px-3 py-2 text-xs focus:outline-none" />
+          
+          <!-- SCREENSHOT SELECTOR -->
+          <div class="border-2 border-dashed border-blue-200 bg-blue-50/50 p-3 rounded-xl text-center cursor-pointer hover:bg-blue-50 transition" onclick="document.getElementById('stuReceiptPic').click()">
+            <i class="fa-solid fa-image text-[#3a80bc] text-lg block mb-1"></i>
+            <span class="text-[11px] font-bold text-slate-700 block" id="receiptPicLabel">Attach Payment Receipt Screenshot 📷</span>
+            <span class="text-[9px] text-slate-400 block">Tap to select screenshot from gallery</span>
+            <input type="file" id="stuReceiptPic" accept="image/*" class="hidden" onchange="previewScreenshot(this)" />
+          </div>
         </div>
 
-        <button onclick="submitOrder()" class="w-full bg-[#102138] hover:bg-[#1a385f] text-white font-bold py-2 rounded-xl text-xs transition">
-          Submit for Instructor Approval
+        <button onclick="submitOrderWithScreenshot()" class="w-full bg-[#102138] hover:bg-[#1a385f] text-white font-bold py-2.5 rounded-xl text-xs transition shadow-sm flex items-center justify-center gap-1.5">
+          <i class="fa-brands fa-whatsapp text-emerald-400 text-sm"></i>
+          <span>Send Order to WhatsApp</span>
         </button>
       </div>
     </div>
 
-    <!-- ======================================================== -->
-    <!-- 3D ANIMATED GIFT BOX NOTIFICATION POPUP (BOTTOM-LEFT) -->
-    <!-- ======================================================== -->
+    <!-- 3D ANIMATED GIFT BOX NOTIFICATION POPUP -->
     <div id="giftNoticeBox" class="fixed bottom-6 left-6 z-40 max-w-sm w-full">
       <div class="glass-card-light p-4 rounded-3xl shadow-xl space-y-2.5 relative border border-blue-200/80">
-        
         <div class="flex items-center justify-between">
           <div class="flex items-center space-x-2.5">
             <span class="text-2xl gift-icon-bounce">🎁</span>
@@ -638,11 +640,9 @@
           Flat 20% OFF on Full Semester Bundles & 10% OFF on any 5 subjects!
         </p>
 
-        <!-- 5-SECOND PROGRESS TIMER -->
         <div class="w-full bg-slate-100 h-1.5 rounded-full overflow-hidden">
           <div id="giftProgressBar" class="bg-gradient-to-r from-[#3a80bc] to-[#2563eb] h-full timer-bar-animate"></div>
         </div>
-
       </div>
     </div>
 
@@ -722,7 +722,6 @@
 
   <!-- JAVASCRIPT -->
   <script>
-    // 3D GIFT BOX NOTIFICATION (5s SHOW -> 4s REST)
     const giftNotices = [
       { cat: "Semester Offer", text: "Flat 20% OFF on Full Semester Bundles & 10% OFF on any 5 subjects!" },
       { cat: "Important Policy", text: "All exam preparation portals and master notes are 100% PAID — nothing is free." },
@@ -888,6 +887,8 @@
       document.getElementById("mTitle").innerText = selectedCourse.title;
       document.getElementById("mMid").innerText = selectedCourse.mid;
       document.getElementById("mFinal").innerText = selectedCourse.final;
+      document.getElementById("receiptPicLabel").innerText = "Attach Payment Receipt Screenshot 📷";
+      document.getElementById("stuReceiptPic").value = "";
       document.getElementById("orderModal").classList.remove("hidden");
     }
 
@@ -895,17 +896,28 @@
       document.getElementById("orderModal").classList.add("hidden");
     }
 
-    function submitOrder() {
+    function previewScreenshot(input) {
+      if (input.files && input.files[0]) {
+        document.getElementById("receiptPicLabel").innerText = "✓ Screenshot Ready: " + input.files[0].name;
+      }
+    }
+
+    // SUBMIT ORDER WITH SCREENSHOT INSTRUCTION DIRECTLY TO WHATSAPP
+    function submitOrderWithScreenshot() {
       const name = document.getElementById("stuName").value.trim();
       const email = document.getElementById("stuEmail").value.trim();
-      const trx = document.getElementById("stuTrx").value.trim();
+      const picInput = document.getElementById("stuReceiptPic");
 
-      if (name.length < 3 || !email.includes("@") || trx.length < 8) {
-        alert("Please enter your name, valid email, and 8+ digit Trx ID.");
+      if (name.length < 2 || !email.includes("@")) {
+        alert("Please enter full name and valid Gmail address.");
         return;
       }
 
-      const msg = `*Assalam-o-Alaikum SDG Insights!*%0A%0AI have placed an order for 1-Month Portal Access:%0A*Course:* ${selectedCourse.code} - ${selectedCourse.title}%0A*Name:* ${name}%0A*Gmail:* ${email}%0A*Trx ID:* ${trx}%0A%0ABarah-e-Karam payment verify karke portal access ALLOW kar dein. Shukriya!`;
+      const hasPic = picInput.files && picInput.files[0];
+      const receiptStatus = hasPic ? `[Screenshot Attached: ${picInput.files[0].name}]` : `[Sending Screenshot in this Chat]`;
+
+      const msg = `*Assalam-o-Alaikum SDG Insights!*%0A%0AI have made payment for 1-Month Portal Access:%0A*Course:* ${selectedCourse.code} - ${selectedCourse.title}%0A*Name:* ${name}%0A*Gmail:* ${email}%0A*Payment Proof:* ${receiptStatus}%0A%0AI am attaching my payment receipt screenshot below. Please ALLOW my access in Google Sheet. Thank you!`;
+      
       window.open(`https://wa.me/923198519637?text=${msg}`, '_blank');
       closeOrderModal();
     }
@@ -946,7 +958,6 @@
       document.getElementById("loginBox").classList.remove("hidden");
     }
 
-    // CHATBOT SCRIPT
     function toggleTeacherChat() {
       document.getElementById("teacherChatWindow").classList.toggle("hidden");
     }
