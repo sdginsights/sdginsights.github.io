@@ -260,27 +260,16 @@
     <header class="bg-white/90 backdrop-blur-xl border-b border-slate-200/80 sticky top-0 z-40 shadow-sm">
       <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
         
-        <!-- Hamburger Menu (Mobile Only) -->
-        <button onclick="toggleMobileMenu()" class="lg:hidden w-10 h-10 flex items-center justify-center rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition">
-          <i class="fa-solid fa-bars text-lg"></i>
+        <!-- Hamburger Menu (Always Visible) -->
+        <button onclick="toggleMobileMenu()" class="w-10 h-10 flex items-center justify-center rounded-xl bg-slate-100 text-[#102138] border border-slate-200 hover:bg-[#3a80bc] hover:text-white hover:border-[#3a80bc] transition-all shadow-sm shrink-0 group">
+          <i class="fa-solid fa-bars text-lg group-hover:scale-110 transition-transform"></i>
         </button>
 
         <!-- Logo -->
         <div onclick="switchTab('tab-home')" class="flex items-center space-x-3 cursor-pointer shrink-0">
-          <div class="w-10 h-10 md:w-12 md:h-12 rounded-full overflow-hidden shadow-sm flex items-center justify-center bg-[#11253e] shrink-0 border-2 border-[#3a80bc] hover:rotate-12 transition-transform duration-500">
-            <svg viewBox="0 0 200 200" class="w-full h-full drop-shadow-md">
-              <defs><path id="textArc" d="M 24,100 A 76,76 0 1,1 176,100" fill="none" /></defs>
-              <circle cx="100" cy="100" r="98" fill="#11253e" />
-              <text font-family="'Plus Jakarta Sans', sans-serif" font-size="12.5" font-weight="900" fill="#ffffff" letter-spacing="2.2">
-                <textPath href="#textArc" startOffset="50%" text-anchor="middle">SUCCESS DIGNITY AND GLORY</textPath>
-              </text>
-              <circle cx="32" cy="122" r="5" fill="#ffffff" />
-              <circle cx="168" cy="122" r="5" fill="#ffffff" />
-              <circle cx="100" cy="100" r="69" fill="none" stroke="#ffffff" stroke-width="3" />
-              <circle cx="100" cy="100" r="67.5" fill="#3a80bc" />
-              <text x="100" y="98" font-family="'Plus Jakarta Sans', sans-serif" font-size="36" font-weight="900" fill="#11253e" text-anchor="middle" letter-spacing="-1">SDG</text>
-              <text x="100" y="126" font-family="'Plus Jakarta Sans', sans-serif" font-size="18" font-weight="800" fill="#ffffff" text-anchor="middle" letter-spacing="1.5">INSIGHTS</text>
-            </svg>
+          <div class="w-10 h-10 md:w-12 md:h-12 rounded-full overflow-hidden shadow-sm flex items-center justify-center bg-white shrink-0 border-2 border-[#3a80bc] hover:scale-110 transition-transform duration-500">
+            <!-- YOUR HD LOGO IMAGE HERE -->
+            <img src="logo.png" alt="SDG Insights" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/100x100/11253e/ffffff?text=SDG'" />
           </div>
           <div class="hidden sm:block">
             <span class="text-lg md:text-xl font-black text-[#102138] tracking-tight block leading-tight">SDG Insights</span>
