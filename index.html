@@ -340,6 +340,12 @@
         <a href="https://vulms.vu.edu.pk/" target="_blank" class="w-full flex items-center gap-3 px-4 py-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold transition">
           <i class="fa-solid fa-graduation-cap text-[#3a80bc]"></i> VU LMS Official Login
         </a>
+        <a href="https://youtube.com/@sdginsights" target="_blank" class="w-full flex items-center gap-3 px-4 py-3 rounded-xl bg-red-50 hover:bg-red-100 text-red-700 font-bold transition mt-2">
+          <i class="fa-brands fa-youtube text-red-600"></i> YouTube Channel
+        </a>
+        <a href="https://whatsapp.com/channel/0029VbB78Xa3WHTReQ1hTF1Q" target="_blank" class="w-full flex items-center gap-3 px-4 py-3 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-800 font-bold transition mt-2">
+          <i class="fa-brands fa-whatsapp text-emerald-600"></i> WhatsApp Community
+        </a>
         <button onclick="orderViaWhatsApp('Book Your Assignment'); toggleMobileMenu();" class="w-full flex items-center gap-3 px-4 py-3 rounded-xl bg-amber-50 border border-amber-200 text-amber-700 hover:bg-amber-100 font-bold transition mt-2">
           <i class="fa-solid fa-pen-nib"></i> Book Your Assignment
         </button>
@@ -505,8 +511,8 @@
             <p class="text-sm text-slate-600 leading-relaxed font-medium">Select 7 or more preparation portals across your degree program.</p>
             <div class="pt-6 mt-4 border-t border-slate-200 flex items-center justify-between">
               <div class="flex flex-col">
-                <span class="text-[10px] text-slate-400 uppercase font-bold tracking-wider">Fixed Price Example</span>
-                <span class="text-lg font-black text-emerald-600">Rs. 6000</span>
+                <span class="text-[10px] text-slate-400 uppercase font-bold tracking-wider">Discount Trigger</span>
+                <span class="text-sm font-black text-emerald-600">-20% on Cart Total</span>
               </div>
               <button onclick="triggerDealCart(20)" class="bg-white border border-[#102138] hover:bg-slate-50 text-[#102138] text-xs font-bold px-5 py-2.5 rounded-xl transition-colors shadow-sm">Start Adding to Cart</button>
             </div>
@@ -531,16 +537,74 @@
     <!-- FLOATING ICONS -->
     <div class="fixed bottom-6 left-4 md:left-6 z-40 flex flex-col gap-3">
       <!-- WhatsApp Icon -->
-      <a href="https://wa.me/923198519637" target="_blank" class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-emerald-500 text-white shadow-lg flex items-center justify-center hover:scale-110 transition-transform hover:bg-emerald-600 relative group">
-        <i class="fa-brands fa-whatsapp text-2xl md:text-3xl"></i>
+      <a href="https://wa.me/923198519637" target="_blank" class="w-10 h-10 md:w-11 md:h-11 rounded-full bg-emerald-500 text-white shadow-lg flex items-center justify-center hover:scale-110 transition-transform hover:bg-emerald-600 relative group">
+        <i class="fa-brands fa-whatsapp text-xl md:text-2xl"></i>
         <div class="absolute -inset-2 bg-emerald-400 rounded-full blur opacity-30 group-hover:opacity-60 transition"></div>
       </a>
-      
-      <!-- Cart Icon -->
-      <button onclick="toggleCart()" class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-white border border-slate-200 text-[#102138] shadow-lg flex items-center justify-center hover:scale-110 transition-transform relative group">
-        <i class="fa-solid fa-cart-shopping text-xl md:text-2xl text-[#3a80bc]"></i>
-        <span id="floatingCartBadge" class="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] md:text-xs w-5 h-5 md:w-6 md:h-6 rounded-full flex items-center justify-center font-bold hidden border-2 border-white">0</span>
+    </div>
+
+    <!-- INSTRUCTOR CHATBOT -->
+    <div class="fixed bottom-6 right-4 md:right-6 z-50">
+      <button onclick="toggleTeacherChat()" id="chatTriggerBtn" class="flex items-center gap-3 bg-[#102138] hover:bg-[#1a385f] text-white px-5 py-3.5 md:px-6 md:py-4 rounded-full shadow-2xl transition-all duration-300 border border-[#3a80bc]/40 hover:scale-105">
+        <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#3a80bc] flex items-center justify-center text-white text-base md:text-lg shrink-0">
+          <i class="fa-solid fa-chalkboard-user"></i>
+        </div>
+        <div class="text-left leading-tight hidden sm:block">
+          <span class="text-[11px] md:text-xs text-slate-300 block">Have a Question?</span>
+          <span class="text-sm md:text-base font-bold text-amber-300">Talk to Instructor</span>
+        </div>
       </button>
+
+      <div id="teacherChatWindow" class="hidden absolute bottom-20 md:bottom-24 right-0 w-[300px] sm:w-[350px] bg-white rounded-3xl shadow-2xl border border-slate-200 overflow-hidden flex flex-col animate-fade-in-up text-xs">
+        <div class="bg-[#102138] text-white p-4 flex items-center justify-between border-b border-slate-700">
+          <div class="flex items-center space-x-2.5">
+            <div class="w-9 h-9 rounded-full bg-[#3a80bc] flex items-center justify-center text-white font-bold shrink-0">
+              <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+            <div>
+              <h4 class="font-extrabold text-sm">SDG Insights Desk</h4>
+              <span class="text-[10px] text-emerald-400 flex items-center gap-1">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span> Instructor Online
+              </span>
+            </div>
+          </div>
+          <button onclick="toggleTeacherChat()" class="text-slate-400 hover:text-white text-base">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+
+        <div id="chatMessages" class="p-4 h-72 overflow-y-auto space-y-4 bg-slate-50 hide-scrollbar">
+          <div class="bg-white p-3.5 rounded-2xl rounded-tl-none border border-slate-200 shadow-sm space-y-2 leading-relaxed">
+            <span class="text-[10px] font-bold text-[#3a80bc] block">SDG Insights Instructor</span>
+            <p class="urdu-font text-xs text-slate-800 text-right">
+              السلام علیکم عزیز طالب علم! میں SDG Insights سے آپ کی انسٹرکٹر ہوں۔ نوٹس، ایگزام تیاری، پورٹلز یا ایل ایم ایس ہینڈلنگ سے متعلق کوئی بھی سوال ہو تو نیچے میسج لکھیں یا سوال منتخب کریں:
+            </p>
+          </div>
+
+          <div class="space-y-1.5 pt-1">
+            <span class="text-[10px] font-bold text-slate-400 block uppercase">Quick Questions:</span>
+            <button onclick="askBotQuestion('paid')" class="w-full text-left bg-white hover:bg-blue-50/70 p-2.5 rounded-xl border border-slate-200 text-slate-700 font-semibold block transition">
+              • Are all notes and portals paid? (کیا یہ پیڈ ہیں؟)
+            </button>
+            <button onclick="askBotQuestion('exam_percentage')" class="w-full text-left bg-white hover:bg-blue-50/70 p-2.5 rounded-xl border border-slate-200 text-slate-700 font-semibold block transition">
+              • How much exam comes from these notes? (پیپر کتنا آتا ہے؟)
+            </button>
+            <button onclick="askBotQuestion('discounts')" class="w-full text-left bg-white hover:bg-blue-50/70 p-2.5 rounded-xl border border-slate-200 text-slate-700 font-semibold block transition">
+              • Any discounts or packages? (ڈیلز / ڈسکاؤنٹ)
+            </button>
+            <button onclick="askBotQuestion('access_method')" class="w-full text-left bg-white hover:bg-blue-50/70 p-2.5 rounded-xl border border-slate-200 text-slate-700 font-semibold block transition">
+              • How will I get portal access? (ایکسیس کیسے ملے گی؟)
+            </button>
+          </div>
+        </div>
+
+        <div class="p-2.5 bg-white border-t border-slate-200 flex items-center gap-1.5">
+          <input type="text" id="userChatInput" placeholder="Type Roman Urdu, Urdu or English..." class="flex-1 bg-slate-50 border border-slate-200 rounded-xl px-3 py-2.5 text-xs focus:bg-white focus:outline-none" onkeypress="if(event.key==='Enter') sendCustomTeacherMsg()" />
+          <button onclick="sendCustomTeacherMsg()" class="bg-[#102138] hover:bg-[#1a385f] text-white p-2.5 rounded-xl transition">
+            <i class="fa-solid fa-paper-plane text-xs"></i>
+          </button>
+        </div>
+      </div>
     </div>
 
     <!-- CART SIDEBAR DRAWER -->
@@ -617,7 +681,7 @@
 
         <div class="space-y-3 text-xs relative z-10">
           <input type="text" id="stuName" placeholder="Your Full Name *" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 text-[#102138] placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-[#3a80bc] transition shadow-sm" />
-          <input type="email" id="stuEmail" placeholder="Allotted Email (for access) *" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 text-[#102138] placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-[#3a80bc] transition shadow-sm" />
+          <input type="email" id="stuEmail" placeholder="Your Gmail (For Portal Access) *" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 text-[#102138] placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-[#3a80bc] transition shadow-sm" />
           
           <div class="border-2 border-dashed border-[#3a80bc]/40 bg-blue-50/50 p-4 rounded-xl text-center cursor-pointer hover:bg-blue-50 transition-all group" onclick="document.getElementById('stuReceiptPic').click()">
             <i class="fa-solid fa-cloud-arrow-up text-[#3a80bc] text-2xl block mb-2 group-hover:-translate-y-1 transition-transform"></i>
@@ -656,7 +720,7 @@
             </div>
             <div class="relative">
               <i class="fa-solid fa-envelope absolute left-4 top-1/2 -translate-y-1/2 text-[#3a80bc] text-sm"></i>
-              <input type="email" id="loginEmail" placeholder="Allotted Email ID *" class="w-full bg-white border border-[#3a80bc]/40 rounded-xl pl-10 pr-4 py-3 text-sm text-[#102138] focus:outline-none focus:ring-1 focus:ring-[#3a80bc] shadow-sm" />
+              <input type="email" id="loginEmail" placeholder="Your Gmail (For Portal Access) *" class="w-full bg-white border border-[#3a80bc]/40 rounded-xl pl-10 pr-4 py-3 text-sm text-[#102138] focus:outline-none focus:ring-1 focus:ring-[#3a80bc] shadow-sm" />
             </div>
             <button onclick="verifyAndUnlockPortal()" class="w-full btn-premium font-bold py-3.5 rounded-xl text-sm transition-all shadow-md mt-2">
               Login & Access Portal
@@ -715,13 +779,18 @@
     ];
 
     const courses = [
-      { code: "MGT101", title: "Financial Accounting Master", types: ["MID", "FINAL"], mid: "Rs. 500", final: "Rs. 500" },
-      { code: "CS101", title: "Introduction to Computing", types: ["MID", "FINAL"], mid: "Rs. 500", final: "Rs. 800" },
-      { code: "CS201", title: "Intro to Programming (C++)", types: ["MID", "FINAL"], mid: "Rs. 600", final: "Rs. 1000" },
-      { code: "CS301", title: "Data Structures & Algorithms", types: ["MID", "FINAL"], mid: "Rs. 600", final: "Rs. 1000" },
-      { code: "CS403", title: "Database Management Systems", types: ["MID", "FINAL"], mid: "Rs. 600", final: "Rs. 1000" },
-      { code: "MTH101", title: "Calculus And Analytical Geometry", types: ["MID", "FINAL"], mid: "Rs. 600", final: "Rs. 900" },
-      { code: "MTH401", title: "Differential Equations Master Notes", types: ["MID", "FINAL"], mid: "Rs. 600", final: "Rs. 900" }
+      { code: "MGT101", title: "Financial Accounting Master", types: ["MID", "FINAL"], mid: "Rs. 500", final: "Rs. 500", ytLink: "https://youtube.com/@sdginsights" },
+      { code: "MGT501", title: "Human Resource Management", types: ["MID", "FINAL"], mid: "Rs. 500", final: "Rs. 800", ytLink: "https://www.youtube.com/playlist?list=PLpIaHMEigBC-YFSYa7mADA9inlKrlvTZk" },
+      { code: "CS101", title: "Introduction to Computing", types: ["MID", "FINAL"], mid: "Rs. 500", final: "Rs. 800", ytLink: "https://www.youtube.com/watch?v=XPiS9jWiADE" },
+      { code: "ENG101", title: "English Comprehension", types: ["MID", "FINAL"], mid: "Rs. 500", final: "Rs. 800", ytLink: "https://www.youtube.com/watch?v=ZS58Jh7NPfs" },
+      { code: "PHY101", title: "Physics", types: ["MID", "FINAL"], mid: "Rs. 500", final: "Rs. 800", ytLink: "https://www.youtube.com/watch?v=5bM_HYHbkEk" },
+      { code: "CS201", title: "Intro to Programming (C++)", types: ["MID", "FINAL"], mid: "Rs. 600", final: "Rs. 1000", ytLink: "https://youtube.com/@sdginsights" },
+      { code: "CS301", title: "Data Structures & Algorithms", types: ["MID", "FINAL"], mid: "Rs. 600", final: "Rs. 1000", ytLink: "https://youtube.com/@sdginsights" },
+      { code: "CS304", title: "Object Oriented Programming", types: ["MID", "FINAL"], mid: "Rs. 600", final: "Rs. 1000", ytLink: "https://www.youtube.com/playlist?list=PLpIaHMEigBC_EpJ2kb_E_wY6_HeLN0xM4" },
+      { code: "CS403", title: "Database Management Systems", types: ["MID", "FINAL"], mid: "Rs. 600", final: "Rs. 1000", ytLink: "https://youtube.com/@sdginsights" },
+      { code: "CS610", title: "Computer Networks", types: ["MID", "FINAL"], mid: "Rs. 600", final: "Rs. 800", ytLink: "https://www.youtube.com/playlist?list=PLpIaHMEigBC-LdhxFxtum9r8Fl4-JpYxz" },
+      { code: "MTH101", title: "Calculus And Analytical Geometry", types: ["MID", "FINAL"], mid: "Rs. 600", final: "Rs. 900", ytLink: "https://youtube.com/@sdginsights" },
+      { code: "MTH401", title: "Differential Equations Master Notes", types: ["MID", "FINAL"], mid: "Rs. 600", final: "Rs. 900", ytLink: "https://youtube.com/@sdginsights" }
     ];
 
     let currentTab = 'tab-home';
@@ -807,6 +876,10 @@
             <button onclick="openLockedPreview('${item.code}')" class="w-full bg-slate-100 text-slate-600 hover:bg-slate-200 text-xs font-bold py-2.5 rounded-xl transition-all flex items-center justify-center gap-2">
               <i class="fa-solid fa-play"></i> Start Preparation
             </button>
+            ${item.ytLink ? `
+            <a href="${item.ytLink}" target="_blank" class="w-full bg-red-50 text-red-600 hover:bg-red-100 border border-red-200 text-xs font-bold py-2.5 rounded-xl transition-all flex items-center justify-center gap-2 mt-2">
+              <i class="fa-brands fa-youtube text-lg"></i> Watch Preparation Video
+            </a>` : ''}
           </div>
         `;
         gridElement.appendChild(card);
@@ -943,11 +1016,16 @@
 
       const msgText = `*Assalam-o-Alaikum!*\nI made payment for Access:\n\n${details}\n\n*Name:* ${name}\n*Email:* ${email}\n\nPlease ALLOW my access.`;
 
+      // Copy to clipboard to bypass WhatsApp Android bug where text is stripped from images
+      try { await navigator.clipboard.writeText(msgText); } catch(e) {}
+
       if (file && navigator.canShare && navigator.canShare({ files: [file] })) {
         try {
-          await navigator.share({ files: [file], text: msgText });
-          closeOrderModal(); showToast("Opening WhatsApp...", "success");
-          if(isCartCheckoutMode) { cart = []; updateCartUI(); } return;
+          showToast("Details COPIED! Please PASTE them in the WhatsApp caption.", "info");
+          await navigator.share({ title: 'SDG Insights Order', text: msgText, files: [file] });
+          closeOrderModal(); 
+          if(isCartCheckoutMode) { cart = []; updateCartUI(); } 
+          return;
         } catch (e) {}
       }
       
@@ -988,6 +1066,107 @@
       } else {
         showToast("Sorry, you can't log in without payment. Please do payment and then start preparation.", "error");
       }
+    }
+
+    // Chatbot Logic
+    function toggleTeacherChat() {
+      document.getElementById("teacherChatWindow").classList.toggle("hidden");
+    }
+
+    const knowledgeBase = {
+      paid: {
+        roman: "Ji bilkul, SDG Insights ke tamam solved notes, preparation portals aur interactive software 100% PAID hain.\n\nHumari koi bhi file ya portal free nahi hai. Har course professional mehnat se 100% handout-accurate tayar kiya gaya hai.",
+        urdu: "جی بالکل، SDG Insights کے تمام حل شدہ نوٹس، پریپریشن پورٹلز اور اسٹڈی سافٹ ویئر 100% پیڈ ہیں۔\n\nہماری کوئی بھی فائل یا پورٹل فری نہیں ہے۔ ہر کورس آفیشل ہینڈ آؤٹس کے عین مطابق مکمل تحقیق سے تیار کیا گیا ہے۔",
+        english: "Yes, all study notes, preparation portals, and interactive software from SDG Insights are 100% PAID.\n\nWe do not offer free resources. Every single file is systematically verified according to official VU handouts."
+      },
+      exam_percentage: {
+        roman: "Humare notes Virtual University ke official handouts aur lectures se 100% word-by-word tayar kiye gaye hain.\n\nAgar aap in notes ko baghair koi lafz chore 100% achi tarah yaad kar lete hain, to exam 80% se 90% tak inhi me se ata hai!",
+        urdu: "ہمارے تمام نوٹس ورچوئل یونیورسٹی کے آفیشل ہینڈ آؤٹس اور لیکچرز سے تیار کیے گئے ہیں۔\n\nاگر آپ نوٹس کا ایک بھی لفظ چھوڑے بغیر 100% اچھے سے یاد کر لیں، تو امتحان 80% سے 90% انہی میں سے آتا ہے!",
+        english: "Our materials are prepared directly from official Virtual University handouts and lectures.\n\nIf you prepare the notes 100% thoroughly without skipping anything, 80% to 90% of the exam comes directly from these contents!"
+      },
+      discounts: {
+        roman: "Ji haan! Humare paas special packages available hain:\n\n• Full Semester Super Bundle: 7 ya zyada subjects lene par Flat 20% OFF milta hai.\n\n• Pick Any 5 Pack: Apni marzi ke 5 subjects lene par Flat 10% OFF milta hai.",
+        urdu: "جی ہاں! ہمارے پاس خصوصی ڈیلز دستیاب ہیں:\n\n• مکمل سمسٹر بنڈل: 7 یا زیادہ سبجیکٹس پر فلیٹ 20% رعایت ہے۔\n\n• کوئی سے 5 سبجیکٹس: اپنی مرضی کے 5 کورسز پر 10% رعایت ہے۔",
+        english: "Yes, we offer special package discounts:\n\n• Full Semester Bundle: Flat 20% OFF on 7 or more subjects.\n\n• Pick Any 5 Pack: Flat 10% OFF on 5 subjects of your choice."
+      },
+      access_method: {
+        roman: "Access ka tariqa bohat aasan hai, koi code yaad rakhne ki zaroorat nahi:\n\n1. EasyPaisa ya Bank par fee send karein.\n\n2. WhatsApp par screenshot aur apni Gmail send karein.\n\n3. Instructor access active kar dengi.\n\n4. Aap apni Gmail laga kar direct notes open kar sakenge.",
+        urdu: "پورٹل کی رسائی حاصل کرنا اب انتہائی آسان ہے، کوئی کوڈ یاد رکھنے کی ضرورت نہیں:\n\n1. ایزی پیسہ یا بینک پر فیس بھیجیں۔\n\n2. واٹس ایپ پر رسید کا اسکرین شاٹ اور اپنی جی میل بھیجیں۔\n\n3. انسٹرکٹر آپ کی ایکسیس فعال کر دیں گی!\n\n4. آپ ڈائریکٹ ای میل درج کر کے نوٹس کھول سکیں گے۔",
+        english: "Getting portal access is effortless — no passcodes to remember:\n\n1. Transfer fee via EasyPaisa or Bank.\n\n2. Send receipt screenshot and Gmail to WhatsApp.\n\n3. The instructor activates your access.\n\n4. You can open your notes directly using your registered Gmail."
+      }
+    };
+
+    function askBotQuestion(key) {
+      appendStudentMsg(event.target.innerText.replace('• ', ''));
+      const resp = knowledgeBase[key].roman + "\n\n━━━━━━━━━━━━━━\n" + knowledgeBase[key].urdu;
+      setTimeout(() => appendTeacherMsg(resp, 'both'), 400);
+    }
+
+    function sendCustomTeacherMsg() {
+      const input = document.getElementById("userChatInput");
+      const text = input.value.trim();
+      if (!text) return;
+
+      appendStudentMsg(text);
+      input.value = "";
+
+      const lower = text.toLowerCase();
+      const isUrduScript = /[\u0600-\u06FF]/.test(text);
+      const isRomanUrdu = /kya|kia|kesy|kese|hai|hain|hyn|chahiye|kitna|kitne|bata|batao|milega|milegi|aoa|salam|krna|karna|pese|paise/.test(lower);
+
+      let lang = 'english';
+      if (isUrduScript) lang = 'urdu';
+      else if (isRomanUrdu) lang = 'roman';
+
+      let answerKey = 'paid';
+      if (/salam|aoa|hello|hi|hey|assalam/.test(lower)) {
+        if (lang === 'urdu') {
+          setTimeout(() => appendTeacherMsg("وعلیکم السلام عزیز طالب علم! میں SDG Insights سے آپ کی انسٹرکٹر ہوں۔ آپ کو کس کورس، نوٹس یا ایل ایم ایس ہینڈلنگ میں رہنمائی چاہیے؟", 'urdu'), 400);
+          return;
+        } else if (lang === 'roman') {
+          setTimeout(() => appendTeacherMsg("Walaikum Assalam! Main SDG Insights se aapki instructor hoon.\n\nAapko kis subject ya LMS service me help chahiye?", 'roman'), 400);
+          return;
+        } else {
+          setTimeout(() => appendTeacherMsg("Hello! Welcome to SDG Insights. How can I assist you today?", 'english'), 400);
+          return;
+        }
+      } else if (/percentage|percent|kitna ata|kitna paper|guarantee/.test(lower)) {
+        answerKey = 'exam_percentage';
+      } else if (/deal|discount|off|riayat|bundle|package/.test(lower)) {
+        answerKey = 'discounts';
+      } else if (/access|code|passcode|pass|open|kholna/.test(lower)) {
+        answerKey = 'access_method';
+      }
+
+      const responseText = knowledgeBase[answerKey][lang];
+      setTimeout(() => appendTeacherMsg(responseText, lang), 450);
+    }
+
+    function appendStudentMsg(msg) {
+      const box = document.getElementById("chatMessages");
+      const isUrdu = /[\u0600-\u06FF]/.test(msg);
+      box.innerHTML += `
+        <div class="flex justify-end">
+          <div class="bg-[#102138] text-white p-3 rounded-2xl rounded-tr-none text-xs max-w-[85%] shadow-sm whitespace-pre-line ${isUrdu ? 'urdu-font text-right' : 'text-left'}">
+            ${msg}
+          </div>
+        </div>
+      `;
+      box.scrollTop = box.scrollHeight;
+    }
+
+    function appendTeacherMsg(msg, lang) {
+      const box = document.getElementById("chatMessages");
+      const isUrdu = lang === 'urdu' || /[\u0600-\u06FF]/.test(msg);
+      box.innerHTML += `
+        <div class="bg-white p-3.5 rounded-2xl rounded-tl-none border border-slate-200 shadow-sm max-w-[92%] space-y-1.5 leading-relaxed">
+          <span class="text-[10px] font-bold text-[#3a80bc] block">SDG Insights Instructor</span>
+          <div class="text-xs text-slate-800 whitespace-pre-line ${isUrdu ? 'urdu-font text-right' : 'text-left'}">
+            ${msg}
+          </div>
+        </div>
+      `;
+      box.scrollTop = box.scrollHeight;
     }
 
     switchTab('tab-home');
