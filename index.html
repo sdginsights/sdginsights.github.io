@@ -39,6 +39,10 @@
             pulseGlow: {
               '0%, 100%': { boxShadow: '0 0 0 0 rgba(58, 128, 188, 0.4)' },
               '50%': { boxShadow: '0 0 0 10px rgba(58, 128, 188, 0)' },
+            },
+            shimmer: {
+              '0%': { transform: 'translateX(-100%) skewX(-15deg)' },
+              '50%, 100%': { transform: 'translateX(200%) skewX(-15deg)' }
             }
           }
         }
@@ -167,6 +171,21 @@
     }
     .nav-btn-inactive:hover { background-color: #f1f5f9; color: #102138; }
 
+    /* HIDE SCROLLBAR FOR MOBILE TABS */
+    .hide-scrollbar::-webkit-scrollbar { display: none; }
+    .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+    /* SHINE ANIMATION FOR BUTTONS */
+    .btn-shine { position: relative; overflow: hidden; }
+    .btn-shine::before {
+      content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%;
+      background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%);
+      transform: skewX(-25deg); animation: shimmer 3s infinite; z-index: 1; pointer-events: none;
+    }
+    .btn-shine-dark::before {
+      background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.15) 50%, rgba(255,255,255,0) 100%);
+    }
+
     /* MOBILE DRAWER MENU */
     .mobile-drawer-bg {
       opacity: 0; pointer-events: none; transition: opacity 0.3s ease;
@@ -286,6 +305,17 @@
           </button>
         </div>
       </div>
+
+      <!-- MOBILE SCROLLABLE TABS (Visible on small screens) -->
+      <div class="lg:hidden bg-white/95 backdrop-blur-md border-t border-slate-200 overflow-x-auto hide-scrollbar">
+        <div class="flex items-center px-4 py-2 gap-2 min-w-max">
+          <button onclick="switchTab('tab-home')" id="mob-btn-tab-home" class="nav-btn-active px-4 py-1.5 rounded-xl text-xs transition btn-shine btn-shine-dark">Home</button>
+          <button onclick="switchTab('tab-mid-portals')" id="mob-btn-tab-mid-portals" class="nav-btn-inactive px-4 py-1.5 rounded-xl text-xs transition">Mid Term Portals</button>
+          <button onclick="switchTab('tab-final-portals')" id="mob-btn-tab-final-portals" class="nav-btn-inactive px-4 py-1.5 rounded-xl text-xs transition">Final Term Portals</button>
+          <button onclick="switchTab('tab-lms')" id="mob-btn-tab-lms" class="nav-btn-inactive px-4 py-1.5 rounded-xl text-xs transition">LMS Handling</button>
+          <button onclick="switchTab('tab-deals')" id="mob-btn-tab-deals" class="nav-btn-inactive px-4 py-1.5 rounded-xl text-xs transition">Discounted Deals</button>
+        </div>
+      </div>
     </header>
 
     <!-- MOBILE DRAWER MENU (THE LIST) -->
@@ -345,12 +375,15 @@
             100% from the handout of Virtual University (VU). 100% success guarantee for your best CGPA.
           </p>
 
-          <div class="flex flex-col sm:flex-row items-center justify-center gap-3 pt-4">
-             <button onclick="switchTab('tab-mid-portals')" class="btn-premium w-full sm:w-auto px-8 py-3.5 rounded-2xl text-sm font-bold flex items-center justify-center gap-2">
-               <i class="fa-solid fa-bullseye"></i> Explore Portals
+          <div class="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3 pt-4">
+             <button onclick="switchTab('tab-mid-portals')" class="btn-premium btn-shine btn-shine-dark w-full sm:w-auto px-6 py-3.5 rounded-2xl text-sm font-bold flex items-center justify-center gap-2">
+               <i class="fa-solid fa-bullseye"></i> Mid Term Preparation
              </button>
-             <button onclick="orderViaWhatsApp('Book Your Assignment')" class="bg-white border-2 border-[#102138] text-[#102138] hover:bg-slate-50 w-full sm:w-auto px-8 py-3.5 rounded-2xl text-sm font-bold transition-all flex items-center justify-center gap-2 shadow-sm">
-               <i class="fa-solid fa-pen-nib text-[#3a80bc]"></i> Book Assignment
+             <button onclick="switchTab('tab-final-portals')" class="btn-premium btn-shine btn-shine-dark w-full sm:w-auto px-6 py-3.5 rounded-2xl text-sm font-bold flex items-center justify-center gap-2">
+               <i class="fa-solid fa-trophy text-amber-300"></i> Final Term Preparation
+             </button>
+             <button onclick="orderViaWhatsApp('Book Your Assignment')" class="bg-white border-2 border-[#102138] text-[#102138] hover:bg-slate-50 w-full sm:w-auto px-6 py-3.5 rounded-2xl text-sm font-bold transition-all flex items-center justify-center gap-2 shadow-sm btn-shine">
+               <i class="fa-solid fa-pen-nib text-[#3a80bc]"></i> Book Your Assignment
              </button>
           </div>
 
@@ -719,6 +752,16 @@
       ['tab-home', 'tab-mid-portals', 'tab-final-portals', 'tab-lms', 'tab-deals'].forEach(t => {
         const btn = document.getElementById(`btn-${t}`);
         if (btn) btn.className = (t === tabId) ? "nav-btn-active px-3 py-2 rounded-xl transition" : "nav-btn-inactive px-3 py-2 rounded-xl transition";
+        
+        // Handle mobile scrollable tabs
+        const mobBtn = document.getElementById(`mob-btn-${t}`);
+        if (mobBtn) {
+          if (t === tabId) {
+            mobBtn.className = "nav-btn-active px-4 py-1.5 rounded-xl text-xs transition btn-shine btn-shine-dark";
+          } else {
+            mobBtn.className = "nav-btn-inactive px-4 py-1.5 rounded-xl text-xs transition";
+          }
+        }
       });
 
       if (tabId === 'tab-mid-portals') renderGrid('midGrid', 'MID');
@@ -744,6 +787,8 @@
 
       filtered.forEach(item => {
         let p = (typeFilter === 'MID') ? item.mid : item.final;
+        let termLabel = (typeFilter === 'MID') ? 'Mid Term Preparation' : 'Final Term Preparation';
+        
         const card = document.createElement("div");
         card.className = `glass-card-light rounded-3xl p-5 flex flex-col justify-between group overflow-hidden relative`;
         card.innerHTML = `
@@ -753,6 +798,13 @@
               <span class="text-[10px] text-[#3a80bc] font-black uppercase tracking-wider bg-blue-50 px-2 py-0.5 rounded border border-blue-100">${p}</span>
             </div>
             <h4 class="font-bold text-lg text-[#102138] leading-tight">${item.title}</h4>
+            
+            <div class="mt-3 p-2.5 bg-blue-50/50 border border-blue-100 rounded-xl">
+              <span class="text-[11px] font-black text-[#3a80bc] uppercase tracking-wide block leading-none mb-1">${termLabel}</span>
+              <span class="text-[10px] text-slate-500 font-bold leading-tight flex items-center gap-1">
+                <i class="fa-solid fa-book-open-reader text-slate-400"></i> According to VU syllabus and paper pattern
+              </span>
+            </div>
           </div>
           <div class="space-y-2.5 mt-auto relative z-10">
             <div class="flex gap-2 w-full flex-col sm:flex-row">
@@ -923,7 +975,31 @@
       document.getElementById("lockedPreviewModal").classList.remove("hidden");
     }
     function closeLockedPreview() { document.getElementById("lockedPreviewModal").classList.add("hidden"); }
-    function verifyAndUnlockPortal() { showToast("This is a demo preview mode.", "info"); setTimeout(closeLockedPreview, 1500); }
+    
+    function verifyAndUnlockPortal() {
+      const email = document.getElementById("loginEmail").value.trim().toLowerCase();
+      const courseCode = document.getElementById("loginCourseCode").value;
+
+      if (!email || !email.includes("@")) {
+        showToast("Please enter a valid email address.", "error");
+        return;
+      }
+
+      // Check if student exists in the database for this course (or "ALL")
+      const isApproved = approvedStudents.find(s => s.email === email && (s.course === courseCode || s.course === "ALL"));
+
+      if (isApproved) {
+        showToast("Congratulations! You have successfully signed in.", "success");
+        setTimeout(() => {
+          closeLockedPreview();
+          showToast(`Loading ${courseCode} Preparation Portal...`, "info");
+          // Here you can add the actual redirect link later, e.g.:
+          // window.location.href = `${courseCode.toLowerCase()}.html`;
+        }, 1500);
+      } else {
+        showToast("Sorry, you can't log in without payment. Please do payment and then start preparation.", "error");
+      }
+    }
 
     switchTab('tab-home');
   </script>
