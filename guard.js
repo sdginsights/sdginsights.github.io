@@ -1,7 +1,7 @@
 // IMMEDIATE SCREEN SHIELD
 (function() {
   const whitelist = [
-    "munazammukhtarmukhtar@gmail.com",
+    "munazamukhtarmukhtar@gmail.com",
     "sdginsightsedu@gmail.com",
     "ali.student@gmail.com"
   ];
