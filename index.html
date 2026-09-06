@@ -562,40 +562,35 @@
     </section>
 
     <!-- ======================================================== -->
-    <!-- ORDER MODAL: SCREENSHOT RECEIPT INSTEAD OF TRX ID -->
+    <!-- ORDER MODAL: SCREENSHOT RECEIPT & DYNAMIC TYPE IDENTIFICATION -->
     <!-- ======================================================== -->
     <div id="orderModal" class="fixed inset-0 bg-slate-950/70 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
       <div class="bg-white rounded-3xl max-w-sm w-full p-5 space-y-3.5 border border-slate-200 shadow-2xl">
         <div class="flex items-center justify-between">
           <div>
             <span class="text-[10px] font-bold text-[#3a80bc] uppercase" id="mCode">MGT101</span>
-            <h3 class="text-sm font-bold text-[#102138]" id="mTitle">Preparation Portal (1 Month Access)</h3>
+            <h3 class="text-sm font-bold text-[#102138]" id="mTitle">Portal Title</h3>
           </div>
           <button onclick="closeOrderModal()" class="text-slate-400 hover:text-slate-600 text-sm">
             <i class="fa-solid fa-xmark"></i>
           </button>
         </div>
 
-        <div class="grid grid-cols-2 gap-2 text-center text-xs">
-          <div class="p-2 border rounded-xl bg-slate-50">
-            <span class="text-[10px] text-slate-400 block font-bold">Midterm (1 Month)</span>
-            <span class="font-bold text-[#102138]" id="mMid">Rs. 500</span>
-          </div>
-          <div class="p-2 border rounded-xl bg-slate-50">
-            <span class="text-[10px] text-slate-400 block font-bold">Final Term (1 Month)</span>
-            <span class="font-bold text-[#102138]" id="mFinal">Rs. 500</span>
-          </div>
+        <!-- DYNAMIC PRICING BOX (Updates based on Mid/Final selection) -->
+        <div class="p-3 border rounded-xl bg-blue-50/50 text-center border-blue-200">
+          <span class="text-[10px] text-slate-500 block font-bold uppercase" id="mPlanType">Midterm Portal</span>
+          <span class="text-lg font-black text-[#102138]" id="mPriceDisplay">Rs. 500</span>
         </div>
 
         <!-- PAYMENT NUMBERS -->
         <div class="bg-slate-50 p-2.5 rounded-xl text-[11px] space-y-1 border border-slate-200">
           <div class="flex items-center justify-between">
             <div><span class="font-bold text-emerald-700">EasyPaisa:</span> <span class="font-mono font-bold">03198519637</span> (Munazza mukhtar)</div>
-            <button onclick="navigator.clipboard.writeText('03198519637'); alert('Copied: 03198519637');" class="bg-white px-2 py-0.5 rounded border text-[10px] font-bold">Copy</button>
+            <button onclick="navigator.clipboard.writeText('03198519637');" class="bg-white px-2 py-0.5 rounded border text-[10px] font-bold">Copy</button>
           </div>
           <div class="flex items-center justify-between">
             <div><span class="font-bold text-blue-700">MCB Bank:</span> <span class="font-mono font-bold">1708370211010380</span> (MUNAZA MUKHTAR)</div>
-            <button onclick="navigator.clipboard.writeText('1708370211010380'); alert('Copied: 1708370211010380');" class="bg-white px-2 py-0.5 rounded border text-[10px] font-bold">Copy</button>
+            <button onclick="navigator.clipboard.writeText('1708370211010380');" class="bg-white px-2 py-0.5 rounded border text-[10px] font-bold">Copy</button>
           </div>
         </div>
 
@@ -608,7 +603,7 @@
           <div class="border-2 border-dashed border-blue-200 bg-blue-50/50 p-3 rounded-xl text-center cursor-pointer hover:bg-blue-50 transition" onclick="document.getElementById('stuReceiptPic').click()">
             <i class="fa-solid fa-image text-[#3a80bc] text-lg block mb-1"></i>
             <span class="text-[11px] font-bold text-slate-700 block" id="receiptPicLabel">Attach Payment Receipt Screenshot 📷</span>
-            <span class="text-[9px] text-slate-400 block">Tap to select screenshot from gallery</span>
+            <span class="text-[9px] text-slate-400 block">Required for verification</span>
             <input type="file" id="stuReceiptPic" accept="image/*" class="hidden" onchange="previewScreenshot(this)" />
           </div>
         </div>
@@ -883,10 +878,30 @@
     function openOrderModal(code) {
       selectedCourse = courses.find(c => c.code === code);
       if (!selectedCourse) return;
+      
+      // Determine what exactly the user is buying based on their active filter
+      let planName = "";
+      let price = "";
+      
+      if (currentFilter === 'MID') {
+        planName = "Midterm (1 Month Access)";
+        price = selectedCourse.mid;
+      } else if (currentFilter === 'FINAL') {
+        planName = "Final Term (1 Month Access)";
+        price = selectedCourse.final;
+      } else if (currentFilter === 'HIGHLIGHTED') {
+        planName = "Highlighted Handouts";
+        price = selectedCourse.hl || "Rs. 300";
+      } else {
+        planName = "Master Notes";
+        price = selectedCourse.final;
+      }
+
       document.getElementById("mCode").innerText = selectedCourse.code;
       document.getElementById("mTitle").innerText = selectedCourse.title;
-      document.getElementById("mMid").innerText = selectedCourse.mid;
-      document.getElementById("mFinal").innerText = selectedCourse.final;
+      document.getElementById("mPlanType").innerText = planName;
+      document.getElementById("mPriceDisplay").innerText = price;
+      
       document.getElementById("receiptPicLabel").innerText = "Attach Payment Receipt Screenshot 📷";
       document.getElementById("stuReceiptPic").value = "";
       document.getElementById("orderModal").classList.remove("hidden");
@@ -902,23 +917,44 @@
       }
     }
 
-    // SUBMIT ORDER WITH SCREENSHOT INSTRUCTION DIRECTLY TO WHATSAPP
-    function submitOrderWithScreenshot() {
+    // SUBMIT ORDER: DYNAMIC PLAN + DIRECT IMAGE SHARE IF SUPPORTED
+    async function submitOrderWithScreenshot() {
       const name = document.getElementById("stuName").value.trim();
       const email = document.getElementById("stuEmail").value.trim();
       const picInput = document.getElementById("stuReceiptPic");
+      const planName = document.getElementById("mPlanType").innerText;
 
       if (name.length < 2 || !email.includes("@")) {
         alert("Please enter full name and valid Gmail address.");
         return;
       }
 
-      const hasPic = picInput.files && picInput.files[0];
-      const receiptStatus = hasPic ? `[Screenshot Attached: ${picInput.files[0].name}]` : `[Sending Screenshot in this Chat]`;
-
-      const msg = `*Assalam-o-Alaikum SDG Insights!*%0A%0AI have made payment for 1-Month Portal Access:%0A*Course:* ${selectedCourse.code} - ${selectedCourse.title}%0A*Name:* ${name}%0A*Gmail:* ${email}%0A*Payment Proof:* ${receiptStatus}%0A%0AI am attaching my payment receipt screenshot below. Please ALLOW my access in Google Sheet. Thank you!`;
+      // Generate the clean message (Removed the specific "I have attached..." string as requested)
+      const msgText = `*Assalam-o-Alaikum SDG Insights!*\n\nI have made payment for Portal Access:\n*Course:* ${selectedCourse.code} - ${selectedCourse.title}\n*Type:* ${planName}\n*Name:* ${name}\n*Gmail:* ${email}\n\nPlease ALLOW my access in Google Sheet. Thank you!`;
       
-      window.open(`https://wa.me/923198519637?text=${msg}`, '_blank');
+      const file = picInput.files && picInput.files[0];
+
+      // DIRECT FILE SHARE CAPABILITY (Works amazingly on mobile devices)
+      // The user taps this, their native share sheet opens, they select WhatsApp, and the image + text is loaded instantly!
+      if (file && navigator.canShare && navigator.canShare({ files: [file] })) {
+        try {
+          await navigator.share({
+            files: [file],
+            title: 'SDG Insights Payment Receipt',
+            text: msgText
+          });
+          closeOrderModal();
+          return; // Stop execution if direct share was successful
+        } catch (error) {
+          console.log('User cancelled direct share or it failed. Falling back to text link.');
+        }
+      }
+
+      // FALLBACK: For Desktop browsers or devices that don't support file sharing through Web API
+      // Here we encode the message text and send it via the standard WhatsApp intent. 
+      // The user will have to manually attach the image once inside WhatsApp.
+      const encodedMsg = encodeURIComponent(msgText);
+      window.open(`https://wa.me/923198519637?text=${encodedMsg}`, '_blank');
       closeOrderModal();
     }
 
