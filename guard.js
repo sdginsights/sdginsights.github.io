@@ -1,7 +1,7 @@
 /* ========================================================
-   SDG INSIGHTS — CLEAN AUTO-LOCK GUARD (ZERO BLUR)
+   SDG INSIGHTS — CLOUD AUTO-LOCK GUARD (ZERO BLUR)
    ======================================================== */
-const SDG_API_URL = "https://script.google.com/macros/s/AKfycbwSKD2hKMbDZ3gUtgMu48-M7oVNsSj2nCE1QPTtzfUdjvnSYGq2vHbjRuumJySIvs-RJQ/exec";
+const SDG_API_URL = "https://script.google.com/macros/s/AKfycbxJARIiUGpoFzuWpKJWZZfSKdu1d3rDXGqgw31jknglYs5ijClp9FC4q-nnXV0GE1fi/exec";
 
 const SDG_OWNERS = [
   "munazamukhtarmukhtar@gmail.com",
@@ -31,13 +31,13 @@ function sdgIsUnlockedLocally() {
 }
 
 (function initGuard() {
-  // If verified, show content cleanly without any lock
+  // If owner or verified student, show content cleanly with ZERO blur!
   if (sdgIsUnlockedLocally()) {
     console.log("SDG Insights: Access Verified & Clean");
     return;
   }
 
-  // Create clean full screen overlay (NO BLURRING OF CONTENT)
+  // Clean full screen lock overlay (NO BLURRING)
   const overlay = document.createElement("div");
   overlay.id = "sdgFullScreenLock";
   overlay.style.cssText = `
@@ -57,7 +57,7 @@ function sdgIsUnlockedLocally() {
       <div style="font-size:36px; margin-bottom:12px;">🔒</div>
       <h2 style="font-size:20px; font-weight:800; color:#102138; margin:0 0 8px 0;">Portal Locked</h2>
       <p style="font-size:12px; color:#64748b; line-height:1.6; margin:0 0 16px 0;">
-        یہ مکمل نوٹس پورٹل صرف منظور شدہ طلبہ کے لیے ہے۔ رسائی کے لیے اپنی منظور شدہ جی میل درج کریں۔
+        یہ مکمل نوٹس پورٹل صرف منظور شدہ طلبہ کے لیے ہے۔ رسائی حاصل کرنے کے لیے اپنی منظور شدہ جی میل درج کریں۔
       </p>
       <input type="email" id="sdgUnlockEmailInput" placeholder="Enter Approved Gmail Address..." style="width:100%; box-sizing:border-box; border:2px solid #cbd5e1; border-radius:12px; padding:12px; font-size:13px; outline:none; text-align:center; margin-bottom:12px;" />
       <button id="sdgUnlockBtn" style="width:100%; background:#102138; color:#ffffff; font-weight:700; border:none; border-radius:12px; padding:12px; font-size:13px; cursor:pointer; margin-bottom:12px;">
@@ -74,7 +74,7 @@ function sdgIsUnlockedLocally() {
 
   document.body.appendChild(overlay);
 
-  // Auto check URL
+  // Auto check URL parameter
   const params = new URLSearchParams(window.location.search);
   if (params.has('student')) {
     const sEmail = params.get('student').toLowerCase().trim();
@@ -95,8 +95,8 @@ function sdgIsUnlockedLocally() {
     const btn = document.getElementById("sdgUnlockBtn");
     const statusBox = document.getElementById("sdgStatusMsg");
     btn.disabled = true;
-    btn.innerText = "Verifying...";
-    statusBox.innerText = "Checking Database...";
+    btn.innerText = "Verifying with Database...";
+    statusBox.innerText = "Checking Google Sheet...";
     statusBox.style.color = "#3a80bc";
 
     if (SDG_OWNERS.includes(email)) {
@@ -114,7 +114,7 @@ function sdgIsUnlockedLocally() {
 
         if (data.allowed) {
           sessionStorage.setItem("sdg_verified_student", email);
-          overlay.remove();
+          overlay.remove(); // Removes lock completely, notes appear crystal clean!
         } else {
           statusBox.innerText = data.message || "❌ Access Denied";
           statusBox.style.color = "#dc2626";
