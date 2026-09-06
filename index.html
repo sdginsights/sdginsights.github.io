@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>SDG Insights — Mid & Final Prep Portals</title>
-  <meta name="description" content="Official SDG Insights study portal for Virtual University of Pakistan. 100% Success for 4/4 CGPA." />
+  <meta name="description" content="Official SDG Insights study portal for Virtual University of Pakistan." />
   
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
@@ -909,4 +909,45 @@
     // ========================================================
     const squareNotices = [
       { icon: "🎁", tag: "Special Deal", text: "Flat 20% OFF on Full Semester & 10% OFF on 5 subjects!" },
-      { icon: "⚠️", tag: "Official Policy", text: "All exam preparation portals are 100% PAID — nothing
+      { icon: "⚠️", tag: "Official Policy", text: "All exam preparation portals are 100% PAID — nothing is free." },
+      { icon: "💼", tag: "LMS Handling", text: "Complete Assignments, Quizzes & GDBs with 24/7 support." },
+      { icon: "💻", tag: "Study Portals", text: "Practice & prepare online with zero file downloads directly on website." }
+    ];
+    let sqIdx = 0;
+    const sqBox = document.getElementById("squareNoticeBox");
+    const sqIcon = document.getElementById("sqNoticeIcon");
+    const sqTag = document.getElementById("sqNoticeTag");
+    const sqText = document.getElementById("sqNoticeText");
+    const sqBar = document.getElementById("sqProgressBar");
+
+    function showNextSquareNotice() {
+      if (!sqBox) return;
+      const current = squareNotices[sqIdx];
+      sqIcon.innerText = current.icon;
+      sqTag.innerText = current.tag;
+      sqText.innerText = current.text;
+      sqBox.classList.add("box-visible");
+
+      if (sqBar) {
+        sqBar.classList.remove("timer-line-animate");
+        void sqBar.offsetWidth;
+        sqBar.classList.add("timer-line-animate");
+      }
+
+      setTimeout(() => {
+        sqBox.classList.remove("box-visible");
+        sqIdx = (sqIdx + 1) % squareNotices.length;
+        setTimeout(showNextSquareNotice, 3500);
+      }, 5000);
+    }
+
+    setTimeout(showNextSquareNotice, 2000);
+
+    function hideSquareNotice() {
+      if (sqBox) sqBox.classList.remove("box-visible");
+    }
+
+    switchTab('tab-home');
+  </script>
+</body>
+</html>
