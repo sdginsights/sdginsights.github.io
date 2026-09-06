@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>SDG Insights — Mid & Final Prep Portals</title>
-  <meta name="description" content="Official SDG Insights study portal for Virtual University of Pakistan. 100% Success for 4/4 CGPA." />
+  <meta name="description" content="Official SDG Insights study portal for Virtual University of Pakistan. 100% Success granted." />
   
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
@@ -59,7 +59,7 @@
     }
     .urdu-font { font-family: 'Noto Nastaliq Urdu', serif; line-height: 2.3; }
 
-    /* Fast, static background instead of heavy animations */
+    /* Fast, static background */
     .radiant-aurora {
       position: fixed;
       top: 0; left: 0; width: 100vw; height: 100vh;
@@ -156,6 +156,33 @@
     
     @keyframes pop { 0% { transform: scale(1); } 50% { transform: scale(1.3); } 100% { transform: scale(1); } }
     .badge-pop { animation: pop 0.2s ease-out; }
+
+    /* ========================================================
+       SQUARE BOX NOTIFICATION STYLING (PERFECT COMPACT CUBE)
+       ======================================================== */
+    #squareNoticeBox {
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      transform: translateY(140px) scale(0.85);
+      opacity: 0;
+      pointer-events: none;
+    }
+    #squareNoticeBox.box-visible {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    @keyframes bounceIcon {
+      0%, 100% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-4px) scale(1.1); }
+    }
+    .icon-bounce { animation: bounceIcon 2s ease-in-out infinite; }
+
+    @keyframes timerLine {
+      0% { width: 0%; }
+      100% { width: 100%; }
+    }
+    .timer-line-animate { animation: timerLine 5s linear infinite; }
   </style>
 </head>
 <body class="antialiased relative flex flex-col">
@@ -263,7 +290,6 @@
         </button>
       </div>
       
-      <!-- Contact Info at bottom of menu -->
       <div class="p-4 border-t border-slate-100 bg-slate-50 space-y-2">
         <span class="text-[9px] font-black text-slate-400 uppercase tracking-widest">Official Contact</span>
         <div class="flex items-center gap-2 bg-white px-3 py-2 rounded-lg border border-slate-200 shadow-sm text-sm font-bold text-[#102138]">
@@ -312,7 +338,7 @@
              </a>
           </div>
 
-          <!-- Glassmorphic Search -->
+          <!-- Search -->
           <div class="max-w-md mx-auto pt-6">
             <div class="relative group">
               <div class="relative flex items-center">
@@ -334,9 +360,7 @@
             <i class="fa-solid fa-bullseye text-[#3a80bc]"></i> Mid Term Prep Portals
           </h2>
         </div>
-        <div id="midGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          <!-- Injected via JS -->
-        </div>
+        <div id="midGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
       </div>
     </section>
 
@@ -347,9 +371,7 @@
             <i class="fa-solid fa-trophy text-[#3a80bc]"></i> Final Term Prep Portals
           </h2>
         </div>
-        <div id="finalGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          <!-- Injected via JS -->
-        </div>
+        <div id="finalGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
       </div>
     </section>
 
@@ -436,6 +458,38 @@
         </div>
       </div>
     </section>
+
+    <!-- ========================================================
+         COMPACT SQUARE BOX RECURRING NOTIFICATION (BOTTOM-LEFT)
+         ======================================================== -->
+    <div id="squareNoticeBox" class="fixed bottom-20 left-4 z-40 w-56 aspect-square">
+      <div class="w-full h-full bg-white/95 backdrop-blur-md rounded-2xl border border-blue-200/80 p-4 shadow-xl flex flex-col justify-between relative overflow-hidden">
+        
+        <!-- Header -->
+        <div class="flex items-center justify-between border-b border-slate-100 pb-2">
+          <div class="flex items-center gap-2">
+            <span id="sqNoticeIcon" class="text-lg icon-bounce">🎁</span>
+            <span id="sqNoticeTag" class="text-[9px] font-black uppercase tracking-wider text-[#3a80bc]">Special Deal</span>
+          </div>
+          <button onclick="hideSquareNotice()" class="w-5 h-5 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-400 hover:text-slate-600 flex items-center justify-center text-[10px] transition">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+
+        <!-- Square Text Body -->
+        <div class="my-auto text-center px-1">
+          <p id="sqNoticeText" class="text-[11px] font-extrabold text-[#102138] leading-snug">
+            Flat 20% OFF on Full Semester & 10% OFF on 5 subjects!
+          </p>
+        </div>
+
+        <!-- 5-Second Timer Bar at Bottom -->
+        <div class="w-full bg-slate-100 h-1 rounded-full overflow-hidden">
+          <div id="sqProgressBar" class="bg-gradient-to-r from-[#3a80bc] to-[#2563eb] h-full timer-line-animate"></div>
+        </div>
+
+      </div>
+    </div>
 
     <!-- SMALL FLOATING ICONS (Bottom Left) -->
     <div class="fixed bottom-4 left-4 z-40">
@@ -574,7 +628,6 @@
   </div>
 
   <script>
-    // JS Logic without alert()
     function showToast(message, type = 'info') {
       const container = document.getElementById('toastContainer');
       const toast = document.createElement('div');
@@ -594,7 +647,7 @@
     }
 
     const courses = [
-      { code: "MGT101", title: "Financial Accounting", types: ["MID", "FINAL"], mid: "Rs. 500", final: "Rs. 500" },
+      { code: "MGT101", title: "Financial Accounting", types: ["MID", "FINAL"], mid: "Rs. 500", final: "Rs. 500", link: "mgt101.html" },
       { code: "MGT501", title: "HR Management", types: ["MID", "FINAL"], mid: "Rs. 500", final: "Rs. 800" },
       { code: "CS101", title: "Intro to Computing", types: ["MID", "FINAL"], mid: "Rs. 500", final: "Rs. 800" },
       { code: "ENG101", title: "English Comprehension", types: ["MID", "FINAL"], mid: "Rs. 500", final: "Rs. 800" },
@@ -647,9 +700,10 @@
       filtered.forEach(item => {
         let p = (typeFilter === 'MID') ? item.mid : item.final;
         let termLabel = (typeFilter === 'MID') ? 'Mid Term' : 'Final Term';
+        const hasDirectLink = item.code === "MGT101";
         
         const card = document.createElement("div");
-        card.className = `glass-card-light rounded-xl p-4 flex flex-col justify-between`;
+        card.className = `glass-card-light rounded-xl p-4 flex flex-col justify-between ${hasDirectLink ? 'border-2 border-[#3a80bc]' : ''}`;
         card.innerHTML = `
           <div class="mb-3">
             <div class="flex justify-between mb-2">
@@ -660,6 +714,11 @@
             <span class="text-[9px] font-bold text-[#3a80bc] block mt-1 uppercase">${termLabel} Prep</span>
           </div>
           <div class="space-y-1.5 mt-auto">
+            ${hasDirectLink ? `
+              <a href="mgt101.html" class="w-full bg-[#3a80bc] hover:bg-[#2563eb] text-white text-[10px] font-bold py-2 rounded-lg flex items-center justify-center gap-1 shadow-xs transition">
+                <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i> Open MGT101 Portal
+              </a>
+            ` : ''}
             <div class="flex gap-1.5">
               <button onclick="addToCart('${item.code}', '${typeFilter}')" class="flex-1 bg-slate-50 border border-slate-200 text-slate-700 text-[10px] font-bold py-2 rounded-lg flex items-center justify-center gap-1"><i class="fa-solid fa-cart-plus"></i> Add</button>
               <button onclick="openOrderModal('${item.code}', '${typeFilter}')" class="flex-1 btn-premium text-[10px] font-bold py-2 rounded-lg flex items-center justify-center gap-1"><i class="fa-solid fa-unlock text-amber-300"></i> Unlock</button>
@@ -767,7 +826,7 @@
       if (name.length < 2 || !email.includes("@")) { showToast("Enter full name and valid Gmail.", "error"); return; }
       
       let details = isCartCheckoutMode ? `*Bundle (${cart.length})*\n${cart.map((i,idx)=>`${idx+1}. ${i.code} (${i.type})`).join('\n')}\n*Total:* Rs. ${calculateCartTotals().total}` : `*Course:* ${selectedCourse.code} (${selectedType})`;
-      const msgText = `*Order Details*\n${details}\n*Name:* ${name}\n*Email:* ${email}`;
+      const msgText = `*Order Details*\n${details}\n*Name:* ${name}\n*Email:* ${email}\n[Attached Payment Screenshot]`;
       window.open(`https://wa.me/923198519637?text=${encodeURIComponent(msgText)}`, '_blank');
       closeOrderModal();
     }
@@ -775,10 +834,18 @@
 
     function openLockedPreview(code) { document.getElementById("loginCourseCode").value = code; document.getElementById("lockedCourseCode").innerText = code; document.getElementById("lockedPreviewModal").classList.remove("hidden"); }
     function closeLockedPreview() { document.getElementById("lockedPreviewModal").classList.add("hidden"); }
+    
     function verifyAndUnlockPortal() {
-      const email = document.getElementById("loginEmail").value.trim();
+      const email = document.getElementById("loginEmail").value.trim().toLowerCase();
+      const code = document.getElementById("loginCourseCode").value.trim().toUpperCase();
       if (!email.includes("@")) { showToast("Enter valid email.", "error"); return; }
-      showToast("Access Denied: Payment Required.", "error"); // Simplified DB check for speed
+      
+      // Auto redirect if MGT101
+      if (code === "MGT101") {
+        window.location.href = `mgt101.html?student=${encodeURIComponent(email)}`;
+        return;
+      }
+      showToast("Verifying access with database...", "info");
     }
 
     function toggleTeacherChat() { document.getElementById("teacherChatWindow").classList.toggle("hidden"); }
@@ -791,7 +858,7 @@
     function sendCustomTeacherMsg() {
       const input = document.getElementById("userChatInput"); const text = input.value.trim(); if (!text) return;
       appendStudentMsg(text); input.value = "";
-      setTimeout(() => appendTeacherMsg("Instructor will reply soon. You can also WhatsApp us!"), 500);
+      setTimeout(() => appendTeacherMsg("Instructor will reply soon. You can also WhatsApp us at 0319-8519637!"), 500);
     }
     function appendStudentMsg(msg) {
       const box = document.getElementById("chatMessages");
@@ -802,6 +869,49 @@
       const box = document.getElementById("chatMessages");
       box.innerHTML += `<div class="bg-white p-2 rounded-lg border border-slate-200 text-slate-800 text-[10px] max-w-[90%]"><span class="font-bold text-[#3a80bc] block mb-0.5">Instructor</span>${msg}</div>`;
       box.scrollTop = box.scrollHeight;
+    }
+
+    // ========================================================
+    // RECURRING SQUARE BOX NOTIFICATION ENGINE (5s SHOW -> 3.5s REST)
+    // ========================================================
+    const squareNotices = [
+      { icon: "🎁", tag: "Semester Deal", text: "Flat 20% OFF on Full Semester & 10% OFF on 5 subjects!" },
+      { icon: "⚠️", tag: "Official Policy", text: "All exam preparation portals are 100% PAID — nothing is free." },
+      { icon: "💼", tag: "LMS Handling", text: "Complete Assignments, Quizzes & GDBs with 24/7 academic support." },
+      { icon: "💻", tag: "Online Portals", text: "Practice & prepare online with zero file downloads directly on your screen!" }
+    ];
+    let sqIdx = 0;
+    const sqBox = document.getElementById("squareNoticeBox");
+    const sqIcon = document.getElementById("sqNoticeIcon");
+    const sqTag = document.getElementById("sqNoticeTag");
+    const sqText = document.getElementById("sqNoticeText");
+    const sqBar = document.getElementById("sqProgressBar");
+
+    function showNextSquareNotice() {
+      if (!sqBox) return;
+      const current = squareNotices[sqIdx];
+      sqIcon.innerText = current.icon;
+      sqTag.innerText = current.tag;
+      sqText.innerText = current.text;
+      sqBox.classList.add("box-visible");
+
+      if (sqBar) {
+        sqBar.classList.remove("timer-line-animate");
+        void sqBar.offsetWidth; // trigger reflow
+        sqBar.classList.add("timer-line-animate");
+      }
+
+      setTimeout(() => {
+        sqBox.classList.remove("box-visible");
+        sqIdx = (sqIdx + 1) % squareNotices.length;
+        setTimeout(showNextSquareNotice, 3500); // 3.5s rest
+      }, 5000); // 5s active
+    }
+
+    setTimeout(showNextSquareNotice, 2000);
+
+    function hideSquareNotice() {
+      if (sqBox) sqBox.classList.remove("box-visible");
     }
 
     switchTab('tab-home');
