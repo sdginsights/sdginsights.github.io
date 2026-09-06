@@ -246,10 +246,11 @@
           <span class="text-slate-300">Success, Dignity & Glory in Your VU Studies</span>
         </div>
         <div class="flex items-center gap-4">
-          <a href="https://vulms.vu.edu.pk/" target="_blank" class="hover:text-blue-300 transition flex items-center gap-1.5 border-r border-slate-700 pr-4">
-            <i class="fa-solid fa-graduation-cap"></i> VU LMS Login
+          <a href="https://vulms.vu.edu.pk/" target="_blank" class="bg-blue-800 hover:bg-blue-700 text-white px-3 py-1 rounded-md transition flex items-center gap-2 border border-blue-600 shadow-sm">
+            <div class="bg-white text-blue-900 w-5 h-5 rounded-full flex items-center justify-center text-[9px] font-black tracking-tighter">VU</div>
+            VU LMS Login
           </a>
-          <button onclick="orderViaWhatsApp('Book Your Assignment')" class="hover:text-amber-300 text-amber-400 transition flex items-center gap-1.5">
+          <button onclick="orderViaWhatsApp('Book Your Assignment')" class="hover:text-amber-300 text-amber-400 transition flex items-center gap-1.5 pl-2 border-l border-slate-700">
             <i class="fa-solid fa-pen-nib"></i> Book Your Assignment
           </button>
         </div>
@@ -280,14 +281,21 @@
         <!-- Desktop Navigation -->
         <nav class="hidden lg:flex items-center bg-slate-50 p-1 rounded-2xl border border-slate-200 text-xs font-semibold shadow-inner">
           <button onclick="switchTab('tab-home')" id="btn-tab-home" class="nav-btn-active px-3 py-2 rounded-xl transition">Home</button>
-          <button onclick="switchTab('tab-mid-portals')" id="btn-tab-mid-portals" class="nav-btn-inactive px-3 py-2 rounded-xl transition">Mid Term Preparation Portals</button>
-          <button onclick="switchTab('tab-final-portals')" id="btn-tab-final-portals" class="nav-btn-inactive px-3 py-2 rounded-xl transition">Final Term Preparation Portals</button>
-          <button onclick="switchTab('tab-lms')" id="btn-tab-lms" class="nav-btn-inactive px-3 py-2 rounded-xl transition">LMS Handling Service</button>
+          <button onclick="switchTab('tab-mid-portals')" id="btn-tab-mid-portals" class="nav-btn-inactive px-3 py-2 rounded-xl transition">Mid Term Portals</button>
+          <button onclick="switchTab('tab-final-portals')" id="btn-tab-final-portals" class="nav-btn-inactive px-3 py-2 rounded-xl transition">Final Term Portals</button>
+          <button onclick="switchTab('tab-lms')" id="btn-tab-lms" class="nav-btn-inactive px-3 py-2 rounded-xl transition">LMS Handling</button>
           <button onclick="switchTab('tab-deals')" id="btn-tab-deals" class="nav-btn-inactive px-3 py-2 rounded-xl transition">Discounted Deals</button>
         </nav>
 
-        <!-- Right Icons (Cart) -->
+        <!-- Right Icons (YouTube + Cart) -->
         <div class="flex items-center gap-3">
+          <!-- YouTube Button Moved to Top -->
+          <a href="https://youtube.com/@sdginsights" target="_blank" class="flex items-center justify-center gap-2 w-10 h-10 md:w-auto md:px-4 md:py-2 rounded-full md:rounded-xl bg-red-50 hover:bg-red-600 text-red-600 hover:text-white border border-red-200 hover:border-red-600 transition-all shadow-sm group">
+            <i class="fa-brands fa-youtube text-lg group-hover:scale-110 transition-transform"></i>
+            <span class="hidden md:block text-xs font-bold">YouTube</span>
+          </a>
+
+          <!-- Cart Button -->
           <button onclick="toggleCart()" class="relative w-10 h-10 md:w-11 md:h-11 bg-white border border-slate-200 rounded-full text-slate-600 hover:bg-blue-50 hover:text-[#3a80bc] hover:border-[#3a80bc] transition duration-300 shadow-sm flex items-center justify-center group">
             <i class="fa-solid fa-cart-shopping text-lg group-hover:scale-110 transition-transform"></i>
             <span id="headerCartBadge" class="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] w-5 h-5 rounded-full flex items-center justify-center font-bold hidden border-2 border-white shadow-sm">0</span>
@@ -337,14 +345,15 @@
         <div class="my-4 border-t border-slate-200"></div>
         <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest pl-2 mb-2">Quick Links</p>
         
-        <a href="https://vulms.vu.edu.pk/" target="_blank" class="w-full flex items-center gap-3 px-4 py-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold transition">
-          <i class="fa-solid fa-graduation-cap text-[#3a80bc]"></i> VU LMS Official Login
+        <a href="https://vulms.vu.edu.pk/" target="_blank" class="w-full flex items-center gap-3 px-4 py-3 rounded-xl bg-blue-50 border border-blue-200 hover:bg-blue-100 text-blue-900 font-bold transition shadow-sm">
+          <div class="w-8 h-8 rounded-full bg-blue-700 text-white flex items-center justify-center font-black text-xs tracking-tighter shadow-sm">VU</div>
+          VU LMS Official Login
         </a>
-        <a href="https://youtube.com/@sdginsights" target="_blank" class="w-full flex items-center gap-3 px-4 py-3 rounded-xl bg-red-50 hover:bg-red-100 text-red-700 font-bold transition mt-2">
-          <i class="fa-brands fa-youtube text-red-600"></i> YouTube Channel
+        <a href="https://youtube.com/@sdginsights" target="_blank" class="w-full flex items-center gap-3 px-4 py-3 rounded-xl bg-red-50 hover:bg-red-100 text-red-700 font-bold transition mt-2 border border-red-100">
+          <i class="fa-brands fa-youtube text-red-600 text-lg"></i> YouTube Channel
         </a>
-        <a href="https://whatsapp.com/channel/0029VbB78Xa3WHTReQ1hTF1Q" target="_blank" class="w-full flex items-center gap-3 px-4 py-3 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-800 font-bold transition mt-2">
-          <i class="fa-brands fa-whatsapp text-emerald-600"></i> WhatsApp Community
+        <a href="https://whatsapp.com/channel/0029VbB78Xa3WHTReQ1hTF1Q" target="_blank" class="w-full flex items-center gap-3 px-4 py-3 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-800 font-bold transition mt-2 border border-emerald-100">
+          <i class="fa-brands fa-whatsapp text-emerald-600 text-lg"></i> WhatsApp Community
         </a>
         <button onclick="orderViaWhatsApp('Book Your Assignment'); toggleMobileMenu();" class="w-full flex items-center gap-3 px-4 py-3 rounded-xl bg-amber-50 border border-amber-200 text-amber-700 hover:bg-amber-100 font-bold transition mt-2">
           <i class="fa-solid fa-pen-nib"></i> Book Your Assignment
@@ -370,20 +379,18 @@
             100% from the handout of Virtual University (VU). 100% success guarantee for your best CGPA.
           </p>
 
-          <div class="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3 pt-4">
-             <button onclick="switchTab('tab-mid-portals')" class="btn-premium btn-shine btn-shine-dark w-full sm:w-auto px-6 py-3.5 rounded-2xl text-sm font-bold flex items-center justify-center gap-2">
-               <i class="fa-solid fa-bullseye"></i> Mid Term Preparation
+          <!-- MAIN PREP BUTTONS (Strictly Mid & Final focuses as requested) -->
+          <div class="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-4 pt-6 pb-2">
+             <button onclick="switchTab('tab-mid-portals')" class="btn-premium btn-shine btn-shine-dark w-full sm:w-auto px-8 py-4 rounded-2xl text-base font-black flex items-center justify-center gap-3 shadow-lg">
+               <i class="fa-solid fa-bullseye text-xl"></i> Mid Term Preparation
              </button>
-             <button onclick="switchTab('tab-final-portals')" class="btn-premium btn-shine btn-shine-dark w-full sm:w-auto px-6 py-3.5 rounded-2xl text-sm font-bold flex items-center justify-center gap-2">
-               <i class="fa-solid fa-trophy text-amber-300"></i> Final Term Preparation
-             </button>
-             <button onclick="orderViaWhatsApp('Book Your Assignment')" class="bg-white border-2 border-[#102138] text-[#102138] hover:bg-slate-50 w-full sm:w-auto px-6 py-3.5 rounded-2xl text-sm font-bold transition-all flex items-center justify-center gap-2 shadow-sm btn-shine">
-               <i class="fa-solid fa-pen-nib text-[#3a80bc]"></i> Book Your Assignment
+             <button onclick="switchTab('tab-final-portals')" class="btn-premium btn-shine btn-shine-dark w-full sm:w-auto px-8 py-4 rounded-2xl text-base font-black flex items-center justify-center gap-3 shadow-lg">
+               <i class="fa-solid fa-trophy text-amber-300 text-xl"></i> Final Term Preparation
              </button>
           </div>
 
           <!-- Glassmorphic Search -->
-          <div class="max-w-md mx-auto pt-8">
+          <div class="max-w-md mx-auto pt-6">
             <div class="relative group">
               <div class="absolute -inset-0.5 bg-gradient-to-r from-[#3a80bc] to-[#102138] rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-500"></div>
               <div class="relative flex items-center">
@@ -392,16 +399,6 @@
                 <button onclick="searchFromHome()" class="absolute right-2 bg-[#102138] hover:bg-[#3a80bc] text-white px-4 py-2 rounded-xl text-xs font-bold transition-colors shadow-sm">Search</button>
               </div>
             </div>
-          </div>
-          
-          <div class="flex items-center justify-center gap-4 pt-6">
-            <a href="https://youtube.com/@sdginsights" target="_blank" class="flex items-center gap-2 text-xs font-bold text-slate-600 hover:text-red-600 transition">
-              <i class="fa-brands fa-youtube text-lg"></i> YouTube Channel
-            </a>
-            <span class="text-slate-300">|</span>
-            <a href="https://whatsapp.com/channel/0029VbB78Xa3WHTReQ1hTF1Q" target="_blank" class="flex items-center gap-2 text-xs font-bold text-slate-600 hover:text-[#3a80bc] transition">
-              <i class="fa-brands fa-whatsapp text-lg"></i> WhatsApp Community
-            </a>
           </div>
 
         </div>
@@ -536,9 +533,13 @@
 
     <!-- FLOATING ICONS -->
     <div class="fixed bottom-6 left-4 md:left-6 z-40 flex flex-col gap-3">
-      <!-- WhatsApp Icon -->
-      <a href="https://wa.me/923198519637" target="_blank" class="w-10 h-10 md:w-11 md:h-11 rounded-full bg-emerald-500 text-white shadow-lg flex items-center justify-center hover:scale-110 transition-transform hover:bg-emerald-600 relative group">
+      <!-- WhatsApp Channel Icon (Explicitly clearly labeled) -->
+      <a href="https://whatsapp.com/channel/0029VbB78Xa3WHTReQ1hTF1Q" target="_blank" class="flex items-center gap-2.5 px-4 py-3 rounded-full bg-emerald-500 text-white shadow-lg hover:scale-105 transition-transform hover:bg-emerald-600 relative group border border-emerald-400">
         <i class="fa-brands fa-whatsapp text-xl md:text-2xl"></i>
+        <div class="flex flex-col leading-none pr-1">
+          <span class="text-[9px] font-bold opacity-80 uppercase tracking-wider">Join Official</span>
+          <span class="text-xs md:text-sm font-black">WhatsApp Channel</span>
+        </div>
         <div class="absolute -inset-2 bg-emerald-400 rounded-full blur opacity-30 group-hover:opacity-60 transition"></div>
       </a>
     </div>
@@ -932,7 +933,7 @@
 
     function updateCartUI() {
       const count = cart.length;
-      const badges = ['headerCartBadge', 'floatingCartBadge'];
+      const badges = ['headerCartBadge'];
       badges.forEach(id => {
         const b = document.getElementById(id);
         if (b) {
@@ -1090,7 +1091,7 @@
         english: "Yes, we offer special package discounts:\n\n• Full Semester Bundle: Flat 20% OFF on 7 or more subjects.\n\n• Pick Any 5 Pack: Flat 10% OFF on 5 subjects of your choice."
       },
       access_method: {
-        roman: "Access ka tariqa bohat aasan hai, koi code yaad rakhne ki zaroorat nahi:\n\n1. EasyPaisa ya Bank par fee send karein.\n\n2. WhatsApp par screenshot aur apni Gmail send karein.\n\n3. Instructor access active kar dengi.\n\n4. Aap apni Gmail laga kar direct notes open kar sakenge.",
+        roman: "Access ka tariqa bohat aasan hai, koi code yaad rakhne ki zaroorat nahi:\n\n1. EasyPaisa ya Bank par fee send karein.\n\n2. WhatsApp par screenshot aur apni Gmail send karein.\n\n3. Instructor access active kar dengi.\n\n4. Aap apni Gmail laga টান kar direct notes open kar sakenge.",
         urdu: "پورٹل کی رسائی حاصل کرنا اب انتہائی آسان ہے، کوئی کوڈ یاد رکھنے کی ضرورت نہیں:\n\n1. ایزی پیسہ یا بینک پر فیس بھیجیں۔\n\n2. واٹس ایپ پر رسید کا اسکرین شاٹ اور اپنی جی میل بھیجیں۔\n\n3. انسٹرکٹر آپ کی ایکسیس فعال کر دیں گی!\n\n4. آپ ڈائریکٹ ای میل درج کر کے نوٹس کھول سکیں گے۔",
         english: "Getting portal access is effortless — no passcodes to remember:\n\n1. Transfer fee via EasyPaisa or Bank.\n\n2. Send receipt screenshot and Gmail to WhatsApp.\n\n3. The instructor activates your access.\n\n4. You can open your notes directly using your registered Gmail."
       }
